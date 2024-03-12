@@ -1,0 +1,109 @@
+﻿<style>
+  .fa-envelope {
+    color: red !important
+  }
+</style>
+<!--=== Breadcrumbs ===-->
+<fd-dashboard-widgets-header-drctv fund="fund" show-edit-menu="false" show-global-menu="true"></fd-dashboard-widgets-header-drctv>
+<!--=== End Breadcrumbs ===-->
+
+<!--=== Content Part -Body ===-->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- Page Error Summary-->
+      <md-alert-drctv title="{{title}}" message="{{message}}" alert-type="{{alertType}}" fade="fadeIn" show-alert="{{showAlert}}" show-block="true" button-title="Setup your WePay Account and start accepting payments" button-function="gotoBasics()"></md-alert-drctv>
+      <!-- //Page Error Summary -->
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <!-- Tabs -->
+      <div class="headline"><h3>My Fundraisers</h3></div>
+
+      <tabset ng-hide="isLoading">
+        <tab heading="My Campaigns">
+          <ul class="portfolio recent-work clearfix list-unstyled">
+            <li data-id="id-1" ng-repeat="fund in funds">
+              <a href="/fund/controlpanel/{{fund.identification}}/overview">
+                <em class="overflow-hidden"><img ng-src="{{getDefaultImage(fund.item.itemUploadList)}}" alt="{{fund.items.title}}"></em>
+                <div class="progress" style="height: 20px; margin-bottom: 10px; margin-top:5px;">
+                  <div class="progress progress-bar-background-blue">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" ng-style="getProgressPercentageWidth(fund)">
+                      ${{getTotalDonation(fund) | number:0}}
+                    </div>
+                  </div>
+                </div>
+                <span>
+                  <strong>
+                    {{fund.item.title}}
+                    <i class="fa fa-envelope" ng-show="fund.fundNoteCount > 0"></i>
+                  </strong>
+                  <i>{{cutText(fund.item.description)}}</i>
+                  
+                </span>
+              </a>
+            </li>
+          </ul>
+        </tab>
+        <tab heading="Campaigns I Support" select="FilterFund('Support')">
+          <ul class="portfolio recent-work clearfix list-unstyled">
+            <li data-id="id-1" ng-repeat="fund in supportedFunds">
+              <a href="/{{fund.item.permalink}}">
+                <em class="overflow-hidden"><img ng-src="{{getDefaultImage(fund.item.itemUploadList)}}" alt="{{fund.items.title}}"></em>
+                <div class="progress" style="height: 20px; margin-bottom: 10px; margin-top:5px;">
+                  <div class="progress progress-bar-background-blue">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" ng-style="getProgressPercentageWidth(fund)">
+                      ${{getTotalDonation(fund) | number:0}}
+                    </div>
+                  </div>
+                </div>
+                <span>
+                  <strong>
+                    {{fund.item.title}}
+                    <i class="fa fa-envelope" ng-show="fund.fundNoteCount > 0"></i>
+                  </strong>
+                  <i>{{cutText(fund.item.description)}}</i>
+
+                </span>
+              </a>
+            </li>
+          </ul>
+        </tab>
+        <tab heading="My Teams" select="FilterFund('TeamMember')">
+          <ul class="portfolio recent-work clearfix list-unstyled">
+            <li data-id="id-1" ng-repeat="fund in teamed">
+              <a href="/fund/dashboard/{{fund.identification}}">
+                <em class="overflow-hidden"><img ng-src="{{getDefaultImage(fund.item.itemUploadList)}}" alt="{{fund.items.title}}"></em>
+                <div class="progress" style="height: 20px; margin-bottom: 10px; margin-top:5px;">
+                  <div class="progress progress-bar-background-blue">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" ng-style="getProgressPercentageWidth(fund)">
+                      ${{getTotalDonation(fund) | number:0}}
+                    </div>
+                  </div>
+                </div>
+                <span>
+                  <strong>
+                    {{fund.item.title}}
+                    <i class="fa fa-envelope" ng-show="fund.fundNoteCount > 0"></i>
+                  </strong>
+                  <i>{{cutText(fund.item.description)}}</i>
+
+                </span>
+              </a>
+            </li>
+          </ul>
+        </tab>
+      </tabset><!--/tab-content-->
+
+      <div ng-show="isLoading" class="margin-bottom-20">
+        <md-spinner-bar-drctv />
+      </div>
+
+    </div><!--/col-md-12-->
+
+  </div><!--/row-->
+
+</div><!--/container-->
+<!--=== End Content Part - Body ===-->

@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" xmlns:ng="http://angularjs.org" xmlns:fb="http://ogp.me/ns/fb#" ng-app="fundoloApp" ng-controller="fdMainCtrl">
+<!--<![endif]-->
+
+<head>
+  <title>FREE Online Fundraising - You Create, They Donate, We Change Lives</title>
+  <base href="/">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="{{pageDescription}}" name="Description">
+  <meta content="{{pageMetaKeywords}}" name="Keywords">
+
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/assets/img/favicon.ico">
+
+  <!--Facebook open graphs-->
+  <meta property="fb:app_id" content="140316459192" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{{og.title}}" />
+  <meta property="og:description" content="{{og.description}}" />
+  <meta property="og:url" content="{{og.url}}" />
+  <meta property="og:image" content="{{og.image}}" />
+
+  <!--http://davidwalsh.name/twitter-cards-->
+  <meta name="twitter:card" content="{{og.card}}">
+  <meta name="twitter:url" content="{{og.url}}">
+  <meta name="twitter:title" content="{{og.title}}">
+  <meta name="twitter:description" content="{{og.description}}">
+  <meta name="twitter:image" content="{{og.image}}">
+  <meta name="fragment" content="!" />
+
+
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+  <!-- CSS Implementing Plugins -->
+  <!-- CSS Global Compulsory -->
+  <link rel="stylesheet" href="assets/css/style.min.css">
+
+  <link href="/assets/css/plugins/brand-buttons/brand-buttons.css" rel="stylesheet" />
+  <link href="/assets/css/plugins/brand-buttons/brand-buttons-inversed.css" rel="stylesheet" />
+
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
+  <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/plugins/scrollbar/src/perfect-scrollbar.css">
+  <link rel="stylesheet" href="assets/plugins/owl-carousel/owl-carousel/owl.carousel.css">
+  <link rel="stylesheet" href="assets/plugins/revolution-slider/rs-plugin/css/settings.min.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="assets2/plugins/master-slider/quick-start/masterslider/style/masterslider.css">
+  <link rel='stylesheet' href="assets2/plugins/master-slider/quick-start/masterslider/skins/default/style.css">
+  <link rel="stylesheet" href="assets/plugins/sky-forms/version-2.0.1/css/custom-sky-forms.css">
+  <link rel="stylesheet" href="/Content/scrolling-nav.css" />
+  <link rel="stylesheet" href="/assets/plugins/ladda-buttons/css/custom-lada-btn.css">
+  <!--[if lt IE 9]>
+      <link rel="stylesheet" href="assets/plugins/sky-forms/version-2.0.1/css/sky-forms-ie8.css">
+  <![endif]-->
+  <!--[if lt IE 9]><link rel="stylesheet" href="assets/plugins/revolution-slider/rs-plugin/css/settings-ie8.css" type="text/css" media="screen"><![endif]-->
+  <!-- CSS Theme -->
+  <link rel="stylesheet" href="assets/css/theme-colors/default.min.css" id="style_color">
+  <link rel="stylesheet" href="assets/css/theme-colors/default-custom.css" id="style_color_item">
+  <link rel="stylesheet" href="assets/css/theme-skins/dark.min.css">
+  <link rel="stylesheet" href="assets/css/theme-skins/dark-custom.css">
+  <!-- CSS Customization -->
+  <link rel="stylesheet" href="assets/css/custom.min.css">
+
+  <!-- CSS Global -->
+  <link rel="stylesheet" href="/content/site.min.css" />
+  <link rel="stylesheet" href="/content/social-buttons.css" />
+  <link rel="stylesheet" href="/Content/toastr.min.css" />
+  <link rel="stylesheet" href="/Content/ng-grid.min.css" type="text/css" />
+  <link href="/Scripts/angular-csp.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="wrapper page-option-v1">
+    <div ui-view></div>
+  </div>
+  <!--=== End Copyright ===-->
+  <!-- JS Global Compulsory -->
+  <!--[if lt IE 10]>
+    <script src="/scripts/xdomain.min.js"></script>
+    <script>
+      xdomain.slaves({
+        "http://api.local.fundingmiracles.com": "/proxy.html",
+        "http://api.fundingmiracles.com": "/proxy.html",
+        "http://staging-api.fundingmiracles.com": "/proxy.html"
+      })
+    </script>
+  <![endif]-->
+
+  <script src="/scripts/jquery-2.1.0.min.js"></script>
+  <script src="/Scripts/jquery-ui-1.11.2.min.js"></script>
+  <script src="/scripts/ckeditor/ckeditor.min.js"></script>
+  <script src="/scripts/moment.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <script src="/scripts/angular.min.js"></script>
+  <script src="/scripts/angular-touch.min.js"></script>
+  <script src="/scripts/angular-ui/ui-bootstrap.min.js"></script>
+  <script src="/scripts/angular-facebook.min.js"></script>
+  <script src="/scripts/angular-resource.min.js"></script>
+  <script src="/scripts/angular-ui-validate.min.js"></script>
+  <script src="/scripts/angular-cookies.min.js"></script>
+  <script src="/scripts/angular-route.min.js"></script>
+  <script src="/scripts/angular-sanitize.min.js"></script>
+  <script src="/scripts/angular-ui-router.min.js"></script>
+  <script src="/scripts/angular-file-upload-shim.min.js"></script>
+  <script src="/scripts/angular-file-upload.min.js"></script>
+  <script src="/Scripts/angular-ui-sortable.min.js"></script>
+  <script src="/scripts/ng-grid.min.js"></script>
+  <script src="/scripts/mask.min.js"></script>
+  <script src="/scripts/jquery-printArea.min.js"></script>
+
+  <script src="/scripts/toastr.min.js"></script>
+  <script src="/Scripts/angulartics.min.js"></script>
+  <script src="/Scripts/angulartics-ga.min.js"></script>
+
+
+  <!-- JS Global Compulsory -->
+  <script type="text/javascript" src="assets/plugins/jquery/jquery-migrate.min.js"></script>
+  <!-- JS Implementing Plugins -->
+  <script type="text/javascript" src="assets/plugins/back-to-top.min.js"></script>
+  <script type="text/javascript" src="assets/plugins/owl-carousel/owl-carousel/owl.carousel.min.js"></script>
+  <script type="text/javascript" src="assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+  <script type="text/javascript" src="assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+  <!-- Master Slider -->
+  <script type="text/javascript" src="assets2/plugins/master-slider/quick-start/masterslider/masterslider.min.js"></script>
+
+  <script type="text/javascript" src="/scripts/scrolling-nav.js"></script>
+  <!-- JS Page Level -->
+  <script type="text/javascript" src="assets/js/app.min.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/style-switcher.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/owl-carousel.js"></script>
+  <script type="text/javascript" src="assets/js/plugins/revolution-slider.js"></script>
+  <!-- JS Customization -->
+  <script type="text/javascript" src="assets/js/custom.min.js"></script>
+
+
+  <!-- TESTING FOR BACKDROP<script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-523afcc317294822" type="text/javascript"></script>-->
+  <!-- Application -->
+  <script src="/app/Fundolo.js"></script>
+  <!-- /Application-->
+  <!--[if lt IE 9]>
+    <script src="assets/plugins/respond.js"></script>
+    <script src="assets/plugins/html5shiv.js"></script>
+    <script src="assets/js/plugins/placeholder-IE-fixes.js"></script>
+  <![endif]-->
+  <!--TESTING FOR BACKDROP<script type="text/javascript">window.prerenderReady = false;</script>-->
+  <!--The following is used to detect Bootstrap changes in size-->
+  <div class="device-xs visible-xs"></div>
+  <div class="device-sm visible-sm"></div>
+  <div class="device-md visible-md"></div>
+  <div class="device-lg visible-lg"></div>
+  
+  <!--Staging-->
+  <!--<script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-59005510-2', 'auto');
+    ga('require', 'displayfeatures');
+
+  </script>-->
+
+  <!--
+    <script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+  ga('create', 'UA-59005510-1', 'auto');
+    ga('require', 'displayfeatures');
+    </script>-->
+  
+  
+  <!--Local-->
+  <script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+  ga('create', 'UA-59005510-3', 'auto');
+  ga('require', 'displayfeatures');
+
+    </script>
+
+</body>
+</html>
+

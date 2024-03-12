@@ -1,0 +1,42 @@
+﻿<wi-navbar-drctv></wi-navbar-drctv>
+
+<div class="main-container" id="main-container">
+  <script type="text/javascript">
+    try {
+      ace.settings.check('main-container', 'fixed');
+    } catch (e) { }
+  </script>
+
+  <div class="main-container-inner">
+    <a class="menu-toggler" id="menu-toggler" href="#">
+      <span class="menu-text"></span>
+    </a>
+
+    <wi-sidebar-drctv></wi-sidebar-drctv>
+
+    <div class="main-content">
+      <wi-breadcrumbs-drctv></wi-breadcrumbs-drctv>
+
+      <div class="page-content">
+        <wi-pageheader-drctv></wi-pageheader-drctv><!-- /.page-header -->
+
+        <div class="row">
+          <div class="col-xs-12">
+            <!-- PAGE CONTENT BEGINS -->
+            <div ui-view></div>
+            <!-- PAGE CONTENT ENDS -->
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
+
+  </div><!-- /.main-container-inner -->
+
+  <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+    <i class="icon-double-angle-up icon-only bigger-110"></i>
+  </a>
+</div><!-- /.main-container -->
+
+<script language="javascript">
+  ace.general_things(jQuery);
+</script>

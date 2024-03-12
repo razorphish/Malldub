@@ -1,0 +1,114 @@
+﻿<!--=== Breadcrumbs ===-->
+<fd-dashboard-widgets-header-drctv fund="fund" show-edit-menu="true"></fd-dashboard-widgets-header-drctv>
+<!--=== End Breadcrumbs ===-->
+<!--== Content Part Header===-->
+<div class="container">
+  <div class="row" ng-show="showWarning">
+    <div class="col-md-12">
+      <!-- Page Error Summary-->
+      <md-alert-drctv title="{{title}}" message="{{message}}" alert-type="{{alertType}}" fade="fadeIn" show-alert="{{showAlert}}" show-block="true"></md-alert-drctv>
+      <!-- //Page Error Summary -->
+    </div>
+  </div>
+
+</div>
+<!--== /Content Part Header ==-->
+<!--=== Content Part -Body ===-->
+<div class="container">
+
+  <!--Page Row-->
+  <div class="row">
+
+    <!--LEFT SECTION(BODY)-->
+    <div class="col-md-8">
+
+      <!-- Fund Settings Header  -->
+      <div class="row">
+        <div class="col-md-7 headline">
+          <h3>{{fund.item.title}} Teams</h3>
+        </div>
+        <div class="col-md-5 margin-top-10">
+          <button type="button" class="btn btn-link" ng-click="openTeam()">Add Team</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+
+          <!--Main Body-->
+          <ul>
+            <li>
+              A team will have its own page that shows the total amount of money raised
+            </li>
+            <li>
+              A team member will have their page that shows how much they raised 
+            </li>
+            <li>
+              A team captain can change the page information
+            </li>
+            <li>
+              Others may join the team by clicking on the "Join Team" link on campaign page
+            </li>
+            <li>
+              Each team will be displayed on campaign page with total amount raised
+            </li>
+          </ul>
+          
+          <div class="table-search-v1 margin-bottom-20">
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th width="70">Progress</th>
+                    <th width="100">Goal</th>
+                    <th width="100">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="fundTeam in fund.teamList | orderBy:'dateEntered':true">
+                    <td>
+                      {{fundTeam.team.name}}
+                    </td>
+                    <td>
+                      <div class="progress progress-u progress-xxs">
+                        <div class="progress-bar progress-bar-u" ng-style="getProgressPercentage()"></div>
+                      </div>
+                    </td>
+                    <td>
+                      ${{fundTeam.goalAmount | number:0}}
+                    </td>
+                    <td>
+                      <div class="btn-group">
+                        <button class="btn-u btn-u-green btn-u-xs" ng-click="openTeamFund(fundTeam)" title="Manage team fund"><i class="fa fa-folder margin-right-5"></i></button>
+                        <button class="btn-u btn-u-red btn-u-xs" ng-click="openTeam(fundTeam)" title="Edit Team info"><i class="fa fa-edit margin-right-5"></i></button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- /Main Body-->
+
+        </div>
+      </div>
+      <!-- /Fund Settings  -->
+
+    </div>
+    <!--/LEFT SECTION(BODY)-->
+    <!-- RIGHT SECTION(Body) -->
+    <div class="col-md-4">
+      <!-- Fund Features -->
+      <fd-dashboard-widgets-features-drctv fund="fund"></fd-dashboard-widgets-features-drctv>
+      <!-- /Fund Features -->
+    </div>
+    <!--/RIGHT SECTION (Body)-->
+
+  </div>
+  <!--/Page Row-->
+
+</div>
+<!--/container-->
+<!--=== End Content Part - Body ===-->

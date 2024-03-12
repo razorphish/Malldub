@@ -1,0 +1,45 @@
+﻿<div ng-controller="Menu as vm">
+    <div ng-if="vm.headerMenu">
+        <style>
+            .main-container.container .sidebar.h-sidebar.navbar-collapse {
+                margin-top: 19px !important;
+                margin-left: 12px !important;
+            }
+        </style>
+
+        <div>
+            <div id="headerbar" class="sidebar h-sidebar t-sidebar navbar-collapse collapse sideBarNotFixed sidebar-fixed width1170">
+                <script type="text/javascript">
+            try { ace.settings.check('headerbar', 'fixed') } catch (e) { }
+        </script>
+
+
+                <ul class="nav nav-list">
+                    <li ng-repeat="state in vm.getChildStates(vm.topMostState.name)" class="hover" ng-class="vm.setMenuActive(state)">
+                        <a ng-click="vm.go(state)">
+                            <i class="menu-icon fa fa-{{state.settings.icon}}"></i>
+                            <span class="menu-text"> {{state.title}} </span>
+                        </a>
+
+                        <b class="arrow"></b>
+                        <ul class="submenu" ng-if="state.abstract">
+                            <li ng-repeat="subState in vm.getChildStates(state.name)" class="hover">
+                                <a ui-sref="{{subState.name}}">
+                                    <i class="menu-icon fa fa-caret-right"></i>
+                                    <span class="menu-text"> {{subState.title}} </span>
+                                </a>
+
+                                <b class="arrow"></b>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- /section:settings.box -->
+            <script type="text/javascript">
+        try { ace.settings.check('headerbar', 'collapsed') } catch (e) { }
+    </script>
+        </div>
+    </div>
+</div>

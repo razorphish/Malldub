@@ -1,0 +1,32 @@
+﻿<div class="modal-body donate-modal">
+  <div ng-form="fundEditPermalinkForm">
+    <div class="row">
+      <div class="col-lg-9 col-md-8 col-xs-8">
+        <div class="headline">
+          <h3>Change your settings</h3>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-xs-4 text-right">
+        <button class="btn btn-lg btn-default" ng-click="close('cancel')"><i class="fa fa-times"></i></button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="headline">
+          <h5 style="margin-top: 10px;">
+            <p>
+              Change your fundraiser's Facebook, Email, Configuration and Status settings here.
+            </p>
+          </h5>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-12">
+        <fd-controlpanel-widgets-settings-drctv fund="fund" active-tab="{{activeTab}}"></fd-controlpanel-widgets-settings-drctv>
+      </div>
+    </div>
+  </div>
+</div>

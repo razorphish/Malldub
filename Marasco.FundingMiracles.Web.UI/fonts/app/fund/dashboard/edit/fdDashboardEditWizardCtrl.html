@@ -1,0 +1,52 @@
+﻿<!--=== Breadcrumbs ===-->
+<div class="breadcrumbs margin-bottom-40">
+  <div class="container">
+    <h1 class="color-green pull-left">Create a Fundraiser</h1>
+    <ul class="pull-right breadcrumb"></ul>
+  </div>
+  <!--/container-->
+</div>
+<!--/breadcrumbs-->
+<!--=== End Breadcrumbs ===-->
+
+<!--=== Content Part -Body ===-->
+<div class="container" ng-cloak>
+  <form id="fundEditWizard" name="fundEditWizard" class="form-horizontal">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="margin-bottom-5">
+          <!-- Wizard header -->
+          <div class="row fuelux" ng-show="false">
+            <div id="MyWizard" class="wizard">
+              <ul class="steps">
+                <li ng-class="{active: step==1 || step==2 || step==3}"><span class="badge" ng-class="{'badge-info': step==1}">1</span>Fundraiser Details<span class="chevron"></span></li>
+                <li ng-class="{active: step==2 || step==3}"><span class="badge" ng-class="{'badge-info': step==2}">2</span>Beneficiary Info<span class="chevron"></span></li>
+              </ul>
+            </div>
+          </div>
+          <!-- /Wizard header -->
+          <!-- Content Pages -->
+          <div ng-switch="step">
+            <div ng-switch-when='1'>
+              <div ng-include='"/app/fund/dashboard/edit/fdDashboardEditUpdateCtrl.html"'></div>
+            </div>
+            <!--<div ng-switch-when='2'>
+              <div ng-include='"/app/fund/dashboard/edit/fdDashboardEditBeneficiaryCtrl.html"'></div>
+            </div>-->
+          </div>
+
+          <!-- /Content Pages -->
+        </div>
+        <!-- /col-md-8-->
+      </div>
+      <!--=== Right column section ===-->
+      <div class="col-md-4">
+
+      </div>
+      <!-- /Right column section-->
+    </div>
+    <!--/row-->
+  </form>
+</div>
+<!--/container-->
+<!--=== End Content Part - Body ===-->

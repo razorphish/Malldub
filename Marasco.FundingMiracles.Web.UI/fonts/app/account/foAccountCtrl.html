@@ -1,0 +1,56 @@
+﻿
+<!--=== Page Title ===-->
+<div class="row breadcrumbs">
+  <div class="container">
+    <h1 class="pull-left">My Account</h1>
+  </div>
+  <!--/container-->
+</div>
+<!--/title-->
+
+<div class="profile container content-xxs" ng-cloak>
+  <div class="row">
+    <!--Left Sidebar-->
+    <div class="col-md-3 md-margin-bottom-40">
+      <img class="img-responsive profile-img margin-bottom-20" ng-src="{{mainImage}}">
+
+      <ul class="list-group sidebar-nav-v1 margin-bottom-40" id="sidebar-nav-1">
+        <li class="list-group-item" ng-class="{active : pageResolve === 'overview'}">
+          <a ui-sref=".overview"><i class="fa fa-bar-chart-o"></i> Overview</a>
+        </li>
+        <li class="list-group-item" ng-class="{active: pageResolve ==='profile'}">
+          <a ui-sref=".profile"><i class="fa fa-user"></i> Profile</a>
+        </li>
+        <li class="list-group-item" ng-class="{active: pageResolve ==='withdraw'}">
+          <a ui-sref=".withdraw"><i class="fa fa-dollar"></i> Withdraw</a>
+        </li>
+        <li class="list-group-item" ng-class="{active: pageResolve ==='password'}">
+          <a ui-sref=".password"><i class="fa fa-lock"></i> Password</a>
+        </li>
+        <li class="list-group-item" ng-class="{active: pageResolve ==='donations'}">
+          <a ui-sref=".donations"><i class="fa fa-heart"></i> My Donations</a>
+        </li>
+        <li class="list-group-item" ng-class="{active: pageResolve ==='notifications'}">
+          <a ui-sref=".notifications"><i class="fa fa-history"></i> Notifications</a>
+        </li>
+        <li class="list-group-item" ng-class="{active: pageResolve ==='status'}">
+          <a ui-sref=".status"><i class="fa fa-pied-piper-alt"></i> Status</a>
+        </li>
+      </ul>
+
+      <hr>
+
+    </div>
+    <!--End Left Sidebar-->
+
+    <div class="col-md-9">
+      <!--Profile Body-->
+      <div ui-view></div>
+      <!--End Profile Body-->
+    </div>
+  </div><!--/end row-->
+</div><!--/container-->
+<!--=== End Profile ===-->
+<!-- Scrollbar -->
+<script src="/assets/plugins/scrollbar/src/jquery.mousewheel.js"></script>
+<script src="/assets/plugins/scrollbar/src/perfect-scrollbar.js"></script>

@@ -1,0 +1,64 @@
+﻿<div class="modal-body donate-modal">
+  <div ng-form="fundEditPermalinkForm">
+    <div class="row">
+      <div class="col-lg-9 col-md-8 col-xs-8">
+        <div class="headline">
+          <h3>Customize your Page Link</h3>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-xs-4 text-right">
+        <button class="btn btn-lg btn-default" ng-click="close('cancel')"><i class="fa fa-times"></i></button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="headline">
+          <h5 style="margin-top: 10px;">
+            <p>
+              Customizing your page url can make it easier for your donors to remember your location.
+            </p>
+            <i>
+              REMEMBER:  Its very important not to change your custom link often so you don't confuse your donors.  Have peace of mind as we
+              will always keep your original.
+            </i>
+          </h5>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-12">
+        <!--Fundraiser Permalink-->
+        <fd-widgets-permalink-drctv form="fundEditPermalinkForm" permalink="permalink"></fd-widgets-permalink-drctv>
+        <!--/Fundraiser Permalink-->
+        <!--Headline-->
+        <div class="headline">
+          <h3>Take a peek!</h3>
+          <div>
+            <h5 style="margin-top: 10px;">
+              <i>
+                Your page link will be <b>http://www.fundingmiracles.com/{{permalink}}</b>
+              </i>
+            </h5>
+          </div>
+        </div>
+        <!--Headline-->
+
+        <div ng-hide="isSaving">
+          <div>
+            <button type="button" class="btn-u btn-u-lg btn-block" ng-click="save()"><i class="fa fa-check"></i> Save</button>
+          </div>
+        </div>
+
+        <div class="actions" ng-show="isSaving">
+          <div class="control-group">
+            <div class="controls">
+              <md-spinner-bar-drctv />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

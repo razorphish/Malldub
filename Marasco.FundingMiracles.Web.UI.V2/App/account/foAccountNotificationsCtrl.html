@@ -1,0 +1,38 @@
+﻿<!--=== Content Part -Body ===-->
+<div class="profile-body">
+  
+  <div class="row">
+
+    <div class="col-md-12">
+      <!-- ??  -->
+      <div class="row">
+        <div class="col-md-7 headline">
+          <h3>Notifications</h3>
+          <div>
+            <h5 style="margin-top: 10px;">
+              <i>
+                Currently, you have no new notifications
+              </i>
+            </h5>
+          </div>
+        </div>
+        <!--<div class="col-md-5 margin-top-10">
+          <button type="button" class="btn btn-link">Email</button>
+          <button type="button" class="btn btn-link">Donations</button>
+        </div>-->
+      </div>
+
+      <div class="row" ng-hide="isLoading">
+        <div class="col-md-12">
+
+        </div>
+      </div>
+      <div ng-show="isLoading">
+        <md-spinner-bar-drctv />
+      </div>
+    </div>
+
+  </div><!--/row-->
+
+</div><!--/profile-body-->
+<!--=== End Content Part - Body ===-->

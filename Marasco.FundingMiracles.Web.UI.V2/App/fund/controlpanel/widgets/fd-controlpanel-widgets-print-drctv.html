@@ -1,0 +1,22 @@
+﻿<div>
+  <div class="bg-light">
+    <h3>Print your campaign and share with everyone in person!</h3>
+    <div class="text-center">
+        <img ng-src="{{imageUrl}}" width="350" imageonload call-back="imageLoaded" />
+    </div>
+  </div>
+  <div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2" ng-hide="isLoading">
+        <button type="button" class="btn-u btn-block" md-print print-element-id="printThisFundControlPanel">Print This!</button>
+      </div>
+      <div class="col-md-8 col-md-offset-2" ng-show="isLoading">
+        <md-spinner-bar-drctv />
+      </div>
+    </div>
+  </div>
+  <div class="visible-print-block" id="printThisFundControlPanel">
+    <img ng-src="{{imageUrl}}" imageonload call-back="imageLoaded" />
+  </div>
+</div>
+

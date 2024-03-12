@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-strict-di>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <title ng-bind="title"></title>
+    <base href="/">
+    <style>
+        /* This helps the ng-show/ng-hide animations start at the right place. */
+        /* Since Angular has this but needs to load, this gives us the class early. */
+
+        .ng-hide {
+            display: none !important;
+        }
+    </style>
+    <script>
+        window.CKEDITOR_BASEPATH = '/ckeditor/';
+    </script>
+    <!-- build:css styles/lib.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/metisMenu/dist/metisMenu.css" />
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="/bower_components/toastr/toastr.css" />
+    <link rel="stylesheet" href="/bower_components/isteven-angular-multiselect/isteven-multi-select.css" />
+    <link rel="stylesheet" href="/bower_components/jquery-timepicker-jt/jquery.timepicker.css" />
+    <link rel="stylesheet" href="/bower_components/angular-ui-switch/angular-ui-switch.css" />
+    <link rel="stylesheet" href="/bower_components/c3/c3.css" />
+    <link rel="stylesheet" href="/bower_components/chosen/chosen.css" />
+    <link rel="stylesheet" href="/bower_components/angular-ui-grid/ui-grid.css" />
+    <link rel="stylesheet" href="/bower_components/angular-ui-grid/ui-grid.min.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css styles/app.css-->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/.tmp/styles.css">
+    <link rel="stylesheet" href="/src/client/styles/ace-fonts.css">
+    <link rel="stylesheet" href="/src/client/styles/ace-global.css">
+    <link rel="stylesheet" href="/src/client/styles/ace-rtl.css">
+    <link rel="stylesheet" href="/src/client/styles/ngPrint.css">
+    <link rel="stylesheet" href="/src/client/styles/pace.css">
+    <link rel="stylesheet" href="/src/client/styles/style.css">
+    <link rel="stylesheet" href="/src/client/styles/acs_styles/angular-ui-switch.css">
+    <link rel="stylesheet" href="/src/client/styles/acs_styles/chosen.css">
+    <link rel="stylesheet" href="/src/client/styles/acs_styles/loading-bar.css">
+    <link rel="stylesheet" href="/src/client/styles/acs_styles/site.css">
+    <link rel="stylesheet" href="/src/client/styles/acs_styles/styles.css">
+    <link rel="stylesheet" href="/src/client/styles/acs_styles/toastr.css">
+    <link rel="stylesheet" href="/src/client/styles/acs_styles/toastr.min.css">
+    <link rel="stylesheet" href="/src/client/styles/acs_styles/ui-bootstrap-csp.css">
+    <link rel="stylesheet" href="/src/client/styles/site/site.css">
+    <!-- endinject -->
+    <!-- endbuild -->
+</head>
+<body class="no-skin">
+    <!--=== Axis Application ===-->
+    <ui-view></ui-view>
+
+    <div id="splash-page" ng-show="false">
+        <div class="page-splash">
+            <div class="page-splash-message">
+                Gulp
+            </div>
+            <div class="progress progress-striped active page-progress-bar">
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>
+    <!--=== /Axis Application ===-->
+
+
+    <!-- build:js js/lib.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/jquery-ui/ui/jquery-ui.js"></script>
+    <script src="/bower_components/metisMenu/dist/metisMenu.js"></script>
+    <script src="/bower_components/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script src="/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="/bower_components/pace/pace.js"></script>
+    <script src="/bower_components/pace-ng-file-upload-inlinepatch/pace-ng-file-upload-inlinepatch.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/oclazyload/dist/ocLazyLoad.js"></script>
+    <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/bower_components/extras.angular.plus/ngplus-overlay.js"></script>
+    <script src="/bower_components/moment/moment.js"></script>
+    <script src="/bower_components/angular-translate/angular-translate.js"></script>
+    <script src="/bower_components/angular-idle/angular-idle.js"></script>
+    <script src="/bower_components/toastr/toastr.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/api-check/dist/api-check.js"></script>
+    <script src="/bower_components/angular-resource/angular-resource.js"></script>
+    <script src="/bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="/bower_components/isteven-angular-multiselect/isteven-multi-select.js"></script>
+    <script src="/bower_components/jquery-timepicker-jt/jquery.timepicker.js"></script>
+    <script src="/bower_components/angular-jquery-timepicker/src/timepickerdirective.js"></script>
+    <script src="/bower_components/d3/d3.js"></script>
+    <script src="/bower_components/angular-charts/dist/angular-charts.js"></script>
+    <script src="/bower_components/angular-ui-mask/dist/mask.js"></script>
+    <script src="/bower_components/angular-messages/angular-messages.js"></script>
+    <script src="/bower_components/angular-ui-switch/angular-ui-switch.js"></script>
+    <script src="/bower_components/angular-scenario/angular-scenario.js"></script>
+    <script src="/bower_components/c3/c3.js"></script>
+    <script src="/bower_components/chosen/chosen.jquery.js"></script>
+    <script src="/bower_components/angular-chosen-localytics/dist/angular-chosen.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/bower_components/angular-touch/angular-touch.js"></script>
+    <script src="/bower_components/angular-ui-grid/ui-grid.js"></script>
+    <script src="/bower_components/angular-ui-grid/ui-grid.min.js"></script>
+    <script src="/bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js"></script>
+    <script src="/bower_components/ui-grid-draggable-rows/js/draggable-rows.js"></script>
+    <script src="/bower_components/ng-file-upload/ng-file-upload.js"></script>
+    <script src="/bower_components/ng-file-upload-shim/ng-file-upload-shim.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:js ckeditor/ckeditor.js-->
+    <!-- inject:js:ckeditor -->
+    <script src="/src/client/ckeditor/ckeditor.js"></script>
+    <!-- endinject -->
+    <!-- endbuild -->
+    <!-- build:js js/ace.js-->
+    <!-- inject:js:ace -->
+    <script src="/src/client/libraries/ace/ace-extra.js"></script>
+    <script src="/src/client/libraries/ace/ace.ajax-content.js"></script>
+    <script src="/src/client/libraries/ace/ace.js"></script>
+    <script src="/src/client/libraries/ace/ace.searchbox-autocomplete.js"></script>
+    <script src="/src/client/libraries/ace/ace.settings-rtl.js"></script>
+    <script src="/src/client/libraries/ace/ace.settings-skin.js"></script>
+    <script src="/src/client/libraries/ace/ace.settings.js"></script>
+    <script src="/src/client/libraries/ace/ace.sidebar-scroll-1.js"></script>
+    <script src="/src/client/libraries/ace/ace.sidebar.js"></script>
+    <script src="/src/client/libraries/ace/ace.submenu-hover.js"></script>
+    <script src="/src/client/libraries/ace/ace.touch-drag.js"></script>
+    <script src="/src/client/libraries/ace/ace.widget-box.js"></script>
+    <script src="/src/client/libraries/ace/ace.widget-on-reload.js"></script>
+    <script src="/src/client/libraries/ace/elements.aside.js"></script>
+    <script src="/src/client/libraries/ace/elements.colorpicker.js"></script>
+    <script src="/src/client/libraries/ace/elements.fileinput.js"></script>
+    <script src="/src/client/libraries/ace/elements.scroller.js"></script>
+    <script src="/src/client/libraries/ace/elements.spinner.js"></script>
+    <script src="/src/client/libraries/ace/elements.treeview.js"></script>
+    <script src="/src/client/libraries/ace/elements.typeahead.js"></script>
+    <script src="/src/client/libraries/ace/elements.wizard.js"></script>
+    <script src="/src/client/libraries/ace/elements.wysiwyg.js"></script>
+    <script src="/src/client/libraries/angular-chosen.js"></script>
+    <script src="/src/client/libraries/chosen.jquery.js"></script>
+    <script src="/src/client/libraries/ng-ckeditor.js"></script>
+    <script src="/src/client/libraries/ngPrint.js"></script>
+    <script src="/src/client/libraries/pace.js"></script>
+    <script src="/src/client/libraries/response.js"></script>
+    <!-- endinject -->
+    <!-- endbuild -->
+    <!-- build:js js/app.js-->
+    <!-- inject:js -->
+    <script src="/src/client/app/app.module.js"></script>
+    <script src="/src/client/app/admin/admin.module.js"></script>
+    <script src="/src/client/app/authorization/authorization.module.js"></script>
+    <script src="/src/client/app/core/core.module.js"></script>
+    <script src="/src/client/app/widgets/widgets.module.js"></script>
+    <script src="/src/client/app/admin/account/account.module.js"></script>
+    <script src="/src/client/app/admin/core/core.module.js"></script>
+    <script src="/src/client/app/admin/fundolo/fundolo.module.js"></script>
+    <script src="/src/client/app/admin/home/home.module.js"></script>
+    <script src="/src/client/app/admin/layout/layout.module.js"></script>
+    <script src="/src/client/app/admin/security/security.module.js"></script>
+    <script src="/src/client/app/blocks/exception/exception.module.js"></script>
+    <script src="/src/client/app/blocks/logger/logger.module.js"></script>
+    <script src="/src/client/app/blocks/router/router.module.js"></script>
+    <script src="/src/client/app/admin/admin.config.js"></script>
+    <script src="/src/client/app/admin/admin.route.js"></script>
+    <script src="/src/client/app/authorization/authorization.factory.js"></script>
+    <script src="/src/client/app/authorization/authorization.interceptor.js"></script>
+    <script src="/src/client/app/authorization/routingConfig.factory.js"></script>
+    <script src="/src/client/app/core/ace.js"></script>
+    <script src="/src/client/app/core/chosen.directive.js"></script>
+    <script src="/src/client/app/core/config.js"></script>
+    <script src="/src/client/app/core/constants.js"></script>
+    <script src="/src/client/app/core/core.route.js"></script>
+    <script src="/src/client/app/core/dataservice.js"></script>
+    <script src="/src/client/app/core/date-only.directive.js"></script>
+    <script src="/src/client/app/core/dummydataservice.js"></script>
+    <script src="/src/client/app/core/ep-switch.controller.js"></script>
+    <script src="/src/client/app/core/ep-switch.directive.js"></script>
+    <script src="/src/client/app/core/utilityService.js"></script>
+    <script src="/src/client/app/widgets/ht-img-person.directive.js"></script>
+    <script src="/src/client/app/widgets/ht-widget-header.directive.js"></script>
+    <script src="/src/client/app/admin/account/profile.controller.js"></script>
+    <script src="/src/client/app/admin/core/adminUI.factory.js"></script>
+    <script src="/src/client/app/admin/core/constant.js"></script>
+    <script src="/src/client/app/admin/core/global.factory.js"></script>
+    <script src="/src/client/app/admin/home/home.controller.js"></script>
+    <script src="/src/client/app/admin/home/home.route.js"></script>
+    <script src="/src/client/app/admin/layout/footer.controller.js"></script>
+    <script src="/src/client/app/admin/layout/ht-footer.directive.js"></script>
+    <script src="/src/client/app/admin/layout/ht-headerbar-directive.js"></script>
+    <script src="/src/client/app/admin/layout/ht-sidebar.directive.js"></script>
+    <script src="/src/client/app/admin/layout/ht-top-nav.directive.js"></script>
+    <script src="/src/client/app/admin/layout/menu.controller.js"></script>
+    <script src="/src/client/app/admin/layout/shell.controller.js"></script>
+    <script src="/src/client/app/admin/layout/sidebar.controller.js"></script>
+    <script src="/src/client/app/admin/security/forgotPassword.controller.js"></script>
+    <script src="/src/client/app/admin/security/login.controller.js"></script>
+    <script src="/src/client/app/admin/security/register.controller.js"></script>
+    <script src="/src/client/app/admin/security/security.route.js"></script>
+    <script src="/src/client/app/blocks/exception/exception-handler.provider.js"></script>
+    <script src="/src/client/app/blocks/exception/exception.js"></script>
+    <script src="/src/client/app/blocks/logger/logger.js"></script>
+    <script src="/src/client/app/blocks/router/router-helper.provider.js"></script>
+    <script src="/src/client/app/core/modal/confirmation.controller.js"></script>
+    <script src="/src/client/app/core/modal/confirmation.factory.js"></script>
+    <script src="/src/client/app/admin/account/role/controller.js"></script>
+    <script src="/src/client/app/admin/account/role/controller.modal.js"></script>
+    <script src="/src/client/app/admin/account/role/factory.js"></script>
+    <script src="/src/client/app/admin/account/user/user.controller.js"></script>
+    <script src="/src/client/app/admin/account/user/user.controller.modal.js"></script>
+    <script src="/src/client/app/admin/account/user/user.factory.js"></script>
+    <script src="/src/client/app/admin/fundolo/fundraiser/fundraiser.controller.js"></script>
+    <script src="/src/client/app/admin/fundolo/fundraiser/fundraiser.controller.modal.js"></script>
+    <script src="/src/client/app/admin/fundolo/fundraiser/fundraiser.factory.js"></script>
+    <script src="/src/client/app/admin/account/user/donations/donations.controller.js"></script>
+    <script src="/src/client/app/admin/account/user/fundraiser/fundraisers.controller.js"></script>
+    <script src="/src/client/app/admin/fundolo/fundraiser/activity/activity.controller.js"></script>
+    <script src="/src/client/app/admin/fundolo/fundraiser/activity/activity.controller.modal..js"></script>
+    <script src="/src/client/app/admin/fundolo/fundraiser/donations/donations.controller.js"></script>
+    <script src="/src/client/app/admin/fundolo/fundraiser/donations/donations.controller.modal.js"></script>
+    <script src="/src/client/app/admin/fundolo/fundraiser/donations/donations.factory.js"></script>
+    <script src="/src/client/app/admin/fundolo/fundraiser/uploads/uploads.controller.js"></script>
+    <script src="/src/client/app/admin/fundolo/fundraiser/uploads/uploads.controller.modal.js"></script>
+    <script src="/src/client/app/admin/fundolo/fundraiser/uploads/uploads.factory.js"></script>
+    <!-- endinject -->
+    <!-- inject:templates:js -->
+    <!-- endinject -->
+    <!-- endbuild -->
+</body>
+</html>

@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Malldub.Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{f4366115-7449-47c2-9c3a-8e7ce259f77f}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.SqlAzureDatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Malldub.Database</RootNamespace>
+    <AssemblyName>Malldub.Database</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunSqlCodeAnalysis>True</RunSqlCodeAnalysis>
+  </PropertyGroup>
+  <!-- VS10 without SP1 will not have VisualStudioVersion set, so do that here -->
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <!-- Default to the v10.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Shopping\" />
+    <Folder Include="Shopping\Tables\" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="Core\" />
+    <Folder Include="Core\Tables\" />
+    <Folder Include="Lists\" />
+    <Folder Include="Lists\Tables\" />
+    <Folder Include="Account\" />
+    <Folder Include="Account\Tables\" />
+    <Folder Include="Auction\" />
+    <Folder Include="Auction\Tables\" />
+    <Folder Include="Mall\" />
+    <Folder Include="Mall\Tables\" />
+    <Folder Include="Security\" />
+    <Folder Include="Fundolo" />
+    <Folder Include="Fundolo\Tables" />
+    <Folder Include="Security\Schemas" />
+    <Folder Include="PostDeployment" />
+    <Folder Include="Views" />
+    <Folder Include="Defaults" />
+    <Folder Include="Defaults\Tables" />
+    <Folder Include="Functions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Shopping\Tables\Item.sql" />
+    <Build Include="dbo\Tables\AspNetUserLogins.sql" />
+    <Build Include="Core\Tables\Note.sql" />
+    <Build Include="dbo\Tables\AspNetRoles.sql" />
+    <Build Include="dbo\Tables\AspNetUserRoles.sql" />
+    <Build Include="dbo\Tables\__MigrationHistory.sql" />
+    <Build Include="Shopping\Tables\ItemUpload.sql" />
+    <Build Include="Lists\Tables\PostReplyEmailType.sql" />
+    <Build Include="Account\Tables\UserStatus.sql" />
+    <Build Include="Lists\Tables\ListPostStatus.sql" />
+    <Build Include="Core\Tables\UserPhone.sql" />
+    <Build Include="Core\Tables\Upload.sql" />
+    <Build Include="Core\Tables\UserAddress.sql" />
+    <Build Include="Core\Tables\UserUpload.sql" />
+    <Build Include="Shopping\Tables\PostField.sql" />
+    <Build Include="Auction\Tables\Bid.sql" />
+    <Build Include="Lists\Tables\ListPortalPostAttribute.sql" />
+    <Build Include="Mall\Tables\Mall.sql" />
+    <Build Include="Core\Tables\Email.sql" />
+    <Build Include="Auction\Tables\AuctionType.sql" />
+    <Build Include="Core\Tables\UserEmail.sql" />
+    <Build Include="Core\Tables\Meta.sql" />
+    <Build Include="Auction\Tables\AuctionStatus.sql" />
+    <Build Include="Core\Tables\PaymentMethod.sql" />
+    <Build Include="Account\Tables\Account.sql" />
+    <Build Include="Shopping\Tables\InvoiceStatus.sql" />
+    <Build Include="Core\Tables\Address.sql" />
+    <Build Include="Shopping\Tables\Invoice.sql" />
+    <Build Include="Shopping\Tables\OrderItem.sql" />
+    <Build Include="Auction\Tables\AuctionInvoiceType.sql" />
+    <Build Include="Mall\Tables\MallPortalStatus.sql" />
+    <Build Include="Shopping\Tables\ItemMeta.sql" />
+    <Build Include="Auction\Tables\AuctionInvoice.sql" />
+    <Build Include="Core\Tables\Phone.sql" />
+    <Build Include="Core\Tables\MetaDataType.sql" />
+    <Build Include="Auction\Tables\AuctionInvoiceBillToType.sql" />
+    <Build Include="Account\Tables\AccountStatus.sql" />
+    <Build Include="Core\Tables\MetaKey.sql" />
+    <Build Include="Auction\Tables\Auction.sql" />
+    <Build Include="Mall\Tables\PortalType.sql" />
+    <Build Include="Shopping\Tables\AuctionPaymentItem.sql" />
+    <Build Include="Shopping\Tables\InvoiceItem.sql" />
+    <Build Include="Mall\Tables\Portal.sql" />
+    <Build Include="Core\Tables\PhoneType.sql" />
+    <Build Include="Shopping\Tables\Category.sql" />
+    <Build Include="Lists\Tables\ListSite.sql" />
+    <Build Include="Shopping\Tables\ItemCategory.sql" />
+    <Build Include="Shopping\Tables\ItemType.sql" />
+    <Build Include="Lists\Tables\ListArea.sql" />
+    <Build Include="Lists\Tables\ListPost.sql" />
+    <Build Include="Lists\Tables\ListType.sql" />
+    <Build Include="Lists\Tables\ListCategory.sql" />
+    <Build Include="Core\Tables\UploadCategory.sql" />
+    <Build Include="dbo\Tables\AspNetUsers.sql" />
+    <Build Include="Shopping\Tables\ItemTransactionType.sql" />
+    <Build Include="Fundolo\Tables\Donation.sql" />
+    <Build Include="Fundolo\Tables\Fund.sql" />
+    <Build Include="Fundolo\Tables\FundUserType.sql" />
+    <Build Include="Fundolo\Tables\FundType.sql" />
+    <Build Include="Fundolo\Tables\FundUpdate.sql" />
+    <Build Include="Fundolo\Tables\FundUser.sql" />
+    <Build Include="Security\Schemas\Account.sql" />
+    <Build Include="Security\Schemas\Auction.sql" />
+    <Build Include="Security\Schemas\Billing.sql" />
+    <Build Include="Security\Schemas\Core.sql" />
+    <Build Include="Security\Schemas\Custom.sql" />
+    <Build Include="Security\Schemas\Defaults.sql" />
+    <Build Include="Security\Schemas\Fundolo.sql" />
+    <Build Include="Security\Schemas\Lists.sql" />
+    <Build Include="Security\Schemas\Mall.sql" />
+    <Build Include="Security\Schemas\MallDub.sql" />
+    <Build Include="Security\Schemas\Shopping.sql" />
+    <Build Include="Fundolo\Tables\FundUpdateStatus.sql" />
+    <Build Include="Shopping\Tables\Order.sql" />
+    <Build Include="Fundolo\Tables\DonationFeeType.sql" />
+    <Build Include="Fundolo\Tables\DonationStatus.sql" />
+    <Build Include="Fundolo\Tables\DonationNote.sql" />
+    <Build Include="dbo\Tables\AspNetUserClaims.sql" />
+    <Build Include="Views\AspNetUserSummary.sql" />
+    <Build Include="Core\Tables\State.sql" />
+    <Build Include="dbo\Tables\AspNetUserGateway.sql" />
+    <Build Include="dbo\Tables\Gateway.sql" />
+    <Build Include="Core\Tables\NoteType.sql" />
+    <Build Include="Core\Tables\MalldubApplication.sql" />
+    <Build Include="Fundolo\Tables\FundShareType.sql" />
+    <Build Include="Fundolo\Tables\FundShare.sql" />
+    <Build Include="Fundolo\Tables\FundNote.sql" />
+    <Build Include="Shopping\Tables\ItemStatus.sql" />
+    <Build Include="Defaults\Tables\Default.sql" />
+    <Build Include="Fundolo\Tables\FundNoteType.sql" />
+    <Build Include="Fundolo\Tables\FundSettings.sql" />
+    <Build Include="dbo\Tables\AspNetUsersTemp.sql" />
+    <Build Include="Core\Tables\ActivityType.sql" />
+    <Build Include="Core\Tables\Activity.sql" />
+    <Build Include="Fundolo\Tables\FundActivityType.sql" />
+    <Build Include="Fundolo\Tables\FundActivity.sql" />
+    <Build Include="Fundolo\Tables\FundCategory.sql" />
+    <Build Include="Fundolo\Tables\Team.sql" />
+    <Build Include="Fundolo\Tables\FundTeam.sql" />
+    <Build Include="Fundolo\Tables\FundTeamMember.sql" />
+    <Build Include="Fundolo\Tables\FundTeamMemberRole.sql" />
+    <Build Include="Core\Tables\Comment.sql" />
+    <Build Include="Core\Tables\Geo.sql" />
+    <Build Include="Fundolo\Tables\FundComment.sql" />
+    <Build Include="Fundolo\Tables\FundCommentOrigin.sql" />
+    <Build Include="Core\Tables\UploadType.sql" />
+    <Build Include="Fundolo\Tables\FundDefault.sql" />
+    <Build Include="Fundolo\Tables\DonationSubscriptionType.sql" />
+    <Build Include="Functions\StripHtml.sql" />
+    <Build Include="dbo\Tables\AspNetUserGatewayActivity.sql" />
+    <Build Include="dbo\Tables\AspNetUserGatewayActivityType.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Malldub.Database_SuperChargers.publish.xml" />
+    <None Include="Malldub.Database.SdL7-amarasco.publish.publish.xml" />
+    <None Include="Malldub.Database.publish.xml" />
+    <None Include="Malldub-Staging.Database.publish.xml" />
+    <None Include="Copy of Malldub.Database.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="Malldub.Database.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="PostDeployment\ForeignKey.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PreDeploy Include="PostDeployment\Script.PreDeployment.sql" />
+  </ItemGroup>
+  <PropertyGroup>
+    <PostBuildEvent>:r./PostDeployment/ForeignKey.PostDeployment.sql</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Staging|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunSqlCodeAnalysis>True</RunSqlCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugRelease|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Uat|AnyCPU' ">
+    <OutputPath>bin\Uat\</OutputPath>
+  </PropertyGroup>
+</Project>

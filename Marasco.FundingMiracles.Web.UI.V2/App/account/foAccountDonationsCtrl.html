@@ -1,0 +1,48 @@
+﻿<!--=== Content Part -Body ===-->
+<div class="profile-body">
+  
+  <div class="row">
+
+
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-12">
+          <!-- Page Error Summary-->
+          <md-alert-drctv title="{{title}}" message="{{message}}" alert-type="{{alertType}}" fade="fadeIn" show-alert="{{showAlert}}"></md-alert-drctv>
+          <!-- //Page Error Summary -->
+        </div>
+      </div>
+
+      <!-- ??  -->
+      <div class="row">
+        <div class="col-md-7 headline">
+          <h3>My Donations</h3>
+        </div>
+      </div>
+
+      <div class="row" ng-hide="isLoading">
+        <div class="col-md-12">
+          <div class="booking-blocks booking-blocks-nopadding" ng-repeat="donation in donations">
+            <div class="pull-left booking-img">
+              <a ng-href="/{{donation.fund.item.permalink}}">
+                <img class="img-responsive profile-img margin-bottom-20" ng-src="{{getImageFile(donation.fund.item.itemUploadList)}}" alt="{{donation.fund.item.title}}">
+              </a>
+            </div>
+            <div style="overflow: hidden;">
+              <span class="bigger-140"><a ng-href="/{{donation.fund.item.permalink}}">{{donation.fund.item.title}}</a></span><br />
+              <span>Amount I donated: {{donation.amount | currency}} ({{donation.dateEntered | date}})</span><br />
+              <span>Message: {{donation.message}}</span><br />
+              <span>Name: {{donation.donorName}} ({{donation.email}})</span><br />
+              <p><a ng-href="/{{donation.fund.item.permalink}}">go to fund</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div ng-show="isLoading">
+        <md-spinner-bar-drctv />
+      </div>
+    </div>
+  </div>
+
+</div><!--/profile-body-->
+<!--=== End Content Part - Body ===-->

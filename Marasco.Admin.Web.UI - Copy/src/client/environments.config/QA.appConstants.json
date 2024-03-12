@@ -1,0 +1,7 @@
+{
+    "genericApiUrl": "https://qatest-webenrollmentapi.amssupport.net",
+    "loggingApiUrl": "https://qatestloggingwebapi.amssupport.net",
+    "prodLogApiUrl": "https://qatest.adminwebapi.aspenrms.com",
+    "adminApiUrl": "https://qatest.adminwebapi.aspenrms.com",
+    "isDev": false
+}

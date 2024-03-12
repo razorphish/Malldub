@@ -1,0 +1,57 @@
+﻿<div class="breadcrumbs breadcrumbs-bottom-margin-0 margin-bottom-10">
+  <div class="container">
+    <div class="row">
+      <h1 class="color-green pull-left">{{headline}}</h1>
+    </div>
+
+    <div class="row">
+
+      <!--Header Sub Left Menu-->
+      <div>
+        <div class="navbar navbar-default navbar-static-top" role="navigation">
+
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" ng-href="/account/basics" role="button"><span class="line-height-28">Basics</span></a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav" id="nav-with-menu">
+              <li ng-class="{active : activeTab === 'Profile'}">
+                <a ng-href="/account/profile" role="button">Profile</a>
+              </li>
+              <li ng-class="{active : activeTab === 'Withdraw'}">
+                <a ng-href="/account/withdraw" role="button">Withdraw</a>
+              </li>
+              <li ng-class="{active : activeTab === 'Password'}">
+                <a ng-href="/account/password" role="button">Change Password</a>
+              </li>
+              <li ng-class="{active : activeTab === 'Donations'}" class="dropdown">
+                <a href id="drop3" class="dropdown-toggle" data-toggle="dropdown">Activities <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li ng-class="{active : activeTab === 'Donations'}"><a role="menuitem" tabindex="-1" ng-href="/account/donations">My Donations</a></li>
+                </ul>
+              </li>
+              <li class="dropdown" ng-class="{ active : moreTab(activeTab)}">
+                <a href id="drop3" class="dropdown-toggle" data-toggle="dropdown">More <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li ng-class="{active : activeTab === 'Social'}"><a role="menuitem" tabindex="-1" ng-href="/account/social">Social Connections</a></li>
+                  <li ng-class="{active : activeTab === 'Notifications'}"><a role="menuitem" tabindex="-1" ng-href="/account/notifications">Notifications</a></li>
+                  <li ng-class="{active : activeTab === 'Status'}"><a role="menuitem" tabindex="-1" ng-href="/account/status">Status</a></li>
+                  <li class="divider"></li>
+                  <li ng-class="{active : activeTab === 'Close'}"><a role="menuitem" tabindex="-1" ng-href="/account/close">Close Account</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!--/Header Sub Left Menu-->
+    </div>
+  </div><!--/container-->
+</div>

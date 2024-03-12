@@ -1,0 +1,16 @@
+﻿<div ng-form="beneficiaryForm">
+  
+  <!-- Content Pages -->
+  <div ng-switch="beneMode">
+    <div ng-switch-when='summary'>
+      <div ng-include='"/app/fund/dashboard/edit/fdDashboardEditBeneficiarySummary.html"'></div>
+    </div>
+    <div ng-switch-when='create'>
+      <div ng-include='"/app/fund/dashboard/edit/fdDashboardEditBeneficiaryEdit.html"'></div>
+    </div>
+    <div ng-switch-when='pending'>
+      <div ng-include='"/app/fund/dashboard/edit/fdDashboardEditBeneficiaryEdit.html"'></div>
+    </div>
+  </div>
+
+</div>

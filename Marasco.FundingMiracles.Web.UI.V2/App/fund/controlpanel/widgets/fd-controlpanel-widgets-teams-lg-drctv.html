@@ -1,0 +1,91 @@
+﻿<div>
+    <div class="panel-heading overflow-h">
+        <h2 class="panel-title heading-sm pull-left"><i class="fa fa-cubes"></i>Teams</h2>
+        <button class="btn btn-default btn-u pull-right" title="Add Team" ng-click="openTeam()"><i class="fa fa-plus "></i> <span class="hidden-sm hidden-xs">Add Team</span></button>
+    </div>
+    <div class="profile-body">
+        <div class="panel panel-profile">
+            <!--Projects-->
+            <div ng-repeat="row in itemRows track by $index" ng-hide="isLoading">
+                <div class="row">
+                    <div class="col-sm-6" ng-repeat="column in itemColumns track by $index" ng-hide="hide($parent.$index * numberColumns + $index)">
+                        <div class="easy-block-v1">
+                            <img class="full-width img-responsive" ng-src="{{items[$parent.$index * numberColumns + $index].mainFundImage}}" alt="">
+                            <fd-controlpanel-widgets-badge-drctv fund="items[$parent.$index * numberColumns + $index].fund"></fd-controlpanel-widgets-badge-drctv>
+                        </div>
+                        <div class="projects">
+                            <h2>{{items[$parent.$index * numberColumns + $index].team.name}}</h2>
+                            <ul class="list-unstyled list-inline blog-info-v2">
+                                <li>By: {{findUserByType(items[$parent.$index * numberColumns + $index].fund, 'Originator').firstName}} {{findUserByType(items[$parent.$index * numberColumns + $index].fund, 'Originator').lastName}}</li>
+                                <li title="Active date range">
+                                    {{items[$parent.$index * numberColumns + $index].fund.item.startDate | momentTo: 'MM/DD/YYYY'}} -
+                                    {{items[$parent.$index * numberColumns + $index].fund.item.endDate | momentTo: 'MM/DD/YYYY'}}
+                                </li>
+                            </ul>
+                            <p>
+                                {{items[$parent.$index * numberColumns + $index].fund.item.description.substring(0, 100)}}{{items[$parent.$index * numberColumns + $index].fund.item.description.length > 100?'...':''}}
+                            </p>
+                            <br>
+                            <h3 class="heading-xs">Team Progress <span class="pull-right">{{getProgressPercentage(items[$parent.$index * numberColumns + $index].fund)}}%</span></h3>
+                            <div class="progress progress-u progress-xxs">
+                                <div class="progress-bar progress-bar-u"
+                                     role="progressbar"
+                                     aria-valuenow="77"
+                                     aria-valuemin="0"
+                                     aria-valuemax="100"
+                                     ng-style="getProgressBarPercentage(items[$parent.$index * numberColumns + $index].fund)">
+                                </div>
+                            </div>
+                            <ul class="list-inline blog-info-v2">
+                                <li>
+                                    <strong>{{getProgressPercentage(items[$parent.$index * numberColumns + $index].fund)}}%</strong>
+                                    <span>Funded</span>
+                                </li>
+                                <li>
+                                    <strong>${{getTotalDonation(items[$parent.$index * numberColumns + $index].fund) | number}}</strong>
+                                    <span>Raised</span>
+                                </li>
+                                <li>
+                                    <strong>Ends</strong>
+                                    <span>{{items[$parent.$index * numberColumns + $index].fund.item.endDate | momentFrom}}</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="project-share">
+                            <ul class="list-inline comment-list-v2 pull-left">
+                                <li title="Donors"><i class="fa fa-heart"></i><a href="#">{{items[$parent.$index * numberColumns + $index].fund.donationList.length }}</a></li>
+                                <li title="Goal"><i class="fa fa-dollar"></i><a href="#">{{items[$parent.$index * numberColumns + $index].fund.goalAmount }}</a></li>
+                                <li title="Comments"><i class="fa fa-comments"></i> <a href="#">{{items[$parent.$index * numberColumns + $index].fund.commentList.length }}</a></li>
+                            </ul>
+                            <ul class="list-inline star-vote pull-right">
+                                <li>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default" ng-click="teamSettings(items[$parent.$index * numberColumns + $index])"><i class="fa fa-cogs"></i></button>
+                                        <button type="button" class="btn btn-default pull-right" ng-click="openTeam(items[$parent.$index * numberColumns + $index])"><i class="fa fa-edit"></i></button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div><!--/end row-->
+                <!--End Projects-->
+                <hr>
+            </div>
+
+            <div ng-show="isLoading">
+                <md-spinner-bar-drctv />
+            </div>
+
+            <div ng-show="totalItems > itemsPerPage" class="text-center">
+                <ul uib-pagination
+                    total-items="totalItems"
+                    ng-model="currentPage"
+                    max-size="maxSize"
+                    boundary-links="true"
+                    rotate="false"
+                    items-per-page="itemsPerPage"
+                    ng-change="onSelectPage(page)"></ul>
+            </div>
+        </div>
+    </div>
+</div>

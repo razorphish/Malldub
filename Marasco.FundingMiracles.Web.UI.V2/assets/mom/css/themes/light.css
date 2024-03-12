@@ -1,0 +1,71 @@
+﻿.squaresWaveG{
+background-color:#95a5a6;
+}
+
+@-moz-keyframes bounce_squaresWaveG{
+0%{
+background-color:#95a5a6;
+}
+
+100%{
+background-color:#FFFFFF;
+}
+
+}
+
+@-webkit-keyframes bounce_squaresWaveG{
+0%{
+background-color:#95a5a6;
+}
+
+100%{
+background-color:#FFFFFF;
+}
+
+}
+
+@-ms-keyframes bounce_squaresWaveG{
+0%{
+background-color:#95a5a6;
+}
+
+100%{
+background-color:#FFFFFF;
+}
+
+}
+
+@-o-keyframes bounce_squaresWaveG{
+0%{
+background-color:#95a5a6;
+}
+
+100%{
+background-color:#FFFFFF;
+}
+
+}
+
+@keyframes bounce_squaresWaveG{
+0%{
+background-color:#95a5a6;
+}
+
+100%{
+background-color:#FFFFFF;
+}
+
+}
+
+.progress-bar {
+  background-color: #95a5a6 !important;
+}
+
+.breadcrumbs {
+  background-color: #95a5a6;
+  color: #ffffff
+}
+
+.breadcrumbs h1 {
+  color: #ffffff!important;
+}

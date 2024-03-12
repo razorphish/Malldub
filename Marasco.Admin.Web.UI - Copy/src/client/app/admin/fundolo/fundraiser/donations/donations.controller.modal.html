@@ -1,0 +1,160 @@
+<div class="modal-header">
+  <button type="button" class="close" ng-click="vm.close()">&times;</button>
+  <h3 class="modal-title" ng-show="!vm.isAdd">Edit Donation - {{donation.identification}}</h3>
+  <h3 class="modal-title" ng-show="vm.isAdd">Add Donation</h3>
+</div>
+<div class="modal-body">
+  <div class="form-horizontal" ng-form="vm.fundraiserDonationForm">
+    <div class="row" ng-show="!vm.isAdd">
+      <label class="col-sm-2 col-md-1 col-lg-1">Donor Name</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <label>{{donation.donorName}}</label>
+      </div>
+      <label class="col-sm-2 col-md-1 col-lg-1">Email</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <label>{{donation.email}}</label>
+      </div>
+      <label class="col-sm-2 col-md-1 col-lg-1">Status</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <label>{{donation.statusId}}</label>
+      </div>
+      <label class="col-sm-2 col-md-1 col-lg-1">Fee Type</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <label>{{donation.feeTypeId}}</label>
+      </div>
+    </div>
+    <div class="space-2" ng-show="!vm.isAdd"></div>
+    <div class="row" ng-show="!vm.isAdd">
+      <label class="col-sm-2 col-md-1 col-lg-1">Private Amount?</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <switch tabindex="10" ng-model="donation.isPrivateAmount" ng-true-value="true" ng-false-value="false" disabled="true"></switch>
+      </div>
+      <label class="col-sm-2 col-md-1 col-lg-1">Private Donor?</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <switch tabindex="20" ng-model="donation.isPrivateDonorName" ng-true-value="true" ng-false-value="false" disabled="true"></switch>
+      </div>
+      <div class="space-2 hidden-lg hidden-md hidden-xs"></div>
+      <label class="col-sm-2 col-md-1 col-lg-1">Offline?</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <switch tabindex="20" ng-model="donation.offlineDonation" ng-true-value="true" ng-false-value="false" disabled="true"></switch>
+      </div>
+      <label class="col-sm-2 col-md-1 col-lg-1">Thank You Sent?</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <switch tabindex="20" ng-model="donation.thankYouNoteSent" ng-true-value="true" ng-false-value="false" disabled="true"></switch>
+      </div>
+    </div>
+    <div class="space-2" ng-show="!vm.isAdd"></div>
+    <div class="row" ng-show="!vm.isAdd">
+      <label class="col-sm-2 col-md-1 col-lg-1">First Name</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <label>{{donation.user.firstName}}</label>
+      </div>
+      <label class="col-sm-2 col-md-1 col-lg-1">Last Name</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <label>{{donation.user.lastName}}</label>
+      </div>
+      <div class="space-2 hidden-lg hidden-md hidden-xs"></div>
+      <label class="col-sm-2 col-md-1 col-lg-1">Email</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <label>{{donation.user.email}}</label>
+      </div>
+      <label class="col-sm-2 col-md-1 col-lg-1">Id</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <label>{{donation.user.identification}}</label>
+      </div>
+    </div>
+    <div class="space-2" ng-show="!vm.isAdd"></div>
+    <div class="row" ng-show="!vm.isAdd">
+      <label class="col-sm-2 col-md-1 col-lg-1">Bene Amount</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <label>{{donation.beneficiaryAmount | currency : '$' : 2}}</label>
+      </div>
+      <label class="col-sm-2 col-md-1 col-lg-1">Processing Fee</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <label>{{donation.processingFee | currency : '$': 2}}</label>
+      </div>
+      <div class="space-2 hidden-lg hidden-md hidden-xs"></div>
+      <label class="col-sm-2 col-md-1 col-lg-1">System Amount</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <label>{{donation.systemAmount | currency: '$': 2}}</label>
+      </div>
+      <label class="col-sm-2 col-md-1 col-lg-1"><b>Gross</b></label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <label>{{donation.beneficiaryAmount + donation.processingFee + donation.systemAmount | currency : '$': 2}}</label>
+      </div>
+    </div>
+    <div class="space-2" ng-show="!vm.isAdd"></div>
+    <div class="row" ng-show="!vm.isAdd">
+      <label class="col-sm-2 col-md-1 col-lg-1">Message</label>
+      <div class="col-sm-4 col-md-5 col-lg-5">
+        <label>{{donation.message}}</label>
+      </div>
+      <div class="space-2 hidden-lg hidden-md hidden-xs"></div>
+      <label class="col-sm-2 col-md-1 col-lg-1">Costs Covered</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <switch tabindex="20" ng-model="donation.costsCovered" ng-true-value="true" ng-false-value="false" disabled="true"></switch>
+      </div>
+      <label class="col-sm-2 col-md-1 col-lg-1" ng-show="!vm.isAdd">Date Created</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <label ng-show="!vm.isAdd">{{donation.dateEntered|date:'MM/dd/yyyy h:mm:ss a'}}</label>
+      </div>
+    </div>
+    <div class="space-2" ng-show="!vm.isAdd"></div>
+    <div class="row" ng-show="!vm.isAdd">
+      <label class="col-sm-2 col-md-1 col-lg-1">Order</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <label uib-tooltip="Change order on image list screen">{{itemUpload.sortOrder}}</label>
+      </div>
+      <label class="col-sm-2 col-md-1 col-lg-1"></label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+
+      </div>
+      <div class="space-2 hidden-lg hidden-md hidden-xs"></div>
+      <label class="col-sm-2 col-md-1 col-lg-1"></label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+
+      </div>
+      <label class="col-sm-2 col-md-1 col-lg-1"></label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+
+      </div>
+    </div>
+    <!--<div class="space-2"></div>
+    <div class="row">
+      <div class="col-xs-12 align-right">
+
+        </button> &nbsp; &nbsp;
+        <button tabindex="9" class="btn btn-sm btn-primary" type="button" ng-click="vm.saveFundraiser()" ng-disabled="vm.isSaving">
+          <i class="ace-icon fa" ng-class="{'fa-spinner fa-spin': vm.isSaving, 'fa-save': !vm.isSaving}"></i>
+          Save
+        </button> &nbsp; &nbsp;
+        <button tabindex="10" class="btn btn-sm btn-primary" type="button" ng-click="vm.close()">
+          <i class="ace-icon fa fa-close bigger-110"></i>
+          Close
+        </button>
+      </div>
+    </div>-->
+    <div class="space-2" ng-show="vm.isAdd"></div>
+    <div class="row" ng-show="vm.isAdd">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+
+      </div>
+    </div>
+
+    <div class="space-2" ng-show="!vm.isAdd"></div>
+    <div class="row" ng-show="!vm.isAdd">
+      <div class="col-xs-12">
+        <uib-tabset active="active">
+          <uib-tab ng-repeat="tab in vm.tabs" index="tab.index" uib-tooltip="{{tab.tooltip}}">
+            <uib-tab-heading>
+              <i class="fa fa-{{tab.icon}}"></i> <span class="hidden-xs hidden-sm">{{ tab.heading }}</span>
+            </uib-tab-heading>
+            <div class="container-fluid">
+              <div ng-if="active == tab.index" ng-include="tab.template"></div>
+            </div>
+          </uib-tab>
+        </uib-tabset>
+      </div>
+    </div>
+  </div>
+</div>

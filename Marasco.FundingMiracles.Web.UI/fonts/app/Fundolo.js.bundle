@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<bundle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://vswebessentials.com/schemas/v1/bundle.xsd">
+  <settings>
+    <!--Determines if the sprite image should be automatically optimized after creation/update.-->
+    <minify>true</minify>
+    <!--Determin whether to generate/re-generate this sprite on building the solution.-->
+    <runOnBuild>false</runOnBuild>
+    <!--Use absolute path in the generated CSS files. By default, the URLs are relative to generated bundled CSS file.-->
+    <adjustRelativePaths>false</adjustRelativePaths>
+    <!--Specifies a custom subfolder to save files to. By default, compiled output will be placed in the same folder and nested under the original file.-->
+    <outputDirectory />
+  </settings>
+  <!--The order of the <file> elements determines the order of the images in the bundle.-->
+  <files>
+    <file>/app/security/routing-config.js</file>
+    <file>/app/app.js</file>
+    <file>/app/constants/mdConfig.js</file>
+    <file>/app/modules/mdCssInjector.js</file>
+    <file>/app/modules/mdMalldubTwitter.js</file>
+    <file>/app/services/mdGoogleSvc.js</file>
+    <file>/app/pages/pgCtrl.js</file>
+    <file>/app/home/hmHomeContainer.js</file>
+    <file>/app/home/hmHomeCtrl.js</file>
+    <file>/app/home/hm-header-drctv.js</file>
+    <file>/app/home/hm-header5-drctv.js</file>
+    <file>/app/home/hm-slider-layer-drctv.js</file>
+    <file>/app/home/hm-slider-v2-drctv.js</file>
+    
+    <file>/app/security/seLoginCtrl.js</file>
+    <file>/app/security/seNavigationCtrl.js</file>
+    <file>/app/security/seRegisterCtrl.js</file>
+    <file>/app/security/seConnectExternalCtrl.js</file>
+    <file>/app/security/seResetPasswordCtrl.js</file>
+    <file>/app/security/seRegisterExternalCtrl.js</file>
+    <file>/app/security/seAuthenticateCtrl.js</file>
+    <file>/app/security/se-external-logins-drctv.js</file>
+    <file>/app/security/se-login-popup-drctv.js</file>
+    <file>/app/security/se-login-popup-facebook-drctv.js</file>
+    
+    <file>/app/fund/fdsvc.js</file>
+    
+    <file>/app/paymentgateway/wepay/pgWePaySvc.js</file>
+    <file>/app/paymentgateway/wepay/pgWePayAuthenticateCtrl.js</file>
+    
+    <file>/app/account/widgets/ac-dashboard-widgets-header-drctv.js</file>
+    <file>/app/account/widgets/ac-dashboard-widgets-manage-drctv.js</file>
+    
+    <file>/app/account/foAccountCtrl.js</file>
+    <file>/app/account/foAccountOverviewCtrl.js</file>
+    <file>/app/account/foAccountProfileCtrl.js</file>
+    <file>/app/account/foAccountWithdrawCtrl.js</file>
+    <file>/app/account/foAccountPasswordCtrl.js</file>
+    <file>/app/account/foAccountDonationsCtrl.js</file>
+    <file>/app/account/foAccountNotificationsCtrl.js</file>
+    <file>/app/account/foAccountStatusCtrl.js</file>
+    
+    <file>/app/fund/dashboard/fdDashboardSvc.js</file>
+    
+    <file>/app/fund/controlpanel/fdControlPanelCtrl.js</file>
+    <file>/app/fund/controlpanel/fdControlPanelOverviewCtrl.js</file>
+    <file>/app/fund/controlpanel/fdControlPanelProfileCtrl.js</file>
+    <file>/app/fund/controlpanel/fdControlPanelSupportersCtrl.js</file>
+    <file>/app/fund/controlpanel/fdControlPanelTeamsCtrl.js</file>
+    <file>/app/fund/controlpanel/fdControlPanelCommentsCtrl.js</file>
+    <file>/app/fund/controlpanel/fdControlPanelHistoryCtrl.js</file>
+    <file>/app/fund/controlpanel/fdControlPanelSettingsCtrl.js</file>
+    <file>/app/fund/controlpanel/fdControlPanelToolsCtrl.js</file>
+    <file>/app/fund/controlpanel/fdControlPanelListCtrl.js</file>
+    <file>/app/fund/controlpanel/fdControlPanelTeamsMdl.js</file>
+    <file>/app/fund/controlpanel/fdControlPanelDonationsCtrl.js</file>
+    <file>/app/fund/controlpanel/fdControlPanelNotificationsCtrl.js</file>
+    <file>/app/fund/controlpanel/fdControlPanelTeamMemberCtrl.js</file>
+    <file>/app/fund/controlpanel/fdControlPanelEditCtrl.js</file>
+    
+    <file>/app/fund/controlpanel/widgets/fd-controlpanel-widgets-notifications-drctv.js</file>
+    <file>/app/fund/controlpanel/widgets/fd-controlpanel-widgets-activity-drctv.js</file>
+    <file>/app/fund/controlpanel/widgets/fd-controlpanel-widgets-donations-drctv.js</file>
+    <file>/app/fund/controlpanel/widgets/fd-controlpanel-widgets-updates-drctv.js</file>
+    <file>/app/fund/controlpanel/widgets/fd-controlpanel-widgets-updates-drctv-mdl.js</file>
+    <file>/app/fund/controlpanel/widgets/fd-controlpanel-widgets-supporters-drctv.js</file>
+    <file>/app/fund/controlpanel/widgets/fd-controlpanel-widgets-teams-drctv.js</file>
+    <file>/app/fund/controlpanel/widgets/fd-controlpanel-widgets-teams-lg-drctv.js</file>
+    <file>/app/fund/controlpanel/widgets/fd-controlpanel-widgets-squad-drctv.js</file>
+    <file>/app/fund/controlpanel/widgets/fd-controlpanel-widgets-comments-drctv.js</file>
+    <file>/app/fund/controlpanel/widgets/fd-controlpanel-widgets-badge-drctv.js</file>
+    <file>/app/fund/controlpanel/widgets/fd-controlpanel-widgets-badgev2-drctv.js</file>
+    <file>/app/fund/controlpanel/widgets/fd-controlpanel-widgets-embed-drctv.js</file>
+    <file>/app/fund/controlpanel/widgets/fd-controlpanel-widgets-print-drctv.js</file>
+    <file>/app/fund/controlpanel/widgets/fd-controlpanel-widgets-share-drctv.js</file>
+    <file>/app/fund/controlpanel/widgets/fd-controlpanel-widgets-profile-drctv.js</file>
+    <file>/app/fund/controlpanel/widgets/fd-controlpanel-widgets-analytics-drctv.js</file>
+    <file>/app/fund/controlpanel/widgets/fd-controlpanel-widgets-settings-drctv.js</file>
+    <file>/app/fund/controlpanel/widgets/fd-controlpanel-widgets-donations-lg-drctv.js</file>
+    <file>/app/fund/controlpanel/widgets/fd-controlpanel-widgets-notifications-lg-drctv.js</file>
+    <file>/app/fund/controlpanel/widgets/fd-controlpanel-widgets-notifications-mdl.js</file>
+    <file>/app/fund/controlpanel/widgets/fd-controlpanel-widgets-edit-drctv.js</file>
+    
+    <file>/app/fund/widgets/fd-widgets-featured-slider-drctv.js</file>
+    <file>/app/fund/widgets/fd-widgets-contact-drctv.js</file>
+    <file>/app/fund/widgets/fd-widgets-support-drctv.js</file>
+    <file>/app/fund/widgets/fd-widgets-permalink-drctv.js</file>
+    <file>/app/fund/widgets/fd-widgets-teams-drctv.js</file>
+    <file>/app/fund/widgets/fd-widgets-featured-drctv.js</file>
+    <file>/app/fund/widgets/fd-widgets-sliderv2-drctv.js</file>
+    <file>/app/fund/widgets/fd-widgets-tweets-drctv.js</file>
+    <file>/app/fund/widgets/fd-widgets-provider-drctv.js</file>
+    <file>/app/fund/widgets/fd-widgets-fund-drctv.js</file>
+    <file>/app/fund/widgets/fd-widgets-fund-xs-drctv.js</file>
+    <file>/app/fund/widgets/fd-widgets-fundv2-drctv.js</file>
+    <file>/app/fund/widgets/fd-widgets-social-drctv.js</file>
+    <file>/app/fund/widgets/fd-widgets-sliderv3-drctv.js</file>
+    <file>/app/fund/widgets/fd-widgets-donate-drctv.js</file>
+    <file>/app/fund/widgets/fd-widgets-updates-drctv.js</file>
+    <file>/app/fund/widgets/fd-widgets-comments-drctv.js</file>    
+    <file>/app/fund/widgets/fd-widgets-fundraisers-drctv.js</file>
+    <file>/app/fund/widgets/fdWidgetsSocialPostMdl.js</file>
+    <file>/app/fund/widgets/fdWidgetsSocialMailPreviewMdl.js</file>
+    <file>/app/fund/widgets/fdWidgetsSocialPrintMdl.js</file>
+    <file>/app/fund/widgets/fdWidgetsSocialEmbedMdl.js</file>
+    <file>/app/fund/widgets/fdWidgetsDonateMdl.js</file>
+    <file>/app/fund/widgets/fdWidgetsDonateThankYouMdl.js</file>
+    <file>/app/fund/widgets/fd-widgets-donations-drctv.js</file>
+    <file>/app/fund/widgets/fd-widgets-supporters-drctv.js</file>
+    
+    <file>/app/fund/donate/fdDonateThankYouCtrl.js</file>
+    <file>/app/fund/donate/fdDonateCtrl.js</file>
+    
+    <file>/app/fund/fdCtrl.js</file>
+    <file>/app/fund/fdCtrlEditTitleMdl.js</file>
+    <file>/app/fund/fdCtrlEditGoalMdl.js</file>
+    <file>/app/fund/fdCtrlEditPermalinkMdl.js</file>
+    <file>/app/fund/fdCtrlEditDescriptionMdl.js</file>
+    <file>/app/fund/fdCtrlEditShortSummaryMdl.js</file>
+    <file>/app/fund/fdCtrlEditCategoryMdl.js</file>
+    <file>/app/fund/fdCtrlEditUploadMdl.js</file>
+    <file>/app/fund/fdCtrlEditDateMdl.js</file>
+    <file>/app/fund/fdCtrlEditSettingsMdl.js</file>
+
+    <file>/app/fund/search/fdSearchCtrl.js</file>
+    <file>/app/fund/widgets/fdWidgetsPermalinkSvc.js</file>
+    <file>/app/security/seAuthSvc.js</file>
+    <file>/app/security/security.js</file>
+    <file>/app/user/userSvc.js</file>
+    <file>/app/shopping/orDataSvc.js</file>
+    <file>/app/widgets/wiFeatureSummarySvc.js</file>
+    <file>/app/widgets/wi-feature-summary-drctv.js</file>
+    <file>/app/embed/emFundWidgetCtrl.js</file>
+    <file>/app/embed/emFundCardCtrl.js</file>
+    <file>/app/embed/emFundButtonCtrl.js</file>
+    
+    <file>/app/common/md-alert-drctv.js</file>
+    <file>/app/common/dtPickerCtrl.js</file>
+    <file>/app/common/mdCommonDrctv.js</file>
+    <file>/app/common/validation/va-password-check-drctv.js</file>
+    <file>/app/common/mdCoreDataSvc.js</file>
+    <file>/app/common/md-press-thumbnail-drctv.js</file>
+    <file>/app/common/md-carousel-drctv.js</file>
+    <file>/app/common/validation/va-whole-number-drctv.js</file>
+    <file>/app/common/md-social-message-drctv.js</file>
+    <file>/app/common/bt-swatch-drctv.js</file>
+    <file>/app/common/at-plugin.js</file>
+    <file>/app/common/md-spinner-bar-drctv.js</file>
+    <file>/app/common/mdPressDataSvc.js</file>
+    <file>/app/common/mdFilters.js</file>
+    <file>/app/common/md-avatar-drctv.js</file>
+    <file>/app/common/mdSmoothScrollSvc.js</file>
+  </files>
+</bundle>

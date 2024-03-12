@@ -1,0 +1,32 @@
+﻿CREATE TABLE [Fundolo].[Donation]
+(
+  [Id] INT NOT NULL PRIMARY KEY IDENTITY,
+  [FundId] INT NOT NULL,
+  [DonorUserId] NVARCHAR(128) NOT NULL,
+  [MemberUserId] NVARCHAR(128),
+  [OrderId] INT NULL,
+  [FeeTypeId] NVARCHAR(20) NOT NULL,
+  [StatusId] NVARCHAR(20) NOT NULL,
+  [SubscriptionTypeId] NVARCHAR(20) NOT NULL DEFAULT 'None',
+  [SubscriptionId] NVARCHAR(128) NULL,
+  [Amount] MONEY NOT NULL,
+  [ProcessingFee] MONEY NOT NULL,
+  [BeneficiaryAmount] MONEY NOT NULL,
+  [SystemAmount] MONEY NOT NULL,
+  [DonorName]   NVARCHAR(100) NOT NULL,
+  [Email]       NVARCHAR(100) NOT NULL,
+  [Message] NVARCHAR(500) NULL,
+  [IsPrivateAmount] BIT NOT NULL,
+  [IsPrivateDonorName] BIT NOT NULL ,
+  [OfflineDonation] BIT NOT NULL,
+  [ThankYouNoteSent] BIT NOT NULL,
+  [CostsCovered] BIT NOT NULL ,
+  [DateEntered] DATETIME
+  CONSTRAINT [FK_Donation_Fund] FOREIGN KEY ([FundId]) REFERENCES [Fundolo].[Fund]([Id]) ON DELETE CASCADE, 
+  CONSTRAINT [FK_Donation_DonorUser] FOREIGN KEY ([DonorUserId]) REFERENCES [dbo].[AspNetUsers]([Id]) ON DELETE CASCADE, 
+  CONSTRAINT [FK_Donation_MemberUser] FOREIGN KEY ([MemberUserId]) REFERENCES [dbo].[AspNetUsers]([Id]), 
+  CONSTRAINT [FK_Donation_DonationFeeType] FOREIGN KEY ([FeeTypeId]) REFERENCES [Fundolo].[DonationFeeType]([Id]), 
+  CONSTRAINT [FK_Donation_Order] FOREIGN KEY ([OrderId]) REFERENCES [Shopping].[Order]([Id]) ON DELETE CASCADE, 
+  CONSTRAINT [FK_Donation_DonationStatus] FOREIGN KEY ([StatusId]) REFERENCES [Fundolo].[DonationStatus]([Id]),
+  CONSTRAINT [FK_Donation_DonationType] FOREIGN KEY ([SubscriptionTypeId]) REFERENCES [Fundolo].[DonationSubscriptionType]([Id])
+)

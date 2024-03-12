@@ -1,0 +1,28 @@
+﻿<a href ng-click="gotoFund(fund.item.permalink)">
+<div class="profile-body">
+  <div class="profile-blog" tooltip="Created {{fund.item.dateEntered | momentTo : 'dddd, MMMM Do, YYYY, h:mm a'}}" tooltip-trigger="mouseenter" tooltip-placement="top">
+    <div class="row">
+      <div class="col-md-12">
+        <img ng-src="{{mainFundImage}}" class="media-object rounded-x" alt="{{fund.item.title}}" />
+        <div class="name-location">
+          <strong>{{fundTitle}}</strong>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class=" product-description-brd margin-top-5">
+            <div class="progress" style="height: 7px; margin-bottom: 0">
+              <div class="progress-bar pull-left" ng-style="fund.progressPercentage"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          {{fund.item.title}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</a>

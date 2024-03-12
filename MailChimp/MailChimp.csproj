@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4018D082-4F31-4013-B602-451666E07649}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MailChimp</RootNamespace>
+    <AssemblyName>MailChimp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Staging|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Staging\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugRelease|AnyCPU'">
+    <OutputPath>bin\DebugRelease\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Uat|AnyCPU'">
+    <OutputPath>bin\Uat\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ServiceStack.Text, Version=4.0.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\ServiceStack.Text.4.0.10\lib\net40\ServiceStack.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Campaigns\CampaignAnalyticsOptions.cs" />
+    <Compile Include="Campaigns\CampaignCreateContent.cs" />
+    <Compile Include="Campaigns\CampaignCreateOptions.cs" />
+    <Compile Include="Campaigns\CampaignScheduleDays.cs" />
+    <Compile Include="Campaigns\CampaignSegmentOptions.cs" />
+    <Compile Include="Campaigns\CampaignSegmentTestResult.cs" />
+    <Compile Include="Campaigns\Campaign.cs" />
+    <Compile Include="Campaigns\CampaignContent.cs" />
+    <Compile Include="Campaigns\CampaignError.cs" />
+    <Compile Include="Campaigns\CampaignFilter.cs" />
+    <Compile Include="Campaigns\CampaignListResult.cs" />
+    <Compile Include="Campaigns\CampaignActionResult.cs" />
+    <Compile Include="Campaigns\CampaignSegmentCriteria.cs" />
+    <Compile Include="Campaigns\CampaignTrackingOptions.cs" />
+    <Compile Include="Campaigns\CampaignTypeAbsplitOptions.cs" />
+    <Compile Include="Campaigns\CampaignTypeAutoResponderOptions.cs" />
+    <Compile Include="Campaigns\CampaignTypeOptions.cs" />
+    <Compile Include="Campaigns\CampaignTypeRssOptions.cs" />
+    <Compile Include="Helper\Match.cs" />
+    <Compile Include="Helper\Matches.cs" />
+    <Compile Include="Reports\Absplit.cs" />
+    <Compile Include="Reports\Clicks.cs" />
+    <Compile Include="Reports\Timeseries.cs" />
+    <Compile Include="Reports\Timewarp.cs" />
+    <Compile Include="Reports\Industry.cs" />
+    <Compile Include="Reports\ReportSummary.cs" />
+    <Compile Include="Errors\ApiError.cs" />
+    <Compile Include="Errors\MailChimpAPIException.cs" />
+    <Compile Include="Folders\FolderActionResult.cs" />
+    <Compile Include="Folders\FolderAddResult.cs" />
+    <Compile Include="Folders\FolderListResult.cs" />
+    <Compile Include="Helper\AccountDetails.cs" />
+    <Compile Include="Helper\CampaignForEmail.cs" />
+    <Compile Include="Helper\ChimpChatterMessage.cs" />
+    <Compile Include="Helper\Contact.cs" />
+    <Compile Include="Helper\EmailParameter.cs" />
+    <Compile Include="Helper\FacebookProfile.cs" />
+    <Compile Include="Helper\Integration.cs" />
+    <Compile Include="Helper\ListForEmail.cs" />
+    <Compile Include="Helper\Module.cs" />
+    <Compile Include="Helper\Order.cs" />
+    <Compile Include="Helper\PingMessage.cs" />
+    <Compile Include="Helper\Rewards.cs" />
+    <Compile Include="Lists\AbuseReport.cs" />
+    <Compile Include="Lists\AbuseResult.cs" />
+    <Compile Include="Lists\BatchEmailParameter.cs" />
+    <Compile Include="Lists\BatchUnsubscribeResult.cs" />
+    <Compile Include="Lists\Client.cs" />
+    <Compile Include="Lists\Grouping.cs" />
+    <Compile Include="Lists\InterestGrouping.cs" />
+    <Compile Include="Lists\ListActivity.cs" />
+    <Compile Include="Lists\ListError.cs" />
+    <Compile Include="Lists\BatchSubscribeResult.cs" />
+    <Compile Include="Lists\ListFilter.cs" />
+    <Compile Include="Lists\ListInfo.cs" />
+    <Compile Include="Lists\ListResult.cs" />
+    <Compile Include="Lists\MCLocation.cs" />
+    <Compile Include="Lists\MCNote.cs" />
+    <Compile Include="Lists\MemberGeo.cs" />
+    <Compile Include="Lists\MemberInfo.cs" />
+    <Compile Include="Lists\MemberInfoResult.cs" />
+    <Compile Include="Lists\MemberNote.cs" />
+    <Compile Include="Lists\MembersResult.cs" />
+    <Compile Include="Lists\MergeVar.cs" />
+    <Compile Include="Lists\StaticSegmentAddResult.cs" />
+    <Compile Include="Lists\StaticSegmentActionResult.cs" />
+    <Compile Include="Lists\StaticSegmentMembersAddResult.cs" />
+    <Compile Include="Lists\StaticSegmentMembersDeleteResult.cs" />
+    <Compile Include="Lists\StaticSegmentResult.cs" />
+    <Compile Include="Lists\SubscriberLocation.cs" />
+    <Compile Include="Lists\UnsubscribeResult.cs" />
+    <Compile Include="MailChimpManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Templates\TemplateAddResult.cs" />
+    <Compile Include="Templates\TemplateDeleteResult.cs" />
+    <Compile Include="Templates\TemplateFilters.cs" />
+    <Compile Include="Templates\TemplateInformationResult.cs" />
+    <Compile Include="Templates\TemplateListResult.cs" />
+    <Compile Include="Templates\TemplateTypes.cs" />
+    <Compile Include="Templates\TemplateListInfo.cs" />
+    <Compile Include="Templates\TemplateUndeleteResult.cs" />
+    <Compile Include="Templates\TemplateUpdateResult.cs" />
+    <Compile Include="Templates\TemplateUpdateValue.cs" />
+    <Compile Include="Users\UserActionResult.cs" />
+    <Compile Include="Users\UserInvite.cs" />
+    <Compile Include="Webhooks\CleanedWebhookData.cs" />
+    <Compile Include="Webhooks\CleanedWebhookResult.cs" />
+    <Compile Include="Webhooks\UnsubscribeWebhookData.cs" />
+    <Compile Include="Webhooks\UnsubscribeWebhookResult.cs" />
+    <Compile Include="Webhooks\WebhookMerges.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Ecomm\" />
+    <Folder Include="VIP\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

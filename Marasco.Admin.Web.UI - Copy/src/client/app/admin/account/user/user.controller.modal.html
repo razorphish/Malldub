@@ -1,0 +1,68 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="vm.close()">&times;</button>
+    <h3 class="modal-title">Manage User</h3>
+</div>
+<div class="modal-body">
+    <div ng-form="vm.editForm">
+        <div class="form-group" ng-class="{'has-error': vm.showValidationMessages && (vm.editForm.firstName.$error.required || vm.editForm.firstName.$error.minlength) }">
+            <label class="block clearfix">
+          <span class="block input-icon input-icon-right">
+                    <input type="text" ng-minlength="2" class="form-control" placeholder="First Name" ng-model="vm.newUser.firstName" ng-required="true" name="firstName" />
+            <i class="ace-icon fa"
+               ng-class="{'fa-times-circle': vm.showValidationMessages && vm.editForm.firstName.$error.required ,
+                                                            'fa-pencil': true}"></i>
+          </span>
+
+        </label>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error': vm.showValidationMessages && (vm.editForm.lastName.$error.required || vm.editForm.lastName.$error.minlength) }">
+            <label class="block clearfix">
+          <span class="block input-icon input-icon-right">
+                    <input type="text" class="form-control" ng-minlength="2" placeholder="Last Name" ng-model="vm.newUser.lastName" ng-required="true" name="lastName" />
+            <i class="ace-icon fa"
+               ng-class="{'fa-times-circle': vm.showValidationMessages && vm.editForm.lastName.$error.required,
+                                                            'fa-pencil': true}"></i>
+          </span>
+
+        </label>
+        </div>
+
+
+        <div class="form-group" ng-class="{'has-error': vm.showValidationMessages && vm.editForm.Email.$error.required }">
+            <div class="form-group" ng-class="{'has-error': vm.editForm.Email.$error.email }">
+                <label class="block clearfix">
+            <span class="block input-icon input-icon-right">
+              <input type="email" class="form-control" placeholder="Email" ng-model="vm.newUser.email" ng-required="true" name="Email" />
+              <i class="ace-icon fa"
+                 ng-class="{'fa-times-circle': vm.showValidationMessages && vm.editForm.Email.$error.required,
+                                                            'fa-envelope': true}"></i>
+            </span>
+          </label>
+            </div>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error': vm.showValidationMessages && vm.editForm.UserName.$error.required }">
+            <label class="block clearfix">
+          <span class="block input-icon input-icon-right">
+            <input ng-disabled="true" type="text" class="form-control" ng-model="vm.newUser.userName" name="UserName" />
+            <i class="ace-icon fa"
+               ng-class="{'fa-times-circle': vm.showValidationMessages && vm.editForm.UserName.$error.required,
+                                                            'fa-users': true}"></i>
+          </span>
+        </label>
+        </div>
+
+        <uib-tabset active="active">
+            <uib-tab ng-repeat="tab in vm.tabs" heading="{{ tab.heading }}" index="tab.index">
+                <div class="container-fluid">
+                    <div ng-if="active == tab.index" ng-include="tab.template"></div>
+                </div>
+            </uib-tab>
+        </uib-tabset>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-success" ng-click="vm.updateUser()">Update</button>
+    <button class="btn btn-warning" ng-click="vm.close()">Cancel</button>
+</div>

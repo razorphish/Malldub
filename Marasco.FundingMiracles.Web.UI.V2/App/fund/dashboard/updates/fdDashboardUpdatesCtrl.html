@@ -1,0 +1,38 @@
+﻿<!--=== Breadcrumbs ===-->
+<fd-dashboard-widgets-header-drctv fund="fund" show-edit-menu="true"></fd-dashboard-widgets-header-drctv>
+<!--=== End Breadcrumbs ===-->
+<!--== Content Part Header===-->
+<!-- Donation Summary and Fund Sharing-->
+<div class="container">
+  <div class="row" ng-show="showWarning">
+    <div class="col-md-12">
+      <div class="alert">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>Warning!</strong> Best check yo self, you're not looking too good.
+      </div>
+    </div>
+  </div>
+</div>
+<!-- //Donation Summary and Fund Sharing -->
+<!--== /Content Part Header ==-->
+<!--=== Content Part -Body ===-->
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-8">
+      <!--LEFT SECTION(BODY)-->
+      <fd-dashboard-widgets-updates-drctv fund-id="fund.identification" fund="fund"></fd-dashboard-widgets-updates-drctv><!--/col-md-8-->
+      <!--/LEFT SECTION(BODY)-->
+    </div>
+    <!-- RIGHT SECTION -->
+    <div class="col-md-4">
+      <!-- Fund Features -->
+      <fd-dashboard-widgets-features-drctv fund="fund" show-feed="true"></fd-dashboard-widgets-features-drctv>
+      <!-- /Fund Features -->
+
+    </div><!--/span3-->
+
+  </div><!--/row-->
+
+</div><!--/container-->
+<!--=== End Content Part - Body ===-->

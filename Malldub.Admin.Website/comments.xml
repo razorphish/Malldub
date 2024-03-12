@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Marasco.MailChimp</name>
+  </assembly>
+  <members>
+    <member name="" />
+    <member name="N:Marasco.MailChimpApi" />
+    <member name="P:Marasco.MailChimpApi.MarascoMailChimpBase.DefaultEmailType"> <summary>
+ Gets or sets the default type of the email.
+ </summary>
+ <value>The default type of the email.</value></member>
+  </members>
+</doc>

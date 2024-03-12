@@ -1,0 +1,890 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AC9F3584-3715-4C01-A09D-A5023DBC75EE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Malldub.Data</RootNamespace>
+    <AssemblyName>Malldub.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Staging|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Staging\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugRelease|AnyCPU'">
+    <OutputPath>bin\DebugRelease\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Uat|AnyCPU'">
+    <OutputPath>bin\Uat\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CodeSmith.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=596a5eee5d207fdd, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Templates\Common\v4.5\CodeSmith.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.7\lib\net40\System.Linq.Dynamic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\Account.cs" />
+    <Compile Include="Entities\Account.generated.cs">
+      <DependentUpon>Account.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\AccountStatus.cs" />
+    <Compile Include="Entities\AccountStatus.generated.cs">
+      <DependentUpon>AccountStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Activity.cs" />
+    <Compile Include="Entities\Activity.generated.cs">
+      <DependentUpon>Activity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ActivityType.cs" />
+    <Compile Include="Entities\ActivityType.generated.cs">
+      <DependentUpon>ActivityType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Address.cs" />
+    <Compile Include="Entities\Address.generated.cs">
+      <DependentUpon>Address.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\AspNetRole.cs" />
+    <Compile Include="Entities\AspNetRole.generated.cs">
+      <DependentUpon>AspNetRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\AspNetUser.cs" />
+    <Compile Include="Entities\AspNetUser.generated.cs">
+      <DependentUpon>AspNetUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\AspNetUserClaim.cs" />
+    <Compile Include="Entities\AspNetUserClaim.generated.cs">
+      <DependentUpon>AspNetUserClaim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\AspNetUserGateway.cs" />
+    <Compile Include="Entities\AspNetUserGateway.generated.cs">
+      <DependentUpon>AspNetUserGateway.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\AspNetUserGatewayActivity.cs" />
+    <Compile Include="Entities\AspNetUserGatewayActivity.generated.cs">
+      <DependentUpon>AspNetUserGatewayActivity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\AspNetUserGatewayActivityType.cs" />
+    <Compile Include="Entities\AspNetUserGatewayActivityType.generated.cs">
+      <DependentUpon>AspNetUserGatewayActivityType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\AspNetUserLogin.cs" />
+    <Compile Include="Entities\AspNetUserLogin.generated.cs">
+      <DependentUpon>AspNetUserLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\AspNetUsersTemp.cs" />
+    <Compile Include="Entities\AspNetUsersTemp.generated.cs">
+      <DependentUpon>AspNetUsersTemp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Auction.cs" />
+    <Compile Include="Entities\Auction.generated.cs">
+      <DependentUpon>Auction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\AuctionInvoice.cs" />
+    <Compile Include="Entities\AuctionInvoice.generated.cs">
+      <DependentUpon>AuctionInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\AuctionInvoiceBillToType.cs" />
+    <Compile Include="Entities\AuctionInvoiceBillToType.generated.cs">
+      <DependentUpon>AuctionInvoiceBillToType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\AuctionInvoiceType.cs" />
+    <Compile Include="Entities\AuctionInvoiceType.generated.cs">
+      <DependentUpon>AuctionInvoiceType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\AuctionPaymentItem.cs" />
+    <Compile Include="Entities\AuctionPaymentItem.generated.cs">
+      <DependentUpon>AuctionPaymentItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\AuctionStatus.cs" />
+    <Compile Include="Entities\AuctionStatus.generated.cs">
+      <DependentUpon>AuctionStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\AuctionType.cs" />
+    <Compile Include="Entities\AuctionType.generated.cs">
+      <DependentUpon>AuctionType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Bid.cs" />
+    <Compile Include="Entities\Bid.generated.cs">
+      <DependentUpon>Bid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\Category.generated.cs">
+      <DependentUpon>Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Comment.cs" />
+    <Compile Include="Entities\Comment.generated.cs">
+      <DependentUpon>Comment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Default.cs" />
+    <Compile Include="Entities\Default.generated.cs">
+      <DependentUpon>Default.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Donation.cs" />
+    <Compile Include="Entities\Donation.generated.cs">
+      <DependentUpon>Donation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\DonationFeeType.cs" />
+    <Compile Include="Entities\DonationFeeType.generated.cs">
+      <DependentUpon>DonationFeeType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\DonationNote.cs" />
+    <Compile Include="Entities\DonationNote.generated.cs">
+      <DependentUpon>DonationNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\DonationStatus.cs" />
+    <Compile Include="Entities\DonationStatus.generated.cs">
+      <DependentUpon>DonationStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\DonationSubscriptionType.cs" />
+    <Compile Include="Entities\DonationSubscriptionType.generated.cs">
+      <DependentUpon>DonationSubscriptionType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Email.cs" />
+    <Compile Include="Entities\Email.generated.cs">
+      <DependentUpon>Email.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Fund.cs" />
+    <Compile Include="Entities\Fund.generated.cs">
+      <DependentUpon>Fund.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\FundActivity.cs" />
+    <Compile Include="Entities\FundActivity.generated.cs">
+      <DependentUpon>FundActivity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\FundActivityType.cs" />
+    <Compile Include="Entities\FundActivityType.generated.cs">
+      <DependentUpon>FundActivityType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\FundCategory.cs" />
+    <Compile Include="Entities\FundCategory.generated.cs">
+      <DependentUpon>FundCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\FundComment.cs" />
+    <Compile Include="Entities\FundComment.generated.cs">
+      <DependentUpon>FundComment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\FundCommentOrigin.cs" />
+    <Compile Include="Entities\FundCommentOrigin.generated.cs">
+      <DependentUpon>FundCommentOrigin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\FundNote.cs" />
+    <Compile Include="Entities\FundNote.generated.cs">
+      <DependentUpon>FundNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\FundNoteType.cs" />
+    <Compile Include="Entities\FundNoteType.generated.cs">
+      <DependentUpon>FundNoteType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\FundSetting.cs" />
+    <Compile Include="Entities\FundSetting.generated.cs">
+      <DependentUpon>FundSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\FundShare.cs" />
+    <Compile Include="Entities\FundShare.generated.cs">
+      <DependentUpon>FundShare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\FundShareType.cs" />
+    <Compile Include="Entities\FundShareType.generated.cs">
+      <DependentUpon>FundShareType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\FundTeam.cs" />
+    <Compile Include="Entities\FundTeam.generated.cs">
+      <DependentUpon>FundTeam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\FundTeamMember.cs" />
+    <Compile Include="Entities\FundTeamMember.generated.cs">
+      <DependentUpon>FundTeamMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\FundTeamMemberRole.cs" />
+    <Compile Include="Entities\FundTeamMemberRole.generated.cs">
+      <DependentUpon>FundTeamMemberRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\FundType.cs" />
+    <Compile Include="Entities\FundType.generated.cs">
+      <DependentUpon>FundType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\FundUpdate.cs" />
+    <Compile Include="Entities\FundUpdate.generated.cs">
+      <DependentUpon>FundUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\FundUpdateStatus.cs" />
+    <Compile Include="Entities\FundUpdateStatus.generated.cs">
+      <DependentUpon>FundUpdateStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\FundUser.cs" />
+    <Compile Include="Entities\FundUser.generated.cs">
+      <DependentUpon>FundUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\FundUserType.cs" />
+    <Compile Include="Entities\FundUserType.generated.cs">
+      <DependentUpon>FundUserType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Gateway.cs" />
+    <Compile Include="Entities\Gateway.generated.cs">
+      <DependentUpon>Gateway.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Geo.cs" />
+    <Compile Include="Entities\Geo.generated.cs">
+      <DependentUpon>Geo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Invoice.cs" />
+    <Compile Include="Entities\Invoice.generated.cs">
+      <DependentUpon>Invoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\InvoiceItem.cs" />
+    <Compile Include="Entities\InvoiceItem.generated.cs">
+      <DependentUpon>InvoiceItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\InvoiceStatus.cs" />
+    <Compile Include="Entities\InvoiceStatus.generated.cs">
+      <DependentUpon>InvoiceStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Item.cs" />
+    <Compile Include="Entities\Item.generated.cs">
+      <DependentUpon>Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ItemCategory.cs" />
+    <Compile Include="Entities\ItemCategory.generated.cs">
+      <DependentUpon>ItemCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ItemMetum.cs" />
+    <Compile Include="Entities\ItemMetum.generated.cs">
+      <DependentUpon>ItemMetum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ItemStatus.cs" />
+    <Compile Include="Entities\ItemStatus.generated.cs">
+      <DependentUpon>ItemStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ItemTransactionType.cs" />
+    <Compile Include="Entities\ItemTransactionType.generated.cs">
+      <DependentUpon>ItemTransactionType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ItemType.cs" />
+    <Compile Include="Entities\ItemType.generated.cs">
+      <DependentUpon>ItemType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ItemUpload.cs" />
+    <Compile Include="Entities\ItemUpload.generated.cs">
+      <DependentUpon>ItemUpload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ListArea.cs" />
+    <Compile Include="Entities\ListArea.generated.cs">
+      <DependentUpon>ListArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ListCategory.cs" />
+    <Compile Include="Entities\ListCategory.generated.cs">
+      <DependentUpon>ListCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ListPortalPostAttribute.cs" />
+    <Compile Include="Entities\ListPortalPostAttribute.generated.cs">
+      <DependentUpon>ListPortalPostAttribute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ListPost.cs" />
+    <Compile Include="Entities\ListPost.generated.cs">
+      <DependentUpon>ListPost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ListPostStatus.cs" />
+    <Compile Include="Entities\ListPostStatus.generated.cs">
+      <DependentUpon>ListPostStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ListSite.cs" />
+    <Compile Include="Entities\ListSite.generated.cs">
+      <DependentUpon>ListSite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ListType.cs" />
+    <Compile Include="Entities\ListType.generated.cs">
+      <DependentUpon>ListType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Mall.cs" />
+    <Compile Include="Entities\Mall.generated.cs">
+      <DependentUpon>Mall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\MalldubApplication.cs" />
+    <Compile Include="Entities\MalldubApplication.generated.cs">
+      <DependentUpon>MalldubApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\MallPortalStatus.cs" />
+    <Compile Include="Entities\MallPortalStatus.generated.cs">
+      <DependentUpon>MallPortalStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\MetaDataType.cs" />
+    <Compile Include="Entities\MetaDataType.generated.cs">
+      <DependentUpon>MetaDataType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\MetaKey.cs" />
+    <Compile Include="Entities\MetaKey.generated.cs">
+      <DependentUpon>MetaKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Metum.cs" />
+    <Compile Include="Entities\Metum.generated.cs">
+      <DependentUpon>Metum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Note.cs" />
+    <Compile Include="Entities\Note.generated.cs">
+      <DependentUpon>Note.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\NoteType.cs" />
+    <Compile Include="Entities\NoteType.generated.cs">
+      <DependentUpon>NoteType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Order.cs" />
+    <Compile Include="Entities\Order.generated.cs">
+      <DependentUpon>Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\OrderItem.cs" />
+    <Compile Include="Entities\OrderItem.generated.cs">
+      <DependentUpon>OrderItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\PaymentMethod.cs" />
+    <Compile Include="Entities\PaymentMethod.generated.cs">
+      <DependentUpon>PaymentMethod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Phone.cs" />
+    <Compile Include="Entities\Phone.generated.cs">
+      <DependentUpon>Phone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\PhoneType.cs" />
+    <Compile Include="Entities\PhoneType.generated.cs">
+      <DependentUpon>PhoneType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Portal.cs" />
+    <Compile Include="Entities\Portal.generated.cs">
+      <DependentUpon>Portal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\PortalType.cs" />
+    <Compile Include="Entities\PortalType.generated.cs">
+      <DependentUpon>PortalType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\PostField.cs" />
+    <Compile Include="Entities\PostField.generated.cs">
+      <DependentUpon>PostField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\PostReplyEmailType.cs" />
+    <Compile Include="Entities\PostReplyEmailType.generated.cs">
+      <DependentUpon>PostReplyEmailType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\RefactorLog.cs" />
+    <Compile Include="Entities\RefactorLog.generated.cs">
+      <DependentUpon>RefactorLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\State.cs" />
+    <Compile Include="Entities\State.generated.cs">
+      <DependentUpon>State.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Team.cs" />
+    <Compile Include="Entities\Team.generated.cs">
+      <DependentUpon>Team.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Upload.cs" />
+    <Compile Include="Entities\Upload.generated.cs">
+      <DependentUpon>Upload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\UploadCategory.cs" />
+    <Compile Include="Entities\UploadCategory.generated.cs">
+      <DependentUpon>UploadCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\UploadType.cs" />
+    <Compile Include="Entities\UploadType.generated.cs">
+      <DependentUpon>UploadType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\UserAddress.cs" />
+    <Compile Include="Entities\UserAddress.generated.cs">
+      <DependentUpon>UserAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\UserEmail.cs" />
+    <Compile Include="Entities\UserEmail.generated.cs">
+      <DependentUpon>UserEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\UserPhone.cs" />
+    <Compile Include="Entities\UserPhone.generated.cs">
+      <DependentUpon>UserPhone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\UserStatus.cs" />
+    <Compile Include="Entities\UserStatus.generated.cs">
+      <DependentUpon>UserStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\UserUpload.cs" />
+    <Compile Include="Entities\UserUpload.generated.cs">
+      <DependentUpon>UserUpload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MalldubDataContext.cs" />
+    <Compile Include="MalldubDataContext.generated.cs">
+      <DependentUpon>MalldubDataContext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GeoCode.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\AccountExtensions.cs" />
+    <Compile Include="Queries\AccountExtensions.Generated.cs">
+      <DependentUpon>AccountExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\AccountStatusExtensions.cs" />
+    <Compile Include="Queries\AccountStatusExtensions.Generated.cs">
+      <DependentUpon>AccountStatusExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\ActivityExtensions.cs" />
+    <Compile Include="Queries\ActivityExtensions.Generated.cs">
+      <DependentUpon>ActivityExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\ActivityTypeExtensions.cs" />
+    <Compile Include="Queries\ActivityTypeExtensions.Generated.cs">
+      <DependentUpon>ActivityTypeExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\AddressExtensions.cs" />
+    <Compile Include="Queries\AddressExtensions.Generated.cs">
+      <DependentUpon>AddressExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\AspNetRoleExtensions.cs" />
+    <Compile Include="Queries\AspNetRoleExtensions.Generated.cs">
+      <DependentUpon>AspNetRoleExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\AspNetUserClaimExtensions.cs" />
+    <Compile Include="Queries\AspNetUserClaimExtensions.Generated.cs">
+      <DependentUpon>AspNetUserClaimExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\AspNetUserExtensions.cs" />
+    <Compile Include="Queries\AspNetUserExtensions.Generated.cs">
+      <DependentUpon>AspNetUserExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\AspNetUserGatewayActivityExtensions.cs" />
+    <Compile Include="Queries\AspNetUserGatewayActivityExtensions.Generated.cs">
+      <DependentUpon>AspNetUserGatewayActivityExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\AspNetUserGatewayActivityTypeExtensions.cs" />
+    <Compile Include="Queries\AspNetUserGatewayActivityTypeExtensions.Generated.cs">
+      <DependentUpon>AspNetUserGatewayActivityTypeExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\AspNetUserGatewayExtensions.cs" />
+    <Compile Include="Queries\AspNetUserGatewayExtensions.Generated.cs">
+      <DependentUpon>AspNetUserGatewayExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\AspNetUserLoginExtensions.cs" />
+    <Compile Include="Queries\AspNetUserLoginExtensions.Generated.cs">
+      <DependentUpon>AspNetUserLoginExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\AspNetUsersTempExtensions.cs" />
+    <Compile Include="Queries\AspNetUsersTempExtensions.Generated.cs">
+      <DependentUpon>AspNetUsersTempExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\AuctionExtensions.cs" />
+    <Compile Include="Queries\AuctionExtensions.Generated.cs">
+      <DependentUpon>AuctionExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\AuctionInvoiceBillToTypeExtensions.cs" />
+    <Compile Include="Queries\AuctionInvoiceBillToTypeExtensions.Generated.cs">
+      <DependentUpon>AuctionInvoiceBillToTypeExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\AuctionInvoiceExtensions.cs" />
+    <Compile Include="Queries\AuctionInvoiceExtensions.Generated.cs">
+      <DependentUpon>AuctionInvoiceExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\AuctionInvoiceTypeExtensions.cs" />
+    <Compile Include="Queries\AuctionInvoiceTypeExtensions.Generated.cs">
+      <DependentUpon>AuctionInvoiceTypeExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\AuctionPaymentItemExtensions.cs" />
+    <Compile Include="Queries\AuctionPaymentItemExtensions.Generated.cs">
+      <DependentUpon>AuctionPaymentItemExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\AuctionStatusExtensions.cs" />
+    <Compile Include="Queries\AuctionStatusExtensions.Generated.cs">
+      <DependentUpon>AuctionStatusExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\AuctionTypeExtensions.cs" />
+    <Compile Include="Queries\AuctionTypeExtensions.Generated.cs">
+      <DependentUpon>AuctionTypeExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\BidExtensions.cs" />
+    <Compile Include="Queries\BidExtensions.Generated.cs">
+      <DependentUpon>BidExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\CategoryExtensions.cs" />
+    <Compile Include="Queries\CategoryExtensions.Generated.cs">
+      <DependentUpon>CategoryExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\CommentExtensions.cs" />
+    <Compile Include="Queries\CommentExtensions.Generated.cs">
+      <DependentUpon>CommentExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\DefaultExtensions.cs" />
+    <Compile Include="Queries\DefaultExtensions.Generated.cs">
+      <DependentUpon>DefaultExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\DonationExtensions.cs" />
+    <Compile Include="Queries\DonationExtensions.Generated.cs">
+      <DependentUpon>DonationExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\DonationFeeTypeExtensions.cs" />
+    <Compile Include="Queries\DonationFeeTypeExtensions.Generated.cs">
+      <DependentUpon>DonationFeeTypeExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\DonationNoteExtensions.cs" />
+    <Compile Include="Queries\DonationNoteExtensions.Generated.cs">
+      <DependentUpon>DonationNoteExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\DonationStatusExtensions.cs" />
+    <Compile Include="Queries\DonationStatusExtensions.Generated.cs">
+      <DependentUpon>DonationStatusExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\DonationSubscriptionTypeExtensions.cs" />
+    <Compile Include="Queries\DonationSubscriptionTypeExtensions.Generated.cs">
+      <DependentUpon>DonationSubscriptionTypeExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\EmailExtensions.cs" />
+    <Compile Include="Queries\EmailExtensions.Generated.cs">
+      <DependentUpon>EmailExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\FundActivityExtensions.cs" />
+    <Compile Include="Queries\FundActivityExtensions.Generated.cs">
+      <DependentUpon>FundActivityExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\FundActivityTypeExtensions.cs" />
+    <Compile Include="Queries\FundActivityTypeExtensions.Generated.cs">
+      <DependentUpon>FundActivityTypeExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\FundCategoryExtensions.cs" />
+    <Compile Include="Queries\FundCategoryExtensions.Generated.cs">
+      <DependentUpon>FundCategoryExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\FundCommentExtensions.cs" />
+    <Compile Include="Queries\FundCommentExtensions.Generated.cs">
+      <DependentUpon>FundCommentExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\FundCommentOriginExtensions.cs" />
+    <Compile Include="Queries\FundCommentOriginExtensions.Generated.cs">
+      <DependentUpon>FundCommentOriginExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\FundExtensions.cs" />
+    <Compile Include="Queries\FundExtensions.Generated.cs">
+      <DependentUpon>FundExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\FundNoteExtensions.cs" />
+    <Compile Include="Queries\FundNoteExtensions.Generated.cs">
+      <DependentUpon>FundNoteExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\FundNoteTypeExtensions.cs" />
+    <Compile Include="Queries\FundNoteTypeExtensions.Generated.cs">
+      <DependentUpon>FundNoteTypeExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\FundSettingExtensions.cs" />
+    <Compile Include="Queries\FundSettingExtensions.Generated.cs">
+      <DependentUpon>FundSettingExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\FundShareExtensions.cs" />
+    <Compile Include="Queries\FundShareExtensions.Generated.cs">
+      <DependentUpon>FundShareExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\FundShareTypeExtensions.cs" />
+    <Compile Include="Queries\FundShareTypeExtensions.Generated.cs">
+      <DependentUpon>FundShareTypeExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\FundTeamExtensions.cs" />
+    <Compile Include="Queries\FundTeamExtensions.Generated.cs">
+      <DependentUpon>FundTeamExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\FundTeamMemberExtensions.cs" />
+    <Compile Include="Queries\FundTeamMemberExtensions.Generated.cs">
+      <DependentUpon>FundTeamMemberExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\FundTeamMemberRoleExtensions.cs" />
+    <Compile Include="Queries\FundTeamMemberRoleExtensions.Generated.cs">
+      <DependentUpon>FundTeamMemberRoleExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\FundTypeExtensions.cs" />
+    <Compile Include="Queries\FundTypeExtensions.Generated.cs">
+      <DependentUpon>FundTypeExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\FundUpdateExtensions.cs" />
+    <Compile Include="Queries\FundUpdateExtensions.Generated.cs">
+      <DependentUpon>FundUpdateExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\FundUpdateStatusExtensions.cs" />
+    <Compile Include="Queries\FundUpdateStatusExtensions.Generated.cs">
+      <DependentUpon>FundUpdateStatusExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\FundUserExtensions.cs" />
+    <Compile Include="Queries\FundUserExtensions.Generated.cs">
+      <DependentUpon>FundUserExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\FundUserTypeExtensions.cs" />
+    <Compile Include="Queries\FundUserTypeExtensions.Generated.cs">
+      <DependentUpon>FundUserTypeExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\GatewayExtensions.cs" />
+    <Compile Include="Queries\GatewayExtensions.Generated.cs">
+      <DependentUpon>GatewayExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\GeoExtensions.cs" />
+    <Compile Include="Queries\GeoExtensions.Generated.cs">
+      <DependentUpon>GeoExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\InvoiceExtensions.cs" />
+    <Compile Include="Queries\InvoiceExtensions.Generated.cs">
+      <DependentUpon>InvoiceExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\InvoiceItemExtensions.cs" />
+    <Compile Include="Queries\InvoiceItemExtensions.Generated.cs">
+      <DependentUpon>InvoiceItemExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\InvoiceStatusExtensions.cs" />
+    <Compile Include="Queries\InvoiceStatusExtensions.Generated.cs">
+      <DependentUpon>InvoiceStatusExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\ItemCategoryExtensions.cs" />
+    <Compile Include="Queries\ItemCategoryExtensions.Generated.cs">
+      <DependentUpon>ItemCategoryExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\ItemExtensions.cs" />
+    <Compile Include="Queries\ItemExtensions.Generated.cs">
+      <DependentUpon>ItemExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\ItemMetumExtensions.cs" />
+    <Compile Include="Queries\ItemMetumExtensions.Generated.cs">
+      <DependentUpon>ItemMetumExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\ItemStatusExtensions.cs" />
+    <Compile Include="Queries\ItemStatusExtensions.Generated.cs">
+      <DependentUpon>ItemStatusExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\ItemTransactionTypeExtensions.cs" />
+    <Compile Include="Queries\ItemTransactionTypeExtensions.Generated.cs">
+      <DependentUpon>ItemTransactionTypeExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\ItemTypeExtensions.cs" />
+    <Compile Include="Queries\ItemTypeExtensions.Generated.cs">
+      <DependentUpon>ItemTypeExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\ItemUploadExtensions.cs" />
+    <Compile Include="Queries\ItemUploadExtensions.Generated.cs">
+      <DependentUpon>ItemUploadExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\ListAreaExtensions.cs" />
+    <Compile Include="Queries\ListAreaExtensions.Generated.cs">
+      <DependentUpon>ListAreaExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\ListCategoryExtensions.cs" />
+    <Compile Include="Queries\ListCategoryExtensions.Generated.cs">
+      <DependentUpon>ListCategoryExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\ListPortalPostAttributeExtensions.cs" />
+    <Compile Include="Queries\ListPortalPostAttributeExtensions.Generated.cs">
+      <DependentUpon>ListPortalPostAttributeExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\ListPostExtensions.cs" />
+    <Compile Include="Queries\ListPostExtensions.Generated.cs">
+      <DependentUpon>ListPostExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\ListPostStatusExtensions.cs" />
+    <Compile Include="Queries\ListPostStatusExtensions.Generated.cs">
+      <DependentUpon>ListPostStatusExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\ListSiteExtensions.cs" />
+    <Compile Include="Queries\ListSiteExtensions.Generated.cs">
+      <DependentUpon>ListSiteExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\ListTypeExtensions.cs" />
+    <Compile Include="Queries\ListTypeExtensions.Generated.cs">
+      <DependentUpon>ListTypeExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\MalldubApplicationExtensions.cs" />
+    <Compile Include="Queries\MalldubApplicationExtensions.Generated.cs">
+      <DependentUpon>MalldubApplicationExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\MallExtensions.cs" />
+    <Compile Include="Queries\MallExtensions.Generated.cs">
+      <DependentUpon>MallExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\MallPortalStatusExtensions.cs" />
+    <Compile Include="Queries\MallPortalStatusExtensions.Generated.cs">
+      <DependentUpon>MallPortalStatusExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\MetaDataTypeExtensions.cs" />
+    <Compile Include="Queries\MetaDataTypeExtensions.Generated.cs">
+      <DependentUpon>MetaDataTypeExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\MetaKeyExtensions.cs" />
+    <Compile Include="Queries\MetaKeyExtensions.Generated.cs">
+      <DependentUpon>MetaKeyExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\MetumExtensions.cs" />
+    <Compile Include="Queries\MetumExtensions.Generated.cs">
+      <DependentUpon>MetumExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\NoteExtensions.cs" />
+    <Compile Include="Queries\NoteExtensions.Generated.cs">
+      <DependentUpon>NoteExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\NoteTypeExtensions.cs" />
+    <Compile Include="Queries\NoteTypeExtensions.Generated.cs">
+      <DependentUpon>NoteTypeExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\OrderExtensions.cs" />
+    <Compile Include="Queries\OrderExtensions.Generated.cs">
+      <DependentUpon>OrderExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\OrderItemExtensions.cs" />
+    <Compile Include="Queries\OrderItemExtensions.Generated.cs">
+      <DependentUpon>OrderItemExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\PaymentMethodExtensions.cs" />
+    <Compile Include="Queries\PaymentMethodExtensions.Generated.cs">
+      <DependentUpon>PaymentMethodExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\PhoneExtensions.cs" />
+    <Compile Include="Queries\PhoneExtensions.Generated.cs">
+      <DependentUpon>PhoneExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\PhoneTypeExtensions.cs" />
+    <Compile Include="Queries\PhoneTypeExtensions.Generated.cs">
+      <DependentUpon>PhoneTypeExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\PortalExtensions.cs" />
+    <Compile Include="Queries\PortalExtensions.Generated.cs">
+      <DependentUpon>PortalExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\PortalTypeExtensions.cs" />
+    <Compile Include="Queries\PortalTypeExtensions.Generated.cs">
+      <DependentUpon>PortalTypeExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\PostFieldExtensions.cs" />
+    <Compile Include="Queries\PostFieldExtensions.Generated.cs">
+      <DependentUpon>PostFieldExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\PostReplyEmailTypeExtensions.cs" />
+    <Compile Include="Queries\PostReplyEmailTypeExtensions.Generated.cs">
+      <DependentUpon>PostReplyEmailTypeExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\RefactorLogExtensions.cs" />
+    <Compile Include="Queries\RefactorLogExtensions.Generated.cs">
+      <DependentUpon>RefactorLogExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\StateExtensions.cs" />
+    <Compile Include="Queries\StateExtensions.Generated.cs">
+      <DependentUpon>StateExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\TeamExtensions.cs" />
+    <Compile Include="Queries\TeamExtensions.Generated.cs">
+      <DependentUpon>TeamExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\UploadCategoryExtensions.cs" />
+    <Compile Include="Queries\UploadCategoryExtensions.Generated.cs">
+      <DependentUpon>UploadCategoryExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\UploadExtensions.cs" />
+    <Compile Include="Queries\UploadExtensions.Generated.cs">
+      <DependentUpon>UploadExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\UploadTypeExtensions.cs" />
+    <Compile Include="Queries\UploadTypeExtensions.Generated.cs">
+      <DependentUpon>UploadTypeExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\UserAddressExtensions.cs" />
+    <Compile Include="Queries\UserAddressExtensions.Generated.cs">
+      <DependentUpon>UserAddressExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\UserEmailExtensions.cs" />
+    <Compile Include="Queries\UserEmailExtensions.Generated.cs">
+      <DependentUpon>UserEmailExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\UserPhoneExtensions.cs" />
+    <Compile Include="Queries\UserPhoneExtensions.Generated.cs">
+      <DependentUpon>UserPhoneExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\UserStatusExtensions.cs" />
+    <Compile Include="Queries\UserStatusExtensions.Generated.cs">
+      <DependentUpon>UserStatusExtensions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Queries\UserUploadExtensions.cs" />
+    <Compile Include="Queries\UserUploadExtensions.Generated.cs">
+      <DependentUpon>UserUploadExtensions.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Entities.csp">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Malldub.edmx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Malldub.Helper\Malldub.Helper.csproj">
+      <Project>{05d0c6bb-ee12-4a87-b165-9abeb04a1e60}</Project>
+      <Name>Malldub.Helper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,42 @@
+﻿<div class="modal-header">
+  <div class="row">
+    <div class="col-lg-9 col-lg-offset-1 col-md-8 col-xs-8 text-center">
+      <div>
+        Join this team
+      </div>
+      <h3>{{fundTeam.team.name}}</h3>
+    </div>
+    <div class="col-lg-2 col-md-4 col-xs-4 text-right">
+      <button class="btn btn-lg btn-default" ng-click="dismiss('fd-teams-close')"><i class="fa fa-times"></i></button>
+    </div>
+  </div>
+</div>
+<div class="modal-body modal-body-slim">
+  <div>
+    <form class="sky-form sky-form-noborder" id="fundJoinTeamForm" name="fundJoinTeamForm">
+      <fieldset>
+        <section>
+          <div></div>
+          <div class="text-center">
+            Joining a team greatly enhances the campaign's chances of reaching its goals.  
+            Your team page as well as your personal team member page can be used to market
+            for this campaign and greatly enhance its support.
+          </div>
+        </section>
+      </fieldset>
+    </form>
+  </div>
+</div>
+<div class="modal-footer" ng-hide="isSupporting">
+  <div class="text-center">
+    <button class="btn btn-lg btn-facebook-inversed" ng-click="joinTeam()"><i class="fa fa-facebook"></i> Join The Team!</button>
+  </div>
+  <div class="text-center margin-top-10" ng-hide="isLoggedIn">
+     Join Team With Email | <se-login-popup-drctv register-callback="closeOnRegister()" link-title="Login"></se-login-popup-drctv>
+  </div>
+</div>
+<div class="modal-footer text-center" ng-show="isSupporting">
+  <div class="text-center">
+    <md-spinner-bar-drctv />
+  </div>
+</div>

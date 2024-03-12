@@ -1,0 +1,101 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="vm.close()">&times;</button>
+    <h3 class="modal-title">Manage User</h3>
+</div>
+<div class="modal-body">
+    <div ng-form="vm.editForm">
+        <div class="form-group" ng-class="{'has-error': vm.showValidationMessages && (vm.editForm.firstName.$error.required || vm.editForm.firstName.$error.minlength) }">
+            <label class="block clearfix">
+          <span class="block input-icon input-icon-right">
+                    <input type="text" ng-minlength="2" class="form-control" placeholder="First Name" ng-model="vm.newUser.firstName" ng-required="true" name="firstName" />
+            <i class="ace-icon fa"
+               ng-class="{'fa-times-circle': vm.showValidationMessages && vm.editForm.firstName.$error.required ,
+                                                            'fa-pencil': true}"></i>
+          </span>
+
+        </label>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error': vm.showValidationMessages && (vm.editForm.lastName.$error.required || vm.editForm.lastName.$error.minlength) }">
+            <label class="block clearfix">
+          <span class="block input-icon input-icon-right">
+                    <input type="text" class="form-control" ng-minlength="2" placeholder="Last Name" ng-model="vm.newUser.lastName" ng-required="true" name="lastName" />
+            <i class="ace-icon fa"
+               ng-class="{'fa-times-circle': vm.showValidationMessages && vm.editForm.lastName.$error.required,
+                                                            'fa-pencil': true}"></i>
+          </span>
+
+        </label>
+        </div>
+
+
+        <div class="form-group" ng-class="{'has-error': vm.showValidationMessages && vm.editForm.Email.$error.required }">
+            <div class="form-group" ng-class="{'has-error': vm.editForm.Email.$error.email }">
+                <label class="block clearfix">
+            <span class="block input-icon input-icon-right">
+              <input type="email" class="form-control" placeholder="Email" ng-model="vm.newUser.email" ng-required="true" name="Email" />
+              <i class="ace-icon fa"
+                 ng-class="{'fa-times-circle': vm.showValidationMessages && vm.editForm.Email.$error.required,
+                                                            'fa-envelope': true}"></i>
+            </span>
+
+          </label>
+            </div>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error': vm.showValidationMessages && vm.editForm.UserName.$error.required }">
+            <label class="block clearfix">
+          <span class="block input-icon input-icon-right">
+            <input ng-disabled="true" type="text" class="form-control" ng-model="vm.newUser.userName" name="UserName" />
+            <i class="ace-icon fa"
+               ng-class="{'fa-times-circle': vm.showValidationMessages && vm.editForm.UserName.$error.required,
+                                                            'fa-users': true}"></i>
+          </span>
+
+        </label>
+        </div>
+
+        <div id="dual-list-box-Roles" class="form-group row">
+            <div class="col-md-5">
+                <h4>
+                    <span class="unselected-title">Available Roles</span>
+                    <small>- showing <span class="unselected-count">{{vm.Roles.length}}</span></small>
+                </h4>
+
+                <input class="filter form-control filter-unselected" type="text" placeholder="Filter" style="margin-bottom: 5px;" ng-model="vm.filter.rolename">
+                <select class="unselected" style="height: 200px; width: 100%;" multiple="multiple" ng-options="a.name for a in vm.Roles| filter:vm.filter.rolename|orderBy : 'name'"
+                    ng-model="vm.leftroleItem" value="{{vm.a.name}}"></select>
+
+            </div>
+            <div class="visible-md visible-lg col-md-2 text-center" style="margin-top:60px;">
+                <button type="button" class="btn btn-primary col-md-8 col-md-offset-2 atr" data-type="atr" style="margin-bottom: 10px;" ng-disabled="vm.Roles.length==0"
+                    ng-click="vm.rightAllRoles('true')"><span class="glyphicon glyphicon-list"></span><span class="glyphicon glyphicon-chevron-right"></span></button>
+                <button type="button" class="btn btn-success col-md-8 col-md-offset-2 str" data-type="str" style="margin-bottom: 20px;" ng-disabled="vm.leftroleItem.length===0"
+                    ng-click="vm.pushrightselectedroles('true')"><span class="glyphicon glyphicon-chevron-right"></span></button>
+                <button type="button" class="btn btn-success col-md-8 col-md-offset-2 stl" data-type="stl" style="margin-bottom: 10px;" ng-disabled="vm.rightroleitems.length===0"
+                    ng-click="vm.pushrightselectedroles('false')"><span class="glyphicon glyphicon-chevron-left"></span></button>
+                <button type="button" class="btn btn-primary col-md-8 col-md-offset-2 atl" data-type="atl" style="margin-bottom: 10px;" ng-disabled="vm.newUser.userRoles.length==0"
+                    ng-click="vm.rightAllRoles('false')"><span class="glyphicon glyphicon-chevron-left"></span><span class="glyphicon glyphicon-list"></span></button>
+            </div>
+            <div class="visible-sm visible-xs text-center" style="margin-top:20px;margin-bottom:20px;">
+                <button type="button" class="btn btn-primary rotate90 atr" data-type="atr" style=" width:60px" ng-disabled="vm.Roles.length==0"
+                    ng-click="vm.rightAllRoles('true')"><span class="glyphicon glyphicon-list"></span><span class="glyphicon glyphicon-chevron-right"></span></button>
+                <button type="button" class="btn btn-success rotate90 str" data-type="str" style=" width:60px" ng-disabled="vm.leftroleItem.length==0"
+                    ng-click="vm.pushrightselectedroles('true')"><span class="glyphicon glyphicon-chevron-right"></span></button>
+                <button type="button" class="btn btn-success rotate90" style="width:60px" ng-disabled="vm.rightroleitems.length==0" ng-click="vm.pushrightselectedroles('false')"><span class="glyphicon glyphicon-chevron-left"></span></button>
+                <button type="button" class="btn btn-primary rotate90" style="width:60px" ng-disabled="vm.newUser.userRoles.length==0" ng-click="vm.rightAllRoles('false')"><span class="glyphicon glyphicon-chevron-left"></span><span class="glyphicon glyphicon-list"></span></button>
+            </div>
+            <div class="col-md-5">
+                <h4><span class="selected-title">Selected Roles</span> <small>- showing <span class="selected-count">{{vm.newUser.userRoles.length}}</span></small></h4>
+                <input class="filter form-control filter-selected" type="text" placeholder="Filter" style="margin-bottom: 5px;" ng-model="vm.filter.selectedrolename">
+                <select class="selected" style="height: 200px; width: 100%;" multiple="multiple" name="" ng-options="items.name for items in vm.newUser.userRoles| filter:filter.selectedrolename|orderBy : 'name'"
+                    ng-model="vm.rightroleitems" value="{{vm.items.name}}"></select>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-success" ng-click="vm.updateUser()">Update</button>
+    <button class="btn btn-warning" ng-click="vm.close()">Cancel</button>
+</div>

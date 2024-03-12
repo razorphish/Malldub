@@ -1,0 +1,105 @@
+﻿<div class="profile-body margin-bottom-5" id="fundDonationsPage">
+    <div class="panel-heading overflow-h margin-bottom-10">
+        <h2 class="panel-title heading-sm pull-left"><i class="fa fa-users"></i>Donations</h2>
+        <button class="btn btn-default btn-u pull-right" title="Add Offline donation" ng-click="addDonation()">
+            <i class="fa fa-plus "></i>
+            <span class="hidden-sm hidden-xs">Add Offline Donation</span>
+        </button>
+    </div>
+    <!--Profile Blog-->
+    <div class="margin-bottom-20" ng-repeat="row in itemRows track by $index" ng-hide="isLoading">
+        <div class="row">
+            <div class="col-sm-6 sm-margin-bottom-20" ng-repeat="column in itemColumns track by $index" ng-hide="hide($parent.$index * numberColumns + $index)">
+                <div class="profile-blog">
+                    <md-avatar-drctv user="items[$parent.$index * numberColumns + $index].user" classes="rounded-x"></md-avatar-drctv>
+                    <div class="name-location">
+                        <strong ng-hide="items[$parent.$index * numberColumns + $index].isPrivateDonorName">{{items[$parent.$index * numberColumns + $index].donorName}}</strong>
+                        <strong ng-show="items[$parent.$index * numberColumns + $index].isPrivateDonorName">Anonymous</strong>
+                        <span>
+                            {{items[$parent.$index * numberColumns + $index].dateEntered | momentTo : 'dddd, MMMM Do, YYYY, h:mm a'}}
+                        </span>
+                    </div>
+                    <div class="clearfix margin-bottom-10"></div>
+                    {{items[$parent.$index * numberColumns + $index].message}}
+                    <div class="clearfix margin-bottom-10"></div>
+                    <ul class="list-inline share-list">
+                        <li ng-hide="items[$parent.$index * numberColumns + $index].isPrivateAmount" title="donor amount"><i class="fa fa-heart"></i> ${{items[$parent.$index * numberColumns + $index].beneficiaryAmount | number: 0}}</li>
+                        <li ng-show="items[$parent.$index * numberColumns + $index].isPrivateAmount" title="private amount"><i class="fa fa-heart-o"></i> $????</li>
+                        <li ng-show="items[$parent.$index * numberColumns + $index].subscriptionTypeId === 'Monthly'" title="donor subscription"><i class="fa fa-support"></i> Subscribed</li>
+                        <li ng-show="items[$parent.$index * numberColumns + $index].thankYouNoteSent" title="thank you note sent"><i class="fa fa-envelope-o"></i></li>
+                        <li ng-show="items[$parent.$index * numberColumns + $index].isPrivateDonorName" title="Donor name is private"><i class="fa fa-eye-slash"></i></li>
+                        <li ng-show="items[$parent.$index * numberColumns + $index].offlineDonation" title="offline donation"><i class="fa fa-toggle-off"></i></li>
+                    </ul>
+                    <hr>
+
+                    <div class="btn-group-sm" ng-hide="items[$parent.$index * numberColumns + $index].isCommentDeleting || items[$parent.$index * numberColumns + $index].isMakeAnonymous || items[$parent.$index * numberColumns + $index].isDonationDeleting">
+                      <button title="send thank you "
+                              ng-if="!items[$parent.$index * numberColumns + $index].thankYouNoteSent"
+                              type="button"
+                              class="btn btn-u btn-u-sm"
+                              ng-click="openThankYou(items[$parent.$index * numberColumns + $index])">
+                        <i class="fa fa-envelope"></i>
+                      </button>
+                        <button title="delete comment"
+                                type="button"
+                                class="btn btn-u btn-u-sm"
+                                ng-show="items[$parent.$index * numberColumns + $index].message"
+                                ng-click="verifyDeleteComment(items[$parent.$index * numberColumns + $index], true)">
+                            <i class="fa fa-comment-o"></i>
+                        </button>
+                        <button title="anonymize"
+                                type="button"
+                                class="btn btn-u btn-u-sm"
+                                ng-hide="items[$parent.$index * numberColumns + $index].isPrivate"
+                                ng-click="verifyMakeAnonymous(items[$parent.$index * numberColumns + $index], true)">
+                            <i class="fa fa-user-secret"></i>
+                        </button>
+                        <!--<button type="button" class="btn btn-u btn-u-sm" ng-show="showDelete(items[$parent.$index * numberColumns + $index].statusId)" ng-click="verifyDeleteDonation(items[$parent.$index * numberColumns + $index], true)">
+                          <i class="fa fa-eraser"></i>
+                        </button>-->
+                    </div>
+
+                    <div ng-show="items[$parent.$index * numberColumns + $index].isCommentDeleting">
+                        <h6>
+                            Are you sure you want to delete comment?
+                            <button type="button" class="btn btn-sm btn-danger" ng-click="deleteComment(items[$parent.$index * numberColumns + $index])">Yes</button>
+                            <button type="button" class="btn btn-sm btn-warning" ng-click="verifyDeleteComment(items[$parent.$index * numberColumns + $index], false)">No</button>
+                        </h6>
+                    </div>
+                    <div ng-show="items[$parent.$index * numberColumns + $index].isMakeAnonymous">
+                        <h6>
+                            Are you sure you want to anonyize?
+                            <b>Amount?:</b> <input type="checkbox" ng-model="items[$parent.$index * numberColumns + $index].isPrivateAmount" title="Amount?" />
+                            <b>Name?:</b> <input type="checkbox" ng-model="items[$parent.$index * numberColumns + $index].isPrivateDonorName" title="Name?" />
+                            <button type="button" class="btn btn-sm btn-danger" ng-click="makeAnonymous(items[$parent.$index * numberColumns + $index])">Yes</button>
+                            <button type="button" class="btn btn-sm btn-warning" ng-click="verifyMakeAnonymous(items[$parent.$index * numberColumns + $index], false)">No</button>
+                        </h6>
+                    </div>
+                    <div ng-show="items[$parent.$index * numberColumns + $index].isDonationDeleting">
+                        <h6>
+                            Are you sure you want to delete this donation?
+                            <button type="button" class="btn btn-sm btn-danger" ng-click="deleteDonation(items[$parent.$index * numberColumns + $index])">Yes</button>
+                            <button type="button" class="btn btn-sm btn-warning" ng-click="verifyDeleteDonation(items[$parent.$index * numberColumns + $index], false)">No</button>
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </div><!--/end row-->
+    </div>
+    <!--End Profile Blog-->
+
+    <div ng-show="isLoading">
+        <md-spinner-bar-drctv />
+    </div>
+
+    <div ng-show="totalItems > itemsPerPage" class="text-center">
+        <ul uib-pagination
+            total-items="totalItems"
+            ng-model="currentPage"
+            max-size="maxSize"
+            boundary-links="true"
+            rotate="false"
+            items-per-page="itemsPerPage"
+            ng-change="onSelectPage(page)"></ul>
+    </div>
+</div>

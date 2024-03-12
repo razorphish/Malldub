@@ -1,0 +1,24 @@
+﻿<div class="container">
+  <div class="heading heading-v1 margin-bottom-20">
+    <h2>{{title}}</h2>
+    <p>
+      {{subTitle}}
+    </p>
+  </div>
+
+
+  <div class="illustration-v2 margin-bottom-60">
+    <div class="customNavigation margin-bottom-25">
+      <a class="owl-btn prev rounded-x" id="{{owlId}}-prev"><i class="fa fa-angle-left"></i></a>
+      <a class="owl-btn next rounded-x" id="{{owlId}}-next"><i class="fa fa-angle-right"></i></a>
+    </div>
+
+    <ul class="list-inline owl-slider" id="{{owlId}}">
+
+      <li class="item" ng-repeat="fund in funds | orderBy:'dateEntered':true">
+        <fd-widgets-fund-drctv fund="fund"></fd-widgets-fund-drctv>
+      </li>
+
+    </ul>
+  </div>
+</div>

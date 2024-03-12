@@ -1,0 +1,115 @@
+﻿<!--=== Header ===-->
+<hm-header-drctv></hm-header-drctv>
+<!--=== End Header===-->
+
+
+<!--=== Body ===-->
+<div ui-view></div>
+<!--=== /Body ===-->
+
+
+<!--=== Footer Version 1 ===-->
+<div class="footer-v1 hidden-print">
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <!-- About -->
+        <div class="col-md-3 md-margin-bottom-40">
+          <a ui-sref="home.index"><img id="logo-footer" class="footer-logo" src="/assets/img/100.png" alt="FREE Crowd funding"></a>
+          <p class="margin-bottom-25 md-margin-bottom-40">
+            Funding Miracles is one of the leading low cost crowdfunding websites in the world. With <b>NO</b>
+            website fee and a small credit card processing fee, Funding Miracles provides unlimited possibilities
+            for raising money and awareness. Anyone can create and publish fundraisers within minutes by using
+            Funding Miracle's easy campaign creator. Try it today for FREE!
+            <b>You</b> Create. <b>They</b> Donate. <b>We</b> Change Lives.
+          </p>
+        </div><!--/col-md-3-->
+        <!-- End About -->
+        <!-- Latest -->
+        <div class="col-md-3 md-margin-bottom-40">
+          <div class="posts">
+            <div class="headline"><h2>Latest Posts</h2></div>
+            <ul class="list-unstyled latest-list">
+              <li>
+                <a ui-sref="home.cancerinfo">Cancer Info</a>
+                <small>January 8, 2017</small>
+              </li>
+              <li>
+              <a ui-sref="home.howitworks">How It Works</a>
+                <small>February 23, 2017</small>
+              </li>
+              <li>
+                <a ui-sref="home.fees">Fees</a>
+                <small>March 13, 2017</small>
+              </li>
+            </ul>
+          </div>
+        </div><!--/col-md-3-->
+        <!-- End Latest -->
+        <!-- Link List -->
+        <div class="col-md-3 md-margin-bottom-40">
+          <div class="headline"><h2>Useful Links</h2></div>
+          <ul class="list-unstyled link-list">
+            <li><a ui-sref="home.aboutus">About us</a><i class="fa fa-angle-right"></i></li>
+            <li><a ui-sref="home.controlPanelList">Crowdfund Now!</a><i class="fa fa-angle-right"></i></li>
+            <li><a ui-sref="home.learn">Learn</a><i class="fa fa-angle-right"></i></li>
+            <li><a ui-sref="home.tips">Tips</a><i class="fa fa-angle-right"></i></li>
+            <li><a ui-sref="home.search">Find</a><i class="fa fa-angle-right"></i></li>
+            <li><a ui-sref="home.contactus">Contact us</a><i class="fa fa-angle-right"></i></li>
+          </ul>
+        </div><!--/col-md-3-->
+        <!-- End Link List -->
+        <!-- Address -->
+        <div class="col-md-3 map-img md-margin-bottom-40">
+          <div class="headline"><h2>Contact Us - YO</h2></div>
+          <address class="md-margin-bottom-40">
+            San Diego California, US <br />
+            Email: <a href="mailto:support@fundingmiracles.com" class="">support@fundingmiracles.com</a>
+          </address>
+        </div><!--/col-md-3-->
+        <!-- End Address -->
+      </div>
+    </div>
+  </div><!--/footer-->
+
+  <div class="copyright">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <p>
+            {{getCurrentYear()}} &copy; Funding Miracles All Rights Reserved.
+            <a ui-sref="home.privacy">Privacy Policy</a> | <a ui-sref="home.terms">Terms of Service</a>
+          </p>
+        </div>
+
+        <!-- Social Links -->
+        <div class="col-md-6">
+          <ul class="footer-socials list-inline">
+            <li>
+              <a href="https://www.facebook.com/fundingmiracles" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook">
+                <i class="fa fa-facebook"></i>
+              </a>
+            </li>
+            <!--<li>
+              <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Skype">
+                <i class="fa fa-skype"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Google Plus">
+                <i class="fa fa-google-plus"></i>
+              </a>
+            </li>-->
+            <li>
+              <a href="https://twitter.com/fundingmiracles" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter">
+                <i class="fa fa-twitter"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- End Social Links -->
+      </div>
+    </div>
+  </div><!--/copyright-->
+</div>
+<!--=== End Footer Version 1 ===-->

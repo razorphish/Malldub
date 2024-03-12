@@ -1,0 +1,177 @@
+<style>
+    .no-space {
+        margin: 0 0 0 0 !important;
+    }
+</style>
+<div>
+
+    <div class="breadcrumbs" id="breadcrumbs">
+        <script type="text/javascript">
+            try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
+        </script>
+
+        <ul class="breadcrumb">
+            <li>
+                <i class="ace-icon fa fa-home home-icon"></i>
+                <a ui-sref="inspinia.index">Home</a>
+            </li>
+            <li class="active">Edit User</li>
+        </ul>
+        <!-- /.breadcrumb -->
+
+    </div>
+    <div class="page-content">
+        <form class="form-horizontal">
+            <div class="tabbable">
+                <ul class="nav nav-tabs padding-16">
+                    <li class="active">
+                        <a data-toggle="tab" href="#edit-basic">
+                            <i class="green ace-icon fa fa-pencil-square-o bigger-125"></i> Basic Info
+                        </a>
+                    </li>
+
+                    <li>
+                        <a data-toggle="tab" href="#edit-password">
+                            <i class="blue ace-icon fa fa-key bigger-125"></i> Password
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="tab-content profile-edit-tab-content">
+                    <div id="edit-basic" class="tab-pane in active" ng-form="vm.EditProfile">
+                        <h4 class="header blue bolder smaller">General</h4>
+
+                        <div class="row">
+
+                            <div class="col-xs-12 col-sm-8">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label no-padding-right" for="form-field-username">Username</label>
+                                    <div class="col-sm-8">
+                                        <span class="input-icon input-icon-right">
+                                            <input type="text" ng-disabled="true" id="form-field-username" placeholder="Username" ng-model="vm.newUser.userName" name="UserName" />
+                                            <i class="ace-icon fa fa-user"> </i>
+                                        </span>
+
+                                    </div>
+                                </div>
+
+                                <div class="space-4"></div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label no-padding-right" for="form-field-first">Name</label>
+
+                                    <div class="col-sm-8">
+                                        <span class="input-icon input-icon-right" ng-class="{'has-error form-group no-space': vm.showValidationMessages && (vm.EditProfile.firstName.$error.required  || vm.EditProfile.firstName.$error.minlength) }">
+                                            <input type="text" placeholder="First Name" ng-minlength="2" ng-model="vm.newUser.firstName" ng-required="true" name="firstName" />
+                                            <i class="ace-icon fa"
+                                               ng-class="{'fa-times-circle': vm.showValidationMessages && vm.EditProfile.firstName.$error.required ,
+                                                            'fa-pencil': true}"></i>
+                                        </span>
+                                        <span class="input-icon input-icon-right" ng-class="{'has-error form-group no-space': vm.showValidationMessages &&  (vm.EditProfile.lastName.$error.required  || vm.EditProfile.lastName.$error.minlength) }">
+                                            <input type="text" placeholder="Last Name" ng-minlength="2" ng-model="vm.newUser.lastName" ng-required="true" name="lastName" />
+                                            <i class="ace-icon fa"
+                                               ng-class="{'fa-times-circle': vm.showValidationMessages && vm.EditProfile.lastName.$error.required ,
+                                                            'fa-pencil': true}"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr />
+
+                        <h4 class="header blue bolder smaller">Contact</h4>
+
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-8">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label no-padding-right" for="form-field-email">Email</label>
+                                    <div class="col-sm-8">
+                                        <span class="input-icon input-icon-right" ng-class="{'has-error form-group no-space': vm.showValidationMessages &&  ( vm.EditProfile.Email.$error.pattern || vm.EditProfile.Email.$error.required) }">
+                                            <span class="input-icon input-icon-right" ng-class="{'has-error form-group no-space':   vm.EditProfile.Email.$error.required }">
+                                                <input type="email" ng-model="vm.newUser.email" ng-pattern="vm.regExp" ng-required="true" name="Email" />
+                                                <i class="ace-icon fa" ng-class="{'fa-times-circle': vm.showValidationMessages && vm.EditProfile.Email.$error.required,'fa-envelope': true}"></i>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button class="btn btn-info" type="button" ng-click="vm.EditUser()">
+                                    <i class="ace-icon fa fa-check bigger-110"></i>
+                                    Update
+                                </button> &nbsp; &nbsp;
+                                <button class="btn" type="button" ng-click="vm.cancel()">
+                                    <i class="ace-icon fa fa-undo bigger-110"></i>
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div id="edit-password" class="tab-pane" ng-form="vm.changePasswordForm">
+                        <div class="space-10"></div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-pass1">Old Password</label>
+
+                            <div class="col-sm-9">
+                                <span class="input-icon input-icon-right" ng-class="{'has-error form-group no-space':vm.showValidationMessgae && vm.changePasswordForm.oldPassword.$error.required}">
+                                    <input type="password" placeholder="Old Password" name="oldPassword" ng-model="user.oldPassword" ng-required="true" />
+                                    <i class="ace-icon fa"
+                                       ng-class="{'fa-times-circle': vm.showValidationMessages && vm.changePasswordForm.oldPassword.$error.required ,
+                                                            'fa-pencil': true}"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-pass1">New Password</label>
+
+                            <div class="col-sm-9">
+                                <span class="input-icon input-icon-right" ng-class="{'has-error form-group no-space':vm.showValidationMessgae && vm.changePasswordForm.newPassword.$error.required || vm.changePasswordForm.$error.pattern.length>0}">
+                                    <input type="password" placeholder="New Password" name="newPassword" ng-pattern="/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&]).{6,}/" ng-model="vm.user.newPassword" ng-required="true" />
+                                    <i class="ace-icon fa"
+                                       ng-class="{'fa-times-circle': vm.showValidationMessages && vm.changePasswordForm.newPassword.$error.required ,
+                                                            'fa-pencil': true}"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="space-4"></div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="form-field-pass2">Confirm Password</label>
+                            <div class="col-sm-9">
+                                <span class="input-icon input-icon-right" ng-class="{'has-error form-group no-space':vm.showValidationMessgae && vm.changePasswordForm.confirmPassword.$error.required}">
+                                    <input type="password" placeholder="Confirm Password" name="confirmPassword" ng-model="vm.user.confirmPassword" ng-required="true" />
+                                    <i class="ace-icon fa"
+                                       ng-class="{'fa-times-circle': vm.showValidationMessages && vm.changePasswordForm.confirmPassword.$error.required ,
+                                                            'fa-pencil': true}"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="clearfix form-actions">
+                            <div class="col-md-offset-3 col-md-9">
+                                <button class="btn btn-info" type="button" ng-click="vm.ChangePassword()">
+                                    <i class="ace-icon fa fa-check bigger-110"></i>
+                                    Update
+                                </button> &nbsp; &nbsp;
+                                <button class="btn" type="button" ng-click="vm.cancel()">
+                                    <i class="ace-icon fa fa-undo bigger-110"></i>
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

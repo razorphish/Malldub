@@ -1,0 +1,134 @@
+﻿<!--=== Breadcrumbs ===-->
+<fd-dashboard-widgets-header-drctv fund="fund" show-edit-menu="true"></fd-dashboard-widgets-header-drctv>
+<!--=== End Breadcrumbs ===-->
+
+<!--== Content Part Header===-->
+<!-- Donation Summary and Fund Sharing-->
+<div class="container">
+  <div class="row" ng-show="showWarning">
+    <div class="col-md-12">
+      <div class="alert">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>Warning!</strong> Best check yo self, you're not looking too good.
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- //Donation Summary and Fund Sharing -->
+<!--== /Content Part Header ==-->
+<!--=== Content Part -Body ===-->
+<div class="container">
+
+  <div class="row">
+    <!--LEFT SECTION(BODY)-->
+
+    <div class="col-md-8">
+
+      <!-- Fund Donations  -->
+      <div class="row">
+        <div class="col-md-7 headline">
+          <h3>My Donations</h3>
+        </div>
+        <div class="col-md-5 margin-top-10">
+          <button type="button" class="btn btn-link" ng-click="openCreateDonation()">Add offline donation</button>
+        </div>
+      </div>
+
+      <div class="row" ng-hide="isLoading">
+        <div class="col-md-12">
+          <div class="thumbnail margin-bottom-10" ng-repeat="donation in fund.donationList | orderBy:'dateEntered':true">
+            <div class="row">
+              <div class="col-md-2 col-xs-offset-3 col-md-offset-0">
+                <img ng-src="/assets/img/mom_donor.jpg" />
+              </div>
+              <div class="col-md-10" ng-hide="donation.isUpdating">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h4 class="h4-donation">{{donation.donorName}} Donated:</h4>
+                  </div>
+                  <div class="col-md-6 ">
+                    <h4 class="h4-donation"><b>{{donation.beneficiaryAmount | currency}}</b></h4>
+                  </div>
+                </div>
+                <div class="row donation-message">
+                  <div class="col-md-12" ng-hide="donation.message.length === 0">
+                    <i>{{donation.message}}</i>
+                  </div>
+                  <div class="col-md-12" ng-show="donation.message.length === 0">
+                    <i>Comment Removed...</i>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12" ng-hide="donation.thankYouNoteSent">
+                    <button type="button" class="btn-u btn-u-small" ng-click="openThankYou(donation)"><i class="fa fa-envelope"></i> SEND THANK YOU</button>
+                  </div>
+                  <div class="col-md-12" ng-show="donation.thankYouNoteSent">
+                    <h4><i>Thank you note sent...</i></h4>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12" ng-hide="donation.isCommentDeleting || donation.isMakeAnonymous || donation.isDonationDeleting">
+                      <h6>
+                        Posted On: {{donation.dateEntered | date:short }}
+                        <button type="button" class="btn btn-sm btn-warning" ng-show="donation.message" ng-click="verifyDeleteComment(donation, true)">Remove Comment</button>
+                        <button type="button" class="btn btn-sm btn-warning" ng-hide="donation.isPrivate" ng-click="verifyMakeAnonymous(donation, true)">Anonymize</button>
+                        <button type="button" class="btn btn-sm btn-warning" ng-show="showDelete(donation.statusId)" ng-click="verifyDeleteDonation(donation, true)">Delete</button>
+                      </h6>
+                  </div>
+
+                  <div class="col-md-12" ng-show="donation.isCommentDeleting">
+                    <h6>
+                      Are you sure you want to delete comment?
+                      <button type="button" class="btn btn-sm btn-danger" ng-click="deleteComment(donation)">Yes</button>
+                      <button type="button" class="btn btn-sm btn-warning" ng-click="verifyDeleteComment(donation, false)">Cancel</button>
+                    </h6>
+                  </div>
+                  <div class="col-md-12" ng-show="donation.isMakeAnonymous">
+                    <h6>
+                      Are you sure you want to make anonymous?
+                      <b>Amount?:</b> <input type="checkbox" ng-model="donation.isPrivateAmount" title="Amount?" />
+                      <b>Name?:</b> <input type="checkbox" ng-model="donation.isPrivateDonorName" title="Name?" />
+                      <button type="button" class="btn btn-sm btn-danger" ng-click="makeAnonymous(donation)">Yes</button>
+                      <button type="button" class="btn btn-sm btn-warning" ng-click="verifyMakeAnonymous(donation, false)">Cancel</button>
+                    </h6>
+                  </div>
+                  <div class="col-md-12" ng-show="donation.isDonationDeleting">
+                    <h6>
+                      Are you sure you want to delete this donation?
+                      <button type="button" class="btn btn-sm btn-danger" ng-click="deleteDonation(donation)">Yes</button>
+                      <button type="button" class="btn btn-sm btn-warning" ng-click="verifyDeleteDonation(donation, false)">Cancel</button>
+                    </h6>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-9" ng-show="donation.isUpdating">
+                <md-spinner-bar-drctv />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div ng-show="isLoading">
+        <md-spinner-bar-drctv />
+      </div>
+    </div>
+
+
+    <!--/LEFT SECTION(BODY)-->
+
+    <!-- RIGHT SECTION -->
+    <div class="col-md-4">
+      <!-- Fund Features -->
+      <fd-dashboard-widgets-features-drctv fund="fund"></fd-dashboard-widgets-features-drctv>
+      <!-- /Fund Features -->
+
+    </div>
+    <!--/col-md-3-->
+
+  </div>
+  <!--/row-->
+
+</div>
+<!--/container-->
+<!--=== End Content Part - Body ===-->

@@ -1,0 +1,117 @@
+﻿<div class="header hidden-print" ng-cloak>
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container">
+      <!-- Topbar Navigation -->
+      <ul class="loginbar pull-right">
+
+
+        <li access-level="accessLevels.public"><a ui-sref="home.aboutus">About</a></li>
+        
+        <li access-level="accessLevels.user" class="topbar-devider" ng-show="hasWithdrawal"></li>
+        <li access-level="accessLevels.user" class="withdraw-nav" ng-show="hasWithdrawal"><a ui-sref="home.account.withdraw"><i class="fa fa-usd fa-spin"></i> Withdraw</a></li>
+
+
+        <li access-level="accessLevels.user" class="topbar-devider" ng-show="hasConditionalWithdrawal"></li>
+        <li access-level="accessLevels.user"
+            class="withdraw-nav-conditional"
+            ng-show="hasConditionalWithdrawal"
+            title="Pending: withdraw funds">
+          <a ui-sref="home.account.withdraw"><i class="fa fa-usd fa-spin"></i> Withdraw</a>
+        </li>
+
+        <li access-level="accessLevels.user" class="topbar-devider">&nbsp;</li>
+        <li access-level="accessLevels.user" active-nav>
+          <i class="fa fa-user"></i>
+          <a> {{user.firstName}} {{user.lastName}} </a>
+          <ul class="languages">
+            <li>
+              <a ui-sref="home.controlPanelList">My Campaigns</a>
+            </li>
+            <li>
+              <a ui-sref="home.account.overview">My Account</a>
+            </li>
+            <li>
+              <a ng-href="#" ng-click="logout()">Log off</a>
+            </li>
+          </ul>
+        </li>
+
+        <li access-level="accessLevels.anon" class="topbar-devider">&nbsp;</li>
+        <li access-level="accessLevels.anon"><a ui-sref="home.register">Connect/Register</a></li>
+
+        <li access-level="accessLevels.anon" class="topbar-devider">&nbsp;</li>
+        <li access-level="accessLevels.anon"><a ui-sref="home.login">Login</a></li>
+
+      </ul>
+      <!-- End Topbar Navigation -->
+    </div>
+  </div>
+  <!-- End Topbar -->
+  <!-- Navbar -->
+  <div class="navbar navbar-default mega-menu" role="navigation">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="fa fa-bars"></span>
+        </button>
+        <a class="navbar-brand" ui-sref="home.index">
+          <img id="logo-header" class="logo-header" src="/assets/img/banner150.png" alt="Logo">
+        </a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-responsive-collapse">
+        <ul class="nav navbar-nav">
+          <!-- Home -->
+          <li>
+            <a ui-sref="home.index">
+              Home
+            </a>
+          </li>
+          <!-- End Home -->
+          <!-- Create Fundraiser -->
+          <li>
+            <a ui-sref="home.controlPanelList">
+              Create
+            </a>
+          </li>
+          <!-- End Create -->
+
+          <!-- Find a Fundraiser -->
+          <li>
+            <a ui-sref="home.search">
+              Find a Fundraiser
+            </a>
+          </li>
+
+          <!-- Learn -->
+          <li>
+            <a ui-sref="home.learn">
+              Learn
+            </a>
+          </li>
+            <!-- End Learn -->
+        
+
+          <!-- Search Block -->
+          <li ng-controller="fdSearchMiniCtrl">
+            <i class="search fa fa-search search-btn"></i>
+            <div class="search-open" ng-form="searchForm">
+              <div class="input-group animated fadeInDown">
+                <input type="text" class="form-control" placeholder="By title or user" ng-model="searchText" required>
+                <span class="input-group-btn">
+                  <button class="btn-u" type="button" ng-click="goToSearch()">Go</button>
+                </span>
+              </div>
+            </div>
+          </li>
+          <!-- End Search Block -->
+        </ul>
+      </div><!--/navbar-collapse-->
+    </div>
+  </div>
+  <!-- End Navbar -->
+</div>

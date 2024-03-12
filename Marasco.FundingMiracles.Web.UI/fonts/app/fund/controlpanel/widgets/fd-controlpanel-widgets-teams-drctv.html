@@ -1,0 +1,67 @@
+﻿<div class="table-search-v1 margin-bottom-20">
+  <div class="panel panel-profile">
+    <div class="panel-heading overflow-h">
+      <h2 class="panel-title heading-sm pull-left"><i class="fa fa-cubes"></i>Teams</h2>
+      
+
+      <button class="btn btn-u btn-u-default pull-right" ng-click="viewAll()"
+              tooltip="View All Teams"
+              tooltip-trigger="mouseenter"
+              tooltip-placement="bottom">
+        <i class="fa fa-list "></i>
+      </button>
+      <button class="btn btn-u btn-u-default pull-right" title="Add Team" ng-click="openTeam()"
+              tooltip="Add Team"
+              tooltip-trigger="mouseenter"
+              tooltip-placement="bottom">
+        <i class="fa fa-plus "></i>
+      </button>
+
+    </div>
+  </div>
+  <div class="table-responsive" ng-hide="isLoading">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Team</th>
+          <th class="hidden-sm">Goal Amount</th>
+          <th>Progress</th>
+          <th width="125">Actions</th>
+          <th>Started</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="team in teams | orderBy:'dateEntered':true">
+          <td>
+            {{team.team.name}}
+          </td>
+          <td class="td-width">${{team.goalAmount | number}}</td>
+          <td>
+            <div class="progress progress-u progress-xxs">
+              <div class="progress-bar progress-bar-u" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" ng-style="getProgressPercentage(fundTeam.fund)">
+              </div>
+            </div>
+          </td>
+          <td>
+            
+              <button class="btn-u btn-u-green" ng-click="openTeamFund(team)" title="Manage team fund"><i class="fa fa-rocket"></i></button>
+              <button class="btn-u btn-u-red" ng-click="openTeam(team)" title="Edit Team info"><i class="fa fa-cube"></i></button>
+            
+          </td>
+          <td>
+            {{team.team.dateEntered | momentFrom}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div ng-show="isLoading">
+    <div class="row">
+      <div class="col-md-12 margin-top-10">
+        <div style="display:table ;margin: 0 auto;">
+          <md-spinner-bar-drctv spinner-type="barXSmall" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

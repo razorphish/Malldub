@@ -1,0 +1,71 @@
+﻿<!--=== Breadcrumbs ===-->
+<ac-dashboard-widgets-header-drctv headline="Social Connections" active-tab="Social"></ac-dashboard-widgets-header-drctv>
+<!--=== End Breadcrumbs ===-->
+
+<!-- Page Error Summary-->
+<div class="container">
+  <div class="row" ng-show="showWarning">
+    <div class="col-md-12">
+      <div class="alert alert-danger fadeIn">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>Warning!</strong> Best check yo self, you're not looking too good.
+      </div>
+    </div>
+  </div>
+</div>
+<!-- //Page Error Summary -->
+
+<!--=== Content Part -Body ===-->
+<div class="container">
+
+  <div class="row">
+
+    <!--LEFT SECTION(BODY)-->
+    <div class="col-md-8">
+      <!-- Page Header -->
+      <div class="row">
+        <div class="col-md-7 headline">
+          <h3>Social Connections</h3>
+          <div>
+            <h5 style="margin-top: 10px;">
+              <i>
+                Manage your social connections here
+              </i>
+            </h5>
+          </div>
+        </div>
+      </div>
+      <!-- /Page Header -->
+
+
+      <div class="row">
+        <div class="col-md-7 col-lg-7">
+          <ul class="fa-ul">
+            <li ng-repeat="provider in manageList.externalLoginProviders">
+              <i class="fa-li fa fa-{{provider.name | lowercase}} fa-2x"></i>
+              <h3>
+                {{provider.name}}
+                <!--<button type="button" class="btn btn-u btn-u-lg" ng-click="removeConnection(provider.name)"><i class="fa fa-cut"></i> Remove</button>-->
+              </h3>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+
+      <div ng-show="isLoading">
+        <md-spinner-bar-drctv />
+      </div>
+    </div>
+    <!--/LEFT SECTION(BODY)-->
+    <!-- RIGHT SECTION -->
+    <div class="col-md-4">
+      <ac-dashboard-widgets-manage-drctv></ac-dashboard-widgets-manage-drctv>
+    </div>
+    <!-- /RIGHT SECTION -->
+
+  </div><!--/row-->
+
+</div><!--/container-->
+<!--=== End Content Part - Body ===-->

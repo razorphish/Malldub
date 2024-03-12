@@ -1,0 +1,61 @@
+﻿<div class="modal-body donate-modal">
+  <div ng-form="fundEditAmountForm">
+    <div class="donate-form">
+      <div class="donate-fund ">
+
+        <div class="row">
+          <div class="col-lg-9 col-md-8 col-xs-8">
+            <div class="headline">
+              <h3>Goal Amount</h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-xs-4 text-right">
+            <button class="btn btn-lg btn-default" ng-click="close('cancel')"><i class="fa fa-times"></i></button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="headline">
+              <h5 style="margin-top: 10px;">
+                <i>
+                  Any amount that is raised by your campaign is yours to keep.  The goal amount fulfills your need and we understand 
+                  that any little bit helps.
+                </i>
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="row box">
+          <div class="col-md-12 shopping-cart">
+            <div class="billing-info-inputs">
+
+              <div class="product-quantity sm-margin-bottom-20">
+                <button type="button" class="quantity-button"><i class="fa fa-dollar"></i></button>
+                <input class="dollar-field-med" id="goalAmount" name="goalAmount" ng-change="resetAmount()" ng-model="goalAmount" type="number" min="50" va-whole-number-drctv required placeholder="Goal" />
+              </div>
+              
+              <span class="color-red" ng-show="showValidationMessages && fundEditAmountForm.goalAmount.$error.required">
+                <strong>Please enter your goal target</strong>
+              </span>
+
+              <span class="color-red" ng-show="showValidationMessages && fundEditAmountForm.goalAmount.$error.min && !fundEditAmountForm.goalAmount.$error.number">
+                <strong>Goal amount must be greater than $50.00</strong>
+              </span>
+
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div ng-hide="isSaving">
+              <button class="btn-u btn-u-lg btn-block" ng-click="save()"><i class="fa fa-check"></i> Save</button>
+            </div>
+            <div ng-show="isSaving">
+              <md-spinner-bar-drctv  />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

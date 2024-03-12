@@ -1,0 +1,45 @@
+﻿<div ng-form="beneficiaryForm">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- Page Error Summary-->
+      <md-alert-drctv title="{{title}}" message="{{message}}" alert-type="{{alertType}}" fade="fadeIn" show-alert="{{showAlertBeneSummary}}"></md-alert-drctv>
+      <!-- //Page Error Summary -->
+    </div>
+  </div>
+
+
+  <!--Headline-->
+  <div class="headline">
+    <h3>Beneficiary Summary</h3>
+    <div>
+      <h5 style="margin-top: 10px;">
+        <i>
+          The beneficiary has been set for this fund. 
+        </i>
+      </h5>
+    </div>
+  </div>
+  
+  <div class="tag-box tag-box-v4">
+    <h2>Beneficiary Information:</h2>
+    <ul class="list-unstyled">
+      <li><strong>Name:</strong> {{fundUser.aspNetUser.firstName}} {{fundUser.aspNetUser.lastName}}</li>
+      <li><i class="fa fa-home"></i> {{fundUser.aspNetUser.userAddressList[0].address.address1}}, {{fundUser.aspNetUser.userAddressList[0].address.city}}, {{selectedState}} {{fundUser.aspNetUser.userAddressList[0].address.zipCode}}</li>
+      <li><i class="fa fa-envelope"></i> {{fundUser.aspNetUser.userEmailList[0].email.address}}</li>
+      <li><i class="fa fa-phone"></i> {{fundUser.aspNetUser.userPhoneList[0].phone.number}}</li>
+    </ul>
+  </div>
+
+
+  <div class="actions" ng-hide="isSaving">
+    <div>
+
+    </div>
+  </div>
+
+  <div class="actions" ng-show="isSaving">
+    <div>
+      <md-spinner-bar-drctv />
+    </div>
+  </div>
+</div>

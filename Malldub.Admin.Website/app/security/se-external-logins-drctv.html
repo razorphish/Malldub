@@ -1,0 +1,15 @@
+﻿<div class="social-login center">
+  <div ng-hide="isLoading || isAuthenticating">
+    <a ng-repeat="et in externalLogins | orderBy:'sortOrder'" ng-class="et.headerClass" ng-click="externalLogin(et.name, et.url)">
+      <i class="icon-{{et.name | lowercase}}"></i>
+    </a>
+  </div>
+  <div ng-show="isLoading">
+    <div class="headline"><h3>Loading Service Providers..</h3></div>
+    <md-spinner-bar-drctv />
+  </div>
+  <div ng-show="isAuthenticating">
+    <div class="headline"><h3>Authenticating..</h3></div>
+    <md-spinner-bar-drctv />
+  </div>
+</div>

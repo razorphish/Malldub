@@ -1,0 +1,82 @@
+﻿<div ng-form="organizerForm" class="span9">
+    <!--Headline-->
+  <div class="headline">
+    <h3>Edit Organizer Info</h3>
+    <div>
+      <h5 style="margin-top: 10px;"><i>Provide organizer information to expand your network
+      </i></h5>
+    </div>
+  </div>
+  
+  <!-- Organizer First Name -->
+  <div class="control-group">
+    <label class="control-label" for="organizerFirstName">First Name</label>
+
+    <div class="controls row">
+      <div ng-class="{col-md-6: !isUpdating, col-md-8: isUpdating}">
+        <input class="col-md-10 bloat" id="organizerFirstName" name="organizerFirstName" type="text" ng-model="fund.organizer.firstName" required placeholder="First Name">
+      </div>
+      <div class="alert alert-error col-md-4" ng-show="organizerForm.organizerFirstName.$dirty && organizerForm.organizerFirstName.$error.required">
+        <strong>First Name is Required</strong>
+      </div>
+    </div>
+  </div>
+  <!--/Organizer First Name -->
+  
+  <!-- Organizer Last Name -->
+  <div class="control-group">
+    <label class="control-label" for="organizerLastName">Last Name</label>
+    <div class="controls row">
+      <div ng-class="{col-md-6: !isUpdating, col-md-8: isUpdating}">
+        <input class="col-md-10 bloat" id="organizerLastName" name="organizerLastName" type="text" ng-model="fund.organizer.lastName" required placeholder="Last Name">
+      </div>
+      <div class="alert alert-error col-md-4" ng-show="organizerForm.organizerLastName.$dirty && organizerForm.organizerLastName.$error.required">
+        <strong>Last Name is Required</strong>
+      </div>
+    </div>
+  </div>
+  <!-- /Organizer Last Name-->
+  
+  <!-- Organizer Address-->
+  <div class="control-group">
+    <label class="control-label" for="organizerAddress">Address</label>
+    <div class="controls row">
+      <input class="col-md-4" id="organizerAddress" name="organizerAddress" type="text" ng-model="fund.organizer.address" required>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="organizerCity">City</label>
+    <div class="controls row">
+      <input class="col-md-2" id="organizerCity" name="organizerCity" type="text" ng-model="fund.organizer.city" required>
+      <input class="col-md-1" id="organizerState" name="organizerState" type="text" ng-model="fund.organizer.state" required>
+      <input class="col-md-2" id="organizerZip" name="organizerZip" type="text" ng-model="fund.organizer.zip" required>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="organizerPhone">Phone</label>
+    <div class="controls row">
+      <input class="col-md-3" id="organizerPhone" name="organizerPhone" type="text" ng-model="fund.organizer.phone" required>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="organizerRelationship">Relationship</label>
+    <div class="controls row">
+      <input class="col-md-3" id="organizerRelationship" name="organizerRelationship" type="text" ng-model="fund.organizer.relationship" required>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" for="organizerBirthDate">Birth Date</label>
+    <div class="controls row">
+      <input class="col-md-3" id="organizerBirthDate" name="organizerBirthDate" type="text" ng-model="fund.organizer.birthDate" required>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button type="button" class="btn btn-prev" id="btnWizardPrev" ng-click="step=1"> <i class="fa fa-arrow-left"></i>Previous</button>
+    <button type="button" class="btn btn-success btn-next" ng-disabled="!step2form.$valid" ng-click="step = 3">Continue<i class="fa fa-arrow-right"></i></button>
+  </div>
+</div>

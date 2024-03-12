@@ -1,0 +1,135 @@
+<div class="modal-header">
+  <button type="button" class="close" ng-click="vm.close()">&times;</button>
+  <h3 class="modal-title" ng-show="!vm.isAdd">Edit Image - {{itemUpload.uploadId}}</h3>
+  <h3 class="modal-title" ng-show="vm.isAdd">Add Image</h3>
+</div>
+<div class="modal-body">
+  <div class="form-horizontal" ng-form="vm.fundraiserUploadForm">
+    <div class="row" ng-show="!vm.isAdd">
+      <label class="col-sm-2 col-md-1 col-lg-1">Description</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <label>{{itemUpload.upload.description}}</label>
+      </div>
+      <label class="col-sm-2 col-md-1 col-lg-1">Category</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <label>{{itemUpload.upload.categoryId}}</label>
+      </div>
+      <label class="col-sm-2 col-md-1 col-lg-1">Content Length</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <label>{{itemUpload.upload.contentLength}}</label>
+      </div>
+      <label class="col-sm-2 col-md-1 col-lg-1">Content Type</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <label>{{itemUpload.upload.contentType}}</label>
+      </div>
+    </div>
+    <div class="space-2" ng-show="!vm.isAdd"></div>
+    <div class="row" ng-show="!vm.isAdd">
+      <label class="col-sm-2 col-md-1 col-lg-1">Private?</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <switch tabindex="4" ng-model="itemUpload.upload.isPrivate" ng-true-value="true" ng-false-value="false"></switch>
+      </div>
+      <label class="col-sm-2 col-md-1 col-lg-1">Default?</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <switch tabindex="4" ng-model="itemUpload.isDefault" ng-true-value="true" ng-false-value="false"></switch>
+      </div>
+      <div class="space-2 hidden-lg hidden-md hidden-xs"></div>
+      <label class="col-sm-2 col-md-1 col-lg-1">Original Name</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <label>{{itemUpload.upload.originalFileName}}</label>
+      </div>
+      <label class="col-sm-2 col-md-1 col-lg-1">Relative</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <label>{{itemUpload.upload.relativeLocation}}</label>
+      </div>
+    </div>
+    <div class="space-2" ng-show="!vm.isAdd"></div>
+    <div class="row" ng-show="!vm.isAdd">
+      <label class="col-sm-2 col-md-1 col-lg-1">Location</label>
+      <div class="col-sm-4 col-md-5 col-lg-5" ng-class="{'has-error': vm.showValidationMessages && vm.fundraiserUploadForm.categoryId.$error.required }">
+        <label>{{itemUpload.upload.location}}</label>
+      </div>
+
+      <label class="col-sm-2 col-md-1 col-lg-1" ng-show="!vm.isAdd">Date Updated</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <label ng-show="!vm.isAdd">{{itemUpload.upload.dateUpdated|date:'MM/dd/yyyy h:mm:ss a'}}</label>
+      </div>
+      <label class="col-sm-2 col-md-1 col-lg-1" ng-show="!vm.isAdd">Date Created</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <label ng-show="!vm.isAdd">{{itemUpload.upload.dateEntered|date:'MM/dd/yyyy h:mm:ss a'}}</label>
+      </div>
+    </div>
+    <div class="space-2" ng-show="!vm.isAdd"></div>
+    <div class="row" ng-show="!vm.isAdd">
+      <label class="col-sm-2 col-md-1 col-lg-1">Order</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <label uib-tooltip="Change order on image list screen">{{itemUpload.sortOrder}}</label>
+      </div>
+      <label class="col-sm-2 col-md-1 col-lg-1"></label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+
+      </div>
+      <div class="space-2 hidden-lg hidden-md hidden-xs"></div>
+      <label class="col-sm-2 col-md-1 col-lg-1"></label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+
+      </div>
+      <label class="col-sm-2 col-md-1 col-lg-1"></label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+
+      </div>
+    </div>
+    <!--<div class="space-2"></div>
+    <div class="row">
+      <div class="col-xs-12 align-right">
+
+        </button> &nbsp; &nbsp;
+        <button tabindex="9" class="btn btn-sm btn-primary" type="button" ng-click="vm.saveFundraiser()" ng-disabled="vm.isSaving">
+          <i class="ace-icon fa" ng-class="{'fa-spinner fa-spin': vm.isSaving, 'fa-save': !vm.isSaving}"></i>
+          Save
+        </button> &nbsp; &nbsp;
+        <button tabindex="10" class="btn btn-sm btn-primary" type="button" ng-click="vm.close()">
+          <i class="ace-icon fa fa-close bigger-110"></i>
+          Close
+        </button>
+      </div>
+    </div>-->
+    <div class="space-2" ng-show="vm.isAdd"></div>
+    <div class="row" ng-show="vm.isAdd">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+            <button ngf-select
+                      ngf-change="vm.uploads($files)"
+                      class=" btn btn-lg btn-block"
+                      accept="image/*"
+                      ng-model="newUploads"
+                      ng-multiple="true">
+                <i class="fa fa-cloud-upload"></i>
+                Add Image
+              </button>
+      </div>
+    </div>
+
+    <div class="space-2" ng-show="!vm.isAdd"></div>
+    <div class="row" ng-show="!vm.isAdd">
+      <div class="col-xs-12">
+        <uib-tabset active="active">
+          <uib-tab index="0" uib-tooltip="Media">
+            <uib-tab-heading>
+              <i class="fa fa-info"></i> <span class="hidden-xs hidden-sm">Image</span>
+            </uib-tab-heading>
+            <ul class="ace-thumbnails clearfix">
+              <li>
+                <img src="{{itemUpload.upload.locationHttp}}" width="300"/>
+                <div class="text">
+                  <div class="inner">
+                    <span>{{itemUpload.upload.name}}</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </uib-tab>
+        </uib-tabset>
+      </div>
+    </div>
+  </div>
+</div>

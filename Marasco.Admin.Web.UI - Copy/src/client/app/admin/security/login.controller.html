@@ -1,0 +1,96 @@
+<div class="main-container">
+    <div class="main-content">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <div class="login-container" ng-form="vm.loginForm" ui-keypress="{13:'login($event)'}">
+                    <div class="center">
+                        <h1>
+                            <img class="headerLogo" src="/images/admin/Administrative_Tools_Transparent.png" alt="Owner Loyalty Configuration Admin">
+                            <span class="red">admin</span>
+                            <!--<span class="white" id="id-text2">Admin</span>-->
+                        </h1>
+                        <h4 class="blue" id="id-company-text">&copy; Maras,co</h4>
+                    </div>
+                    <div class="space-6"></div>
+                    <div class="position-relative">
+                        <div id="login-box" class="login-box visible widget-box no-border">
+                            <div class="widget-body">
+                                <div class="widget-main">
+                                    <h4 class="header blue lighter bigger">
+                                        <i class="ace-icon fa fa-smile-o green"></i> Please Enter Your Information
+                                    </h4>
+                                    <div class="space-6"></div>
+                                    <fieldset>
+                                        <div class="form-group" ng-class="{'has-error': vm.showValidationMessages && loginForm.userName.$error.required}">
+                                            <label class="block clearfix">
+                                            <span class="block input-icon input-icon-right">
+                                            <input type="text" class="form-control" placeholder="Username" ng-model="vm.user.userName" ng-required="true" name="userName" autofocus/>
+                                            <i class="ace-icon fa"
+                                                ng-class="{'fa-times-circle': vm.showValidationMessages && loginForm.userName.$error.required,
+                                                'fa-user': true}"></i>
+                                            </span>
+                                            </label>
+                                        </div>
+                                        <div class="form-group" ng-class="{'has-error': vm.showValidationMessages && loginForm.password.$error.required}">
+                                            <label class="block clearfix">
+                                            <span class="block input-icon input-icon-right">
+                                            <input name="password" type="password" class="form-control" placeholder="Password" ng-model="vm.user.password" ng-required="true" />
+                                            <i class="ace-icon fa"
+                                                ng-class="{'fa-times-circle': vm.showValidationMessages && loginForm.password.$error.required,
+                                                'fa-lock': true}"></i>
+                                            </span>
+                                            </label>
+                                        </div>
+                                        <div class="space"></div>
+                                        <div class="clearfix">
+                                            <label class="inline">
+                                            <input type="checkbox" class="ace" ng-model="vm.rememberMe" ng-change="vm.togglePersistence()" />
+                                            <span class="lbl"> Remember Me</span>
+                                            </label>
+                                            <button type="button" class="width-35 pull-right btn btn-sm btn-primary" ng-click="vm.login()" ng-disabled="vm.isLoggingIn">
+                                            <i class="ace-icon fa" ng-class="{'fa-spinner fa-spin': vm.isLoggingIn , 'fa-key': !vm.isLoggingIn }"></i>
+                                            <span class="bigger-110">Login</span>
+                                            </button>
+                                        </div>
+                                        <div class="space-4"></div>
+                                    </fieldset>
+                                    <div class="space-6"></div>
+                                    <div class="social-login center">
+                                    </div>
+                                </div>
+                                <!-- /.widget-main -->
+                                <div class="toolbar clearfix">
+                                    <div>
+                                        <a ui-sref="forgotPassword" class="forgot-password-link">
+                                            <i class="ace-icon fa fa-arrow-left"></i> I forgot my password
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a ui-sref="register" class="user-signup-link">
+                                        I want to register
+                                        <i class="ace-icon fa fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.widget-body -->
+                        </div>
+                        <!-- /.login-box -->
+                    </div>
+                    <!-- /.position-relative -->
+                </div>
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+        <div ngplus-overlay ngplus-overlay-delay-in="50" ngplus-overlay-delay-out="700" ngplus-overlay-animation="dissolve-animation">
+                    <div style="background-color: #555555; position: fixed;
+            width: 100%; z-index: 10060; height: 100%; top: 0; left: 0; opacity: 0.5; filter: alpha(opacity=50);">
+                    </div>
+                    <img id="loadingImage" src="images/ajax-loader1.gif" style="z-index: 10005; top: 50%; position: fixed; left: 50%;" />
+                </div>
+    </div>
+    <!-- /.main-content -->
+</div>
+<!-- /.main-container -->
+<!-- basic scripts -->

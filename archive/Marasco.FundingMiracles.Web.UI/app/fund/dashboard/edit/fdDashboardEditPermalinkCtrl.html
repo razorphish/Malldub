@@ -1,0 +1,44 @@
+﻿<div ng-form="permalinkForm">
+
+  <!--Headline-->
+  <div class="headline">
+    <h3>Customize your Page Link?</h3>
+    <div>
+      <h5 style="margin-top: 10px;"><i>REMEMBER:  Its very important not to change your custom link often so you don't confuse your donors.  Have peace of mind as we 
+        will always keep your original.
+      </i></h5>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-8">
+      <!--Fundraiser Permalink-->
+      <fd-widgets-permalink-drctv form="permalinkForm" permalink="fund.item.permalink"></fd-widgets-permalink-drctv>
+      <!--/Fundraiser Permalink-->
+
+      <!--Headline-->
+      <div class="headline">
+        <h3>Take a peek!</h3>
+        <div>
+          <h5 style="margin-top: 10px;"><i>Your page link will be <b>http://www.fundingmiracles.com/{{fund.item.permalink}}</b>
+                                        </i></h5>
+        </div>
+      </div>
+      <!--Headline-->
+
+      <div ng-hide="isSaving">
+        <div>
+          <button type="button" class="btn-u btn-u-lg" ng-click="SaveFund(permalinkForm)"><i class="fa fa-check"></i> Save</button>
+        </div>
+      </div>
+
+      <div class="actions" ng-show="isSaving">
+        <div class="control-group">
+          <div class="controls">
+            <md-spinner-bar-drctv />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

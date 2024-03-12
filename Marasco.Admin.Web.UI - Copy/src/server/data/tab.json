@@ -1,0 +1,65 @@
+[
+  {
+    "tabSetName": "fundraiser",
+    "heading": "Uploads",
+    "active": "false",
+    "template": "app/admin/fundolo/fundraiser/uploads/uploads.controller.html",
+    "icon": "file-image-o",
+    "tooltip": "Fundraiser uploads",
+    "index": "9"
+  },
+  {
+    "tabSetName": "fundraiser",
+    "heading": "Donations",
+    "active": "false",
+    "template": "app/admin/fundolo/fundraiser/donations/donations.controller.html",
+    "icon": "heart",
+    "tooltip": "Donations",
+    "index": "10"
+  },
+  {
+    "tabSetName": "fundraiser",
+    "heading": "Activity",
+    "active": "false",
+    "template": "app/admin/fundolo/fundraiser/activity/activity.controller.html",
+    "icon": "history",
+    "tooltip": "Activity",
+    "index": "20"
+  },
+  {
+    "tabSetName": "fundraiserDonation",
+    "heading": "Order",
+    "active": "false",
+    "template": "app/admin/fundolo/fundraiser/donations/order.controller.html",
+    "icon": "history",
+    "tooltip": "Order Info",
+    "index": "0"
+  },
+  {
+    "tabSetName": "fundraiserDonation",
+    "heading": "User",
+    "active": "false",
+    "template": "app/admin/fundolo/fundraiser/donations/user.controller.html",
+    "icon": "user",
+    "tooltip": "User Info",
+    "index": "10"
+  },
+  {
+    "tabSetName": "fundraiserDonation",
+    "heading": "Comment",
+    "active": "false",
+    "template": "app/admin/fundolo/fundraiser/donations/comment.controller.html",
+    "icon": "microphone",
+    "tooltip": "Comment",
+    "index": "20"
+  },
+  {
+    "tabSetName": "fundraiserDonation",
+    "heading": "Notes",
+    "active": "false",
+    "template": "app/admin/fundolo/fundraiser/donations/note.controller.html",
+    "icon": "paper-plane",
+    "tooltip": "Notes",
+    "index": "30"
+  }
+]

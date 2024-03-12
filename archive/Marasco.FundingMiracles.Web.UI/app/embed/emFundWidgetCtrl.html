@@ -1,0 +1,98 @@
+﻿<style>
+  html, body {
+    margin: 0;
+    text-align: center;
+    background: transparent;
+  }
+
+  .campaign-card {
+    margin: auto;
+    width: 275px;
+    background: #fff;
+  }
+
+  .fundCardHeader h1 {
+    margin: 0 0 15px;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+
+  .bg-light .fundCardHeader {
+    border-bottom: solid 1px #e5e5e5;
+  }
+
+  .campaign-card a {
+    text-decoration: none;
+  }
+
+  a img {
+    border: 0;
+  }
+</style>
+<div id="widget" ng-hide="isLoading">
+  <div class="campaign-card">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="bg-light">
+          <div class="row">
+            <div class="col-md-12 fundCardHeader">
+              <h1><b>{{fund.item.title}}</b></h1>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-12">
+              <a href ng-click="donate()">
+                <img ng-src="/assets/img/250b.png" width="200px" />
+              </a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class=" product-description-brd">
+              <div class="progress" style="height: 37px; margin-bottom: 0">
+                <div class="progress-bar pull-left" ng-style="fund.progressPercentage"></div>
+              </div>
+              <div class="row" style="margin: -33px 10px 10px 10px;">
+                <div class="span6">
+                  <div class="progress-amount-sm-left">
+                    <div>
+                      <i class="fa fa-heart"></i> ${{fund.totalDonation| number: 0}} Raised
+                    </div>
+                  </div>
+                </div>
+                <div class="span6">
+                  <div class="progress-amount-sm-right" title="goal">
+                    <div class="meme">
+                      <i class="fa fa-trophy"></i> ${{fund.goalAmount | number: 0}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+          
+        <div class="row">
+          <div class="col-md-12">
+            <button class="btn-u btn-u-lg btn btn-block" ng-click="donate()"><i class="fa fa-heart-o"></i> DONATE!</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="campaign-card" ng-show="isLoading">
+  <div class="row">
+    <div class="col-md-12">
+      <md-spinner-bar-drctv />
+    </div>
+  </div>
+</div>

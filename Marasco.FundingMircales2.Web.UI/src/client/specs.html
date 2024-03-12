@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <title>gulp</title>
+
+    <style>
+        body {
+            font: 20px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+            padding-left: 20px;
+        }
+    </style>
+
+    <!--BEWARE of using any app styles as @media can screw up tests -->
+
+    <link rel="stylesheet" href="node_modules/mocha/mocha.css">
+
+</head>
+<body>
+
+<h1><a href="specs.html">Spec Runner</a></h1>
+<p><strong>Make sure the REMOTE server is running</strong><br/>
+    Click on a <em>description title</em> to narrow the scope to just its specs
+    (see "<a href="http://mochajs.github.io/mocha/#grep-option" target="_blank" title="MochaJS grep option">
+        ?grep</a>" in address bar).<br/>
+    Click on a <em>spec title</em> to see the test implementation.<br/>
+    Click on <em>page title</em> to start over.
+</p>
+
+<div id="mocha"></div>
+
+    <!-- inject:testlibraries:js -->
+    <script src="/node_modules/mocha/mocha.js"></script>
+    <script src="/node_modules/chai/chai.js"></script>
+    <script src="/node_modules/mocha-clean/index.js"></script>
+    <script src="/node_modules/sinon-chai/lib/sinon-chai.js"></script>
+    <!-- endinject -->
+
+    <script>
+        expect = chai.expect;
+        AssertionError = chai.AssertionError;
+        mocha.setup('bdd');
+        mocha.traceIgnores = ['mocha.js', 'chai.js', 'angular.js'];
+    </script>
+
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/bower_components/extras.angular.plus/ngplus-overlay.js"></script>
+    <script src="/bower_components/moment/moment.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="/bower_components/toastr/toastr.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/api-check/dist/api-check.js"></script>
+    <script src="/bower_components/angular-resource/angular-resource.js"></script>
+    <script src="/bower_components/angular-formly/dist/formly.js"></script>
+    <script src="/bower_components/angular-formly-templates-bootstrap/dist/angular-formly-templates-bootstrap.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="/bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="/bower_components/isteven-angular-multiselect/isteven-multi-select.js"></script>
+    <script src="/bower_components/jquery-timepicker-jt/jquery.timepicker.js"></script>
+    <script src="/bower_components/angular-jquery-timepicker/src/timepickerdirective.js"></script>
+    <script src="/bower_components/angular-mocks/angular-mocks.js"></script>
+    <script src="/bower_components/sinon/index.js"></script>
+    <script src="/bower_components/bardjs/dist/bard.js"></script>
+    <script src="/bower_components/bardjs/dist/bard-ngRouteTester.js"></script>
+    <!-- endbower -->
+
+    <!-- inject:js -->
+    <script src="/src/client/app/app.module.js"></script>
+    <script src="/src/client/app/acs/acs.module.js"></script>
+    <script src="/src/client/app/campaignadmin/campadmin.module.js"></script>
+    <script src="/src/client/app/dashboard/dashboard.module.js"></script>
+    <script src="/src/client/app/core/core.module.js"></script>
+    <script src="/src/client/app/layout/layout.module.js"></script>
+    <script src="/src/client/app/we20/we20.module.js"></script>
+    <script src="/src/client/app/widgets/widgets.module.js"></script>
+    <script src="/src/client/app/blocks/exception/exception.module.js"></script>
+    <script src="/src/client/app/blocks/logger/logger.module.js"></script>
+    <script src="/src/client/app/blocks/router/router.module.js"></script>
+    <script src="/src/client/app/acs/acs.route.js"></script>
+    <script src="/src/client/app/campaignadmin/campadmin.route.js"></script>
+    <script src="/src/client/app/dashboard/dashboard.controller.js"></script>
+    <script src="/src/client/app/dashboard/dashboard.route.js"></script>
+    <script src="/src/client/app/core/ace.js"></script>
+    <script src="/src/client/app/core/config.js"></script>
+    <script src="/src/client/app/core/constants.js"></script>
+    <script src="/src/client/app/core/core.route.js"></script>
+    <script src="/src/client/app/core/dataservice.js"></script>
+    <script src="/src/client/app/layout/footer.controller.js"></script>
+    <script src="/src/client/app/layout/ht-footer.directive.js"></script>
+    <script src="/src/client/app/layout/ht-headerbar-directive.js"></script>
+    <script src="/src/client/app/layout/ht-sidebar.directive.js"></script>
+    <script src="/src/client/app/layout/ht-top-nav.directive.js"></script>
+    <script src="/src/client/app/layout/shell.controller.js"></script>
+    <script src="/src/client/app/layout/sidebar.controller.js"></script>
+    <script src="/src/client/app/we20/we20.controller.js"></script>
+    <script src="/src/client/app/we20/we20.route.js"></script>
+    <script src="/src/client/app/widgets/ht-img-person.directive.js"></script>
+    <script src="/src/client/app/widgets/ht-widget-header.directive.js"></script>
+    <script src="/src/client/app/acs/acs_views/ep-scheduler-drctv-mdl.js"></script>
+    <script src="/src/client/app/acs/acs_views/ep-scheduler-drctv-tpl.js"></script>
+    <script src="/src/client/app/acs/acs_views/ep-scheduler-drctv.js"></script>
+    <script src="/src/client/app/acs/acs_views/epActivityLog.js"></script>
+    <script src="/src/client/app/acs/acs_views/epAppMainCtrl.js"></script>
+    <script src="/src/client/app/acs/acs_views/epCouponLibrary.js"></script>
+    <script src="/src/client/app/acs/acs_views/epFrameCtrl.js"></script>
+    <script src="/src/client/app/acs/acs_views/epNewCtrl.js"></script>
+    <script src="/src/client/app/acs/acs_views/epSubmitErrorMdl.js"></script>
+    <script src="/src/client/app/acs/acs_views/epViewCtrl.js"></script>
+    <script src="/src/client/app/acs/config/epAppConfig.js"></script>
+    <script src="/src/client/app/acs/common/commonCtrl.js"></script>
+    <script src="/src/client/app/acs/common/confirmationMdl.js"></script>
+    <script src="/src/client/app/acs/common/loadingMdlCtrl.js"></script>
+    <script src="/src/client/app/acs/common/loggingAce.js"></script>
+    <script src="/src/client/app/acs/common/popupCtrl.js"></script>
+    <script src="/src/client/app/acs/directives/drctDate.js"></script>
+    <script src="/src/client/app/acs/directives/epUnique.js"></script>
+    <script src="/src/client/app/acs/constants/schedulerConstants.js"></script>
+    <script src="/src/client/app/acs/factory/epSchedulerFcty.js"></script>
+    <script src="/src/client/app/acs/factory/epUserFcty.js"></script>
+    <script src="/src/client/app/acs/providers/epSchedulerProvider.js"></script>
+    <script src="/src/client/app/acs/shared/ep-footer-drctv.js"></script>
+    <script src="/src/client/app/acs/shared/ep-header-drctv.js"></script>
+    <script src="/src/client/app/acs/shared/ep-sidemenu-drctv.js"></script>
+    <script src="/src/client/app/acs/run/epRun.js"></script>
+    <script src="/src/client/app/acs/account/epLogout.js"></script>
+    <script src="/src/client/app/blocks/exception/exception-handler.provider.js"></script>
+    <script src="/src/client/app/blocks/exception/exception.js"></script>
+    <script src="/src/client/app/blocks/logger/logger.js"></script>
+    <script src="/src/client/app/blocks/router/router-helper.provider.js"></script>
+    <script src="/src/client/app/campaignadmin/campaign_pages/campaignenroll.controller.js"></script>
+    <script src="/src/client/app/campaignadmin/campaign_pages/campaignlist.controller.js"></script>
+    <script src="/src/client/app/we20/activityHistory/activityHistory.controller.js"></script>
+    <script src="/src/client/app/we20/contactInformation/addContactInformation.controller.js"></script>
+    <script src="/src/client/app/we20/contactInformation/contactInformation.controller.js"></script>
+    <script src="/src/client/app/acs/values/eplSettingsVal.js"></script>
+    <script src="/src/client/app/we20/factory/epSchedulerWeFcty.js"></script>
+    <script src="/src/client/app/we20/submitAuthorization/submitAuthorization.controller.js"></script>
+    <script src="/src/client/app/we20/mailSetup/mailSetup.controller.js"></script>
+    <script src="/src/client/app/we20/profile/profile.controller.js"></script>
+    <script src="/src/client/app/we20/enrollmentSummary/enrollmentSummary.controller.js"></script>
+    <script src="/src/client/libraries/angular-chosen.js"></script>
+    <script src="/src/client/libraries/chosen.jquery.js"></script>
+    <script src="/src/client/libraries/ep.formly.js"></script>
+    <script src="/src/client/libraries/ng-ckeditor.js"></script>
+    <script src="/src/client/libraries/ngPrint.js"></script>
+    <script src="/src/client/libraries/pace.js"></script>
+    <script src="/src/client/libraries/ui-grid-unstable.js"></script>
+    <script src="/src/client/libraries/ace/ace-extra.js"></script>
+    <script src="/src/client/libraries/ace/ace.ajax-content.js"></script>
+    <script src="/src/client/libraries/ace/ace.js"></script>
+    <script src="/src/client/libraries/ace/ace.searchbox-autocomplete.js"></script>
+    <script src="/src/client/libraries/ace/ace.settings-rtl.js"></script>
+    <script src="/src/client/libraries/ace/ace.settings-skin.js"></script>
+    <script src="/src/client/libraries/ace/ace.settings.js"></script>
+    <script src="/src/client/libraries/ace/ace.sidebar-scroll-1.js"></script>
+    <script src="/src/client/libraries/ace/ace.sidebar.js"></script>
+    <script src="/src/client/libraries/ace/ace.submenu-hover.js"></script>
+    <script src="/src/client/libraries/ace/ace.touch-drag.js"></script>
+    <script src="/src/client/libraries/ace/ace.widget-box.js"></script>
+    <script src="/src/client/libraries/ace/ace.widget-on-reload.js"></script>
+    <script src="/src/client/libraries/ace/elements.aside.js"></script>
+    <script src="/src/client/libraries/ace/elements.colorpicker.js"></script>
+    <script src="/src/client/libraries/ace/elements.fileinput.js"></script>
+    <script src="/src/client/libraries/ace/elements.scroller.js"></script>
+    <script src="/src/client/libraries/ace/elements.spinner.js"></script>
+    <script src="/src/client/libraries/ace/elements.treeview.js"></script>
+    <script src="/src/client/libraries/ace/elements.typeahead.js"></script>
+    <script src="/src/client/libraries/ace/elements.wizard.js"></script>
+    <script src="/src/client/libraries/ace/elements.wysiwyg.js"></script>
+    <!-- endinject -->
+
+    <!-- inject:spechelpers:js -->
+    <script src="/src/client/test-helpers/bind-polyfill.js"></script>
+    <script src="/src/client/test-helpers/mock-data.js"></script>
+    <!-- endinject -->
+
+    <!-- inject:specs:js -->
+    <script src="/src/client/app/dashboard/dashboard.controller.spec.js"></script>
+    <script src="/src/client/app/dashboard/dashboard.route.spec.js"></script>
+    <script src="/src/client/app/core/dataservice.spec.js"></script>
+    <script src="/src/client/app/layout/ht-sidebar.directive.spec.js"></script>
+    <script src="/src/client/app/layout/shell.controller.spec.js"></script>
+    <script src="/src/client/app/layout/sidebar.controller.spec.js"></script>
+    <script src="/src/client/app/we20/we20.controller.spec.js"></script>
+    <script src="/src/client/app/we20/we20.route.spec.js"></script>
+    <script src="/src/client/app/blocks/exception/exception-handler.provider.spec.js"></script>
+    <script src="/src/client/app/we20/activityHistory/activityHistory.controller.spec.js"></script>
+    <script src="/src/client/app/we20/contactInformation/contactInformation.controller.spec.js"></script>
+    <script src="/src/client/app/we20/submitAuthorization/submitAuthorization.controller.spec.js"></script>
+    <script src="/src/client/app/we20/mailSetup/mailSetup.controller.spec.js"></script>
+    <script src="/src/client/app/we20/profile/profile.controller.spec.js"></script>
+    <script src="/src/client/tests/server-integration/dataservice.spec.js"></script>
+    <script src="/src/client/ckeditor/plugins/about/dialogs/about.js"></script>
+    <script src="/src/client/ckeditor/plugins/clipboard/dialogs/paste.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/a11yhelp.js"></script>
+    <script src="/src/client/ckeditor/plugins/pastefromword/filter/default.js"></script>
+    <script src="/src/client/ckeditor/plugins/image/dialogs/image.js"></script>
+    <script src="/src/client/ckeditor/plugins/table/dialogs/table.js"></script>
+    <script src="/src/client/ckeditor/plugins/scayt/dialogs/options.js"></script>
+    <script src="/src/client/ckeditor/plugins/tabletools/dialogs/tableCell.js"></script>
+    <script src="/src/client/ckeditor/plugins/link/dialogs/anchor.js"></script>
+    <script src="/src/client/ckeditor/plugins/link/dialogs/link.js"></script>
+    <script src="/src/client/ckeditor/plugins/wsc/dialogs/wsc.js"></script>
+    <script src="/src/client/ckeditor/plugins/wsc/dialogs/wsc_ie.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/specialchar.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/af.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/ar.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/bg.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/ca.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/cs.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/cy.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/da.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/de-ch.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/de.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/el.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/en-gb.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/en.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/eo.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/es.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/et.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/eu.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/fa.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/fi.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/fo.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/fr-ca.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/fr.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/gl.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/gu.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/he.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/hi.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/hr.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/hu.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/id.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/it.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/ja.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/km.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/ko.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/ku.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/lt.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/lv.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/mk.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/mn.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/nb.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/nl.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/no.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/pl.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/pt-br.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/pt.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/ro.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/ru.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/si.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/sk.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/sl.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/sq.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/sr-latn.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/sr.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/sv.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/th.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/tr.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/tt.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/ug.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/uk.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/vi.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/zh-cn.js"></script>
+    <script src="/src/client/ckeditor/plugins/a11yhelp/dialogs/lang/zh.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/af.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/ar.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/bg.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/ca.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/cs.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/cy.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/da.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/de-ch.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/de.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/el.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/en-gb.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/en.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/eo.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/es.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/et.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/eu.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/fa.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/fi.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/fr-ca.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/fr.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/gl.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/he.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/hr.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/hu.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/id.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/it.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/ja.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/km.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/ko.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/ku.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/lt.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/lv.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/nb.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/nl.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/no.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/pl.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/pt-br.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/pt.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/ru.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/si.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/sk.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/sl.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/sq.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/sv.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/th.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/tr.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/tt.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/ug.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/uk.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/vi.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/zh-cn.js"></script>
+    <script src="/src/client/ckeditor/plugins/specialchar/dialogs/lang/zh.js"></script>
+    <script src="/src/client/ckeditor/build-config.js"></script>
+    <script src="/src/client/ckeditor/ckeditor.js"></script>
+    <script src="/src/client/ckeditor/config.js"></script>
+    <script src="/src/client/ckeditor/styles.js"></script>
+    <script src="/src/client/ckeditor/adapters/jquery.js"></script>
+    <script src="/src/client/ckeditor/lang/en.js"></script>
+    <script src="/src/client/ckeditor/plugins/dialog/dialogDefinition.js"></script>
+    <!-- endinject -->
+
+    <!-- inject:templates:js -->
+    <script src="/.tmp/templates.js"></script>
+    <!-- endinject -->
+
+    <script>
+        mocha.run();
+    </script>
+
+</body>
+</html>

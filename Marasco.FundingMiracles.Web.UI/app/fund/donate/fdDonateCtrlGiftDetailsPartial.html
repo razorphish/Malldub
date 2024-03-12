@@ -1,0 +1,91 @@
+﻿<div class="margin-bottom-10 margin-top-10 bg-light">
+  <div class="headline">
+    <h3>Gift Details</h3>
+  </div>
+  <!-- Donor Name -->
+  <div class=" margin-top-10">
+    <label for="name">
+      This gift is from:<i class="color-red">*</i>
+      <i class="fa fa-question" popover-placement="top" popover="Enter the name you would like displayed in the donors section.  You can choose to make this anonymous by clicking on the checkbox below" popover-trigger="mouseenter"></i>
+      <span class="color-red" ng-show="showValidationMessages && fundDonationForm.donorName.$error.required">
+        <strong>[Name is Required]</strong>
+      </span>
+    </label>
+
+    <div class="row">
+      <div class="col-md-9">
+        <input class="form-control input-lg bloat" id="donorName" ng-disabled="donation.isPrivate" name="donorName" type="text" ng-model="donation.donorName" required placeholder="Donor name" ng-readonly="isDonorReadonly">
+      </div>
+    </div>
+  </div>
+  <!--/ Donor Name -->
+  <!--Message-->
+  <div>
+    <label for="message">
+      Message:
+      <i class="fa fa-question" popover-placement="top" popover="Begin with the story:  People are most moved by the impact a condition has on an individual's life.  Next, explain the purpose behind the fundraiser and how it will positively affect the situation.  Educate your donors about the condition and describe it in terms that people can connect with." popover-trigger="mouseenter"></i>
+    </label>
+
+    <div class="row">
+      <div class="col-md-9">
+        <textarea class="form-control input-lg bloat" rows="2" id="message" name="message" ng-model="donation.message" placeholder="Words of encouragement"></textarea>
+      </div>
+    </div>
+  </div>
+  <!--/Message-->
+  <div class="col-md-8">
+    <label>
+      A quick glimpse on how your donation will appear on fundraiser page
+    </label>
+
+    <div class="bg-light">
+      <div class="row">
+        <div class="col-md-3 col-xs-4 margin-top-10">
+          <img class="img-thumbnail lft-img-margin rgt-img-margin" ng-src="/img/avatar/27.jpg">
+        </div>
+
+        <div class="col-md-9 col-xs-8">
+          <div class="row margin-left-10">
+            <div class="donation-headline ng-binding" ng-hide="hideAmountText">
+              {{selectedFee.beneficiaryAmount | currency:"$"}}
+            </div>
+            <div class="donation-headline ng-binding" ng-show="hideAmountText">
+              Hidden
+            </div>
+            <div>
+              <h4><b class="ng-binding">{{donation.donorName}}</b></h4>
+            </div>
+            <div class="datetime-ago ng-binding">
+              {{timeofDay | date}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mom-well-noborder it ng-binding">
+        {{donation.message}}
+      </div>
+    </div>
+  </div>
+  <!--Anonymous-->
+  <div class="margin-bottom-10">
+    <div class="row">
+      <div class="col-md-9">
+        <label class="checkbox">
+          <input type="checkbox" id="coverCosts" name="checkbox" ng-model="coverFees" ng-change="amountToCoverOptions()" /><i></i> Let me cover the {{selectedFee.chargeFeeAmount | currency: "$"}} transaction fee!  <a ng-href="#" ng-click="modalProcessingFee('transactionFee')">Whats this?</a>
+        </label>
+        <label class="checkbox" ng-show="fund.settings.allowAnonymousDonors">
+          <input type="checkbox" id="isPrivateDonor" name="isPrivateDonor" ng-model="donation.isPrivateDonorName" ng-change="anonymize()" ng-checked="donation.isPrivateDonorName" /><i></i> I would like to make my name anonymous
+        </label>
+        <label class="checkbox" ng-show="fund.settings.allowAnonymousDonors">
+          <input type="checkbox" id="isPrivateAmount" name="isPrivateAmount" ng-model="donation.isPrivateAmount" ng-change="hideAmount()" ng-checked="donation.isPrivateAmount" /> <i></i>I would like hide the amount given
+        </label>
+        <label class="checkbox" ng-show="fund.settings.allowRecuringPayments">
+          <input type="checkbox" id="contributeMonthly" name="contributeMonthly" ng-model="donation.contributeMonthly" ng-checked="donation.contributeMonthly">
+          <i></i><span tooltip="After your first donation, a monthly recurring donation will occur on the same day of each month thereafter.  You will have the ability to manage the recurrence through the vendor's website.'" tooltip-trigger="mouseenter" tooltip-placement="bottom">Contribute Monthly</span>
+        </label>
+      </div>
+    </div>
+  </div>
+  <!--/Message-->
+
+</div>

@@ -1,0 +1,71 @@
+﻿.squaresWaveG{
+background-color:#F660AB;
+}
+
+@-moz-keyframes bounce_squaresWaveG{
+0%{
+background-color:#F660AB;
+}
+
+100%{
+background-color:#FFFFFF;
+}
+
+}
+
+@-webkit-keyframes bounce_squaresWaveG{
+0%{
+background-color:#F660AB;
+}
+
+100%{
+background-color:#FFFFFF;
+}
+
+}
+
+@-ms-keyframes bounce_squaresWaveG{
+0%{
+background-color:#F660AB;
+}
+
+100%{
+background-color:#FFFFFF;
+}
+
+}
+
+@-o-keyframes bounce_squaresWaveG{
+0%{
+background-color:#F660AB;
+}
+
+100%{
+background-color:#FFFFFF;
+}
+
+}
+
+@keyframes bounce_squaresWaveG{
+0%{
+background-color:#F660AB;
+}
+
+100%{
+background-color:#FFFFFF;
+}
+
+}
+
+.progress-bar {
+  background-color: #F660AB !important;
+}
+
+.breadcrumbs {
+  background-color: #F660AB;
+  color: #ffffff
+}
+
+.breadcrumbs h1 {
+  color: #ffffff!important;
+}

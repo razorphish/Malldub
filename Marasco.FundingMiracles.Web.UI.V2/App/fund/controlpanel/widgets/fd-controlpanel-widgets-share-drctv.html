@@ -1,0 +1,19 @@
+﻿<div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="input-group">
+        <input type="text" class="form-control" value="{{baseUrl}}/{{fund.item.permalink}}" select-on-click>
+        <span class="input-group-btn">
+          <button type="button" ng-click="viewFund()" class="btn-u"><i class="fa fa-eye"></i> View</button>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 margin-top-10">
+      <!-- Social Button BEGIN -->
+      <social-add-this-drctv socials="socials" data="socialData"></social-add-this-drctv>
+      <!-- Social Button END -->
+    </div>
+  </div>
+</div>

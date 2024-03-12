@@ -1,0 +1,1055 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{102E2535-1FED-412C-B341-1A8F2242AAE6}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Malldub.WebApi</RootNamespace>
+    <AssemblyName>Malldub.WebApi</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>2f5ace82</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="CodeSmith.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=596a5eee5d207fdd, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Templates\Common\v4.5\CodeSmith.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="CodeSmith.Data.EntityFramework">
+      <HintPath>..\Templates\Common\v4.5\CodeSmith.Data.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="CodeSmith.Data.Memcached">
+      <HintPath>..\Templates\Common\v4.5\CodeSmith.Data.Memcached.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Hammock.ClientProfile">
+      <HintPath>..\packages\TweetSharp.2.3.1\lib\4.0\Hammock.ClientProfile.dll</HintPath>
+    </Reference>
+    <Reference Include="MailChimp.Net.V3, Version=1.9.1.0, Culture=neutral, PublicKeyToken=37d26d538413c581, processorArchitecture=MSIL">
+      <HintPath>..\packages\MailChimp.Net.V3.1.9.1.0\lib\net45\MailChimp.Net.V3.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Cors.2.1.0\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.2.1.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.2.1.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.2.1.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.2.1.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.Text, Version=4.0.10.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Text.4.0.10\lib\net40\ServiceStack.Text.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.7\lib\net40\System.Linq.Dynamic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.2\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="TweetSharp">
+      <HintPath>..\packages\TweetSharp.2.3.1\lib\4.0\TweetSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="WebsitesScreenshot">
+      <HintPath>..\_references\WebsitesScreenshot.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.1.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.1.0.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.1.0.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AccountController.generated.cs">
+      <DependentUpon>AccountController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AccountStatusController.cs" />
+    <Compile Include="Controllers\AccountStatusController.generated.cs">
+      <DependentUpon>AccountStatusController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AddressController.cs" />
+    <Compile Include="Controllers\AddressController.generated.cs">
+      <DependentUpon>AddressController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AspNetRoleController.cs" />
+    <Compile Include="Controllers\AspNetRoleController.generated.cs">
+      <DependentUpon>AspNetRoleController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AspNetUserClaimController.cs" />
+    <Compile Include="Controllers\AspNetUserClaimController.generated.cs">
+      <DependentUpon>AspNetUserClaimController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AspNetUserController.cs" />
+    <Compile Include="Controllers\AspNetUserController.generated.cs">
+      <DependentUpon>AspNetUserController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AspNetUserGatewayController.cs" />
+    <Compile Include="Controllers\AspNetUserGatewayController.generated.cs">
+      <DependentUpon>AspNetUserGatewayController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AspNetUserLoginController.cs" />
+    <Compile Include="Controllers\AspNetUserLoginController.generated.cs">
+      <DependentUpon>AspNetUserLoginController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AuctionController.cs" />
+    <Compile Include="Controllers\AuctionController.generated.cs">
+      <DependentUpon>AuctionController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AuctionInvoiceBillToTypeController.cs" />
+    <Compile Include="Controllers\AuctionInvoiceBillToTypeController.generated.cs">
+      <DependentUpon>AuctionInvoiceBillToTypeController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AuctionInvoiceController.cs" />
+    <Compile Include="Controllers\AuctionInvoiceController.generated.cs">
+      <DependentUpon>AuctionInvoiceController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AuctionInvoiceTypeController.cs" />
+    <Compile Include="Controllers\AuctionInvoiceTypeController.generated.cs">
+      <DependentUpon>AuctionInvoiceTypeController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AuctionPaymentItemController.cs" />
+    <Compile Include="Controllers\AuctionPaymentItemController.generated.cs">
+      <DependentUpon>AuctionPaymentItemController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AuctionStatusController.cs" />
+    <Compile Include="Controllers\AuctionStatusController.generated.cs">
+      <DependentUpon>AuctionStatusController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AuctionTypeController.cs" />
+    <Compile Include="Controllers\AuctionTypeController.generated.cs">
+      <DependentUpon>AuctionTypeController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\BidController.cs" />
+    <Compile Include="Controllers\BidController.generated.cs">
+      <DependentUpon>BidController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CategoryController.generated.cs">
+      <DependentUpon>CategoryController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\DefaultController.generated.cs">
+      <DependentUpon>DefaultController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\DonationController.cs" />
+    <Compile Include="Controllers\DonationController.generated.cs">
+      <DependentUpon>DonationController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\DonationFeeTypeController.cs" />
+    <Compile Include="Controllers\DonationFeeTypeController.generated.cs">
+      <DependentUpon>DonationFeeTypeController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\DonationNoteController.cs" />
+    <Compile Include="Controllers\DonationNoteController.generated.cs">
+      <DependentUpon>DonationNoteController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\DonationStatusController.cs" />
+    <Compile Include="Controllers\DonationStatusController.generated.cs">
+      <DependentUpon>DonationStatusController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\EmailController.cs" />
+    <Compile Include="Controllers\EmailController.generated.cs">
+      <DependentUpon>EmailController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\FundController.cs" />
+    <Compile Include="Controllers\FundController.generated.cs">
+      <DependentUpon>FundController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\FundShareController.cs" />
+    <Compile Include="Controllers\FundShareController.generated.cs">
+      <DependentUpon>FundShareController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\FundShareTypeController.cs" />
+    <Compile Include="Controllers\FundShareTypeController.generated.cs">
+      <DependentUpon>FundShareTypeController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\FundTeamAdminController.cs" />
+    <Compile Include="Controllers\FundTypeController.cs" />
+    <Compile Include="Controllers\FundTypeController.generated.cs">
+      <DependentUpon>FundTypeController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\FundUpdateController.cs" />
+    <Compile Include="Controllers\FundUpdateController.generated.cs">
+      <DependentUpon>FundUpdateController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\FundUpdateStatusController.cs" />
+    <Compile Include="Controllers\FundUpdateStatusController.generated.cs">
+      <DependentUpon>FundUpdateStatusController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\FundUserTypeController.cs" />
+    <Compile Include="Controllers\FundUserTypeController.generated.cs">
+      <DependentUpon>FundUserTypeController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\GatewayController.cs" />
+    <Compile Include="Controllers\GatewayController.generated.cs">
+      <DependentUpon>GatewayController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\InvoiceController.cs" />
+    <Compile Include="Controllers\InvoiceController.generated.cs">
+      <DependentUpon>InvoiceController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\InvoiceItemController.cs" />
+    <Compile Include="Controllers\InvoiceItemController.generated.cs">
+      <DependentUpon>InvoiceItemController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\InvoiceStatusController.cs" />
+    <Compile Include="Controllers\InvoiceStatusController.generated.cs">
+      <DependentUpon>InvoiceStatusController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ItemCategoryController.cs" />
+    <Compile Include="Controllers\ItemCategoryController.generated.cs">
+      <DependentUpon>ItemCategoryController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ItemController.cs" />
+    <Compile Include="Controllers\ItemController.generated.cs">
+      <DependentUpon>ItemController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ItemMetumController.cs" />
+    <Compile Include="Controllers\ItemMetumController.generated.cs">
+      <DependentUpon>ItemMetumController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ItemTransactionTypeController.cs" />
+    <Compile Include="Controllers\ItemTransactionTypeController.generated.cs">
+      <DependentUpon>ItemTransactionTypeController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ItemTypeController.cs" />
+    <Compile Include="Controllers\ItemTypeController.generated.cs">
+      <DependentUpon>ItemTypeController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ItemUploadController.cs" />
+    <Compile Include="Controllers\ItemUploadController.generated.cs">
+      <DependentUpon>ItemUploadController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ListAreaController.cs" />
+    <Compile Include="Controllers\ListAreaController.generated.cs">
+      <DependentUpon>ListAreaController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ListCategoryController.cs" />
+    <Compile Include="Controllers\ListCategoryController.generated.cs">
+      <DependentUpon>ListCategoryController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ListPortalPostAttributeController.cs" />
+    <Compile Include="Controllers\ListPortalPostAttributeController.generated.cs">
+      <DependentUpon>ListPortalPostAttributeController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ListPostController.cs" />
+    <Compile Include="Controllers\ListPostController.generated.cs">
+      <DependentUpon>ListPostController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ListPostStatusController.cs" />
+    <Compile Include="Controllers\ListPostStatusController.generated.cs">
+      <DependentUpon>ListPostStatusController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ListSiteController.cs" />
+    <Compile Include="Controllers\ListSiteController.generated.cs">
+      <DependentUpon>ListSiteController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ListTypeController.cs" />
+    <Compile Include="Controllers\ListTypeController.generated.cs">
+      <DependentUpon>ListTypeController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\MallController.cs" />
+    <Compile Include="Controllers\MallController.generated.cs">
+      <DependentUpon>MallController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\MalldubApplicationController.cs" />
+    <Compile Include="Controllers\MalldubApplicationController.generated.cs">
+      <DependentUpon>MalldubApplicationController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\MallPortalStatusController.cs" />
+    <Compile Include="Controllers\MallPortalStatusController.generated.cs">
+      <DependentUpon>MallPortalStatusController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\MetaDataTypeController.cs" />
+    <Compile Include="Controllers\MetaDataTypeController.generated.cs">
+      <DependentUpon>MetaDataTypeController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\MetaKeyController.cs" />
+    <Compile Include="Controllers\MetaKeyController.generated.cs">
+      <DependentUpon>MetaKeyController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\MetumController.cs" />
+    <Compile Include="Controllers\MetumController.generated.cs">
+      <DependentUpon>MetumController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\NoteController.cs" />
+    <Compile Include="Controllers\NoteController.generated.cs">
+      <DependentUpon>NoteController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\NoteTypeController.cs" />
+    <Compile Include="Controllers\NoteTypeController.generated.cs">
+      <DependentUpon>NoteTypeController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Controllers\OrderController.generated.cs">
+      <DependentUpon>OrderController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\OrderItemController.cs" />
+    <Compile Include="Controllers\OrderItemController.generated.cs">
+      <DependentUpon>OrderItemController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\PaymentMethodController.cs" />
+    <Compile Include="Controllers\PaymentMethodController.generated.cs">
+      <DependentUpon>PaymentMethodController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\PhoneController.cs" />
+    <Compile Include="Controllers\PhoneController.generated.cs">
+      <DependentUpon>PhoneController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\PhoneTypeController.cs" />
+    <Compile Include="Controllers\PhoneTypeController.generated.cs">
+      <DependentUpon>PhoneTypeController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\PortalController.cs" />
+    <Compile Include="Controllers\PortalController.generated.cs">
+      <DependentUpon>PortalController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\PortalTypeController.cs" />
+    <Compile Include="Controllers\PortalTypeController.generated.cs">
+      <DependentUpon>PortalTypeController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\PostFieldController.cs" />
+    <Compile Include="Controllers\PostFieldController.generated.cs">
+      <DependentUpon>PostFieldController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\PostReplyEmailTypeController.cs" />
+    <Compile Include="Controllers\PostReplyEmailTypeController.generated.cs">
+      <DependentUpon>PostReplyEmailTypeController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\RefactorLogController.cs" />
+    <Compile Include="Controllers\RefactorLogController.generated.cs">
+      <DependentUpon>RefactorLogController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\StateController.cs" />
+    <Compile Include="Controllers\StateController.generated.cs">
+      <DependentUpon>StateController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\TabController.cs" />
+    <Compile Include="Controllers\UploadCategoryController.cs" />
+    <Compile Include="Controllers\UploadCategoryController.generated.cs">
+      <DependentUpon>UploadCategoryController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\UploadController.cs" />
+    <Compile Include="Controllers\UploadController.generated.cs">
+      <DependentUpon>UploadController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\UserAddressController.cs" />
+    <Compile Include="Controllers\UserAddressController.generated.cs">
+      <DependentUpon>UserAddressController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\UserEmailController.cs" />
+    <Compile Include="Controllers\UserEmailController.generated.cs">
+      <DependentUpon>UserEmailController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\UserPhoneController.cs" />
+    <Compile Include="Controllers\UserPhoneController.generated.cs">
+      <DependentUpon>UserPhoneController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\UserStatusController.cs" />
+    <Compile Include="Controllers\UserStatusController.generated.cs">
+      <DependentUpon>UserStatusController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\UserUploadController.cs" />
+    <Compile Include="Controllers\UserUploadController.generated.cs">
+      <DependentUpon>UserUploadController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Exceptions\MalldubWebApiErrorResponse.cs" />
+    <Compile Include="Exceptions\MalldubWebApiException.cs" />
+    <Compile Include="FacebookAuth.aspx.cs">
+      <DependentUpon>FacebookAuth.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FacebookAuth.aspx.designer.cs">
+      <DependentUpon>FacebookAuth.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Factories\ModelFactory.cs" />
+    <Compile Include="Filters\MalldubAuthorizeAttribute.cs" />
+    <Compile Include="Filters\RequireHttpsAttribute.cs" />
+    <Compile Include="Filters\SecurityExceptionHandler.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\CORSHandler.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountBindingModels.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ApplicationRole.cs" />
+    <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\ApplicationUserStore.cs" />
+    <Compile Include="Models\ClaimModel.cs" />
+    <Compile Include="Models\CorsPolicyProvider.cs" />
+    <Compile Include="Models\DonationModel.cs" />
+    <Compile Include="Models\DonationNoteModel.cs" />
+    <Compile Include="Models\DonationxLiteModel.cs" />
+    <Compile Include="Models\FundContactRequestModel.cs" />
+    <Compile Include="Models\FundFeatured.cs" />
+    <Compile Include="Models\FundStatusModel.cs" />
+    <Compile Include="Models\FundUpdateModel.cs" />
+    <Compile Include="Models\IUserProfile.cs">
+      <DependentUpon>UserProfileModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrderBindingModel.cs" />
+    <Compile Include="Models\ProviderModel.cs" />
+    <Compile Include="Models\QuestionModel.cs" />
+    <Compile Include="Models\ShareFundModel.cs" />
+    <Compile Include="Models\SupportFundModel.cs" />
+    <Compile Include="Models\UpdateViewedModel.cs" />
+    <Compile Include="Models\UserProfileBasics.cs">
+      <DependentUpon>UserProfileModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserProfilePhone.cs">
+      <DependentUpon>UserProfileModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserProfileAddress.cs">
+      <DependentUpon>UserProfileModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserProfileEmail.cs">
+      <DependentUpon>UserProfileModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserProfileModel.cs" />
+    <Compile Include="Models\UserProfileStatus.cs">
+      <DependentUpon>UserProfileModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="print.aspx.cs">
+      <DependentUpon>print.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="print.aspx.designer.cs">
+      <DependentUpon>print.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="printFund.aspx.cs">
+      <DependentUpon>printFund.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="printFund.aspx.designer.cs">
+      <DependentUpon>printFund.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\ApplicationOAuthProvider.cs" />
+    <Compile Include="Results\ChallengeResult.cs" />
+    <Compile Include="RootControllers\AuthController.cs" />
+    <Compile Include="RootControllers\BaseApiController.cs" />
+    <Compile Include="RootControllers\FacebookController.cs" />
+    <Compile Include="RootControllers\FundCommentController.cs" />
+    <Compile Include="RootControllers\FundDetailsController.cs" />
+    <Compile Include="RootControllers\FundDonationController.cs" />
+    <Compile Include="RootControllers\FundNoteController.cs" />
+    <Compile Include="RootControllers\FundraiserController.cs" />
+    <Compile Include="RootControllers\FundUploadsController.cs" />
+    <Compile Include="RootControllers\FundSettingsController.cs" />
+    <Compile Include="RootControllers\FundTeamController.cs" />
+    <Compile Include="RootControllers\FundUpdateDetails.cs" />
+    <Compile Include="RootControllers\FundUserController.cs" />
+    <Compile Include="RootControllers\GoogleController.cs" />
+    <Compile Include="RootControllers\HomeController.cs" />
+    <Compile Include="RootControllers\MailChimpController.cs" />
+    <Compile Include="RootControllers\MandrillController.cs" />
+    <Compile Include="RootControllers\MarascoController.cs" />
+    <Compile Include="RootControllers\MiracleController.cs" />
+    <Compile Include="RootControllers\OrderController.cs" />
+    <Compile Include="RootControllers\PermalinkController.cs" />
+    <Compile Include="RootControllers\FundSearchController.cs" />
+    <Compile Include="RootControllers\TwitterController.cs" />
+    <Compile Include="RootControllers\UploaderController.cs" />
+    <Compile Include="RootControllers\UserController.cs" />
+    <Compile Include="RootControllers\UserDetailsController.cs" />
+    <Compile Include="RootControllers\WePayController.cs" />
+    <Compile Include="Services\IMalldubIdentityService.cs" />
+    <Compile Include="Services\MalldubIdentityService.cs" />
+    <Compile Include="Services\NinjectWebApiFilterProvider.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="TwitterAuth.aspx.cs">
+      <DependentUpon>TwitterAuth.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TwitterAuth.aspx.designer.cs">
+      <DependentUpon>TwitterAuth.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\aspnet-Malldub.WebApi-20131104055114.mdf" />
+    <Content Include="App_Data\aspnet-Malldub.WebApi-20131104055114_log.ldf">
+      <DependentUpon>aspnet-Malldub.WebApi-20131104055114.mdf</DependentUpon>
+    </Content>
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\img\851.png" />
+    <Content Include="FacebookAuth.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="print.aspx" />
+    <Content Include="printFund.aspx" />
+    <Content Include="proxy.html" />
+    <Content Include="Publish\Malldub.Data.WebApi.PublishSettings" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <None Include="Properties\PublishProfiles\miracles-api - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\miracles-api - Web Deploy.pubxml" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Generated\Accounts.js" />
+    <Content Include="Scripts\Generated\AccountStatuses.js" />
+    <Content Include="Scripts\Generated\Address.js" />
+    <Content Include="Scripts\Generated\AspNetRoles.js" />
+    <Content Include="Scripts\Generated\AspNetUserClaims.js" />
+    <Content Include="Scripts\Generated\AspNetUserGateways.js" />
+    <Content Include="Scripts\Generated\AspNetUserLogins.js" />
+    <Content Include="Scripts\Generated\AspNetUsers.js" />
+    <Content Include="Scripts\Generated\AuctionInvoiceBillToTypes.js" />
+    <Content Include="Scripts\Generated\AuctionInvoices.js" />
+    <Content Include="Scripts\Generated\AuctionInvoiceTypes.js" />
+    <Content Include="Scripts\Generated\AuctionPaymentItems.js" />
+    <Content Include="Scripts\Generated\Auctions.js" />
+    <Content Include="Scripts\Generated\AuctionStatuses.js" />
+    <Content Include="Scripts\Generated\AuctionTypes.js" />
+    <Content Include="Scripts\Generated\Bids.js" />
+    <Content Include="Scripts\Generated\Categories.js" />
+    <Content Include="Scripts\Generated\Defaults.js" />
+    <Content Include="Scripts\Generated\DonationFeeTypes.js" />
+    <Content Include="Scripts\Generated\DonationNotes.js" />
+    <Content Include="Scripts\Generated\Donations.js" />
+    <Content Include="Scripts\Generated\DonationStatuses.js" />
+    <Content Include="Scripts\Generated\Emails.js" />
+    <Content Include="Scripts\Generated\Funds.js" />
+    <Content Include="Scripts\Generated\FundShares.js" />
+    <Content Include="Scripts\Generated\FundShareTypes.js" />
+    <Content Include="Scripts\Generated\FundTypes.js" />
+    <Content Include="Scripts\Generated\FundUpdates.js" />
+    <Content Include="Scripts\Generated\FundUpdateStatuses.js" />
+    <Content Include="Scripts\Generated\FundUsers.js" />
+    <Content Include="Scripts\Generated\FundUserTypes.js" />
+    <Content Include="Scripts\Generated\Gateways.js" />
+    <Content Include="Scripts\Generated\InvoiceItems.js" />
+    <Content Include="Scripts\Generated\Invoices.js" />
+    <Content Include="Scripts\Generated\InvoiceStatuses.js" />
+    <Content Include="Scripts\Generated\ItemCategories.js" />
+    <Content Include="Scripts\Generated\ItemMeta.js" />
+    <Content Include="Scripts\Generated\Items.js" />
+    <Content Include="Scripts\Generated\ItemTransactionTypes.js" />
+    <Content Include="Scripts\Generated\ItemTypes.js" />
+    <Content Include="Scripts\Generated\ItemUploads.js" />
+    <Content Include="Scripts\Generated\ListAreas.js" />
+    <Content Include="Scripts\Generated\ListCategories.js" />
+    <Content Include="Scripts\Generated\ListPortalPostAttributes.js" />
+    <Content Include="Scripts\Generated\ListPosts.js" />
+    <Content Include="Scripts\Generated\ListPostStatuses.js" />
+    <Content Include="Scripts\Generated\ListSites.js" />
+    <Content Include="Scripts\Generated\ListTypes.js" />
+    <Content Include="Scripts\Generated\MalldubApplications.js" />
+    <Content Include="Scripts\Generated\MallPortalStatuses.js" />
+    <Content Include="Scripts\Generated\Malls.js" />
+    <Content Include="Scripts\Generated\Meta.js" />
+    <Content Include="Scripts\Generated\MetaDataTypes.js" />
+    <Content Include="Scripts\Generated\MetaKeys.js" />
+    <Content Include="Scripts\Generated\MigrationHistories.js" />
+    <Content Include="Scripts\Generated\Notes.js" />
+    <Content Include="Scripts\Generated\NoteTypes.js" />
+    <Content Include="Scripts\Generated\OrderItems.js" />
+    <Content Include="Scripts\Generated\Orders.js" />
+    <Content Include="Scripts\Generated\PaymentMethods.js" />
+    <Content Include="Scripts\Generated\Phones.js" />
+    <Content Include="Scripts\Generated\PhoneTypes.js" />
+    <Content Include="Scripts\Generated\Portals.js" />
+    <Content Include="Scripts\Generated\PortalTypes.js" />
+    <Content Include="Scripts\Generated\PostFields.js" />
+    <Content Include="Scripts\Generated\PostReplyEmailTypes.js" />
+    <Content Include="Scripts\Generated\RefactorLogs.js" />
+    <Content Include="Scripts\Generated\States.js" />
+    <Content Include="Scripts\Generated\UploadCategories.js" />
+    <Content Include="Scripts\Generated\Uploads.js" />
+    <Content Include="Scripts\Generated\UserAddresses.js" />
+    <Content Include="Scripts\Generated\UserEmails.js" />
+    <Content Include="Scripts\Generated\UserPhones.js" />
+    <Content Include="Scripts\Generated\UserStatuses.js" />
+    <Content Include="Scripts\Generated\UserUploads.js" />
+    <Content Include="Publish\Malldub.data.WebApi-Staging.PublishSettings" />
+    <None Include="Properties\PublishProfiles\miracles-api-staging - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\miracles-api-staging - Web Deploy.pubxml" />
+    <None Include="Scripts\jquery-2.1.0.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.0.js" />
+    <Content Include="Scripts\jquery-2.1.0.min.js" />
+    <Content Include="Scripts\jquery-2.1.0.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.7.1.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\xdomain.min.js" />
+    <Content Include="TwitterAuth.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <CodeAnalysisDictionary Include="Web.csp">
+      <SubType>Designer</SubType>
+    </CodeAnalysisDictionary>
+    <Content Include="Views\Admin\Accounts.cshtml" />
+    <Content Include="Views\Admin\AccountStatuses.cshtml" />
+    <Content Include="Views\Admin\Address.cshtml" />
+    <Content Include="Views\Admin\AspNetRoles.cshtml" />
+    <Content Include="Views\Admin\AspNetUsers.cshtml" />
+    <Content Include="Views\Admin\AspNetUserClaims.cshtml" />
+    <Content Include="Views\Admin\AspNetUserLogins.cshtml" />
+    <Content Include="Views\Admin\Auctions.cshtml" />
+    <Content Include="Views\Admin\AuctionInvoices.cshtml" />
+    <Content Include="Views\Admin\AuctionInvoiceBillToTypes.cshtml" />
+    <Content Include="Views\Admin\AuctionInvoiceTypes.cshtml" />
+    <Content Include="Views\Admin\AuctionPaymentItems.cshtml" />
+    <Content Include="Views\Admin\AuctionStatuses.cshtml" />
+    <Content Include="Views\Admin\AuctionTypes.cshtml" />
+    <Content Include="Views\Admin\Bids.cshtml" />
+    <Content Include="Views\Admin\Categories.cshtml" />
+    <Content Include="Views\Admin\Defaults.cshtml" />
+    <Content Include="Views\Admin\Donations.cshtml" />
+    <Content Include="Views\Admin\DonationFeeTypes.cshtml" />
+    <Content Include="Views\Admin\DonationNotes.cshtml" />
+    <Content Include="Views\Admin\DonationStatuses.cshtml" />
+    <Content Include="Views\Admin\Emails.cshtml" />
+    <Content Include="Views\Admin\Funds.cshtml" />
+    <Content Include="Views\Admin\FundTypes.cshtml" />
+    <Content Include="Views\Admin\FundUpdates.cshtml" />
+    <Content Include="Views\Admin\FundUpdateStatuses.cshtml" />
+    <Content Include="Views\Admin\FundUsers.cshtml" />
+    <Content Include="Views\Admin\FundUserTypes.cshtml" />
+    <Content Include="Views\Admin\Invoices.cshtml" />
+    <Content Include="Views\Admin\InvoiceItems.cshtml" />
+    <Content Include="Views\Admin\InvoiceStatuses.cshtml" />
+    <Content Include="Views\Admin\Items.cshtml" />
+    <Content Include="Views\Admin\ItemCategories.cshtml" />
+    <Content Include="Views\Admin\ItemMeta.cshtml" />
+    <Content Include="Views\Admin\ItemTransactionTypes.cshtml" />
+    <Content Include="Views\Admin\ItemTypes.cshtml" />
+    <Content Include="Views\Admin\ItemUploads.cshtml" />
+    <Content Include="Views\Admin\ListAreas.cshtml" />
+    <Content Include="Views\Admin\ListCategories.cshtml" />
+    <Content Include="Views\Admin\ListPortalPostAttributes.cshtml" />
+    <Content Include="Views\Admin\ListPosts.cshtml" />
+    <Content Include="Views\Admin\ListPostStatuses.cshtml" />
+    <Content Include="Views\Admin\ListSites.cshtml" />
+    <Content Include="Views\Admin\ListTypes.cshtml" />
+    <Content Include="Views\Admin\Malls.cshtml" />
+    <Content Include="Views\Admin\MallPortalStatuses.cshtml" />
+    <Content Include="Views\Admin\MetaDataTypes.cshtml" />
+    <Content Include="Views\Admin\MetaKeys.cshtml" />
+    <Content Include="Views\Admin\Meta.cshtml" />
+    <Content Include="Views\Admin\MigrationHistories.cshtml" />
+    <Content Include="Views\Admin\Notes.cshtml" />
+    <Content Include="Views\Admin\Orders.cshtml" />
+    <Content Include="Views\Admin\OrderItems.cshtml" />
+    <Content Include="Views\Admin\PaymentMethods.cshtml" />
+    <Content Include="Views\Admin\Phones.cshtml" />
+    <Content Include="Views\Admin\PhoneTypes.cshtml" />
+    <Content Include="Views\Admin\Portals.cshtml" />
+    <Content Include="Views\Admin\PortalTypes.cshtml" />
+    <Content Include="Views\Admin\PostFields.cshtml" />
+    <Content Include="Views\Admin\PostReplyEmailTypes.cshtml" />
+    <Content Include="Views\Admin\RefactorLogs.cshtml" />
+    <Content Include="Views\Admin\Uploads.cshtml" />
+    <Content Include="Views\Admin\UploadCategories.cshtml" />
+    <Content Include="Views\Admin\UserAddresses.cshtml" />
+    <Content Include="Views\Admin\UserEmails.cshtml" />
+    <Content Include="Views\Admin\UserPhones.cshtml" />
+    <Content Include="Views\Admin\UserStatuses.cshtml" />
+    <Content Include="Views\Admin\UserUploads.cshtml" />
+    <Content Include="Views\Admin\States.cshtml" />
+    <Content Include="Views\Admin\AspNetUserGateways.cshtml" />
+    <Content Include="Views\Admin\Gateways.cshtml" />
+    <Content Include="Views\Admin\MalldubApplications.cshtml" />
+    <Content Include="Views\Admin\NoteTypes.cshtml" />
+    <Content Include="Views\Admin\FundShares.cshtml" />
+    <Content Include="Views\Admin\FundShareTypes.cshtml" />
+    <None Include="Web.DebugRelease.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Staging.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Uat.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Malldub.Data\Malldub.Data.csproj">
+      <Project>{ac9f3584-3715-4c01-a09d-a5023dbc75ee}</Project>
+      <Name>Malldub.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Malldub.Helper\Malldub.Helper.csproj">
+      <Project>{05d0c6bb-ee12-4a87-b165-9abeb04a1e60}</Project>
+      <Name>Malldub.Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mandrill\Mandrill.csproj">
+      <Project>{0563ee3c-a65e-4d55-9302-7663c0fe77f7}</Project>
+      <Name>Mandrill</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Marasco.Analytics.V2\Marasco.Analytics.V2.csproj">
+      <Project>{137f1270-e845-4f0c-8083-1775efb4f6f8}</Project>
+      <Name>Marasco.Analytics.V2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Marasco.Api.V2\Marasco.Api.V2.csproj">
+      <Project>{71e933fb-1e9b-4aac-bfef-b80badca4c94}</Project>
+      <Name>Marasco.Api.V2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Marasco.Azure\Marasco.Azure.csproj">
+      <Project>{758c8e56-08e6-4bb7-895f-e7428dbf07e0}</Project>
+      <Name>Marasco.Azure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Marasco.FacebookApi.V2\Marasco.FacebookApi.V2.csproj">
+      <Project>{74df617e-64ef-4b42-bdf8-bcc625ef3d94}</Project>
+      <Name>Marasco.FacebookApi.V2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Marasco.MailChimp.V2\Marasco.MailChimp.V2.csproj">
+      <Project>{bb2875c6-2658-4687-921c-bfb5a1eec37d}</Project>
+      <Name>Marasco.MailChimp.V2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Marasco.TwitterApi.V2\Marasco.TwitterApi.V2.csproj">
+      <Project>{50f50e9e-2b36-4e98-a60a-6f68172f3592}</Project>
+      <Name>Marasco.TwitterApi.V2</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Marasco.WePay\Marasco.WePay.csproj">
+      <Project>{ad6f8217-7a0e-4560-ac81-aa867d040dda}</Project>
+      <Name>Marasco.WePay</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Staging|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugRelease|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;DEBUGRELEASE</DefineConstants>
+    <Optimize>false</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Uat|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>14603</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://api.local.fundingmiracles.com</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,54 @@
+﻿<div class="modal-body donate-modal">
+  <div ng-form="fundEditCategoryForm">
+    <div class="donate-form">
+      <div class="donate-fund ">
+
+        <div class="row">
+          <div class="col-lg-9 col-md-8 col-xs-8">
+            <div class="headline">
+              <h3>Change the Category</h3>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-xs-4 text-right">
+            <button class="btn btn-lg btn-default" ng-click="close('cancel')"><i class="fa fa-times"></i></button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="headline">
+              <h5 style="margin-top: 10px;">
+                <i>
+                  Select the Category that best describes your fundraiser.
+                </i>
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="row box">
+          <div class="col-md-12 shopping-cart">
+            <div class="billing-info-inputs">
+              <label class="input" ng-class="{'state-error': showValidationMessages && fundEditCategoryForm.fundCategory.$error.required}">
+                <select class="form-control"
+                        name="fundCategory"
+                        id="fundCategory"
+                        ng-model="categoryId"
+                        ng-options="s.identification as s.friendlyName for s in fundCategoryOptions"></select>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div ng-hide="isSaving">
+              <button class="btn-u btn-u-lg btn-block" ng-click="save()"><i class="fa fa-check"></i> Save</button>
+            </div>
+            <div ng-show="isSaving">
+              <md-spinner-bar-drctv />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

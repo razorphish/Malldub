@@ -1,0 +1,54 @@
+﻿<div class="profile-body margin-bottom-5" id="fundNotificationsPage">
+    <div class="panel-heading overflow-h margin-bottom-10">
+        <h2 class="panel-title heading-sm pull-left"><i class="fa fa-users"></i>Notifications</h2>
+    </div>
+    <!--Profile Blog-->
+    <div class="margin-bottom-20" ng-repeat="row in itemRows track by $index" ng-hide="isLoading">
+        <div class="row">
+            <div class="col-sm-6 sm-margin-bottom-20" ng-repeat="column in itemColumns track by $index" ng-hide="hide($parent.$index * numberColumns + $index)">
+                <div class="profile-blog">
+                    <i ng-class="getListClass(items[$parent.$index * numberColumns + $index])" style="float: left;margin-right: 10px;"></i>
+                    <div class="name-location">
+                        <strong>{{items[$parent.$index * numberColumns + $index].note.firstName}} {{items[$parent.$index * numberColumns + $index].note.lastName}}</strong>
+                        <span>
+                            {{items[$parent.$index * numberColumns + $index].note.dateEntered | momentTo : 'dddd, MMMM Do, YYYY, h:mm a'}}
+                        </span>
+                    </div>
+                    <div class="clearfix margin-bottom-10"></div>
+                    {{items[$parent.$index * numberColumns + $index].note.comments}}
+                    <div class="clearfix margin-bottom-10"></div>
+                    <ul class="list-inline share-list">
+                        <li ng-hide="items[$parent.$index * numberColumns + $index].note.sent" title="notification sent"><i class="fa fa-envelope"></i></li>
+                        <li ng-show="items[$parent.$index * numberColumns + $index].note.sent" title="notification sent"><i class="fa fa-envelope-o"></i></li>
+                        <li ng-show="items[$parent.$index * numberColumns + $index].note.viewed" title="viewed"><i class="fa fa-eye-slash"></i></li>
+                    </ul>
+                    <hr>
+
+                    <div class="btn-group">
+                        <button ng-show="items[$parent.$index * numberColumns + $index].typeId === 'Notification'"
+                                title="respond"
+                                type="button" class="btn btn-u btn-u-sm" ng-click="respond(items[$parent.$index * numberColumns + $index])">
+                            <i class="fa fa-arrow-left"></i> respond
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div><!--/end row-->
+    </div>
+    <!--End Profile Blog-->
+
+    <div ng-show="isLoading">
+        <md-spinner-bar-drctv />
+    </div>
+
+    <div ng-show="totalItems > itemsPerPage" class="text-center">
+        <ul uib-pagination
+            total-items="totalItems"
+            ng-model="currentPage"
+            max-size="maxSize"
+            boundary-links="true"
+            rotate="false"
+            items-per-page="itemsPerPage"
+            ng-change="onSelectPage(page)"></ul>
+    </div>
+</div>

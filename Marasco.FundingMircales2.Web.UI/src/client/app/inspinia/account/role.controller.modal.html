@@ -1,0 +1,26 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="vm.close()">&times;</button>
+    <h3 ng-show="vm.isAdd" class="modal-title">Add Role</h3>
+    <h3 ng-show="!vm.isAdd" class="modal-title">Manage Role</h3>
+</div>
+<div class="modal-body">
+    <div ng-form="vm.editForm">
+        <div class="form-group" ng-class="{'has-error': vm.showValidationMessages && vm.editForm.name.$error.required }">
+            <label class="block clearfix">
+                <span class="block input-icon input-icon-right">
+                    <input type="text" class="form-control" placeholder="Name" ng-model="vm.newRole.name" ng-required="true" name="name" />
+                    <i class="ace-icon fa"
+                       ng-class="{'fa-times-circle': vm.showValidationMessages && vm.editForm.name.$error.required ,
+                                                            'fa-pencil': true}"></i>
+                </span>
+
+            </label>
+        </div>
+
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-success" ng-disabled="vm.isClicked" ng-show="vm.isAdd" ng-click="vm.addRole()">Add</button>
+    <button class="btn btn-success" ng-disabled="vm.isClicked" ng-show="!vm.isAdd" ng-click="vm.UpdateRole()">Update</button>
+    <button class="btn btn-warning" ng-click="vm.close()">Cancel</button>
+</div>

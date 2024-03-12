@@ -1,0 +1,10 @@
+{
+  "name": "Angular-SEO-Prerender",
+  "description": "...",
+  "version": "0.0.1",
+  "private": "true",
+  "dependencies": {
+    "express": "^4.14.0",
+    "prerender-node": "^2.5.0"
+  }
+}

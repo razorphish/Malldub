@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Malldub.Data.WebApi</name>
+  </assembly>
+  <members>
+    <member name="N:Malldub.WebApi.Controllers" />
+    <member name="T:Malldub.WebApi.Controllers.AuthController"> <summary>
+ Class AccountController.
+ </summary>
+ <seealso cref="T:System.Web.Http.ApiController" />
+ <remarks>Malldub.remarks</remarks></member>
+  </members>
+</doc>

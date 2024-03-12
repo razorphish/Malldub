@@ -1,0 +1,35 @@
+﻿<div class="col-sm-6">
+  <div class="panel panel-profile no-bg">
+    <div class="panel-heading overflow-h">
+      <h2 class="panel-title heading-sm pull-left"><i class="fa fa-heart"></i>Donations</h2>
+      <button class="btn btn-u btn-u-default pull-right" ng-click="gotoDonations()"
+              tooltip="View All Donations"
+              tooltip-trigger="mouseenter"
+              tooltip-placement="bottom">
+        <i class="fa fa-list "></i>
+      </button>
+      <button class="btn btn-u btn-u-default pull-right" ng-click="addDonation()"
+              tooltip="Add Offline Donation"
+              tooltip-trigger="mouseenter"
+              tooltip-placement="bottom">
+        <i class="fa fa-plus "></i>
+      </button>
+    </div>
+    <div id="donationScrollbar" class="panel-body contentHolder-md">
+      <div class="profile-post" ng-class="$index | colorTen:'color-'" ng-repeat="donation in donations | limitTo: 50 | orderBy:'dateEntered':true">
+        <span class="profile-post-numb">{{$index + 1 | doubleDigit:2}}</span>
+        <div class="profile-post-in">
+          <h3 class="heading-xs"><b>{{donation.donorName}}</b> donated ${{donation.beneficiaryAmount|number}}</h3>
+          <p>{{donation.message}}</p>
+          
+          <i class="fa fa-heart-o" ng-show="donation.isPrivateAmount" title="Amount not displayed"></i>
+          <i class="fa fa-heart" ng-hide="donation.isPrivateAmount" title="Amount displayed publicly"></i>
+          <i class="fa fa-envelope" ng-show="donation.thankYouNoteSent" title="Thank you note sent"></i>
+          <i class="fa fa-eye-slash" ng-show="donation.isPrivateDonorName" title="Donor name is private"></i>
+          <i class="fa fa-eye" ng-hide="donation.isPrivateDonorName" title="Donor name is public"></i>
+            {{donation.dateEntered | momentFrom}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

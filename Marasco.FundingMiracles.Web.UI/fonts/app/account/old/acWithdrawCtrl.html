@@ -1,0 +1,68 @@
+﻿<!--=== Breadcrumbs ===-->
+<ac-dashboard-widgets-header-drctv headline="Withdraw" active-tab="Withdraw"></ac-dashboard-widgets-header-drctv>
+<!--=== End Breadcrumbs ===-->
+
+<!--=== Content Part -Body ===-->
+<div class="container">
+
+  <div class="row">
+
+    <!--LEFT SECTION(BODY)-->
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col-md-12">
+          <!-- Page Error Summary-->
+          <md-alert-drctv title="{{title}}" message="{{message}}" alert-type="{{alertType}}" fade="fadeIn" show-alert="{{showAlert}}" show-block="{{showBlock}}" button-title="{{buttonTitle}}" button-function="gotoBasics()"></md-alert-drctv>
+          <!-- //Page Error Summary -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 headline">
+          <h3>Withdraw into my account</h3>
+          <div>
+            <h5 style="margin-top: 10px;">
+              <i>
+                Follow the instructions below to withdraw funds into your account
+              </i>
+            </h5>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row" ng-hide="isLoading">
+        <div class="col-md-12">
+          <h3>Withdrawal amount: <span ng-class="{'text-success' : account.balances[0].balance > 0, 'text-warning' : account.balances[0].balance === 0}"><b>{{account.balances[0].balance | currency}}</b></span></h3>
+        </div>
+      </div>
+
+      <div class="row" ng-show="isReadyForWithdrawal">
+        <div class="col-md-12 margin-bottom-20">
+          <button type="button" class="btn-u btn-u-sea btn-u-lg" id="wePayWithdrawConfirm" name="wePayWithdrawConfirm" ng-click="confirmWithdrawal()">Confirm Withdrawal</button>
+        </div>
+      </div>
+
+      <div class="row" ng-hide="isLoading">
+        <div class="col-md-12" ng-hide="isWithdrawing">
+          <button type="button" class="btn-u btn-u-lg" id="wePayRegister" name="wePayRegister" ng-click="resendWePayRegistration()" ng-show="isPending">Resend Wepay Confirmation Email</button>
+          <button type="button" class="btn-u btn-u-lg" id="wePayWithdraw" name="wePayWithdraw" ng-click="withdraw()" ng-show="isActive">Withdraw from WePay</button>
+        </div>
+        <div class="col-md-12" ng-show="isWithdrawing">
+          <md-spinner-bar-drctv />
+        </div>
+      </div>
+
+      <div ng-show="isLoading">
+        <md-spinner-bar-drctv />
+      </div>
+    </div>
+    <!--/LEFT SECTION(BODY)-->
+    <!-- RIGHT SECTION -->
+    <div class="col-md-4">
+      <ac-dashboard-widgets-manage-drctv></ac-dashboard-widgets-manage-drctv>
+    </div>
+    <!-- /RIGHT SECTION -->
+
+  </div><!--/row-->
+
+</div><!--/container-->
+<!--=== End Content Part - Body ===-->

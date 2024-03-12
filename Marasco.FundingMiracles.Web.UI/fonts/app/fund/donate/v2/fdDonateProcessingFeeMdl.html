@@ -1,0 +1,38 @@
+﻿
+    <div class="modal-header">
+      <h3>I Got This! (IGT)</h3>
+    </div>
+    <div class="modal-body">
+      You can make an even bigger impact of covering the fees for this particular Miracle.
+      Currently, the
+      impact creates a 98.1% net to the fund which means that most funds receive nearly
+      100% of the donations.
+      Funding Miracles helped people raise millions of dollars for various
+      difference makers across the globe.  Our Soul Purpose is to continue the mission
+      of creating value
+      for others through our platform.  Our team of differnece makers is growing and will
+      continue to do so with your help.
+      Four out of five people help Miracles with an optional processing fee.
+
+      <div class="controls margin-top-10 margin-bottom-10">
+        <label class="checkbox" ng-hide="iGotThis">
+          <h4>
+            <input name="iGotThis" type="checkbox" ng-click="amountToCoverOptions($event)" ng-model="iGotThisChecked" ng-checked="iGotThisChecked" />
+            I Got This! (I'll cover the processing fee: {{amountToCover | currency: '$'}})
+          </h4>
+        </label>
+      </div>
+      <div class="controls">
+        <select class="form-control" ng-hide="isCustomAmount" ng-model="selectedFee" ng-change="onFeeSelect($event)" ng-options="item.name for item in items" class="col-md-5"></select>
+
+        <div ng-show="isCustomAmount" class="input-group">
+          <span class="input-group-addon input-group-addon-md">$</span>
+          <input class="form-control bloat" id="customDonationAmount" name="customDonationAmount" ng-model="selectedFee.levels[currentLevel].amount" type="number" min="1" va-whole-number-drctv required placeholder="0">
+          <span class="input-group-addon input-group-addon-md">.00</span>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-lg btn-primary" ng-click="ok()">Save & Close</button>
+      <button class="btn btn-lg btn-warning" ng-click="cancel()">Cancel</button>
+    </div>

@@ -1,0 +1,63 @@
+﻿<!--=== Breadcrumbs ===-->
+<fd-dashboard-widgets-header-drctv fund="fund" show-edit-menu="true"></fd-dashboard-widgets-header-drctv>
+<!--=== End Breadcrumbs ===-->
+<!--== Content Part Header===-->
+
+<div class="row">
+  <div class="col-md-12">
+    <!-- Page Error Summary-->
+    <md-alert-drctv title="{{title}}" message="{{message}}" alert-type="{{alertType}}" fade="fadeIn" show-alert="{{showAlertBeneSummary}}"></md-alert-drctv>
+    <!-- //Page Error Summary -->
+  </div>
+</div>
+
+<!--== /Content Part Header ==-->
+<!--=== Content Part -Body ===-->
+<div class="container">
+
+  <div class="row">
+    <!--LEFT SECTION(BODY)-->
+
+    <div class="col-md-8">
+
+      <!-- Fund Donations  -->
+      <div class="row">
+        <div class="col-md-11 headline">
+          <h3>Share this fund!</h3>
+          <div>
+            <h5 style="margin-top: 10px;">
+              <i>
+                To gain exposure share this fund with your social network as well as your close and personal family and friends.
+              </i>
+            </h5>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" ng-hide="isLoading">
+        <div class="col-md-12">
+
+        </div>
+      </div>
+      <div ng-show="isLoading">
+        <md-spinner-bar-drctv />
+      </div>
+    </div>
+
+
+    <!--/LEFT SECTION(BODY)-->
+    <!-- RIGHT SECTION -->
+    <div class="col-md-4">
+      <!-- Fund Features -->
+      <fd-dashboard-widgets-features-drctv fund="fund"></fd-dashboard-widgets-features-drctv>
+      <!-- /Fund Features -->
+
+    </div>
+    <!--/col-md-3-->
+
+  </div>
+  <!--/row-->
+
+</div>
+<!--/container-->
+<!--=== End Content Part - Body ===-->

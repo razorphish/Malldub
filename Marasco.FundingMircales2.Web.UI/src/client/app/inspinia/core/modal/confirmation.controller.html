@@ -1,0 +1,22 @@
+<div class="modal-header">
+    <h3 class="modal-title">
+        <i ng-show="vm.isWarning" class="fa fa-icon fa-exclamation-triangle red"></i> {{vm.title}} 
+    </h3>
+</div>
+<div class="modal-body">
+    <div ng-bind-html="vm.messageHtml()"></div>
+</div>
+<div class="modal-footer">
+    <div ng-show="!vm.isWarning">
+        <button class="btn btn-success" ng-click="vm.ok()">OK</button>
+        <div ng-show="!vm.hideCancel" class="pull-right" style="margin-left: 10px;">
+            <button class="btn btn-warning" ng-click="vm.close('cancel')">Cancel</button>
+        </div>
+    </div>
+    <div ng-show="vm.isWarning">
+        <button class="btn btn-success" ng-click="vm.ok()"> <span class="glyphicon glyphicon-arrow-right"></span> Ignore & Continue</button>
+        <div ng-show="!vm.hideCancel" class="pull-right" style="margin-left: 10px;">
+            <button class="btn btn-warning" ng-click="vm.close('cancel')"> <span class="glyphicon glyphicon-pencil"></span> Go Back & Edit </button>
+        </div>
+    </div>
+</div>

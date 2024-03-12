@@ -1,0 +1,100 @@
+﻿
+  <div class="modal-body donate-modal">
+    <div ng-form="offlineDonationFormWidget">
+      <div class="donate-form">
+        <div class="donate-fund ">
+
+          <div class="row">
+            <div class="col-lg-9 col-md-8 col-xs-8">
+              <div class="headline">
+                <h3>Add Offline Donation</h3>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-xs-4 text-right">
+              <button class="btn btn-default" ng-click="cancel('cancel')"><i class="fa fa-times"></i></button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="headline">
+                <h5>
+                  <i>
+                    When you receive outside donations (directly from a supporter) you
+                    can place it here.  You will NOT be charged any fees.
+                  </i>
+                </h5>
+              </div>
+            </div>
+          </div>
+
+
+          <!--Donation Amount-->
+          
+          <div class="row margin-bottom-10">
+            <div class="col-md-12 shopping-cart">
+              <div class="billing-info-inputs">
+
+                <div class="product-quantity">
+                  <button type="button" class="quantity-button"><i class="fa fa-dollar"></i></button>
+                  <input class="dollar-field-med" id="donationAmount" name="donationAmount" ng-model="donation.beneficiaryAmount" type="number" min="5" va-whole-number-drctv required placeholder="Amount" />
+                </div>
+
+                <span class="color-red" ng-show="showValidationMessages && offlineDonationFormWidget.donationAmount.$error.required">
+                  <strong>Please enter a donation amount</strong>
+                </span>
+
+                <span class="color-red" ng-show="showValidationMessages && offlineDonationFormWidget.donationAmount.$error.min && !offlineDonationFormWidget.donationAmount.$error.number">
+                  <strong>Donation must be greater than $5.00</strong>
+                </span>
+
+              </div>
+            </div>
+          </div>
+
+          <!--/Donation Amount-->
+          <!-- Name -->
+
+          <div class="row margin-bottom-10">
+            <div class="col-md-12">
+              <label class="input" ng-class="{'state-error': showValidationMessages && offlineDonationFormWidget.name.$error.required}">
+                <input class="form-control" id="name" name="name" type="text" ng-model="donation.donorName" required placeholder="Donor Name">
+              </label>
+            </div>
+          </div>
+
+          <!--/Name-->
+
+          <!-- Email -->
+          <div class="row">
+            <div class="col-md-12 margin-bottom-10">
+              <label class="input" ng-class="{'state-error': showValidationMessages && offlineDonationFormWidget.email.$error.required}">
+                <input class="form-control" id="email" name="email" type="email" ng-model="donation.email" required placeholder="Email Address">
+              </label>
+            </div>
+          </div>
+          <!--/Email-->
+
+          <!-- Message -->
+          <div class="row margin-bottom-20">
+            <div class="col-md-12">
+              <label class="input" ng-class="{'state-error': showValidationMessages && offlineDonationFormWidget.message.$error.required}">
+                <textarea class="form-control" id="message" name="message" type="text" ng-model="donation.message" rows="3" placeholder="Warm Message"></textarea>
+              </label>
+            </div>
+          </div>
+          <!--/Message-->
+          
+          <!--Footer-->
+          <div class="row">
+            <div class="col-md-12 pull-right">
+              <button class="btn btn-u btn-u-lg btn-block" ng-click="ok()" ng-class="{'disabled': isSaving}">
+                <i class="fa" ng-class="{'fa-check': !isSaving, 'fa-spinner fa-spin': isSaving}"></i> Save & Close
+              </button>
+            </div>
+          </div>
+          <!--/Footer-->
+
+        </div>
+      </div>
+    </div>
+  </div>

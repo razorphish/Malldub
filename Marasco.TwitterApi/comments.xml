@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Marasco.MailChimp</name>
+  </assembly>
+  <members>
+    <member name="N:Marasco.MailChimpApi.Models" />
+    <member name="T:Marasco.MailChimpApi.Models.MemberModel"> <summary>
+ Class MemberModel.
+ </summary></member>
+  </members>
+</doc>

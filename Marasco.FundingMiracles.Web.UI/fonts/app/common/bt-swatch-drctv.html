@@ -1,0 +1,20 @@
+﻿<div>
+  <p>
+    <input type="hidden" name="inputColor" ng-model="color"/>
+    <button type="button" class="btn btn-app btn-green btn-mini" ng-click="changeColor('Green')" ng-class="getClass('Green')" />
+    <button type="button" class="btn btn-app btn-blue btn-mini" ng-click="changeColor('Blue')" ng-class="getClass('Blue')" />
+    <button type="button" class="btn btn-app btn-orange btn-mini" ng-click="changeColor('Orange')" ng-class="getClass('Orange')" />
+    <button type="button" class="btn btn-app btn-red btn-mini" ng-click="changeColor('Red')" ng-class="getClass('Red')" />
+    <button type="button" class="btn btn-app btn-light btn-mini" ng-click="changeColor('Light')" ng-class="getClass('Light')" />
+    <button type="button" class="btn btn-app btn-purple btn-mini" ng-click="changeColor('Purple')" ng-class="getClass('Purple')" />
+    <button type="button" class="btn btn-app btn-aqua btn-mini" ng-click="changeColor('Aqua')" ng-class="getClass('Aqua')" />
+    <button type="button" class="btn btn-app btn-brown btn-mini" ng-click="changeColor('Brown')" ng-class="getClass('Brown')" />
+    <button type="button" class="btn btn-app btn-dark-blue btn-mini" ng-click="changeColor('Dark-Blue')" ng-class="getClass('Dark-Blue')" />
+    <button type="button" class="btn btn-app btn-light-green btn-mini" ng-click="changeColor('Light-Green')" ng-class="getClass('Light-Green')" />
+    <button type="button" class="btn btn-app btn-dark-red btn-mini" ng-click="changeColor('Dark-Red')" ng-class="getClass('Dark-Red')" />
+    <button type="button" class="btn btn-app btn-teal btn-mini" ng-click="changeColor('Teal')" ng-class="getClass('Teal')" />
+  </p>
+  <div class="alert alert-error span4" ng-show="color.$dirty && color.$error.requiredColor">
+    <strong>Description is required</strong>
+  </div>
+</div>

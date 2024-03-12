@@ -1,0 +1,163 @@
+<style type="text/css">
+    .errorRedText {
+    color: red;
+    }
+</style>
+<div class="main-container">
+    <div class="main-content">
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <div class="login-container" ng-form="vm.registerForm">
+                    <div class="center">
+                        <h1>
+                            <img class="headerLogo" src="/images/inspinia/Administrative_Tools_Transparent.png" alt="Owner Loyalty Configuration Admin">
+                            <span class="red">Inspinia</span>
+                        </h1>
+                        <h4 class="blue" id="id-company-text">&copy; Epsilon</h4>
+                    </div>
+                    <div class="space-6"></div>
+                    <div class="position-relative">
+                        <div id="signup-box" class="signup-box no-border">
+                            <div class="widget-body">
+                                <div class="widget-main">
+                                    <h4 class="header green lighter bigger">
+                                        <i class="ace-icon fa fa-users blue"></i> New User Registration
+                                    </h4>
+                                    <div class="space-6"></div>
+                                    <p>Enter your details to begin:</p>
+                                    <fieldset>
+                                        <div class="form-group" ng-class="{'has-error': vm.showValidationMessages && (vm.registerForm.firstName.$error.required  || vm.registerForm.lastName.$error.minlength) }">
+                                            <label class="block clearfix">
+                                            <span class="block input-icon input-icon-right">
+                                            <input type="text" class="form-control" ng-minlength="2" placeholder="First Name" ng-model="vm.newUser.firstName" ng-required="true" name="firstName" />
+                                            <i class="ace-icon fa"
+                                                ng-class="{'fa-times-circle': vm.showValidationMessages && vm.registerForm.firstName.$error.required ,
+                                                'fa-pencil': true}"></i>
+                                            </span>
+                                            </label>
+                                        </div>
+                                        <div class="form-group" ng-class="{'has-error': vm.showValidationMessages && (vm.registerForm.lastName.$error.required || vm.registerForm.lastName.$error.minlength) }">
+                                            <label class="block clearfix">
+                                            <span class="block input-icon input-icon-right">
+                                            <input type="text" class="form-control" ng-minlength="2" placeholder="Last Name" ng-model="vm.newUser.lastName" ng-required="true" name="lastName" />
+                                            <i class="ace-icon fa"
+                                                ng-class="{'fa-times-circle': vm.showValidationMessages && vm.registerForm.lastName.$error.required,
+                                                'fa-pencil': true}"></i>
+                                            </span>
+                                            </label>
+                                        </div>
+                                        <div class="form-group" ng-class="{'has-error': vm.showValidationMessages && (coupon.InternalId.$error.pattern ||vm.registerForm.Email.$error.required )}">
+                                            <div class="form-group" ng-class="{'has-error': vm.registerForm.Email.$error.pattern || vm.registerForm.Email.$error.email }">
+                                                <label class="block clearfix">
+                                                <span class="block input-icon input-icon-right">
+                                                <input type="email" ng-pattern="regExp" class="form-control" placeholder="Email" ng-model="vm.newUser.email" ng-required="true" name="Email" />
+                                                <i class="ace-icon fa"
+                                                    ng-class="{'fa-times-circle': vm.showValidationMessages && vm.registerForm.Email.$error.required,
+                                                    'fa-envelope': true}"></i>
+                                                </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" ng-class="{'has-error': vm.showValidationMessages &&  vm.registerForm.UserName.$error.required || vm.registerForm.UserName.$error.pattern}">
+                                            <label class="block clearfix">
+                                            <span class="block input-icon input-icon-right">
+                                            <input type="text" class="form-control" placeholder="UserName" ng-pattern="/^(?=.{4,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+[^-_.]$/" ng-model="vm.newUser.userName" ng-required="true" name="UserName" data-toggle="tooltip" data-placement="right" title="1. Only contains alphanumeric characters, underscore and dot.
+                                                2. Underscore and dot can't be at the end or start of a username (e.g _username / username_ / .username / username.).
+                                                3. Underscore and dot can't be next to each other (e.g user_.name).
+                                                4. Underscore or dot can't be used multiple times in a row (e.g user__name / user..name).
+                                                5. Number of characters must be between 4 to 20." />
+                                            <i class="ace-icon fa fa-user" data-toggle="tooltip" data-placement="right" title="1. Only contains alphanumeric characters, underscore and dot.
+                                                2. Underscore and dot can't be at the end or start of a username (e.g _username / username_ / .username / username.).
+                                                3. Underscore and dot can't be next to each other (e.g user_.name).
+                                                4. Underscore or dot can't be used multiple times in a row (e.g user__name / user..name).
+                                                5. Number of characters must be between 4 to 20."
+                                                ng-class=" {'fa-times-circle': vm.showValidationMessages && vm.registerForm.username.$error.required,
+                                                'fa-user': true}"></i>
+                                            </span>
+                                            </label>
+                                        </div>
+                                        <div class="form-group" ng-class="{'has-error': vm.showValidationMessages && vm.registerForm.Password.$error.required || vm.registerForm.Password.$error.pattern}">
+                                            <label class="block clearfix">
+                                            <span class="block input-icon input-icon-right">
+                                            <input type="password" class="form-control" ng-pattern="/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&]).{6,}/" placeholder="Password" ng-model="vm.newUser.password" ng-required="true" name="Password" data-toggle="tooltip" data-placement="right" title="Passowrd must be at least 6 characters long and must contain at least one digit (0-9), one capital letter (A-Z), one small letter (a-z), and one special character(!@#$%^&)." />
+                                            <i class="ace-icon fa fa-lock" data-toggle="tooltip" data-placement="right" title="Passowrd must be at least 6 characters long and must contain at least one digit (0-9), one capital letter (A-Z), one small letter (a-z), and one special character(!@#$%^&)."
+                                                ng-class="{'fa-times-circle': vm.showValidationMessages && vm.registerForm.Password.$error.required,
+                                                'fa-lock': true}"></i>
+                                            </span>
+                                            <span ng-show="IsMatch">Password Validation</span>
+                                            </label>
+                                        </div>
+                                        <div class="form-group" ng-class="{'has-error': vm.showValidationMessages && vm.registerForm.ConfirmPassword.$error.required}">
+                                            <div class="form-group" ng-class="{'has-error': (vm.registerForm.Password.$dirty && vm.registerForm.ConfirmPassword.$dirty) && (vm.newUser.password != vm.newUser.confirmPassword)}">
+                                                <label class="block clearfix">
+                                                <span class="block input-icon input-icon-right">
+                                                <input type="password" class="form-control" placeholder="Repeat password" ng-confirm-field ng-model="vm.newUser.confirmPassword" confirm-against="vm.newUser.password" ng-required="true" name="ConfirmPassword" />
+                                                <i class="ace-icon fa fa-retweet" ng-class="{'fa-times-circle': vm.showValidationMessages && vm.registerForm.ConfirmPassword.$error.required,
+                                                    'fa-retweet': true}"></i>
+                                                </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div ng-show="vm.showValidationMessages && vm.registerForm.firstName.$error.required">
+                                            <span><i class="ace-icon fa fa-dot-circle-o fa-xs"></i>&nbsp;First Name has an error: <strong class="errorRedText">required</strong>.</span><br
+                                                />
+                                        </div>
+                                        <div ng-show="vm.showValidationMessages && vm.registerForm.lastName.$error.required">
+                                            <span><i class="ace-icon fa fa-dot-circle-o fa-sm"></i>&nbsp;Last Name has an error: <strong class="errorRedText">required </strong>.</span><br
+                                                />
+                                        </div>
+                                        <div ng-show="vm.showValidationMessages && vm.registerForm.UserName.$error.required">
+                                            <span><i class="ace-icon fa fa-dot-circle-o fa-sm"></i>&nbsp;UserName has an error: <strong class="errorRedText">required </strong>.</span><br
+                                                />
+                                        </div>
+                                        <div ng-show="vm.showValidationMessages && vm.registerForm.UserName.$error.pattern">
+                                            <span><i class="ace-icon fa fa-dot-circle-o fa-sm"></i>&nbsp;UserName has an error: <strong class="errorRedText">invalid</strong>.</span><br
+                                                />
+                                        </div>
+                                        <div ng-show="vm.showValidationMessages && vm.registerForm.Email.$error.required">
+                                            <span><i class="ace-icon fa fa-dot-circle-o fa-sm"></i>&nbsp;Email has an error: <strong class="errorRedText">required </strong>.</span><br
+                                                />
+                                        </div>
+                                        <div ng-show="vm.showValidationMessages && vm.registerForm.Password.$error.required">
+                                            <span><i class="ace-icon fa fa-dot-circle-o fa-sm"></i>&nbsp;Password has an error: <strong class="errorRedText"> required</strong>.</span><br
+                                                />
+                                        </div>
+                                        <div ng-show="vm.showValidationMessages && vm.registerForm.ConfirmPassword.$error.required">
+                                            <span><i class="ace-icon fa fa-dot-circle-o fa-sm"></i>&nbsp;Repeat Password has an error: <strong class="errorRedText">required</strong>.</span><br
+                                                />
+                                        </div>
+                                        <div ng-show="vm.showValidationMessages && (vm.registerForm.Email.$error.pattern || vm.registerForm.Email.$error.email)"><span><i class="ace-icon fa fa-dot-circle-o fa-sm"></i>&nbsp;Email is not in proper format:<strong class="errorRedText"> Email</strong>.</span></div>
+                                        <div class="space-24"></div>
+                                        <div class="clearfix">
+                                            <button type="reset" class="width-30 pull-left btn btn-sm" ng-click="vm.reset()">
+                                            <i class="ace-icon fa fa-refresh"></i>
+                                            <span class="bigger-110">Reset</span>
+                                            </button>
+                                            <button type="button" class="width-65 pull-right btn btn-sm btn-success" ng-disabled="vm.isClicked" ng-click="vm.register()">
+                                            <span class="bigger-110">Register</span>
+                                            <i class="ace-icon fa fa-arrow-right icon-on-right"></i>
+                                            </button>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="toolbar center">
+                                    <a ui-sref="login" data-target="#login-box" class="back-to-login-link">
+                                    <i class="ace-icon fa fa-arrow-left"></i> Back to login
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- /.widget-body -->
+                        </div>
+                        <!-- /.signup-box -->
+                    </div>
+                    <!-- /.position-relative -->
+                </div>
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.main-content -->
+</div>
+<!-- /.main-container -->
+<!-- basic scripts -->

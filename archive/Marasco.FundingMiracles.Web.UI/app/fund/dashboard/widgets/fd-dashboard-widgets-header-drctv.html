@@ -1,0 +1,75 @@
+﻿<div class="breadcrumbs breadcrumbs-bottom-margin-0 margin-bottom-10">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="color-green pull-left">{{title}}</h1>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <!--Header Sub Left Menu-->
+      <div class="col-md-7">
+        <div class="navbar navbar-default" ng-show="showEditMenu" role="navigation">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" ng-href="/fund/dashboard/{{fund.identification}}" role="button"><span class="line-height-28">Dashboard</span></a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav" id="nav-with-menu">
+                <li>
+                  <a ng-href="/{{fund.item.permalink}}" role="button"><i class="fa fa-eye"></i> View</a>
+                </li>
+                <li>
+                  <a ng-href="/fund/dashboard/supporters/{{fund.identification}}" role="button"><i class="fa fa-child"></i> Supporters</a>
+                </li>
+                <li>
+                  <a ng-href="/fund/edit/{{fund.identification}}" role="button">Edit</a>
+                </li>
+                <li>
+                  <a ng-href="/fund/dashboard/widgets/{{fund.identification}}" role="button"> Embed</a>
+                </li>
+                <li class="dropdown">
+                  <a href id="drop3" class="dropdown-toggle" data-toggle="dropdown">More <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a role="menuitem" tabindex="-1" ng-href="/fund/dashboard/donations/{{fund.identification}}">Donations</a></li>
+                    <li><a role="menuitem" tabindex="-1" ng-href="/fund/dashboard/notifications/{{fund.identification}}">Notifications</a></li>
+                    <li><a role="menuitem" tabindex="-1" ng-href="/fund/dashboard/updates/{{fund.identification}}">Updates</a></li>
+                    <li><a role="menuitem" tabindex="-1" ng-href="/fund/dashboard/print/{{fund.identification}}">Print</a></li>
+                    <li><a role="menuitem" tabindex="-1" ng-href="/fund/dashboard/settings/{{fund.identification}}">Settings</a></li>
+                    <li><a role="menuitem" tabindex="-1" ng-href="/fund/dashboard/teams/{{fund.identification}}">Teams</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/Header Sub Left Menu-->
+      <!--Header Sub Left Menu-->
+      <div class="col-md-3 col-md-offset-2">
+        <div class="navbar navbar-default navbar-right" ng-show="showEditMenu || showGlobalMenu" role="navigation">
+          <div>
+            <ul class="nav navbar-nav" id="nav-with-menu">
+              <li class="dropdown">
+                <a href id="drop3" class="dropdown-toggle" data-toggle="dropdown">My Fundraisers <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a role="menuitem" tabindex="-1" ng-href="/fund/edit/wizard"><i class="fa fa-plus fa-fw"></i> Add a new Fund Raiser</a></li>
+                  <li><a role="menuitem" tabindex="-1" ng-href="/controlpanel/fund/list"><i class="fa fa-list fa-fw"></i> All Fundraisers</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!--/Header Sub Left Menu-->
+    </div>
+  </div><!--/container-->
+</div>

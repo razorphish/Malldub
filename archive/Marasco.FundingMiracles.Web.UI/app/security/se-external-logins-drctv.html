@@ -1,0 +1,16 @@
+﻿<section id="socialLoginForm">
+  <fieldset id="socialLoginList" ng-hide="isLoading || isAuthenticating">
+    <div class="headline"><h3>{{title}}</h3></div>
+    <p ng-repeat="et in externalLogins | orderBy:'sortOrder'">
+      <button type="button" class="btn btn-block btn-lg btn-{{et.name | lowercase}}-inversed" name="{{et.name}}Provider" title="Log in using your {{et.name}} account" ng-click="externalLogin(et.name, et.url)"><i class="fa fa-{{et.icon | lowercase}}"></i> Connect with {{et.title}}</button>
+    </p>
+  </fieldset>
+  <fieldset ng-show="isLoading">
+    <div class="headline"><h3>Loading Service Providers..</h3></div>
+    <md-spinner-bar-drctv />
+  </fieldset>
+  <fieldset ng-show="isAuthenticating">
+    <div class="headline"><h3>Authenticating...</h3></div>
+    <md-spinner-bar-drctv />
+  </fieldset>
+</section>

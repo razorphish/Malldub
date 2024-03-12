@@ -1,0 +1,52 @@
+﻿<div class="margin-bottom-10 margin-top-10 bg-light">
+  <div class="headline">
+    <h3>Payment Information</h3>
+  </div>
+  <!-- Card Number -->
+  <div class="row">
+    <div class="col-md-6">
+      <label for="cardNumber">
+        Card Number:<i class="color-red">*</i>
+        <span class="color-red" ng-show="showValidationMessages && fundDonationForm.cardNumber.$error.required">
+          <strong>[Card number required]</strong>
+        </span>
+      </label>
+      <div class="row">
+        <div class="col-md-12">
+          <input class="form-control input-lg bloat" id="cardNumber" name="cardNumber" ng-model="order.cardNumber" type="text" required placeholder="Card number">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <!-- /Card CCV -->
+      <label for="securityCode">
+        Security Code:<i class="color-red">*</i>
+        <span class="color-red" ng-show="showValidationMessages && fundDonationForm.securityCode.$error.required">
+          <strong>[Security code required]</strong>
+        </span>
+      </label>
+      <div class="row">
+        <div class="col-md-6 col-xs-6">
+          <input class="form-control input-lg bloat" id="securityCode" name="securityCode" type="text" ng-model="order.cardCvv2" required placeholder="Code">
+        </div>
+      </div>
+      <!-- /Card CCV -->
+    </div>
+  </div>
+  <!--/Card Number-->
+  <!-- /Card Expiration -->
+  <div class="margin-bottom-10">
+    <label for="cardExpirationMonth">
+      Expiration:<i class="has-error">*</i>
+    </label>
+    <div class="row">
+      <div class="col-md-3">
+        <select class="form-control input-lg bloat" ng-model="selectedCardMonth" id="cardExpirationMonth" name="cardExpirationMonth" ng-options="m.name for m in monthOptions" required></select>
+      </div>
+      <div class="col-md-3">
+        <select class="form-control input-lg bloat" ng-model="selectedCardYear" id="cardExpirationYear" name="cardExpirationYear" ng-options="y.name for y in yearOptions" required></select>
+      </div>
+    </div>
+  </div>
+  <!-- /Card Expiration -->
+</div>

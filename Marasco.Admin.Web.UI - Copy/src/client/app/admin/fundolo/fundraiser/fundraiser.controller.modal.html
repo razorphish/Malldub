@@ -1,0 +1,199 @@
+<div class="modal-header">
+  <button type="button" class="close" ng-click="vm.close()">&times;</button>
+  <h3 class="modal-title" ng-show="!vm.isAdd">Edit Fundraiser - {{fund.identification}}</h3>
+  <h3 class="modal-title" ng-show="vm.isAdd">Add Fundraiser</h3>
+</div>
+<div class="modal-body">
+  <div class="form-horizontal" ng-form="vm.editForm">
+    <div class="row">
+      <label class="col-sm-2 col-md-1 col-lg-1">Goal</label>
+      <div class="col-sm-4 col-md-2 col-lg-2" ng-class="{'has-error': vm.showValidationMessages && vm.editForm.goalAmount.$error.required}">
+        <input type="number" tabindex="3" class="form-control" placeholder="Goal Amount" ng-model="fund.goalAmount" ng-required="true"
+          name="goalAmount" data-toggle="tooltip" data-placement="top" title="Goal Amount" />
+      </div>
+      <label class="col-sm-2 col-md-1 col-lg-1">Title</label>
+      <div class="col-sm-4 col-md-2 col-lg-2" ng-class="{'has-error': (vm.showValidationMessages && vm.editForm.title.$error.required)}">
+        <input type="text" tabindex="3" class="form-control" placeholder="title" ng-model="fund.item.title" ng-required="true" name="title"
+          title="Title of Fundraiser" />
+      </div>
+      <label class="col-sm-2 col-md-1 col-lg-1">Start Date</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+         <input type="text" class="form-control" 
+          uib-datepicker-popup="MM/dd/yyyy" 
+          ng-model="fund.item.startDate" 
+          is-open="popup1.opened" 
+          datepicker-options="dateOptions1" 
+          ng-required="true" 
+          close-text="Close"
+          ng-change="vm.change1()"
+          ng-click="vm.open1()" />
+      </div>
+      <label class="col-sm-2 col-md-1 col-lg-1">End Date</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+         <input type="text" class="form-control" 
+          uib-datepicker-popup="MM/dd/yyyy" 
+          ng-model="fund.item.endDate" 
+          is-open="popup2.opened" 
+          datepicker-options="dateOptions2" 
+          ng-required="true" 
+          close-text="Close"
+          ng-click="vm.open2()" 
+          uib-tooltip="End Date of fundraiser"/>
+      </div>
+    </div>
+    <div class="space-2"></div>
+    <div class="row">
+      <label class="col-sm-2 col-md-1 col-lg-1">Featured</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <switch tabindex="4" ng-model="fund.item.featured" ng-true-value="true" ng-false-value="false"></switch>
+      </div>
+      <label class="col-sm-2 col-md-1 col-lg-1">Private</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <switch tabindex="4" ng-model="fund.isPrivate" ng-true-value="true" ng-false-value="false"></switch>
+      </div>
+      <div class="space-2 hidden-lg hidden-md hidden-xs"></div>
+      <label class="col-sm-2 col-md-1 col-lg-1">Color</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <select chosen 
+          tabindex="7" 
+          class="chosen-select form-control" 
+          name="pageColor" 
+          data-placeholder="Choose a page color..."
+          ng-model="selectedPageColor" 
+          allow_single_deselect="false" 
+          options="pageColorList" 
+          ol-chosen-model="fund.pageColor"
+          ol-chosen-model-attrib="identification" 
+          required 
+          ng-options="PageColor.friendlyName for PageColor in pageColorList track by PageColor.friendlyName">
+        </select>
+      </div>
+      <label class="col-sm-2 col-md-1 col-lg-1">Skin</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <select chosen 
+          tabindex="7" 
+          class="chosen-select form-control" 
+          name="pageSkin" 
+          data-placeholder="Choose a page skin..."
+          ng-model="selectedpageSkin" 
+          allow_single_deselect="false" 
+          options="pageSkinList" 
+          ol-chosen-model="fund.pageSkin"
+          ol-chosen-model-attrib="identification" 
+          required 
+          ng-options="PageSkin.friendlyName for PageSkin in pageSkinList track by PageSkin.friendlyName">
+        </select>
+      </div>
+    </div>
+    <div class="space-2"></div>
+    <div class="row">
+      <label class="col-sm-2 col-md-1 col-lg-1">Category</label>
+      <div class="col-sm-4 col-md-2 col-lg-2" ng-class="{'has-error': vm.showValidationMessages && vm.editForm.categoryId.$error.required }">
+        <select chosen 
+          tabindex="7" 
+          class="chosen-select form-control" 
+          name="categoryId" 
+          data-placeholder="Choose a category..."
+          ng-model="selectedCategoryId" 
+          allow_single_deselect="false" 
+          options="categoryList" 
+          ol-chosen-model="fund.categoryId"
+          ol-chosen-model-attrib="identification" 
+          required 
+          ng-options="Category.friendlyName for Category in categoryList track by Category.friendlyName">
+        </select>
+      </div>
+      <label class="col-sm-2 col-md-1 col-lg-1">Status</label>
+      <div class="col-sm-4 col-md-2 col-lg-2" ng-class="{'has-error': vm.showValidationMessages && vm.editForm.statusId.$error.required }">
+        <select chosen 
+          tabindex="8" 
+          class="chosen-select form-control" 
+          name="statusId" 
+          data-placeholder="Choose a Status..." 
+          ng-model="selectedStatusId"
+          allow_single_deselect="false" 
+          options="statusList" 
+          ol-chosen-model="fund.item.statusId" 
+          ol-chosen-model-attrib="identification"
+          required 
+          ng-options="Status.friendlyName for Status in statusList track by Status.friendlyName">
+        </select>
+      </div>
+      <label class="col-sm-2 col-md-1 col-lg-1">Layout</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <select chosen 
+          tabindex="10" 
+          class="chosen-select form-control" 
+          name="pageLayout" 
+          data-placeholder="Choose a layout..."
+          ng-model="selectedPageLayout" 
+          allow_single_deselect="false" 
+          options="pageLayoutList" 
+          ol-chosen-model="fund.pageLayout"
+          ol-chosen-model-attrib="identification" 
+          required 
+          ng-options="PageLayout.friendlyName for PageLayout in pageLayoutList track by PageLayout.friendlyName">
+        </select>
+      </div>
+      <label class="col-sm-2 col-md-1 col-lg-1">Permalink</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <input type="text" tabindex="3" class="form-control" placeholder="permalink" ng-model="fund.item.permalink" name="permalink"
+          title="Permalink to fundraiser" />
+      </div>
+    </div>
+    <div class="space-2"></div>
+    <div class="row">
+      <label class="col-sm-2 col-md-1 col-lg-1" for="form-field-first">Short Summary</label>
+      <div class="col-sm-4 col-md-5 col-lg-5" ng-class="{'has-error': vm.showValidationMessages && vm.editForm.shortSummary.$error.required}">
+        <input type="text" tabindex="3" class="form-control" placeholder="Short Summary" ng-model="fund.item.shortSummary" ng-required="true"
+          name="shortSummary" title="Short Summary" />
+      </div>
+      <label class="col-sm-2 col-md-1 col-lg-1" ng-show="!vm.isAdd">Date Updated</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <label ng-show="!vm.isAdd">{{fund.item.dateUpdated|date:'MM/dd/yyyy h:mm:ss a'}}</label>
+      </div>
+      <label class="col-sm-2 col-md-1 col-lg-1" ng-show="!vm.isAdd">Date Created</label>
+      <div class="col-sm-4 col-md-2 col-lg-2">
+        <label ng-show="!vm.isAdd">{{fund.item.dateEntered|date:'MM/dd/yyyy h:mm:ss a'}}</label>
+      </div>
+    </div>
+    <div class="space-2"></div>
+    <div class="row">
+      <div class="col-xs-12 align-right">
+
+        </button> &nbsp; &nbsp;
+        <button tabindex="9" class="btn btn-sm btn-primary" type="button" ng-click="vm.saveFundraiser()" ng-disabled="vm.isSaving">
+          <i class="ace-icon fa" ng-class="{'fa-spinner fa-spin': vm.isSaving, 'fa-save': !vm.isSaving}"></i>
+          Save
+        </button> &nbsp; &nbsp;
+        <button tabindex="10" class="btn btn-sm btn-primary" type="button" ng-click="vm.close()">
+          <i class="ace-icon fa fa-close bigger-110"></i>
+          Close
+        </button>
+      </div>
+    </div>
+    <div class="space-2"></div>
+    <div class="row">
+      <div class="col-xs-12">
+        <uib-tabset active="active">
+          <uib-tab index="0" uib-tooltip="Description">
+            <uib-tab-heading>
+              <i class="fa fa-info"></i> <span class="hidden-xs hidden-sm">Description</span>
+            </uib-tab-heading>
+            <div class="container-fluid">
+              <textarea ckeditor="editorOptions" ng-model="fund.item.description"></textarea>
+            </div>
+          </uib-tab>
+          <uib-tab ng-repeat="tab in vm.tabs" index="tab.index" uib-tooltip="{{tab.tooltip}}">
+            <uib-tab-heading>
+              <i class="fa fa-{{tab.icon}}"></i> <span class="hidden-xs hidden-sm">{{ tab.heading }}</span>
+            </uib-tab-heading>
+            <div class="container-fluid">
+              <div ng-if="active == tab.index" ng-include="tab.template"></div>
+            </div>
+          </uib-tab>
+        </uib-tabset>
+      </div>
+    </div>
+  </div>
+</div>

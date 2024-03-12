@@ -1,0 +1,208 @@
+﻿/* 
+* Version: 1.6
+* Green Color              : #72c02c; 
+* Green Hover Color        : #5fb611; 
+* Green Hover Color light  : #a7e8ee;
+* Additional color         : #d5eef0;
+* rgba(39, 215, 231, 1);
+* rgba(39, 215, 231, 1);
+*/
+
+ .wishlist-category a {
+	color: #72c02c;
+}
+ .add-to-wishlist i {
+	color: #72c02c;
+}
+
+.add-to-wishlist a:hover,
+.add-to-wishlist .wishlist-in:hover i,
+.add-to-wishlist .compare-in:hover i {
+	color: #72c02c;
+}
+
+ .shop-product .shop-product-social li i:hover {
+	color: #72c02c;
+}
+ .shop-product-v2 .shop-product-social li i:hover {
+  color: #72c02c;
+}
+
+ .shop-product .product-review-list a:hover {
+	color: #72c02c;
+}
+
+ .shop-product .product-size label:hover {
+	color: #72c02c;
+	border-color: #72c02c;
+}
+
+.shop-product .product-size input:checked ~ label {
+	color: #72c02c;
+	border-color: #72c02c;
+}
+
+.shop-product .product-color label:hover {
+	cursor: pointer;
+	border: 2px solid #5fb611;
+}
+
+.shop-product .product-color input:checked ~ label {
+	border: 2px solid #72c02c;
+}
+
+.shop-color {
+	color: #72c02c;
+}
+
+.product-service .product-service-heading {
+	background: #72c02c;
+}
+
+.product-service:hover .product-service-heading {
+	background: #a7e8ee;
+}
+
+.product-service .product-service-in a {
+	color: #72c02c;
+}
+
+.tab-v5 .nav-tabs > li.active > a, 
+.tab-v5 .nav-tabs > li.active > a:hover, 
+.tab-v5 .nav-tabs > li.active > a:focus {
+	border-bottom: 1px solid #5fb611;
+}
+
+.tab-v5 .nav-tabs > li > a:hover {
+	border-bottom: 1px solid #5fb611;
+}
+
+.shop-subscribe {
+		background:  #5fb611;
+}
+
+.footer-v4 .copyright a {
+		color: #72c02c;
+}
+
+.product-ratings li .rating-selected {
+		color: #72c02c;
+}
+
+.product-ratings li .rating {
+		color: #d5eef0;
+}
+.product-ratings li.like-icon a {
+		color: #d5eef0;
+}
+
+.product-ratings li.like-icon a:hover {
+		color: #72c02c;
+}
+
+
+.progress-bar-background-blue {
+	background: #72c02c
+}
+
+/* Shopping cart*/
+.btn-u.btn-brd.btn-u-sea-shop {
+		border-color: #72c02c;
+		color: #72c02c;
+}
+
+.btn-u.btn-brd.btn-u-sea-shop:hover {
+		border-color: #72c02c;
+		color: #72c02c;
+}
+
+.btn-u.btn-brd.btn-u-sea-shop.btn-brd-hover:hover {
+		background:  #72c02c;
+}
+
+.btn-u.btn-u-sea-shop {
+	background-color: #72c02c;
+}
+.btn-u.btn-u-sea-shop:hover {
+		border-color: #72c02c;
+		background: #5fb611	;
+
+}
+
+.progress-bar {
+  background-color: #72c02c !important;
+}
+
+/* Dark
+------------------------------------*/
+body.dark  .shop-product .product-size label:hover {
+  color: #72c02c;
+  border-color: #72c02c;
+}
+
+/* Sky form donate fund
+------------------------------------*/
+.sky-form .donate-fund a {
+  color: #72c02c;
+}
+
+/* Large Bars
+------------------------------------*/
+.squaresWaveG{
+background-color:#72c02c;
+}
+
+@-moz-keyframes bounce_squaresWaveG{
+0%{
+background-color:#72c02c;
+}
+
+100%{
+background-color:#FFFFFF;
+}
+
+}
+
+@-webkit-keyframes bounce_squaresWaveG{
+0%{
+background-color:#72c02c;
+}
+
+100%{
+background-color:#FFFFFF;
+}
+
+}
+
+@-ms-keyframes bounce_squaresWaveG{
+0%{
+background-color:#72c02c;
+}
+
+100%{
+background-color:#FFFFFF;
+}
+
+}
+
+@-o-keyframes bounce_squaresWaveG{
+0%{
+background-color:#72c02c ;
+}
+
+100%{
+background-color:#FFFFFF;
+}
+
+}
+
+@keyframes bounce_squaresWaveG{
+0%{
+background-color:#72c02c;
+}
+
+100%{
+background-color:#FFFFFF;
+}
+
+}

@@ -1,0 +1,30 @@
+﻿<div ng-show="fundraisers.length > 0" >
+  <div class="row">
+    <div class="col-md-8">
+      <h3>Fundraisers</h3>
+    </div>
+    <div class="col-md-4 align-bottom margin-top-10">
+      <a href ng-click="viewAll()">View All</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div ng-hide="isLoading" ng-repeat="fundraiser in fundraisers | orderBy:'dateEntered':true | limitTo:3">
+        <div class="row">
+          <div class="col-md-12 profile">
+            <fd-widgets-fund-xs-drctv fund="fundraiser.fund" use-fundraiser-name="true"></fd-widgets-fund-xs-drctv>
+          </div>
+        </div>
+      </div>
+      <div ng-show="isLoading">
+        <md-spinner-bar-drctv />
+      </div>
+    </div>
+  </div>
+  <div class="row margin-top-10">
+    <div class="col-md-10 col-lg-offset-1">
+      <button type="button" class="btn btn-u btn-block" ng-click="becomeFundraiser()">Become a Fundraiser</button>
+    </div>
+  </div>
+  <hr/>
+</div>

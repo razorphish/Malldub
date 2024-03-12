@@ -1,0 +1,11 @@
+﻿# robots.txt generated at http://www.mcanerin.com
+User-agent: baiduspider
+User-agent: Baiduspider 
+User-agent: Baiduspider+ 
+Disallow: /
+User-agent: *
+Disallow: 
+Disallow: /assets/
+Disallow: /press/
+Disallow: /account/
+Disallow: /fund/

@@ -1,0 +1,118 @@
+﻿@{
+    ViewBag.Title = "FundUsers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2> Navigate to: 
+    <select onchange="window.location = this.value;">
+        <option value="/admin/Accounts">Accounts</option>
+        <option value="/admin/AccountStatuses">AccountStatuses</option>
+        <option value="/admin/Address">Address</option>
+        <option value="/admin/AspNetRoles">AspNetRoles</option>
+        <option value="/admin/AspNetUsers">AspNetUsers</option>
+        <option value="/admin/AspNetUserClaims">AspNetUserClaims</option>
+        <option value="/admin/AspNetUserGateways">AspNetUserGateways</option>
+        <option value="/admin/AspNetUserLogins">AspNetUserLogins</option>
+        <option value="/admin/Auctions">Auctions</option>
+        <option value="/admin/AuctionInvoices">AuctionInvoices</option>
+        <option value="/admin/AuctionInvoiceBillToTypes">AuctionInvoiceBillToTypes</option>
+        <option value="/admin/AuctionInvoiceTypes">AuctionInvoiceTypes</option>
+        <option value="/admin/AuctionPaymentItems">AuctionPaymentItems</option>
+        <option value="/admin/AuctionStatuses">AuctionStatuses</option>
+        <option value="/admin/AuctionTypes">AuctionTypes</option>
+        <option value="/admin/Bids">Bids</option>
+        <option value="/admin/Categories">Categories</option>
+        <option value="/admin/Defaults">Defaults</option>
+        <option value="/admin/Donations">Donations</option>
+        <option value="/admin/DonationFeeTypes">DonationFeeTypes</option>
+        <option value="/admin/DonationNotes">DonationNotes</option>
+        <option value="/admin/DonationStatuses">DonationStatuses</option>
+        <option value="/admin/Emails">Emails</option>
+        <option value="/admin/Funds">Funds</option>
+        <option value="/admin/FundShares">FundShares</option>
+        <option value="/admin/FundShareTypes">FundShareTypes</option>
+        <option value="/admin/FundTypes">FundTypes</option>
+        <option value="/admin/FundUpdates">FundUpdates</option>
+        <option value="/admin/FundUpdateStatuses">FundUpdateStatuses</option>
+        <option value="/admin/FundUsers" selected="selected">FundUsers</option>
+        <option value="/admin/FundUserTypes">FundUserTypes</option>
+        <option value="/admin/Gateways">Gateways</option>
+        <option value="/admin/Invoices">Invoices</option>
+        <option value="/admin/InvoiceItems">InvoiceItems</option>
+        <option value="/admin/InvoiceStatuses">InvoiceStatuses</option>
+        <option value="/admin/Items">Items</option>
+        <option value="/admin/ItemCategories">ItemCategories</option>
+        <option value="/admin/ItemMeta">ItemMeta</option>
+        <option value="/admin/ItemTransactionTypes">ItemTransactionTypes</option>
+        <option value="/admin/ItemTypes">ItemTypes</option>
+        <option value="/admin/ItemUploads">ItemUploads</option>
+        <option value="/admin/ListAreas">ListAreas</option>
+        <option value="/admin/ListCategories">ListCategories</option>
+        <option value="/admin/ListPortalPostAttributes">ListPortalPostAttributes</option>
+        <option value="/admin/ListPosts">ListPosts</option>
+        <option value="/admin/ListPostStatuses">ListPostStatuses</option>
+        <option value="/admin/ListSites">ListSites</option>
+        <option value="/admin/ListTypes">ListTypes</option>
+        <option value="/admin/Malls">Malls</option>
+        <option value="/admin/MalldubApplications">MalldubApplications</option>
+        <option value="/admin/MallPortalStatuses">MallPortalStatuses</option>
+        <option value="/admin/MetaDataTypes">MetaDataTypes</option>
+        <option value="/admin/MetaKeys">MetaKeys</option>
+        <option value="/admin/Meta">Meta</option>
+        <option value="/admin/MigrationHistories">MigrationHistories</option>
+        <option value="/admin/Notes">Notes</option>
+        <option value="/admin/NoteTypes">NoteTypes</option>
+        <option value="/admin/Orders">Orders</option>
+        <option value="/admin/OrderItems">OrderItems</option>
+        <option value="/admin/PaymentMethods">PaymentMethods</option>
+        <option value="/admin/Phones">Phones</option>
+        <option value="/admin/PhoneTypes">PhoneTypes</option>
+        <option value="/admin/Portals">Portals</option>
+        <option value="/admin/PortalTypes">PortalTypes</option>
+        <option value="/admin/PostFields">PostFields</option>
+        <option value="/admin/PostReplyEmailTypes">PostReplyEmailTypes</option>
+        <option value="/admin/RefactorLogs">RefactorLogs</option>
+        <option value="/admin/States">States</option>
+        <option value="/admin/Uploads">Uploads</option>
+        <option value="/admin/UploadCategories">UploadCategories</option>
+        <option value="/admin/UserAddresses">UserAddresses</option>
+        <option value="/admin/UserEmails">UserEmails</option>
+        <option value="/admin/UserPhones">UserPhones</option>
+        <option value="/admin/UserStatuses">UserStatuses</option>
+        <option value="/admin/UserUploads">UserUploads</option>
+    </select>
+</h2>
+<div id="grid"></div>
+<script type="text/x-kendo-template" id="template">
+    <div class="toolbar">
+        <label class="toolbarFilter-label" for="toolbarFilter">Show FundUsers by Fund:</label>
+        <input type="search" id="toolbarFilter" style="width: 230px"></input>
+    </div>
+</script>
+
+<style scoped="scoped">
+    #grid .k-toolbar
+    {
+        min-height: 27px;
+    }
+    
+    .toolbarFilter-label
+    {
+        vertical-align: middle;
+        padding-right: .5em;
+    }
+
+    #toolbarFilter
+    {
+        vertical-align: middle;
+    }
+
+    .toolbar {
+        float: right;
+        margin-right: .8em;
+    }
+</style>
+
+@section Scripts {
+    @Scripts.Render("~/Scripts/Generated/FundUsers.js")
+}

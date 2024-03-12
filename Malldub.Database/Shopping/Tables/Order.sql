@@ -1,0 +1,33 @@
+﻿CREATE TABLE [Shopping].[Order](
+  [Id] [int] IDENTITY(1,1) NOT NULL,
+  [OrderGuid] [uniqueidentifier] NOT NULL,
+  [CustomerId] NVARCHAR(128) NOT NULL,
+  [BillingAddressId] INT NOT NULL,
+  [ShippingAddressId] [int] NULL,
+  [OrderStatusId] NVARCHAR(20) NOT NULL,
+  [PaymentStatusId] NVARCHAR(20) NOT NULL,
+  [GeoId] int NULL,
+  [PaymentMethodSystemName] [nvarchar](max) NULL,
+  [CardType] [nvarchar](max) NULL,
+  [CardName] [nvarchar](max) NULL,
+  [CardNumber] [nvarchar](max) NULL,
+  [MaskedCreditCardNumber] [nvarchar](max) NULL,
+  [CardCvv2] [nvarchar](max) NULL,
+  [CardExpirationMonth] [nvarchar](max) NULL,
+  [CardExpirationYear] [nvarchar](max) NULL,
+  [AuthorizationTransactionId] [nvarchar](max) NULL,
+  [AuthorizationTransactionCode] [nvarchar](max) NULL,
+  [AuthorizationTransactionResult] [nvarchar](max) NULL,
+  [CaptureTransactionId] [nvarchar](max) NULL,
+  [CaptureTransactionResult] [nvarchar](max) NULL,
+  [SubscriptionTransactionId] [nvarchar](max) NULL,
+  [PurchaseOrderNumber] [nvarchar](max) NULL,
+  [DateEntered] [datetime] NOT NULL, 
+    CONSTRAINT [FK_Order_Shipping_Address] FOREIGN KEY ([ShippingAddressId]) REFERENCES [Core].[Address]([Id]), 
+    CONSTRAINT [FK_Order_Billing_Address] FOREIGN KEY ([BillingAddressId]) REFERENCES [Core].[Address]([Id]), 
+    CONSTRAINT [FK_Order_Users] FOREIGN KEY ([CustomerId]) REFERENCES [dbo].[AspNetUsers]([Id]), 
+    CONSTRAINT [FK_Order_Geo] FOREIGN KEY ([GeoId]) REFERENCES [Core].[Geo]([Id]), 
+    CONSTRAINT [PK_Order] PRIMARY KEY ([Id])
+  );
+
+

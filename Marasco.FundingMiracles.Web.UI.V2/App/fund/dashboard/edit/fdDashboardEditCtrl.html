@@ -1,0 +1,67 @@
+﻿<!--=== Breadcrumbs ===-->
+<fd-dashboard-widgets-header-drctv fund="fund" show-edit-menu="true && fund.identification"></fd-dashboard-widgets-header-drctv>
+<!--=== End Breadcrumbs ===-->
+<!--=== Content Part ===-->
+<div class="container" ng-cloak>
+
+  <div class="row sky-form sky-form-noborder">
+    <div class="col-md-8">
+
+      <div class="margin-bottom-5">
+        <div ng-init="main.active.tab = initSection()">
+
+          <div class="tabbable tab-v1">
+
+            <ul class="nav nav-tabs" ng-show="isUpdating">
+              <li ng-class="{active: main.active.tab == 'info'}">
+                <a ng-click='main.active.tab = "info"'><i class="fa fa-edit"></i>  Fundraiser</a>
+              </li>
+              <!--<li ng-class="{active: main.active.tab == 'beneficiary'}">
+                <a ng-click='main.active.tab = "beneficiary"'><i class="fa fa-user"></i>  Beneficiary</a>
+              </li>-->
+              <li ng-class="{active: main.active.tab == 'permalink'}">
+                <a ng-click='main.active.tab = "permalink"'><i class="fa fa-road"></i>  Page Link</a>
+              </li>
+              <li ng-class="{active: main.active.tab == 'settings'}">
+                <a ng-click='main.active.tab = "settings"'><i class="fa fa-cog"></i>  Settings</a>
+              </li>
+            </ul>
+
+            <div class="tab-content">
+              <div ng-switch="main.active.tab">
+                <div ng-switch-when='info'>
+                  <div ng-include='"/app/fund/dashboard/edit/fdDashboardEditUpdateCtrl.html"'></div>
+                </div>
+                <!--<div ng-switch-when='beneficiary'>
+                  <div ng-include='"/app/fund/dashboard/edit/fdDashboardEditBeneficiaryCtrl.html"'></div>
+                </div>-->
+                <div ng-switch-when='permalink'>
+                  <div ng-include='"/app/fund/dashboard/edit/fdDashboardEditPermalinkCtrl.html"'></div>
+                </div>
+                <div ng-switch-when='settings'>
+                  <div ng-include='"/app/fund/dashboard/edit/fdDashboardEditSettingsCtrl.html"'></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/col-md-8-->
+
+    <div class="col-md-4">
+
+      <!-- Fund Features -->
+      <fd-dashboard-widgets-features-drctv fund="fund"></fd-dashboard-widgets-features-drctv>
+      <!-- /Fund Features -->
+      <!-- Topics -->
+      <fd-dashboard-widgets-topics-drctv></fd-dashboard-widgets-topics-drctv>
+      <!--/Topic-->
+    </div>
+  </div>
+  <!--/row-->
+
+</div>
+<!--/container-->
+<!--=== End Content Part ===-->

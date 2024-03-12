@@ -1,0 +1,268 @@
+[
+    {
+        "className": "row",
+        "fieldGroup": [
+			{
+                "className": "section-label",
+                "template": "<div><strong>Communication Channel:</strong></div>"
+            },
+			{
+				"className": "col-xs-4",
+				"key": "ChannelLetter.INCLUDE_CAMPAIGN",
+				"type": "checkbox",
+				"templateOptions": {
+					"label": "Channel - Letter"
+				}
+			},
+			{
+                "className": "col-xs-4",
+                "key": "ChannelEmail.INCLUDE_CAMPAIGN",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "Channel - Email"                    
+                }
+			},
+			{
+				"className": "col-xs-4",
+				"key": "ChannelEmailLetter.INCLUDE_CAMPAIGN",
+				"type": "checkbox",
+				"templateOptions": {
+					"label": "Channel - Email Letter"                    
+				}
+			},
+			{
+				"className": "col-xs-4",
+				"key": "ChannelIVR.INCLUDE_CAMPAIGN",
+				"type": "checkbox",
+				"templateOptions": {
+					"label": "Channel - IVR"                    
+				}
+			}, 
+			{
+                "className": "col-xs-4",
+                "key": "ChannelLiveCall.INCLUDE_CAMPAIGN",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "Channel - LiveCall"                    
+                }
+            }
+            ,  {
+                "className": "col-xs-4",
+                "key": "ChannelText.INCLUDE_CAMPAIGN",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "Channel - Text"                    
+                }
+			}
+        ]
+    },
+    {
+        "className": "col-xs-12",
+        "key": "ctcBased",
+        "type": "radio",
+        "templateOptions": {
+            "label": "CTC Based:",
+            "options": [
+                {
+                    "name": "Yes",
+                    "value": "1"
+                },
+                {
+                    "name": "No",
+                    "value": "0"
+                }
+            ]
+        }
+    },
+    {
+        "className": "col-xs-12",
+        "key": "CTC.LBL_DFT_VALUE",
+        "type": "input",
+        "templateOptions": {
+            "required": true,
+            "label": "CTC:"
+        }
+    },
+    {
+        "className": "col-xs-12",
+        "key": "ExtractDate.LBL_DFT_VALUE",
+        "type": "datepicker",
+        "templateOptions": {
+            "label": "Extract Date:",
+            "type": "text",
+            "datepickerPopup": "dd-MMMM-yyyy"
+        }
+    },
+	{
+		"className": "col-xs-12",
+		"key": "creativeUrl",
+		"type": "input",
+		"templateOptions": {
+			"label": "Creative URL:",
+			"type": "text"
+		}
+    },
+    {
+		"className": "col-xs-12",
+		"key": "campaignCode",
+		"type": "input",
+		"templateOptions": {
+			"label": "Campaign Code:",
+			"type": "text"
+		}
+    },
+    {
+        "className": "col-xs-12",
+        "key": "IncludeinER",
+        "type": "radio",
+        "templateOptions": {
+            "label": "Include in ER:",
+            "options": [
+                {
+                    "name": "Yes",
+                    "value": "Yes"
+                },
+                {
+                    "name": "No",
+                    "value": "No"
+                }
+            ]
+        }
+    },
+    {
+        "className": "col-xs-12",
+        "key": "ERCamaignType",
+        "type": "select",
+        "templateOptions": {
+            "label": "ER Camaign Type:",
+            "options": [
+                {
+                    "name": "Ad-hoc",
+                    "value": "Ad-hoc"
+                },
+                {
+                    "name": "Custom",
+                    "value": "Custom"
+                }
+            ]
+        }
+    },
+    {
+        "className": "row col-xs-12",
+        "fieldGroup": [
+            {
+                "className": "section-label",
+                "template": "<div><strong>Program Type:</strong></div>"
+            },
+            {
+                "className": "col-xs-3",
+                "key": "programType.Sales",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "Sales"
+                }
+            },
+            {
+                "className": "col-xs-3",
+                "key": "programType.Sevice",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "Serevice"
+                }
+            }
+        ]
+    },
+    {
+        "className": "col-xs-12",
+        "key": "actionGroup",
+        "type": "input",
+        "templateOptions": {
+            "label": "Action Group:"
+        }
+    },
+    {
+        "className": "col-xs-12",
+        "key": "actionSubtype",
+        "type": "input",
+        "templateOptions": {
+            "label": "Action Subtype:"
+        }
+    },
+    {
+        "className": "col-xs-12",
+        "key": "StartDate.LBL_DFT_VALUE",
+        "type": "datepicker",
+        "templateOptions": {
+            "label": "Enrollment Start:",
+            "type": "text",
+            "datepickerPopup": "dd-MMMM-yyyy"
+        }
+    },
+    {
+        "className": "col-xs-12",
+        "key": "EndDate.LBL_DFT_VALUE",
+        "type": "datepicker",
+        "templateOptions": {
+            "label": "Enrollment End:",
+            "type": "text",
+            "datepickerPopup": "dd-MMMM-yyyy"
+        }
+    },
+    {
+        "className": "col-xs-12",
+        "key": "campaignVisibilityStart",
+        "type": "datepicker",
+        "templateOptions": {
+            "label": "Campaign Visibility Start:",
+            "type": "text",
+            "datepickerPopup": "dd-MMMM-yyyy"
+        }
+    },
+    {
+        "className": "col-xs-12",
+        "key": "campaignVisibilityEnd",
+        "type": "datepicker",
+        "templateOptions": {
+            "label": "Campaign Visibility End:",
+			"type": "text",
+            "datepickerPopup": "dd-MMMM-yyyy"
+        }
+    },
+	{
+        "className": "col-xs-12",
+        "key": "hasCoupons",
+        "type": "radio",
+        "templateOptions": {
+            "label": "Has Coupons:",
+            "options": [
+                {
+                    "name": "Yes",
+                    "value": "Yes"
+                },
+                {
+                    "name": "No",
+                    "value": "No"
+                }
+            ]
+        }
+    },
+	{
+        "className": "col-xs-offset-1 col-xs-5",
+        "key": "minCoupon",
+        "type": "input",
+        "templateOptions": {
+            "label": "Coupons Min:"
+        },
+
+		"hideExpression": "formState.hideCoupon()"
+    },
+	{
+        "className": "col-xs-offset-1 col-xs-5",
+        "key": "maxCoupon",
+        "type": "input",
+        "templateOptions": {
+            "label": "Coupons Max:"
+        },
+		"hideExpression": "formState.hideCoupon()"
+    }
+]

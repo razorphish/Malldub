@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<codeSmith xmlns="http://www.codesmithtools.com/schema/csp.xsd">
+  <propertySets>
+    <propertySet name="WebAPI" template="..\Templates\CSharp\WebAPI.cst">
+	  <property name="EdmxFile">..\Malldub.Data\MallDub.edmx</property>
+      <property name="BaseDirectory">.\</property>
+	  <property name="ServiceBaseUrl">http://local.api.malldub.com/api</property>
+      <property name="ControllerDirectory">.\Controllers</property>
+      <property name="ScriptDirectory">.\Scripts\Generated</property>
+      <property name="ViewDirectory">.\Views</property>
+    </propertySet>
+  </propertySets>
+</codeSmith>

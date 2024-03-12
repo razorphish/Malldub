@@ -1,0 +1,33 @@
+﻿<div class="row">
+  <div class="col-md-7">
+
+    <div class="blog margin-bottom-40" ng-repeat="update in updates | orderBy:'dateEntered':true" >
+      <h2>Update #{{updates.length - $index}}<a id="{{updates.length - $index}}"></a></h2>
+      <div class="blog-post-tags">
+        <ul class="list-unstyled list-inline blog-info">
+          <li><i class="fa fa-calendar"></i> {{update.dateEntered | momentTo}}</li>
+          <li><i class="fa fa-pencil"></i> {{update.firstName}} {{update.lastName}}</li>
+        </ul>
+      </div>
+      <p>
+        {{update.content}}
+      </p>
+    </div>
+  </div>
+  <div class="col-md-3 profile hidden-sm hidden-xs">
+    <div class="panel panel-profile no-bg">
+      <div id="activityScrollbar" class="panel-body contentHolder-full">
+        <div class="profile-event" ng-repeat="update in updates | orderBy:'dateEntered':true">
+          <div class="date-formats">
+            <span>{{update.dateEntered | momentTo:'D'}}</span>
+            <small>{{update.dateEntered | momentTo:'MM'}}, {{update.dateEntered | momentTo:'YYYY'}}</small>
+          </div>
+          <div class="overflow-h comment-donation-sm">
+            <h3 class="heading-xs"><a href="#{{updates.length - $index}}">Update #{{updates.length - $index}}</a> </h3>
+            <p>Update by {{update.firstName}} {{update.lastName}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

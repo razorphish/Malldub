@@ -1,0 +1,32 @@
+<div ng-controller="shellController as vm">
+    <!--=== Header ===-->
+    <div id="navbar" class="navbar navbar-default">
+        <!--Header-->
+        <ht-top-nav headertitle="$root.appTitle" tagline="vm.tagline"></ht-top-nav>
+        <!--End Header -->
+        <!-- /section:basics/navbar.layout -->
+    </div>
+    <div class="main-container" id="main-container">
+        <div ng-include="'app/inspinia/layout/headerbar.html'" id="navigationBar" class="marginHeader responsive"></div>
+        <!-- #section:basics/sidebar -->
+        <script>try{ace.settings.check('main-container','fixed')}catch(e){}</script>
+        <div ng-include="'app/inspinia/layout/sidebar.html'" id="sidebar" class="sidebar responsive"></div>
+        <!-- /section:basics/sidebar -->
+        <div class="main-content" id="main-content">
+            <div class="main-content-inner">
+                <div ui-view></div>
+                <div ngplus-overlay ngplus-overlay-delay-in="50" ngplus-overlay-delay-out="700" ngplus-overlay-animation="dissolve-animation">
+                    <div style="background-color: #555555; position: fixed;
+            width: 100%; z-index: 10060; height: 100%; top: 0; left: 0; opacity: 0.5; filter: alpha(opacity=50);">
+                    </div>
+                    <img id="loadingImage" src="images/ajax-loader1.gif" style="z-index: 10005; top: 50%; position: fixed; left: 50%;" />
+                </div>
+            </div>
+        </div>
+        <!-- /.main-content -->
+        <div ng-include="'app/inspinia/layout/footer.html'" class="footer"></div>
+        <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+            <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+        </a>
+    </div>
+</div>

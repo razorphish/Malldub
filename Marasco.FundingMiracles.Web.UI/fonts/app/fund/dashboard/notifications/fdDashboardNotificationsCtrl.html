@@ -1,0 +1,46 @@
+﻿<!--=== Breadcrumbs ===-->
+<fd-dashboard-widgets-header-drctv fund="fund" show-edit-menu="true"></fd-dashboard-widgets-header-drctv>
+<!--=== End Breadcrumbs ===-->
+
+<!--=== Content Part -Body ===-->
+<div class="container">
+
+  <div class="row">
+    <!--LEFT SECTION(BODY)-->
+
+    <div class="col-md-8">
+
+      <!-- Fund Donations  -->
+      <div class="row">
+        <div class="col-md-7 headline">
+          <h3>Notifications</h3>
+        </div>
+      </div>
+
+      <div class="row" ng-hide="isLoading">
+        <div class="col-md-12">
+          <div class="gridStyle" ng-grid="gridOptions"></div>
+        </div>
+      </div>
+      <div ng-show="isLoading">
+        <md-spinner-bar-drctv />
+      </div>
+    </div>
+
+
+    <!--/LEFT SECTION(BODY)-->
+    <!-- RIGHT SECTION -->
+    <div class="col-md-4">
+      <!-- Fund Features -->
+      <fd-dashboard-widgets-features-drctv fund="fund"></fd-dashboard-widgets-features-drctv>
+      <!-- /Fund Features -->
+
+    </div>
+    <!--/col-md-3-->
+
+  </div>
+  <!--/row-->
+
+</div>
+<!--/container-->
+<!--=== End Content Part - Body ===-->

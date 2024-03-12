@@ -1,0 +1,70 @@
+﻿<div>
+  <!--Profile Body-->
+  <div class="profile-body">
+    <div class="profile-bio">
+      <div class="row">
+        <div class="col-md-5">
+          <img class="img-responsive md-margin-bottom-10" ng-src="{{mainFundImage}}" alt="">
+        </div>
+        <div class="col-md-7">
+          <h2>{{fund.item.title}}</h2>
+          <span><strong>Goal Amount:</strong> ${{fund.goalAmount | number: 0}}</span>
+          <span><strong>Color:</strong> {{fund.pageColor}}</span>
+          <span><strong>Category:</strong> {{fund.categoryId}}</span>
+          <hr>
+          <p>{{fund.item.description}}</p>
+        </div>
+      </div>
+    </div><!--/end row-->
+
+    <hr>
+
+    <div class="row">
+      <!--Social Icons v3-->
+      <div class="col-sm-6 sm-margin-bottom-30">
+        <div class="panel panel-profile">
+          <div class="panel-heading overflow-h">
+            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i> Details </h2>
+          </div>
+          <div class="panel-body">
+            <ul class="list-unstyled social-contacts-v2">
+              <li><i class="rounded-x gp fa fa-user"></i> {{fund.originator.firstName}} {{fund.originator.lastName}}</li>
+              <li><i class="rounded-x gm fa fa-users"></i> edward77@gmail.com</li>
+              <li><i class="rounded-x tw fa fa-external-link"></i> {{fundUrl}}</li>
+              <li><i class="rounded-x fb fa fa-clock-o"></i> {{fund.item.startDate | momentTo}} - {{fund.item.endDate | momentTo}}</li>
+              <li><i class="rounded-x sk fa fa-eye"></i> {{fund.item.statusId}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!--End Social Icons v3-->
+      <!--Design Skills-->
+      <div class="col-sm-6">
+        <div class="panel panel-profile">
+          <div class="panel-heading overflow-h">
+            <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i> Status</h2>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="p-chart col-sm-6 col-xs-6 sm-margin-bottom-10">
+                <div class="circle margin-bottom-20" id="circle-4"></div>
+                <h3 class="heading-xs">Impact</h3>
+                <p>Celery coriander bitterleaf epazote radicchio shallot.</p>
+              </div>
+              <div class="p-chart col-sm-6 col-xs-6">
+                <div class="circle margin-bottom-20" id="circle-5"></div>
+                <h3 class="heading-xs">Goal</h3>
+                <p>Celery coriander bitterleaf epazote radicchio shallot.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--End Design Skills-->
+    </div><!--/end row-->
+
+    <hr>
+
+  </div>
+
+</div>

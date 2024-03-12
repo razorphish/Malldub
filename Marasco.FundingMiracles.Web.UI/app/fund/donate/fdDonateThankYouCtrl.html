@@ -1,0 +1,56 @@
+﻿<!--=== Breadcrumbs ===-->
+<div class="breadcrumbs margin-bottom-40">
+  <div class="container">
+    <h1 class="color-green pull-left">{{fund.item.title}}</h1>
+    <ul class="pull-right breadcrumb"></ul>
+  </div><!--/container-->
+</div>
+<!--=== End Breadcrumbs ===-->
+<!--=== Content Part -Body ===-->
+<div class="container" ng-cloak>
+  <div class="row">
+
+    <!--LEFT SECTION(BODY)-->
+    <div class="col-md-8">
+      
+      <!-- ??  -->
+      <div class="row">
+        <div class="col-md-7 headline">
+          <h3>Thank You!</h3>
+        </div>
+      </div>
+
+      <div class="margin-bottom-5">
+        <!-- Content Pages -->
+        <div ng-form="fundDonationForm" class="margin-bottom-20">
+
+          <!-- Donation Summary -->
+          <div class="col-md-8 margin-bottom-35 margin-top-10">
+            <div class="row">
+              <div class="col-md-4">
+                <img class="img-responsive img-tab-space lft-img-margin rgt-img-margin" ng-src="{{mainFundImage}}">
+              </div>
+              <div class="col-md-8">
+                <div class="row">
+                  <div class="col-md-12">
+                    <h4>{{fund.item.title}}</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!--/col-md-8-->
+        </div>
+        <!-- /Content Pages -->
+      </div>
+      <!-- /col-md-8-->
+    </div>
+    <!--/LEFT SECTION(BODY)-->
+
+    <!-- RIGHT SECTION -->
+    <div class="col-md-4"></div>
+    <!-- RIGHT SECTION -->
+
+  </div>
+  <!--/row-->
+</div><!--/container-->
+<!--=== End Content Part - Body ===-->

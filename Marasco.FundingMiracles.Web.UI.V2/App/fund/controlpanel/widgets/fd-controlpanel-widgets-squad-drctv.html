@@ -1,0 +1,45 @@
+﻿<div class="panel panel-profile">
+  <div class="panel-heading overflow-h">
+    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-tasks"></i>Organizers</h2>
+    <!--<a href="#" class="btn-u btn-brd btn-brd-hover btn-u-dark btn-u-xs pull-right" ng-click="viewAll()">View All</a>-->
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="profile-blog blog-border">
+          <img class="rounded-x" ng-src="{{beneficiary.photoUrl}}" alt="{{beneficiary.firstName}} {{beneficiary.lastName}} is the beneficiary of this campaign.">
+          <div class="name-location">
+            <strong>Beneficiary</strong>
+            <span>{{beneficiary.firstName}} {{beneficiary.lastName}}</span>
+          </div>
+          <div class="clearfix margin-bottom-20"></div>
+          <p>
+            <b>Email:</b> {{beneficiary.email}}
+          </p>
+          <hr>
+          <ul class="list-inline share-list">
+            <!--<button class="btn-u btn-u-aqua btn-u-xs" ng-click="sendEmail(beneficiary)"><i class="fa fa-send margin-right-5"></i> Send Email</button>-->
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <div class="profile-blog blog-border">
+          <img class="rounded-x" ng-src="{{originator.photoUrl}}" alt="{{originator.firstName}} {{originator.lastName}} is the originator of this campaign.">
+          <div class="name-location">
+            <strong>Originator</strong>
+            <span>{{originator.firstName}} {{originator.lastName}}</span>
+          </div>
+          <div class="clearfix margin-bottom-20"></div>
+          <p>
+            <b>Email:</b> {{originator.email}}
+          </p>
+          <hr>
+          <ul class="list-inline share-list">
+            <!--<button class="btn-u btn-u-aqua btn-u-xs" ng-click="sendEmail(originator)"><i class="fa fa-send margin-right-5"></i> Send Email</button>-->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

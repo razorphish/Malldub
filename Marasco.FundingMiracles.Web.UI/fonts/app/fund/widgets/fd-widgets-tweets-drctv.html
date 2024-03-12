@@ -1,0 +1,32 @@
+﻿<div>
+  <!--=== Twitter-Block ===-->
+  <div class="parallaxBg twitter-block margin-bottom-60">
+    <div class="container">
+      <div class="heading heading-v1 margin-bottom-20">
+        <h2>Latest Tweets</h2>
+      </div>
+
+      <div id="carousel-example-generic-v5">
+        
+          <div uib-carousel interval="myInterval" active="active" no-wrap="noWrapSlides">
+              <div uib-slide ng-repeat="slide in tweets track by $index" index="$index">
+                  <div class="carousel-inner">
+                      <p>
+                          {{slide.text}}{{$index}}
+                      <p>
+                      <p><a ng-href="https://twitter.com/{{slide.user.screenName}}">@{{slide.user.screenName}}</a></p>
+                      <ul class="list-inline twitter-icons">
+                          <li><a href="#" ng-click="reply(slide.id_str)"><i class="fa fa-reply"></i></a></li>
+                          <li><a href="#" ng-click="retweet(slide.id_str)"><i class="fa fa-retweet"></i></a></li>
+                          <li><a href="#" ng-click="favorite(slide.id_str)"><i class="fa fa-star"></i></a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+    </div>
+  </div>
+  <!--=== End Twitter-Block ===-->
+
+</div>

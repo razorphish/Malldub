@@ -1,0 +1,28 @@
+﻿<div class="who margin-bottom-30 hidden-xs">
+  <div class="headline">
+    <h3>Fund Features</h3>
+  </div>
+  <ul class="list-unstyled">
+    <li><a href="/fund/edit/{{fund.identification}}"><i class="fa fa-edit fa-fw"></i>Edit your fundraiser</a></li>
+    <li><a href="/fund/dashboard/donations/{{fund.identification}}"><i class="fa fa-heart fa-fw"></i>Donations</a></li>
+    <li>
+      <a href="/fund/dashboard/notifications/{{fund.identification}}">
+        <i class="fa fa-envelope fa-fw"></i>Notifications
+        <span class="badge badge-blue rounded-x" ng-show="notificationNumber > 0">{{notificationNumber}}</span>
+      </a>
+    </li>
+    <li><a href="/fund/edit/{{fund.identification}}/permalink"><i class="fa fa-road fa-fw"></i>Customize your Page Link</a></li>
+    <li><a href="/fund/dashboard/donations/{{fund.identification}}"><i class="fa fa-heart fa-fw"></i>Add Offline Donation</a></li>
+  </ul>
+  <div class="margin-top-20">
+    <div class="headline">
+      <h3>Campaign Tools</h3>
+    </div>
+    <ul class="list-unstyled">
+      <li><a href="/fund/dashboard/updates/{{fund.identification}}"><i class="fa fa-rocket fa-fw"></i>Post an Update</a></li>
+      <li><a href="/fund/dashboard/print/{{fund.identification}}"><i class="fa fa-print fa-fw"></i>Print your campaign</a></li>
+      <li><a href="/fund/dashboard/widgets/{{fund.identification}}"><i class="fa fa-paste fa-fw"></i>Embed into your site</a></li>
+    </ul>
+  </div>
+
+</div>

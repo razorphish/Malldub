@@ -1,0 +1,42 @@
+[
+  {
+    "key": "CAMPAIGN",
+    "type": "input",
+    "templateOptions": {
+      "label": "Campaign",
+      "placeholder": ""
+    }
+  },
+  {
+    "key": "STATUS",
+    "type": "input",
+    "templateOptions": {
+      "label": "Status",
+      "placeholder": ""
+    }
+  },
+  {
+    "key": "edit",
+    "type": "input",
+    "templateOptions": {
+      "label": "Edit",
+      "placeholder": ""
+    }
+  },
+  {
+    "key": "PUBLISHEDBY",
+    "type": "input",
+    "templateOptions": {
+      "label": "Published By",
+      "placeholder": ""
+    }
+  },
+  {
+    "key": "PUBLISHDATE",
+    "type": "input",
+    "templateOptions": {
+      "label": "Published Date",
+      "placeholder": ""
+    }
+  }
+]

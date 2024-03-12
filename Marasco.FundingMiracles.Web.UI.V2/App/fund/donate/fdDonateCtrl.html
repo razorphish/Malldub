@@ -1,0 +1,88 @@
+﻿<!--=== Breadcrumbs ===-->
+<div class="breadcrumbs margin-bottom-40">
+  <div class="container">
+    <h1 class="color-green pull-left">{{fund.item.title}}</h1>
+    <ul class="pull-right breadcrumb"></ul>
+  </div>
+  <!--/container-->
+</div>
+<!--/breadcrumbs-->
+<!--=== End Breadcrumbs ===-->
+<!--=== Content Part -Body ===-->
+<div class="container" ng-cloak>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-12">
+            <!-- Page Error Summary-->
+            <md-alert-drctv title="{{title}}" message="{{message}}" alert-type="{{alertType}}" fade="fadeIn" show-alert="{{showAlert}}"></md-alert-drctv>
+            <!-- //Page Error Summary -->
+          </div>
+        </div>
+
+        <div class="margin-bottom-5">
+          <!-- Content Pages -->
+          <div ng-form="fundDonationForm" class="margin-bottom-20 sky-form sky-form-noborder">
+
+            <!-- Donation Summary -->
+            <div class="col-md-8 margin-bottom-35 margin-top-10">
+              <div class="row">
+                <div class="col-md-4">
+                  <img class="img-responsive img-tab-space lft-img-margin rgt-img-margin" ng-src="{{mainFundImage}}">
+                </div>
+                <div class="col-md-8">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <h4>{{fund.item.title}}</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--/col-md-8-->
+            <!--Gift-->
+            <div ng-include='"/app/fund/donate/fdDonateCtrlGiftPartial.min.html"'></div>
+            <!--/Gift-->
+            <!--PaymentInfo-->
+            <div ng-include='"/app/fund/donate/fdDonateCtrlPaymentInfoPartial.min.html"'></div>
+            <!--/PaymentInfo-->
+            <!--Billing-->
+            <div ng-include='"/app/fund/donate/fdDonateCtrlBillingPartial.min.html"'></div>
+            <!--Billing-->
+
+            <div ng-include='"/app/fund/donate/fdDonateCtrlGiftDetailsPartial.min.html"'></div>
+
+            <!-- Confirmation: Optional Fees Amount -->
+            <div ng-include='"/app/fund/donate/fdDonateCtrlOptionalPayPartial.min.html"'></div>
+            <!-- /Confirmation: Optional Fees Amount -->
+
+            <div class="row">
+              <div class="col-md-12">
+                <div ng-hide="isSaving">
+                  <div class="text-center">
+                    By clicking Submit, you agree to pay <b>{{totalAmount() | currency:"$"}}</b> to Funding Miracles.  <a ng-href="/p/terms">Terms of Use</a><br />
+                    Checkout the <a class="linked" ng-href="#" ng-click="modalPaymentBreakdown()">donation breakdown »</a><br />
+                    <button type="button" class="btn-u btn-u-lg margin-top-10" ng-click="saveDonation()"><i class="fa fa-check"></i> Submit</button>
+                  </div>
+                </div>
+
+                <div ng-show="isSaving">
+                  <div class="text-center">
+                    <md-spinner-bar-drctv />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- /Content Pages -->
+        </div>
+        <!-- /col-md-12-->
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+    <!--/row-->
+</div>
+<!--/container-->
+<!--=== End Content Part - Body ===-->

@@ -1,0 +1,49 @@
+﻿
+<div class="modal-body">
+  <div class="panel panel-grey margin-bottom-40 donate-fund">
+    <div class="panel-heading">
+      <h3 class="panel-title">Donation Breakdown</h3>
+    </div>
+    <div class="panel-body">
+      <p>
+        We are committed to remaining transparent with you and this breakdown gives you just that!
+        The final amount charged equals your donation amount, any transaction fees you are
+        covering and any additional payments to Funding Miracles.
+      </p>
+    </div>
+    <table class="table table-striped invoice-table">
+      <thead>
+        <tr>
+          <th>Goes To</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{donation.beneficiary}}</td>
+          <td>{{donation.beneficiaryAmount | currency:"$"}}</td>
+        </tr>
+        <tr>
+          <td>Funding Miracles - Thank you</td>
+          <td>{{donation.systemAmount | currency:"$"}}</td>
+        </tr>
+        <tr>
+          <td>Credit Card Processing (WePay)</td>
+          <td>{{donation.processingFee | currency:"$"}}</td>
+        </tr>
+        <tr>
+          <td><strong>Total Amount</strong></td>
+          <td><strong>{{totalAmount | currency:"$"}}</strong></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 hidden-xs"></div>
+    <div class="col-md-6">
+      <button class="btn btn-block btn-u btn-u-lg" ng-click="ok()">Got It!</button>
+    </div>
+  </div>
+</div>
+

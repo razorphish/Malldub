@@ -1,0 +1,7 @@
+{
+  "genericApiUrl": "http://dev-webenrollmentapi.amssupport.net",
+  "loggingApiUrl": "http://devloggingwebapi.amssupport.net",
+  "prodLogApiUrl": "http://dev.inspiniawebapi.aspenrms.com",
+  "inspiniaApiUrl": "http://dev.inspiniawebapi.aspenrms.com",
+  "isDev":true 
+}

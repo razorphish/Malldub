@@ -1,0 +1,7 @@
+{
+    "genericApiUrl": "https://webenrollmentapi.amssupport.net",
+    "loggingApiUrl": "https://loggingwebapi.amssupport.net",
+    "prodLogApiUrl": "https://adminwebapi.aspenrms.com",
+    "adminApiUrl": "https://adminwebapi.aspenrms.com",
+    "isDev": false
+}

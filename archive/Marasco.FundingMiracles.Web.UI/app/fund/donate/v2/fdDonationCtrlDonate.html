@@ -1,0 +1,77 @@
+﻿<div ng-form="fundDonationDonateForm" class="margin-bottom-20">
+
+  <!-- Donor Name -->
+  <div class=" margin-top-10">
+    <label for="name">
+      Name:<i class="color-red">*</i>
+      <i class="fa fa-question" popover-placement="top" popover="Enter the name you would like displayed in the donors section.  You can choose to make this anonymous by clicking on the checkbox below" popover-trigger="mouseenter"></i>
+      <span class="color-red" ng-show="showValidationMessages && fundDonationDonateForm.donorName.$error.required">
+        <strong>[Name is Required]</strong>
+      </span>
+    </label>
+
+    <div class="row">
+      <div class="col-md-9">
+        <input class="form-control input-lg bloat" id="donorName" ng-disabled="donation.isPrivate" name="donorName" type="text" ng-model="donation.donorName" required placeholder="Donor Name">
+      </div>
+    </div>
+  </div>
+  <!--/ Donor Name -->
+  <!-- Email -->
+  <div>
+    <label for="email">
+      Email:<i class="color-red">*</i>
+      <span class="color-red" ng-show="showValidationMessages && fundDonationDonateForm.email.$error.required">
+        <strong>[Email is Required]</strong>
+      </span>
+      <span class="color-red" ng-show="showValidationMessages && !fundDonationDonateForm.email.$valid && !fundDonationDonateForm.email.$error.required">
+        <strong>[Invalid Email]</strong>
+      </span>
+    </label>
+
+    <div class="row">
+      <div class="col-md-9">
+        <input class="form-control input-lg bloat" id="email" name="email" type="email" ng-model="donation.email" required placeholder="Email">
+      </div>
+    </div>
+  </div>
+  <!--/Email -->
+  <!--Message-->
+  <div>
+    <label for="message">
+      Message:
+      <i class="fa fa-question" popover-placement="top" popover="Begin with the story:  People are most moved by the impact a condition has on an individual's life.  Next, explain the purpose behind the fundraiser and how it will positively affect the situation.  Educate your donors about the condition and describe it in terms that people can connect with." popover-trigger="mouseenter"></i>
+    </label>
+
+    <div class="row">
+      <div class="col-md-9">
+        <textarea class="form-control input-lg bloat" rows="2" id="message" name="message" ng-model="donation.message" placeholder="Words of encouragement"></textarea>
+      </div>
+    </div>
+  </div>
+  <!--/Message-->
+  <!--Anonymous-->
+  <div class="margin-bottom-10">
+    <div class="row">
+      <div class="col-md-9">
+        <input type="checkbox" id="isPrivate" name="isPrivate" ng-model="donation.isPrivateDonorName" ng-checked="donation.isPrivateDonorName" /> I would like to make my name anonymous<br />
+        <input type="checkbox" id="isPrivate" name="isPrivate" ng-model="donation.isPrivateAmount" ng-checked="donation.isPrivateAmount" /> I would like hide the amount given
+      </div>
+    </div>
+  </div>
+  <!--/Message-->
+
+  <div ng-hide="isSaving">
+    <div>
+      <button type="button" class="btn-u btn-u-lg" ng-click="gotoStep(1)"><i class="fa fa-arrow-left"></i> Back</button>
+      <button type="button" class="btn-u btn-u-lg" ng-click="saveInfo()"><i class="fa fa-check"></i> Save & Continue</button>
+    </div>
+  </div>
+
+  <div ng-show="isSaving">
+    <div>
+      <md-spinner-bar-drctv />
+    </div>
+  </div>
+
+</div>

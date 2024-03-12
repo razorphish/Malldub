@@ -1,0 +1,314 @@
+[
+    {
+        "className": "col-xs-12",
+        "key": "Name.LBL_DFT_VALUE",
+        "type": "input",
+        "templateOptions": {
+            "required": true,
+            "label": "Campaign Name:"
+        }
+    },
+    {
+        "className": "col-xs-12",
+        "key": "ShortDescription.LBL_DFT_VALUE",
+        "type": "textarea",
+        "templateOptions": {
+            "required": false,
+            "label": "Short Description:"
+        }
+    },
+    {
+        "className": "col-xs-12",
+        "key": "LongDescription.LBL_DFT_VALUE",
+        "type": "textarea",
+        "templateOptions": {
+            "required": false,
+            "label": "Long Description:"
+        }
+    },
+    {
+        "className": "col-xs-12",
+        "key": "campaignGroup",
+        "type": "select",
+        "templateOptions": {
+            "label": "Campaign Group:",
+            "options": [
+                {
+                    "name": "Sales",
+                    "value": "Sales"
+                },
+                {
+                    "name": "Service",
+                    "value": "Service"
+                }
+            ]
+        }
+    },
+    {
+        "className": "col-xs-12",
+        "key": "CampaignExecutionSchedule",
+        "type": "select",
+        "templateOptions": {
+            "label": "Campaign Execution Schedule:",
+            "options": [
+                {
+                    "name": "Daily",
+                    "value": "Daily"
+                },
+                {
+                    "name": "Weekly",
+                    "value": "Weekly"
+                },
+                {
+                    "name": "Monthly",
+                    "value": "Monthly"
+                }
+            ]
+        }
+    },
+    {
+        "className": "col-xs-12",
+        "key": "configurablebyBrand",
+        "type": "radio",
+        "templateOptions": {
+            "label": "Configurable by Brand:",
+            "options": [
+                {
+                    "name": "Yes",
+                    "value": "Yes"
+                },
+                {
+                    "name": "No",
+                    "value": "No"
+                }
+            ]
+        }
+    },
+    {
+        "className": "col-xs-12",
+        "key": "DisplayinOnboardingCommlist.LBL_DFT_VALUE",
+        "type": "radio",
+        "templateOptions": {
+            "label": "Visible in Onboarding Communications List:",
+            "options": [
+                {
+                    "name": "Yes",
+                    "value": "Yes"
+                },
+                {
+                    "name": "No",
+                    "value": "No"
+                }
+            ]
+        }
+    },
+    {
+        "className": "col-xs-12",
+        "key": "DisplayinOnboardingCampaignlist.LBL_DFT_VALUE",
+        "type": "radio",
+        "templateOptions": {
+            "label": "Visible in Onboarding Campaigns List:",
+            "options": [
+                {
+                    "name": "Yes",
+                    "value": true
+                },
+                {
+                    "name": "No",
+                    "value": false
+                }
+            ]
+        }
+    },
+    {
+        "className": "col-xs-12",
+        "key": "programControlGroup",
+        "type": "radio",
+        "templateOptions": {
+            "label": "Program Control Group:",
+            "options": [
+                {
+                    "name": "Yes",
+                    "value": "Yes"
+                },
+                {
+                    "name": "No",
+                    "value": "No"
+                }
+            ]
+        }
+    },
+    {
+        "className": "col-xs-12",
+        "key": "campaignControlGroup",
+        "type": "radio",
+        "templateOptions": {
+            "label": "Campaign Control Group:",
+            "options": [
+                {
+                    "name": "Yes",
+                    "value": "Yes"
+                },
+                {
+                    "name": "No",
+                    "value": "No"
+                }
+            ]
+        }
+    },
+    {
+        "className": "col-xs-12",
+        "key": "engagementFeedTreated",
+        "type": "radio",
+        "templateOptions": {
+            "label": "Engagement Feed - Treated:",
+            "options": [
+                {
+                    "name": "Yes",
+                    "value": "Yes"
+                },
+                {
+                    "name": "No",
+                    "value": "No"
+                }
+            ]
+        }
+    },
+    {
+        "className": "col-xs-12",
+        "key": "engagementFeedControl",
+        "type": "radio",
+        "templateOptions": {
+            "label": "Engagement Feed - Control:",
+            "options": [
+                {
+                    "name": "Yes",
+                    "value": "Yes"
+                },
+                {
+                    "name": "No",
+                    "value": "No"
+                }
+            ]
+        }
+    },
+	{
+        "className": "col-xs-12",
+        "key": "category.LBL_DFT_VALUE",
+        "type": "input",
+        "templateOptions": {
+            "required": true,
+            "label": "Category:"
+        }
+    },
+    {
+        "className": "row col-xs-12",
+        "fieldGroup": [
+            {
+                "className": "section-label",
+                "template": "<div><strong>Creative Version:</strong></div>"
+            },
+            {
+                "className": "col-xs-2",
+                "key": "creativeVersion.Ford",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "Ford"
+                }
+            },
+            {
+                "className": "col-xs-2",
+                "key": "creativeVersion.QuickLane",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "QucikLane"
+                }
+            },
+            {
+                "className": "col-xs-2",
+                "key": "creativeVersion.Lincoln",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "Lincoln"
+                }
+            },
+            {
+                "className": "col-xs-2",
+                "key": "creativeVersion.Diesel",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "Diesel"
+                }
+            }
+        ]
+    },
+    {
+        "className": "row col-xs-12",
+        "fieldGroup": [
+            {
+                "className": "section-label",
+                "template": "<div><strong>Billing Brand:</strong></div>"
+            },
+            {
+                "className": "col-xs-2",
+                "key": "billingBrand.Ford",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "Ford"
+                }
+            },
+            {
+                "className": "col-xs-2",
+                "key": "billingBrand.QuickLane",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "QucikLane"
+                }
+            },
+            {
+                "className": "col-xs-2",
+                "key": "billingBrand.Lincoln",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "Lincoln"
+                }
+            }
+        ]
+    },
+	{
+        "className": "col-xs-12",
+        "key": "hasIncentives",
+        "type": "radio",
+        "templateOptions": {
+            "label": "Has Incentives:",
+            "options": [
+                {
+                    "name": "Yes",
+                    "value": "Yes"
+                },
+                {
+                    "name": "No",
+                    "value": "No"
+                }
+            ]
+        }
+    },
+	{
+        "className": "col-xs-offset-1 col-xs-5",
+        "key": "MinIncentive",
+        "type": "input",
+        "templateOptions": {
+            "label": "Incentives Min:"
+        },
+		"hideExpression": "formState.hideIncentive()"
+    },
+	{
+        "className": "col-xs-offset-1 col-xs-5",
+        "key": "MaxIncentive",
+        "type": "input",
+        "templateOptions": {
+            "label": "Incentives Max:"
+        },
+		"hideExpression": "formState.hideIncentive()"
+    }
+]

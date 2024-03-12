@@ -1,0 +1,78 @@
+﻿<!--=== Breadcrumbs ===-->
+<fd-dashboard-widgets-header-drctv fund="fund" show-edit-menu="true"></fd-dashboard-widgets-header-drctv>
+<!--=== End Breadcrumbs ===-->
+<!--== Content Part Header===-->
+<!-- Donation Summary and Fund Supporters-->
+<div class="container">
+  <div class="row" ng-show="showWarning">
+    <div class="col-md-12">
+      <!-- Page Error Summary-->
+      <md-alert-drctv title="{{title}}" message="{{message}}" alert-type="{{alertType}}" fade="fadeIn" show-alert="{{showAlert}}" show-block="true"></md-alert-drctv>
+      <!-- //Page Error Summary -->
+    </div>
+  </div>
+
+</div>
+<!-- //Donation Summary and Fund Supporters -->
+<!--== /Content Part Header ==-->
+
+<!--=== Content Part -Body ===-->
+<div class="container">
+  
+  <!--Page Row-->
+  <div class="row">
+    
+    <!--LEFT SECTION(BODY)-->
+    <div class="col-md-8">
+
+      <!-- Fund Supporters  -->
+      <div class="row">
+        <div class="col-md-7 headline">
+          <h3>Supporters</h3>
+        </div>
+      </div>
+
+      <div class="row" ng-hide="isLoading">
+        <div class="col-md-12">
+          
+          <!--Main Body-->
+          <div class="thumbnail margin-bottom-10" ng-repeat="supporter in fund.supporters | orderBy:'dateEntered':true">
+            <div class="row">
+              <div class="col-md-2 col-xs-offset-3 col-md-offset-0">
+                <img src="https://graph.facebook.com/{{supporter.facebookProvider.providerKey}}/picture?width=54&height=54" />
+              </div>
+              <div class="col-md-10" ng-hide="donation.isUpdating">
+                <div class="row">
+                  <div class="col-md-12">
+                    <h5 class="h4-donation">{{supporter.firstName}} {{supporter.lastName}} supported your campaign on {{supporter.dateEntered | momentTo:'MMMM Do, YYYY'}}</h5> 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--/Main Body-->
+
+        </div>
+      </div>
+      <div ng-show="isLoading">
+        <md-spinner-bar-drctv />
+      </div>
+      <!-- /Fund Supporters  -->
+
+    </div>
+    <!--/LEFT SECTION(BODY)-->
+
+    <!-- RIGHT SECTION -->
+    <div class="col-md-4">
+      <!-- Fund Features -->
+      <fd-dashboard-widgets-features-drctv fund="fund"></fd-dashboard-widgets-features-drctv>
+      <!-- /Fund Features -->
+    </div>
+    <!--/RIGHT SECTION-->
+
+  </div>
+  <!--/Page Row-->
+
+</div>
+<!--/container-->
+<!--=== End Content Part - Body ===-->

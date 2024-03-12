@@ -1,0 +1,43 @@
+﻿<div class="body">
+
+  <!--=== Breadcrumbs ===-->
+  <div class="breadcrumbs margin-bottom-40">
+    <div class="container">
+      <h1 class="color-green pull-left">{{title}}</h1>
+    </div><!--/container-->
+  </div><!--/breadcrumbs-->
+  <!--=== End Breadcrumbs ===-->
+
+  <!--=== Content Part ===-->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-1 col-sm-6">
+        <section id="loginForm" class="reg-page">
+
+          <div class="headline">
+            <h2>{{subTitle}}</h2>
+          </div>
+
+          <div class="row">
+            <div class="col-md-10" ng-show="isAuthorizing">
+              <md-spinner-bar-drctv />
+            </div>
+            <div class="col-md-10" ng-hide="isAuthorizing">
+              <p>
+                There was an error processing this request.  The error was <strong>{{error}}</strong>.   Please try to
+                connect again by clicking the button below
+              </p>
+              <p>
+                <button type="button" class="btn-u btn-u-lg" ng-click="authorize()">Authorize WePay Account</button>
+              </p>
+            </div>
+          </div>
+
+        </section>
+      </div>
+    </div><!--/row-->
+  </div><!--/container-->
+  <!--=== End Content Part ===-->
+
+</div>
+<!--/body-->

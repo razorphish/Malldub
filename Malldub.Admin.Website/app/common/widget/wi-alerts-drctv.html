@@ -1,0 +1,32 @@
+﻿<li class="purple">
+  <a data-toggle="dropdown" class="dropdown-toggle-ace" href="#">
+    <i class="icon-bell-alt icon-animated-bell"></i>
+    <span class="badge badge-important" ng-show="total > 0">{{total}}</span>
+  </a>
+
+  <ul class="pull-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
+    <li class="dropdown-header">
+      <i class="icon-warning-sign"></i>
+      {{total}} Notification(s)
+    </li>
+    
+    <li ng-repeat="note in notes | orderBy:'applicationId':reverse=true">
+      <a href="/admin/global/notes/{{note.applicationId}}">
+        <div class="clearfix">
+          <span class="pull-left">
+            <i class="btn btn-xs no-hover btn-pink" ng-class="getIcon(note.applicationId)"></i>
+            {{note.applicationId}}
+          </span>
+          <span class="pull-right badge badge-info">+{{note.quantity}}</span>
+        </div>
+      </a>
+    </li>
+
+    <li>
+      <a href="/admin/notes">
+        See all notifications
+        <i class="icon-arrow-right"></i>
+      </a>
+    </li>
+  </ul>
+</li>

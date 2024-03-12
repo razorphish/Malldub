@@ -1,0 +1,130 @@
+﻿<div class="modal-header">
+  <div class="row">
+    <div class="col-lg-9 col-md-8 col-xs-8">
+      <h2>Please Log In</h2>
+    </div>
+    <div class="col-lg-3 col-md-4 col-xs-4 text-right">
+      <button class="btn btn-lg btn-default" ng-click="dismiss('close')"><i class="fa fa-times"></i></button>
+    </div>
+  </div>
+</div>
+
+<!--=== Body: Login ===-->
+<div class="modal-body" ng-show="viewModal === 1">
+  <div ng-form="popupLoginForm" class="sky-form">
+    <div class="reg-block-header">
+      <ul class="social-icons text-center">
+        <li><a class="rounded-x social_facebook" data-original-title="Facebook" ng-href="#" ng-click="facebookLogin()"></a></li>
+      </ul>
+      <p ng-show="showConnectMessage">
+        <b>{{user.firstName}}</b>, we found you!  Please login below to complete the connection to your social account.
+      </p>
+      <p>
+        <a class="color-green" ng-href="#" ng-click="dismiss('resetPassword')">Forgot Password?</a> ·
+        <a class="color-green" ng-href="#" ng-click="dismiss('register')">Sign Up</a>
+      </p>
+    </div>
+
+    <div class="input-group margin-bottom-20" ng-class="{'state-error': showValidationMessages && popupLoginForm.userName.$error.required}">
+      <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+      <input type="text" class="form-control" ng-model="user.userName" placeholder="Email" required id="userName" name="userName">
+      <em for="email" class="note-error" ng-show="showValidationMessages && popupLoginForm.userName.$error.required">Please enter your email address</em>
+    </div>
+    <div class="input-group margin-bottom-20" ng-class="{'state-error': showValidationMessages && popupLoginForm.password.$error.required}">
+      <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+      <input type="password" class="form-control" ng-model="user.password" placeholder="Password" required id="password" name="password">
+      <em for="password" class="note-error" ng-show="showValidationMessages && popupLoginForm.password.$error.required">Please enter your password</em>
+    </div>
+  </div>
+</div>
+<!--=== End Body: Login===-->
+<!--== Footer: Login ==-->
+<div class="modal-footer" ng-show="viewModal === 1">
+  <div class="text-left">
+    <div ng-hide="isLoggingIn">
+      <label class="checkbox">
+        <input type="checkbox" ng-model="persistent">Always stay signed in
+      </label>
+      <div class="text-center">
+        <button type="button" class="btn-u btn-u-lg btn-block btn-u-blue" ng-click="login(user, persistent)" ng-hide="isLoggingIn">Log In</button>
+      </div>
+    </div>
+    <div class="text-center" ng-show="isLoggingIn">
+      <md-spinner-bar-drctv />
+    </div>
+  </div>
+  <div class="text-left margin-top-10">
+    <div ng-hide="isFacebookLoggingIn || facebookLoading">
+      <h3>Facebook</h3>
+      <button class="btn btn-lg btn-block btn-facebook-inversed" ng-click="facebookLogin()"><i class="fa fa-facebook"></i> Login With Facebook</button>
+    </div>
+    <div class="text-center" ng-show="isFacebookLoggingIn || facebookLoading">
+      <md-spinner-bar-drctv />
+    </div>
+  </div>
+  <div class="margin-top-10">
+    Want to start your own FREE Fundraiser? <a ng-href="#" ng-click="dismiss('register')"> Start One For Free</a>
+  </div>
+</div>
+<!--== /Footer: Login ==-->
+
+<!--=== Body: External Register ===-->
+<div class="modal-body" ng-show="viewModal === 2">
+  <div ng-form="popupRegisterForm" class="sky-form">
+    <div class="reg-block-header">
+      <p>
+        <b>{{user.firstName}}</b>, simply create a password and to connect with us!  It's easy as 1-2-3..
+      </p>
+    </div>
+      <div class="input-group margin-bottom-20" ng-class="{'state-error': showValidationMessages && popupRegisterForm.firstName.$error.required}">
+        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+        <input type="text" class="form-control" ng-model="user.firstName" placeholder="First Name" required id="firstName" name="firstName">
+        <em for="email" class="note-error" ng-show="showValidationMessages && popupRegisterForm.firstName.$error.required">Please enter your first name</em>
+      </div>
+      <div class="input-group margin-bottom-20" ng-class="{'state-error': showValidationMessages && popupRegisterForm.lastName.$error.required}">
+        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+        <input type="text" class="form-control" ng-model="user.lastName" placeholder="Last Name" required id="lastName" name="lastName">
+        <em for="email" class="note-error" ng-show="showValidationMessages && popupRegisterForm.lastName.$error.required">Please enter your email address</em>
+      </div>
+      <div class="input-group margin-bottom-20" ng-class="{'state-error': showValidationMessages && popupRegisterForm.userName.$error.required}">
+        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+        <input type="text" class="form-control" ng-model="user.userName" placeholder="Email" required id="userName" name="userName">
+        <em for="email" class="note-error" ng-show="showValidationMessages && popupRegisterForm.userName.$error.required">Please enter your email address</em>
+      </div>
+      <div class="input-group margin-bottom-20" ng-class="{'state-error': showValidationMessages && popupRegisterForm.password.$error.required}">
+        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+        <input type="password" class="form-control" ng-model="user.password" placeholder="Password" required id="password" name="password">
+        <em for="password" class="note-error" ng-show="showValidationMessages && popupRegisterForm.password.$error.required">Please enter your password</em>
+      </div>
+    </div>
+</div>
+<!--=== /Body: External Register ===-->
+<!--== Footer: External Register ==-->
+<div class="modal-footer" ng-show="viewModal === 2">
+  <div class="text-left margin-top-10">
+    <div ng-hide="isExternalRegister">
+      <button class="btn-u btn-u-lg btn-block btn-u-blue" ng-click="registerExternal()">Connect With Us!</button>
+    </div>
+    <div class="text-center" ng-show="isExternalRegister">
+      <md-spinner-bar-drctv />
+    </div>
+  </div>
+</div>
+<!--== /Footer: Register ==-->
+
+<!--=== Body: External Register Auto===-->
+<div class="modal-body" ng-show="viewModal === 3">
+  <div class="sky-form">
+      <h3>Authenticating...</h3>
+  </div>
+</div>
+<!--=== /Body: External Register Auto ===-->
+<!--== Footer: External Register Auto ==-->
+<div class="modal-footer" ng-show="viewModal === 3">
+  <div class="text-left margin-top-10">
+    <div class="text-center">
+      <md-spinner-bar-drctv />
+    </div>
+  </div>
+</div>
+<!--== /Footer: Register Auto==-->

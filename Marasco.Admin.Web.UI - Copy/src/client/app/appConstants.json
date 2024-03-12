@@ -1,0 +1,4 @@
+{
+  "adminApiUrl": "http://api.local.fundingmiracles.com",
+  "isDev":true 
+}

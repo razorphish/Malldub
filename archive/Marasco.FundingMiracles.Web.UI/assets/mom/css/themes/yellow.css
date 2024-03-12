@@ -1,0 +1,72 @@
+﻿/*Save Spinner*/
+.squaresWaveG {
+  background-color:#FBB117;
+}
+
+@-moz-keyframes bounce_squaresWaveG{
+0%{
+background-color:#FBB117;
+}
+
+100%{
+background-color:#FFFFFF;
+}
+
+}
+
+@-webkit-keyframes bounce_squaresWaveG{
+0%{
+background-color:#FBB117;
+}
+
+100%{
+background-color:#FFFFFF;
+}
+
+}
+
+@-ms-keyframes bounce_squaresWaveG{
+0%{
+background-color:#FBB117;
+}
+
+100%{
+background-color:#FFFFFF;
+}
+
+}
+
+@-o-keyframes bounce_squaresWaveG{
+0%{
+background-color:#FBB117;
+}
+
+100%{
+background-color:#FFFFFF;
+}
+
+}
+
+@keyframes bounce_squaresWaveG{
+0%{
+background-color:#FBB117;
+}
+
+100%{
+background-color:#FFFFFF;
+}
+
+}
+
+.progress-bar {
+  background-color: #FBB117 !important;
+}
+
+.breadcrumbs {
+  background-color: #FBB117;
+  color: #ffffff
+}
+
+.breadcrumbs h1 {
+  color: #ffffff!important;
+}

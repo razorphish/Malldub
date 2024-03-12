@@ -1,0 +1,183 @@
+﻿.marginTop10 {
+    margin-top: 10px !important;
+}
+
+.sideBarNotFixed {
+    position: relative;
+    left: 0px;
+}
+
+.footerFixed {
+    width: 1170px !important;
+    margin-left: 0px !important;
+}
+
+.width1170 {
+    width: 1170px !important;
+}
+
+.marginTop92 {
+    margin-top: 92px !important;
+}
+
+.marginLeft0 {
+    margin-left: 0px !important;
+}
+
+.headerBarWidth {
+    width: 1170px !important;
+}
+
+.marginTop15 {
+    margin-top: 15px !important;
+}
+
+.marginTop20 {
+    margin-top: 20px !important;
+}
+
+.marginTop25 {
+    margin-top: 25px !important;
+}
+
+.marginTop88 {
+    margin-top: 88px !important;
+}
+
+.marginTop90 {
+    margin-top: 90px !important;
+}
+
+.marginLeftNeg12 {
+    margin-left: -12px !important;
+}
+
+.marginLeftNeg22 {
+    margin-left: -22px !important;
+}
+
+.top116 {
+    top: 116px;
+}
+
+.paddingLeftZero {
+    padding-left: 0 !important;
+}
+
+.marginLeft40 {
+    margin-left: 40px;
+}
+
+.marginLeft4 {
+    margin-left: 4px;
+}
+
+.radio {
+    display: inline-block !important;
+    margin-right: 10px;
+    padding-top: 0;
+}
+
+.colorRed {
+    color: red;
+    font-weight: normal;
+}
+
+.marginBot5 {
+    margin-bottom: 5px;
+}
+
+.marginBot10 {
+    margin-bottom: 10px !important;
+}
+
+.marginBot15 {
+    margin-bottom: 15px !important;
+}
+
+.marginBot20 {
+    margin-bottom: 20px !important;
+}
+
+.marginBot25 {
+    margin-bottom: 25px !important;
+}
+
+.paddingTop10 {
+    padding-top: 10px !important;
+}
+
+.paddingBot10 {
+    padding-bottom: 10px !important;
+}
+
+.headerDlrAttr {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    background-color: #629B58;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.fieldGroupBasic {
+    border: 1px solid #E0E0E0;
+    margin-top: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.fieldGroupDlrAttr {
+    background-color: #FFFFFF;
+    padding-top: 15px;
+    border-top: 1px solid #3D92B3;
+}
+
+.fieldGroupDlrAttrAlt {
+    background-color: #3D92B3;
+    padding-top: 15px;
+    border-top: 1px solid #3D92B3;
+    color: #ffffff;
+}
+
+.nopadding_Left {
+    padding-left: 0;
+}
+
+.btn.data-toggle.collapsed i.fa:before {
+    content: "\f061";
+}
+
+.btn.data-toggle i.fa:before {
+    content: "\f063";
+}
+
+.radio-no-margin-top .radio {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.check-no-margin .radio-inline {
+    margin: 0;
+    padding: 0;
+}
+
+.table-no-margin-bottom .table {
+    margin-bottom: 0px;
+}
+
+.form-group {
+    margin-bottom: 5px;
+}
+
+/*Dropdown arrow/caret*/
+.caret {
+    border-top: 4px dashed;
+}
+
+.hide-label div {
+    width: 100% !important;
+}
+
+.hide-label label {
+    display: none;
+}

@@ -1,0 +1,26 @@
+﻿
+    <div class="modal-header">
+      <h3>Adding a Beneficiary?  Please read below</h3>
+    </div>
+    <div class="modal-body" ng-form="beneInfoForm">
+      Just a couple of things to note before you add a beneficiary to this fund
+      <ul>
+        <li>
+          The Beneficiary will need to setup their own account(s).  [WePay, Miracles].  Don't worry, we'll assist them!
+        </li>
+        <li>
+          Only the beneficiary is allowed to withdraw from account.
+        </li>
+        <li>
+          You will not be required to setup a WePay account for this fund
+        </li>
+        <li>
+          Once set, you will not be able to change the beneficiary info.
+        </li>
+      </ul>
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-u btn-u-lg btn-u-orange" ng-click="cancel()"><i class="fa fa-check"></i> No Thanks, Let's just finish.</button>
+      <button type="button" class="btn btn-u btn-u-lg" ng-click="ok()"><i class="fa fa-check"></i> OK, Got it!</button>
+    </div>

@@ -1,0 +1,27 @@
+﻿CREATE TABLE [Fundolo].[FundSettings]
+(
+    [FundId] INT NOT NULL PRIMARY KEY,
+    [AllowAnonymousDonors] bit NOT NULL, 
+    [AllowRecuringPayments] BIT NOT NULL, 
+    [AllowCommenting] BIT NOT NULL, 
+    [UsePaymentModal] BIT NOT NULL, 
+    [FacebookPostAddVideo] BIT NOT NULL, 
+    [FacebookPostAddImage] BIT NOT NULL, 
+    [FacebookPostUpdate] BIT NOT NULL, 
+    [FacebookPostUserSupport] BIT NOT NULL, 
+    [FacebookPostUserDonate] BIT NOT NULL, 
+    [FacebookPostUserFundraiser] BIT NOT NULL, 
+    [FacebookPostUserComment] BIT NOT NULL DEFAULT 1, 
+    [EmailReceiveUserDonation] BIT NOT NULL, 
+    [EmailReceiveUserSupport] BIT NOT NULL, 
+    [EmailReceiveUserFundraiser] BIT NOT NULL, 
+    [EmailReceiveUserTeamMember] BIT NOT NULL, 
+    [EmailSendSupporter25Raised] BIT NOT NULL, 
+    [EmailSendSupporter50Raised] BIT NOT NULL, 
+    [EmailSendSupporter75Raised] BIT NOT NULL, 
+    [EmailSendSupporterFriendSupport] BIT NOT NULL, 
+    [DonationHideAmount] BIT NOT NULL DEFAULT 0, 
+    [DonationHideDonorName] BIT NOT NULL DEFAULT 0, 
+    CONSTRAINT [FK_FundSettings_Fund] FOREIGN KEY ([FundId]) REFERENCES [Fundolo].[Fund]([Id]) ON DELETE CASCADE,
+
+)

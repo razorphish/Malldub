@@ -1,0 +1,51 @@
+﻿/*
+  Custom 
+  ==========================
+*/
+body.dark .shop-product {
+  background: #252525;
+  color: #999;
+}
+body.dark  .shop-product h3.shop-product-title {
+  color: #dedede !important;
+}
+
+body.dark .shop-product .product-size label {
+  color: #999
+}
+
+body.dark .donate-modal {
+   background: #252525; 
+}
+
+body.dark .donate-fund h3.donate-title {
+   color: #dedede; 
+}
+
+body.dark .donate-fund small.donate-title-sub {
+	color: #dedede;
+}
+
+body.dark .donate-fund h4.paymentOption {
+	color: #dedede;
+}
+
+body.dark .donate-fund small.donate-sub{
+	color: #dedede;
+}
+body.dark .donate-fund .donate-fund-title {
+	color: #dedede;
+}
+body.dark .progress {
+	background: #dedede;
+}
+ 
+body.dark .donate-fund .donate-fund-title2 {
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+
+body.dark .donate-fund h3.donate-title2 {
+	font-size: 14px;
+	margin-bottom: 5px;
+}

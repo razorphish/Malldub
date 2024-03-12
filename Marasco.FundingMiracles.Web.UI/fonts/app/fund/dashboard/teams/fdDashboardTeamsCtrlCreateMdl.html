@@ -1,0 +1,60 @@
+﻿
+<div class="modal-header">
+  <div class="row">
+    <div class="col-lg-9 col-md-8 col-xs-8">
+      <h3>Create a team for <br/>{{fund.item.title}}</h3>
+    </div>
+    <div class="col-lg-3 col-md-4 col-xs-4 text-right">
+      <button class="btn btn-lg btn-default" ng-click="cancel('close')"><i class="fa fa-times"></i></button>
+    </div>
+  </div>
+</div>
+<div class="modal-body" ng-form="createTeamForm">
+  Creating a team is an effective way to ensure success of your campaign.
+  <div class="margin-top-10">
+
+    <!-- Name -->
+
+    <div class="row">
+      <div class="col-md-9">
+        <input class="form-control input-lg bloat" id="teamName" name="teamName" type="text" ng-model="fundTeam.team.name" required placeholder="Team Name">
+      </div>
+    </div>
+
+    <!--/Name-->
+    
+    <!-- Captain -->
+
+    <div class="row" ng-show="isEdit">
+      <div class="col-md-9">
+        <input class="form-control input-lg bloat" id="teamCaptainEmail" name="teamCaptainEmail" type="email" ng-model="fundTeam.captainEmail" placeholder="Team Captain email">
+      </div>
+    </div>
+
+    <!--/Captain-->
+
+    <!--Goal-->
+
+    <div class="row margin-bottom-20">
+      <div class="col-md-9">
+        <div class="input-group">
+          <span class="input-group-addon input-group-addon-md">$</span>
+          <input class="form-control input-lg bloat" id="teamGoalAmount" name="teamGoalAmount" ng-model="fundTeam.goalAmount" type="number" min="1" placeholder="$ Goal" va-whole-number-drctv required>
+          <span class="input-group-addon input-group-addon-md">.00</span>
+        </div>
+      </div>
+    </div>
+
+    <!--/Goal-->
+
+  </div>
+
+</div>
+<div class="modal-footer" ng-hide="isSaving">
+  <button class="btn btn-lg btn-primary" ng-click="ok()">Save Team</button>
+</div>
+<div class="modal-footer" ng-show="isSaving">
+  <md-spinner-bar-drctv />
+</div>
+
+

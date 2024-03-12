@@ -1,0 +1,57 @@
+﻿<!--=== Breadcrumbs ===-->
+<ac-dashboard-widgets-header-drctv headline="My Donations" active-tab="Donations"></ac-dashboard-widgets-header-drctv>
+<!--=== End Breadcrumbs ===-->
+<!--=== Content Part -Body ===-->
+<div class="container">
+  <div class="row">
+
+    <!--LEFT SECTION(BODY)-->
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col-md-12">
+          <!-- Page Error Summary-->
+          <md-alert-drctv title="{{title}}" message="{{message}}" alert-type="{{alertType}}" fade="fadeIn" show-alert="{{showAlert}}"></md-alert-drctv>
+          <!-- //Page Error Summary -->
+        </div>
+      </div>
+      <!-- ??  -->
+      <div class="row">
+        <div class="col-md-7 headline">
+          <h3>My Donations</h3>
+        </div>
+      </div>
+
+      <div class="row" ng-hide="isLoading">
+        <div class="col-md-12">
+          <div class="booking-blocks booking-blocks-nopadding" ng-repeat="donation in donations">
+            <div class="pull-left booking-img">
+              <a ng-href="/{{donation.fund.item.permalink}}">
+                <img ng-src="/azure/{{donation.fund.item.itemUploadList[0].upload.containerName}}/{{donation.fund.item.itemUploadList[0].upload.name}}?height=150&width=230&mode=crop" alt="{{fund.title}}">
+              </a>
+            </div>
+            <div style="overflow: hidden;">
+              <span class="bigger-140"><a ng-href="/{{donation.fund.item.permalink}}">{{donation.fund.item.title}}</a></span><br />
+              <span>Amount I donated: {{donation.amount | currency}} ({{donation.dateEntered | date}})</span><br />
+              <span>Message: {{donation.message}}</span><br />
+              <span>Name: {{donation.donorName}} ({{donation.email}})</span><br />
+              <p><a ng-href="/{{donation.fund.item.permalink}}">go to fund</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div ng-show="isLoading">
+        <md-spinner-bar-drctv />
+      </div>
+    </div>
+    <!--/LEFT SECTION(BODY)-->
+
+    <!-- RIGHT SECTION -->
+    <div class="col-md-4">
+      <ac-dashboard-widgets-manage-drctv></ac-dashboard-widgets-manage-drctv>
+    </div>
+    <!-- /RIGHT SECTION -->
+
+  </div><!--/row-->
+
+</div><!--/container-->
+<!--=== End Content Part - Body ===-->

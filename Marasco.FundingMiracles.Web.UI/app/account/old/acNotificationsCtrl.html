@@ -1,0 +1,62 @@
+﻿<!--=== Breadcrumbs ===-->
+<ac-dashboard-widgets-header-drctv headline="Notifications" active-tab="Notifications"></ac-dashboard-widgets-header-drctv>
+<!--=== End Breadcrumbs ===-->
+
+<!-- Page Error Summary-->
+<div class="container">
+  <div class="row" ng-show="showWarning">
+    <div class="col-md-12">
+      <div class="alert alert-danger fadeIn">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>Warning!</strong> {{warning}}
+      </div>
+    </div>
+  </div>
+</div>
+<!-- //Page Error Summary -->
+
+<!--=== Content Part -Body ===-->
+<div class="container">
+
+  <div class="row">
+
+    <!--LEFT SECTION(BODY)-->
+    <div class="col-md-8">
+      <!-- ??  -->
+      <div class="row">
+        <div class="col-md-7 headline">
+          <h3>Notifications</h3>
+          <div>
+            <h5 style="margin-top: 10px;">
+              <i>
+                Currently, you have no new notifications
+              </i>
+            </h5>
+          </div>
+        </div>
+        <div class="col-md-5 margin-top-10">
+          <button type="button" class="btn btn-link">Email</button>
+          <button type="button" class="btn btn-link">Donations</button>
+        </div>
+      </div>
+
+      <div class="row" ng-hide="isLoading">
+        <div class="col-md-12">
+
+        </div>
+      </div>
+      <div ng-show="isLoading">
+        <md-spinner-bar-drctv />
+      </div>
+    </div>
+    <!--/LEFT SECTION(BODY)-->
+    <!-- RIGHT SECTION -->
+    <div class="col-md-4">
+      <ac-dashboard-widgets-manage-drctv></ac-dashboard-widgets-manage-drctv>
+    </div>
+    <!-- /RIGHT SECTION -->
+
+  </div><!--/row-->
+
+</div><!--/container-->
+<!--=== End Content Part - Body ===-->

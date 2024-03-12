@@ -1,0 +1,420 @@
+[
+    {
+        "className": "section-label",
+        "template": "<div><u><strong>Dealer Attributes:</strong></u></div>"
+    },
+    {
+        "className": "section-label",
+        "template": "<div>Global Campaign Attributes</div>"
+    },
+    {
+        "className": "row",
+        "fieldGroup": [
+            {
+                "className": "col-xs-2",
+                "key": "dealerAttributes.INCLUDE_CAMPAIGN",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "Frequency"
+                }
+            },
+            {
+                "className": "col-xs-2",
+                "key": "dealerAttributes.frequencyShowCampaignDetails",
+                "type": "radio",
+                "templateOptions": {
+                    "label": "Show Campaign Details",
+                    "options": [
+                        {
+                            "name": "Yes",
+                            "value": "1"
+                        },
+                        {
+                            "name": "No",
+                            "value": "0"
+                        }
+                    ]
+                }
+            },
+            {
+                "className": "col-xs-2",
+                "template": "ShowCampaignDetails"
+            },
+            {
+                "className": "col-xs-2",
+                "key": "dealerAttributes.frequency.defaultCampaignOrder",
+                "type": "select",
+                "templateOptions": {
+                    "label": "Default Campaign Orders",
+                    "options": [
+                        {
+                            "name": "Daily",
+                            "value": "Daily"
+                        },
+                        {
+                            "name": "Weekly",
+                            "value": "Weekly"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "className": "row",
+        "fieldGroup": [
+            {
+                "className": "col-xs-2",
+                "key": "dealerAttributes.OrderDate",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "Order Date"
+                }
+            },
+            {
+                "className": "col-xs-2",
+                "key": "dealerAttributes.orderdate.ShowCampaignDetails",
+                "type": "radio",
+                "templateOptions": {
+                    "label": "Show Campaign Details",
+                    "options": [
+                        {
+                            "name": "Yes",
+                            "value": "1"
+                        },
+                        {
+                            "name": "No",
+                            "value": "0"
+                        }
+                    ]
+                }
+            },
+            {
+                "className": "col-xs-2",
+                "template": "ShowCampaignDetails"
+            },
+            {
+                "className": "col-xs-2",
+                "key": "dealerAttributes.orderdate.defaultCampaignOrder",
+                "type": "datepicker",
+                "templateOptions": {
+                    "label": "Order Date",
+                    "type": "text",
+                    "datepickerPopup": "dd-MMMM-yyyy"
+                }
+            }
+        ]
+    },
+    {
+        "className": "row",
+        "fieldGroup": [
+            {
+                "className": "col-xs-2",
+                "key": "Iagreetoterms.INCLUDE_CAMPAIGN",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "I agree To Terms"
+                }
+            }
+        ]
+    },
+    {
+        "className": "row",
+        "fieldGroup": [
+            {
+                "className": "col-xs-2",
+                "key": "dealerAttributes.CustomDesclaimer",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "Custom Desclaimer"
+                }
+            },
+            {
+                "className": "col-xs-2",
+                "key": "dealerAttributes.CustomDesclaimer.ShowCampaignDetails",
+                "type": "radio",
+                "templateOptions": {
+                    "label": "Show Campaign Details",
+                    "options": [
+                        {
+                            "name": "Yes",
+                            "value": "1"
+                        },
+                        {
+                            "name": "No",
+                            "value": "0"
+                        }
+                    ]
+                }
+            },
+            {
+                "className": "col-xs-2",
+                "template": "ShowCampaignDetails"
+            },
+            {
+                "className": "col-xs-2",
+                "key": "dealerAttributes.CustomDesclaimer.defaultCampaignOrder",
+                "type": "input",
+                "templateOptions": {
+                    "label": "Default Campaign Orders"
+                }
+            }
+        ]
+    },
+    {
+        "className": "row",
+        "fieldGroup": [
+            {
+                "className": "col-xs-2",
+                "key": "dealerAttributes.Disc1ExcludeOilChanges",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "Disc1- Excludes oil Changes"
+                }
+            }
+        ]
+    },
+    {
+        "className": "row",
+        "fieldGroup": [
+            {
+                "className": "col-xs-2",
+                "key": "dealerAttributes.Disc2ExcludeTiresChanges",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "Disc1- Excludes Tire Changes"
+                }
+            }
+        ]
+    },
+    {
+        "className": "row",
+        "fieldGroup": [
+            {
+                "className": "col-xs-2",
+                "key": "dealerAttributes.Disc3MinPurchReq",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "Disc3- Min Purch Required"
+                }
+            }
+        ]
+    },
+    {
+        "className": "row",
+        "fieldGroup": [
+            {
+                "className": "col-xs-2",
+                "key": "dealerAttributes.SelectVersion",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "Select Version"
+                }
+            }
+        ]
+    },
+    {
+        "className": "row",
+        "fieldGroup": [
+            {
+                "className": "col-xs-2",
+                "key": "dealerAttributes.SelectDiscOfferValue",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "Select Disc Offer($ Value)"
+                }
+            }
+        ]
+    },
+    {
+        "className": "row",
+        "fieldGroup": [
+            {
+                "className": "col-xs-2",
+                "key": "dealerAttributes.AnyServiceOff",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "Any Service $ Off"
+                }
+            }
+        ]
+    },
+    {
+        "className": "row",
+        "fieldGroup": [
+            {
+                "className": "col-xs-2",
+                "key": "dealerAttributes.UseLowPriceTireBanner",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "UseLowPriceTireBaner(appliex to Ford&Lincoln creatuive brands)"
+                }
+            }
+        ]
+    },
+    {
+        "className": "row",
+        "fieldGroup": [
+            {
+                "className": "col-xs-2",
+                "key": "dealerAttributes.Works$Price",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "Works$Price"
+                }
+            }
+        ]
+    },
+    {
+        "className": "row",
+        "fieldGroup": [
+            {
+                "className": "col-xs-2",
+                "key": "dealerAttributes.KelleyBlueBook",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "Kelley Blue Book"
+                }
+            },
+            {
+                "className": "col-xs-2",
+                "template": "ShowCampaignDetails"
+            },
+            {
+                "className": "col-xs-2",
+                "key": "dealerAttributes.KelleyBlueBook.ShowCampaignOrder",
+                "type": "radio",
+                "templateOptions": {
+                    "label": "howCampaignOrder",
+                    "options": [
+                        {
+                            "name": "Yes",
+                            "value": "1"
+                        },
+                        {
+                            "name": "No",
+                            "value": "0"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "className": "row",
+        "fieldGroup": [
+            {
+                "className": "col-xs-2",
+                "key": "dealerAttributes.ContactName",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "Contact Name"
+                }
+            }
+        ]
+    },
+    {
+        "className": "row",
+        "fieldGroup": [
+            {
+                "className": "col-xs-2",
+                "key": "dealerAttributes.ContactPhone",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "Contact Phone"
+                }
+            }
+        ]
+    },
+    {
+        "className": "row",
+        "fieldGroup": [
+            {
+                "className": "col-xs-2",
+                "key": "dealerAttributes.VIN",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "VIN"
+                }
+            }
+        ]
+    },
+    {
+        "className": "row",
+        "fieldGroup": [
+            {
+                "className": "col-xs-2",
+                "key": "dealerAttributes.MailCapPct",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "Mail Cap Pct"
+                }
+            }
+        ]
+    },
+    {
+        "className": "row",
+        "fieldGroup": [
+            {
+                "className": "col-xs-2",
+                "key": "dealerAttributes.MailCapQty",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "MailCapQty"
+                }
+            }
+        ]
+    },
+    {
+        "className": "row",
+        "fieldGroup": [
+            {
+                "className": "col-xs-2",
+                "key": "dealerAttributes.LiveCallCapbyQty",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "Live Call Cap by Qty"
+                }
+            }
+        ]
+    },
+    {
+        "className": "row",
+        "fieldGroup": [
+            {
+                "className": "col-xs-2",
+                "key": "dealerAttributes.HighProrityMailCapQty",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "High Prority Mail Cap Qty"
+                }
+            }
+        ]
+    },
+    {
+        "className": "row",
+        "fieldGroup": [
+            {
+                "className": "col-xs-2",
+                "key": "dealerAttributes.HighProrityMailCapPct",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "High Prority Mail Cap Pct"
+                }
+            }
+        ]
+    },
+    {
+        "className": "row",
+        "fieldGroup": [
+            {
+                "className": "col-xs-2",
+                "key": "dealerAttributes.HighProrityLiveCapQty",
+                "type": "checkbox",
+                "templateOptions": {
+                    "label": "High Prority Live Cap Qty"
+                }
+            }
+        ]
+    }
+	]

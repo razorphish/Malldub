@@ -1,0 +1,104 @@
+﻿<div class="panel-body margin-bottom-50">
+    <div class="row margin-bottom-25">
+        <div class="col-md-12" ng-show="allowCommenting">
+            <div ng-hide="isLoggedIn">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3 class="shop-product-title">Leave a Comment</h3>
+                        <p>Sign in with Facebook or <se-login-popup-drctv login-callback="initLogin()" link-title="email"></se-login-popup-drctv></p>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-facebook" se-login-popup-facebook-drctv facebook-callback="initLogin()"><i class="fa fa-facebook"></i> Sign in with Facebook</button>
+                    </div>
+                </div>
+            </div>
+            <div ng-show="isLoggedIn" ng-form="donateCommentForm">
+                <div class="donate-form">
+                    <div class="row">
+                        <div class="col-md-3 text-center">
+                            <md-avatar-drctv user="user" classes="img-bordered rounded-x comment-image"></md-avatar-drctv>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <strong>{{user.firstName}} {{user.lastName}}</strong>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <label class="input" ng-class="{'state-error': showValidationMessages && donateCommentForm.comment.$error.required}">
+                                        <textarea class="form-control" name="comment" id="comment" ng-model="comment" required rows="3" placeholder="Add a comment here..."></textarea>
+                                    </label>
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6" ng-hide="isCommenting">
+                                    <button class="btn btn-u" ng-click="postComment()">Add Comment</button>
+                                </div>
+                                <div class="col-md-6" ng-show="isCommenting">
+                                    <md-spinner-bar-drctv spinner-type="squareLarge" spinner-size="sm" />
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="pull-right">
+                                        <label class="checkbox">
+                                            <input type="checkbox" ng-model="postToFacebook" ng-true-value="true" ng-false-value="false" name="postToFacebook" />
+                                            <i></i>
+                                            Post to Facebook
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row profile">
+        <div class="col-md-12">
+            <div ng-hide="isCommentLoading">
+                <div class="media media-v2" ng-repeat="fundComment in fundcomments | orderBy: 'dateEntered': true">
+                    <a class="pull-left" href>
+                        <md-avatar-drctv user="sendUser(fundComment)" classes="media-object rounded-x"></md-avatar-drctv>
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading">
+
+                            <strong ng-hide="">{{displayCommentName(fundComment)}}</strong>
+                            {{displayCommentTitle(fundComment)}}
+                            <small>{{fundComment.comment.dateEntered | momentFrom}}</small>
+                        </h4>
+                        <p>
+                            <strong class="bigger-140">{{fundComment.comment.post}}</strong>
+                        </p>
+                        <ul class="list-inline results-list pull-left">
+                            <li ng-show="fundComment.comment.totalLikes === 0"><a href ng-click="likeThis(fundComment)" tooltip="Like this" tooltip-trigger="mouseenter" tooltip-placement="top">Like</a></li>
+                            <li ng-show="fundComment.comment.totalLikes > 0"><a href ng-click="likeThis(fundComment)" tooltip="Like this" tooltip-trigger="mouseenter" tooltip-placement="top">{{fundComment.comment.totalLikes}} Like{{fundComment.comment.totalLikes > 1 ? 's' : ''}}</a></li>
+                        </ul>
+                        <ul class="list-inline pull-right">
+                            <li><a href ng-click="likeThis(fundComment)" tooltip="Like this" tooltip-trigger="mouseenter" tooltip-placement="top"><i class="expand-list rounded-x fa fa-thumbs-up"></i></a></li>
+                            <!--TODO: HIDE TIS FOR NOW<li ng-show="fundComment.aspNetUser.identification"><a href ng-click="contact(fundComment)" tooltip="Contact" tooltip-trigger="mouseenter" tooltip-placement="top"><i class="expand-list rounded-x fa fa-reply"></i></a></li>-->
+                        </ul>
+                    </div>
+                </div><!--/end media media v2-->
+            </div>
+
+            <div ng-show="isCommentLoading">
+                <md-spinner-bar-drctv />
+            </div>
+
+            <div ng-show="totalComments > commentsPerPage" class="text-center">
+                <ul uib-pagination
+                    total-items="totalComments"
+                    ng-model="currentPage"
+                    max-size="commentMaxSize"
+                    boundary-links="true"
+                    rotate="false"
+                    items-per-page="commentsPerPage"
+                    ng-change="onSelectCommentPage(page)"></ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+﻿<div class="panel panel-profile">
+  <div class="panel-heading overflow-h">
+    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-comments-o"></i> Comments</h2>
+    <button class="btn btn-u btn-u-default pull-right" ng-click="viewAll()"
+            tooltip="View All Comments"
+            tooltip-trigger="mouseenter"
+            tooltip-placement="bottom">
+      <i class="fa fa-list "></i>
+    </button>
+  </div>
+  <div id="commentScrollbar" class="panel-body contentHolder-md" ng-hide="isLoading">
+    <div class="comment" ng-repeat="comment in comments | orderBy:'dateEntered':true">
+      <md-avatar-drctv user="comment.aspNetUser" classes="media-object rounded-x"></md-avatar-drctv>
+      <div class="overflow-h">
+        <strong>{{comment.comment.name}}<small class="pull-right"> {{comment.comment.dateEntered | momentFrom}}</small></strong>
+        <p>{{comment.comment.post}}</p>
+        <ul class="list-inline comment-list">
+          <li><i class="fa fa-thumbs-up"></i> <a href="#">{{comment.comment.totalLikes}}</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- ===Loading=== -->
+  <div class="panel-body contentHolder-md" ng-show="isLoading">
+    <div class="row">
+      <div class="col-md-12 margin-top-10">
+        <div style="display:table ;margin: 0 auto;">
+          <md-spinner-bar-drctv spinner-type="barXSmall" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

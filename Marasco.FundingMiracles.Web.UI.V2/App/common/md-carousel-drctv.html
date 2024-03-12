@@ -1,0 +1,31 @@
+﻿<div>
+  <div ng-class="spanClass">
+    <div ng-hide="hideHeadline()" class="headline">
+      <h2>{{slideHeadline}}</h2>
+    </div>
+    <carousel interval="myInterval">
+      <slide ng-repeat="slide in slides" active="slide.active">
+        <img ng-src="{{slide.imgUrl}}" style="margin:auto;">
+        <div ng-hide="hideCaption2()" class="carousel-caption">
+          <p>{{slide.description}}</p>
+        </div>
+      </slide>
+    </carousel>
+    <div ng-show="showProgress" class="progress" style="height: 60px; margin-bottom: 0">
+      <div class="progress-bar pull-left" ng-style="getProgressPercentage()"></div>
+    </div>
+    <div class="row" style="margin: -50px 10px 10px 10px;">
+      <div class="span6">
+        <div class="progress-amount-md-left">
+          Raised: ${{getTotalDonation()| number: 0}}
+        </div>
+      </div>
+      <div class="span6">
+        <div class="progress-amount-md">
+          Goal: ${{fund.goalAmount | number: 0}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/span4-->
+</div>

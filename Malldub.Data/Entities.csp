@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<codeSmith xmlns="http://www.codesmithtools.com/schema/csp.xsd">
+  <variables>
+    <add key="MalldubConnectionString_Home" value="Data Source=superchargers;Initial Catalog=MarasCo.MallDub;Persist Security Info=True;User ID=malldub_dbuser;Password=password" />
+    <add key="MalldubConnectionString_Work" value="Data Source=AMARASCO7\MSSQLSERVER2012;Initial Catalog=MallDub;Persist Security Info=True;User ID=malldub_dbuser;Password=password" />
+    <add key="MalldubConnectionString_Laptop" value="Data Source=sdl7-amarasco\mssqlserver2012;Initial Catalog=Malldub;Persist Security Info=True;User ID=malldub_dbuser;Password=password" />
+    <add key="MalldubConnectionString" value="Data Source=superchargers;Initial Catalog=MarasCo.MallDub;Persist Security Info=True;User ID=malldub_dbuser;Password=password" />
+  </variables>
+  <defaultProperties>
+    <property name="EdmxFile">Malldub.edmx</property>
+  </defaultProperties>
+  <propertySets>
+    <propertySet name="EDMX" template="..\Templates\CSharp\edmx.cst">
+      <property name="IncludeViews">False</property>
+      <property name="IncludeFunctions">True</property>
+      <property name="IgnoreList">
+        <stringList>
+      <string>^dbo.sysdiagrams$</string>
+      <string>^dbo.sp_</string>
+    </stringList>
+      </property>
+      <property name="CleanExpression">
+        <stringList>
+      <string>^(sp|tbl|udf|vw)_</string>
+    </stringList>
+      </property>
+      <property name="IncludeList">
+        <stringList />
+      </property>
+      <property name="SourceDatabase">
+        <connectionString>$(MalldubConnectionString_Home)</connectionString>
+        <providerType>SchemaExplorer.SqlSchemaProvider,SchemaExplorer.SqlSchemaProvider</providerType>
+      </property>
+      <property name="EntityNamespace">Malldub.Data</property>
+      <property name="ContextNamespace">Malldub.Data</property>
+      <property name="DataContextName">MalldubDataContext</property>
+    </propertySet>
+    <propertySet name="Entities" template="..\Templates\CSharp\Entities.cst">
+      <property name="BaseDirectory">.\</property>
+      <property name="OutputDirectory">.\Entities</property>
+    </propertySet>
+    <propertySet name="Queries" template="..\Templates\CSharp\Queries.cst">
+      <property name="QueryDirectory">.\Queries</property>
+      <property name="MethodPrefix">By</property>
+      <property name="UniqueMethodPrefix">GetBy</property>
+      <property name="MethodKeySuffix">Key</property>
+    </propertySet>
+  </propertySets>
+</codeSmith>

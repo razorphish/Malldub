@@ -1,0 +1,317 @@
+﻿<!--=== Breadcrumbs ===-->
+<fd-dashboard-widgets-header-drctv fund="fund" show-edit-menu="true"></fd-dashboard-widgets-header-drctv>
+<!--=== End Breadcrumbs ===-->
+<!--== Content Part Header===-->
+<div class="container">
+  <div class="row" ng-show="showWarning">
+    <div class="col-md-12">
+      <!-- Page Error Summary-->
+      <md-alert-drctv title="{{title}}" message="{{message}}" alert-type="{{alertType}}" fade="fadeIn" show-alert="{{showAlert}}" show-block="true"></md-alert-drctv>
+      <!-- //Page Error Summary -->
+    </div>
+  </div>
+
+</div>
+<!--== /Content Part Header ==-->
+<!--=== Content Part -Body ===-->
+<div class="container">
+
+  <!--Page Row-->
+  <div class="row">
+
+    <!--LEFT SECTION(BODY)-->
+    <div class="col-md-8">
+
+      <!-- Fund Settings Header  -->
+      <div class="row">
+        <div class="col-md-7 headline">
+          <h3>Settings For: {{fund.item.title}}</h3>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 sky-form sky-form-noborder">
+
+          <!--Main Body-->
+
+          <!-- Email Settings -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <div class="row">
+                <div class="col-md-10 col-xs-10">
+                  <span class="panel-title"><i class="fa fa-envelope"> </i> Email:</span>
+                </div>
+                <div class="col-md-2 col-xs-2">
+                  <div ng-show="isSavingEmail" class="pull-right margin-top-5">
+                    <md-spinner-bar-drctv spinner-type="barXSmall" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th><span style="text-transform: uppercase">Receive email when your campaign gets:</span></th>
+                  <th><span style="text-transform: uppercase">Send to your supporters when:</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width:50%">
+                    <label class="checkbox">
+                      <input type="checkbox" name="checkbox" ng-change="updateSettings('email')" ng-model="fund.settings.emailReceiveUserDonation" ng-checked="fund.settings.emailReceiveUserDonation"><i></i>New Donation
+                    </label>
+                  </td>
+                  <td>
+                    <label class="checkbox">
+                      <input type="checkbox" name="checkbox" ng-change="updateSettings('email')" ng-model="fund.settings.emailSendSupporter25Raised" ng-checked="fund.settings.emailSendSupporter25Raised"><i></i>25% Funds Raised
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="checkbox">
+                      <input type="checkbox" name="checkbox" ng-change="updateSettings('email')" ng-model="fund.settings.emailReceiveUserSupport" ng-checked="fund.settings.emailReceiveUserSupport"><i></i>New Supporter
+                    </label>
+                  </td>
+                  <td>
+                    <label class="checkbox">
+                      <input type="checkbox" name="checkbox" ng-change="updateSettings('email')" ng-model="fund.settings.emailSendSupporter50Raised" ng-checked="fund.settings.emailSendSupporter50Raised"><i></i>50% Funds Raised
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="checkbox">
+                      <input type="checkbox" name="checkbox" ng-change="updateSettings('email')" ng-model="fund.settings.emailReceiveUserFundraiser" ng-checked="fund.settings.emailReceiveUserFundraiser"><i></i>New Fundraiser
+                    </label>
+                  </td>
+                  <td>
+                    <label class="checkbox">
+                      <input type="checkbox" name="checkbox" ng-change="updateSettings('email')" ng-model="fund.settings.emailSendSupporter75Raised" ng-checked="fund.settings.emailSendSupporter75Raised"><i></i>75% Funds Raised
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="checkbox">
+                      <input type="checkbox" name="checkbox" ng-change="updateSettings('email')" ng-model="fund.settings.emailReceiveUserTeamMember" ng-checked="fund.settings.emailReceiveUserTeamMember"><i></i>New Team Member
+                    </label>
+                  </td>
+                  <td>
+                    <label class="checkbox">
+                      <input type="checkbox" name="checkbox" ng-change="updateSettings('email')" ng-model="fund.settings.emailSendSupporterFriendSupport" ng-checked="fund.settings.emailSendSupporterFriendSupport"><i></i>Their Facebook Friends Support
+                    </label>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="panel-footer">
+              <div >
+                <button class="btn btn-u" type="button" ng-click="updateSettingsGroup('email')"><i class="fa fa-envelope"></i> {{emailButtonTitle}}</button>
+              </div>
+            </div>
+          </div>
+          <!--/Email Settings -->
+          
+          <!-- Facebook Settings -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <div class="row">
+                <div class="col-md-10 col-xs-10">
+                  <span class="panel-title"><i class="fa fa-facebook"> </i> Facebook:</span>
+                </div>
+                <div class="col-md-2 col-xs-2">
+                  <div ng-show="isSavingFacebook" class="pull-right margin-top-5">
+                    <md-spinner-bar-drctv spinner-type="barXSmall" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th><span style="text-transform: uppercase">Post when:</span></th>
+                  <th><span style="text-transform: uppercase">Post when someone:</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width:50%">
+                    <label class="checkbox">
+                      <input type="checkbox" name="checkbox" ng-change="updateSettings('facebook')" ng-model="fund.settings.facebookPostAddVideo" ng-checked="fund.settings.facebookPostAddVideo"><i></i> Add Video
+                    </label>
+                  </td>
+                  <td>
+                    <label class="checkbox">
+                      <input type="checkbox" name="checkbox" ng-change="updateSettings('facebook')" ng-model="fund.settings.facebookPostUserSupport" ng-checked="fund.settings.facebookPostUserSupport"><i></i>Supports
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="checkbox">
+                      <input type="checkbox" name="checkbox" ng-change="updateSettings('facebook')" ng-model="fund.settings.facebookPostAddImage" ng-checked="fund.settings.facebookPostAddImage"><i></i> Add Image
+                    </label>
+                  </td>
+                  <td>
+                    <label class="checkbox">
+                      <input type="checkbox" name="checkbox" ng-change="updateSettings('facebook')" ng-model="fund.settings.facebookPostUserDonate" ng-checked="fund.settings.facebookPostUserDonate"><i></i> Donates
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="checkbox">
+                      <input type="checkbox" name="checkbox" ng-change="updateSettings('facebook')" ng-model="fund.settings.facebookPostUpdate" ng-checked="fund.settings.facebookPostUpdate"><i></i>Post Update
+                    </label>
+                  </td>
+                  <td>
+                    <label class="checkbox">
+                      <input type="checkbox" name="checkbox" ng-change="updateSettings('facebook')" ng-model="fund.settings.facebookPostUserFundraiser" ng-checked="fund.settings.facebookPostUserFundraiser"><i></i>Becomes a Fundraiser
+                    </label>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="panel-footer">
+              <div>
+                <button class="btn btn-u" type="button" ng-click="updateSettingsGroup('facebook')"><i class="fa fa-facebook"></i> {{facebookButtonTitle}}</button>
+              </div>
+            </div>
+          </div>
+          <!--/Facebook Settings -->
+          
+          <!-- Configuration Settings -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <div class="row">
+                <div class="col-md-10 col-xs-10">
+                  <span class="panel-title"><i class="fa fa-cog"> </i> Configuration:</span>
+                </div>
+                <div class="col-md-2 col-xs-2">
+                  <div ng-show="isSavingConfig" class="pull-right margin-top-5">
+                    <md-spinner-bar-drctv spinner-type="barXSmall" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th><span style="text-transform: uppercase">Payments:</span></th>
+                  <th><span style="text-transform: uppercase">Comments and Updates:</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width:50%">
+                    <label class="checkbox">
+                      <input type="checkbox" name="checkbox" ng-change="updateSettings('config')" ng-model="fund.settings.allowAnonymousDonors" ng-checked="fund.settings.allowAnonymousDonors"><i></i> Allow Anonymous Donors
+                    </label>
+                  </td>
+                  <td>
+                    <label class="checkbox">
+                      <input type="checkbox" name="checkbox" ng-change="updateSettings('config')" ng-model="fund.settings.allowCommenting" ng-checked="fund.settings.allowCommenting"><i></i>Allow Comment
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="checkbox">
+                      <input type="checkbox" name="checkbox" ng-change="updateSettings('config')" ng-model="fund.settings.allowRecuringPayments" ng-checked="fund.settings.allowRecuringPayments"><i></i> Allow Recurring Payments
+                    </label>
+                  </td>
+                  <td>
+
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="checkbox">
+                      <input type="checkbox" name="checkbox" ng-change="updateSettings('config')" ng-model="fund.settings.usePaymentModal" ng-checked="fund.settings.usePaymentModal"><i></i>Use Payment Modal
+                    </label>
+                  </td>
+                  <td>
+
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="panel-footer">
+              <div>
+                <button class="btn btn-u" type="button" ng-click="updateSettingsGroup('config')"><i class="fa fa-cogs"></i> {{configButtonTitle}}</button>
+              </div>
+            </div>
+          </div>
+          <!--/Configuration Settings-->
+          
+          <!-- Fund Status -->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <div class="row">
+                <div class="col-md-10 col-xs-10">
+                  <span class="panel-title"><i class="fa fa-flash"> </i> Status:</span>
+                </div>
+                <div class="col-md-2 col-xs-2">
+                  <div ng-show="isSavingStatus" class="pull-right margin-top-5">
+                    <md-spinner-bar-drctv spinner-type="barXSmall" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th><span style="text-transform: uppercase">Payments:</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <label class="radio">
+                      <input type="radio" name="radio" ng-model="fund.item.statusId" value="Active" ng-click="updateStatus('Active')"><i class="rounded-x"></i> <b>Active</b> - Campaign is live to the public and ready to accept donations
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="radio">
+                      <input type="radio" name="radio" ng-model="fund.item.statusId" value="Expired" ng-click="updateStatus('Expired')"><i class="rounded-x"></i> <b>Completed</b> - Campaign is set to completed and no donations can be accepted
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label class="radio">
+                      <input type="radio" name="radio" ng-model="fund.item.statusId" value="Hidden" ng-click="updateStatus('Hidden')"><i class="rounded-x"></i> <b>Hidden</b> - Campaign is only visible to you and private to the outside world 
+                    </label>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!--/Fund Status-->
+
+          <!--/Main Body-->
+
+        </div>
+      </div>
+      <!-- /Fund Settings  -->
+
+    </div>
+    <!--/LEFT SECTION(BODY)-->
+    <!-- RIGHT SECTION(Body) -->
+    <div class="col-md-4">
+      <!-- Fund Features -->
+      <fd-dashboard-widgets-features-drctv fund="fund"></fd-dashboard-widgets-features-drctv>
+      <!-- /Fund Features -->
+    </div>
+    <!--/RIGHT SECTION (Body)-->
+
+  </div>
+  <!--/Page Row-->
+
+</div>
+<!--/container-->
+<!--=== End Content Part - Body ===-->

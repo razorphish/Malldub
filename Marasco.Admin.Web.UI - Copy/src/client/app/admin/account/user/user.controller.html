@@ -1,0 +1,45 @@
+<div ng-form="vm.userForm">
+    <!-- #section:basics/content.breadcrumbs -->
+    <div class="breadcrumbs" id="breadcrumbs">
+        <script type="text/javascript">
+            try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
+        </script>
+
+        <ul class="breadcrumb">
+            <li>
+                <i class="ace-icon fa fa-home home-icon"></i>
+                <a ui-sref="admin.index">Home</a>
+            </li>
+
+            <li>
+                Account
+            </li>
+            <li class="active">User</li>
+        </ul>
+        <!-- /.breadcrumb -->
+
+    </div>
+
+    <!-- /section:basics/content.breadcrumbs -->
+    <div class="page-content">
+
+        <div class="page-header">
+            <h1>
+                User Management
+                <small>
+                    <i class="ace-icon fa fa-angle-double-right"></i>
+                    List of USERS
+                </small>
+            </h1>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div>
+                    <div class="grid" ui-grid="vm.gridOptions" ui-grid-pagination ui-grid-expandable ui-grid-pinning ui-grid-auto-resize></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

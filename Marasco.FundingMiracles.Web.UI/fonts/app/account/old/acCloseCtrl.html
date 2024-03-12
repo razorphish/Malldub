@@ -1,0 +1,47 @@
+﻿<!--=== Breadcrumbs ===-->
+<ac-dashboard-widgets-header-drctv headline="Close your account" active-tab="Close"></ac-dashboard-widgets-header-drctv>
+<!--=== End Breadcrumbs ===-->
+
+<!-- Page Error Summary-->
+<md-alert-drctv></md-alert-drctv>
+<!-- //Page Error Summary -->
+
+<!--=== Content Part -Body ===-->
+<div class="container">
+
+  <div class="row">
+
+    <!--LEFT SECTION(BODY)-->
+    <div class="col-md-8">
+      <!-- ??  -->
+      <div class="row">
+        <div class="col-md-7 headline">
+          <h3>Page Title</h3>
+        </div>
+        <div class="col-md-5 margin-top-10">
+          <button type="button" class="btn btn-link" ng-click="openCreateDonation()">Page link1</button>
+          <button type="button" class="btn btn-link">Page link2</button>
+          <button type="button" class="btn btn-link">Page link3</button>
+        </div>
+      </div>
+
+      <div class="row" ng-hide="isLoading">
+        <div class="col-md-12">
+
+        </div>
+      </div>
+      <div ng-show="isLoading">
+        <md-spinner-bar-drctv />
+      </div>
+    </div>
+    <!--/LEFT SECTION(BODY)-->
+    <!-- RIGHT SECTION -->
+    <div class="col-md-4">
+      <ac-dashboard-widgets-manage-drctv></ac-dashboard-widgets-manage-drctv>
+    </div>
+    <!-- /RIGHT SECTION -->
+
+  </div><!--/row-->
+
+</div><!--/container-->
+<!--=== End Content Part - Body ===-->

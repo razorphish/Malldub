@@ -1,0 +1,60 @@
+<div ng-controller="Sidebar as vm">
+    <style>
+        #sidebar-shortcuts button {
+            margin-right: 4px;
+        }
+    </style>
+    <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+        <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+            <!-- #section:basics/sidebar.layout.shortcuts -->
+            <button class="btn" ng-repeat="state in miniStates" ui-sref="{{state.name}}" ng-class="getIconClass(true, state.settings.mini.buttonColor)">
+                <i class="ace-icon fa" ng-class="getIconClass(false, state.settings.mini.icon)"></i>
+            </button>
+
+        </div>
+
+        <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+            <span class="btn" ng-repeat="state in miniStates" ui-sref="{{state.name}}" ng-class="getIconClass(true, state.settings.mini.buttonColor)"></span>
+        </div>
+    </div>
+
+    <ul class="nav nav-list">
+        <li ng-repeat="state in parents" ng-class="setMenuHeaderActive(state)">
+            <a href="#" class="dropdown-toggle" ng-if="state.states.length > 0">
+                <i class="menu-icon fa" ng-class="getIconClass(false, state.settings.icon)"></i>
+                <span class="menu-text">
+                    {{state.title}}
+                </span>
+
+                <b class="arrow fa fa-angle-down"></b>
+            </a>
+
+            <a ui-sref="{{state.name}}" ng-if="state.states.length === 0">
+                <i class="menu-icon fa" ng-class="getIconClass(false, state.settings.icon)"></i>
+                <span class="menu-text">{{state.title}}</span>
+            </a>
+
+            <b class="arrow"></b>
+
+            <ul class="submenu" ng-class="setMenuHeaderActive(state)" ng-style="setMenuHeaderInactiveStyle(state.name)">
+
+                <li ng-repeat="chState in state.states" ng-class="setMenuActive(chState.name)">
+                    <a ui-sref="{{chState.name}}" ng-if="!chState.disabled">
+                        <i class="menu-icon fa fa-caret-right"></i> {{chState.title}}
+                    </a>
+                    <a ng-if="chState.disabled" class="disableLink">
+                        <i class="menu-icon fa fa-caret-right"></i> {{chState.title}}
+                    </a>
+                    <b class="arrow"></b>
+                </li>
+
+            </ul>
+
+        </li>
+    </ul>
+    <!-- /.nav-list -->
+    <!-- #section:basics/sidebar.layout.minimize -->
+    <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+        <i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+    </div>
+</div>
