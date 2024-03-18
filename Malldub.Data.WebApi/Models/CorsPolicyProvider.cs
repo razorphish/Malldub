@@ -38,6 +38,7 @@
 
       // fundingmiracles.com [Local]
       _policy.Origins.Add("http://localhost:45402");
+      _policy.Origins.Add("http://localhost:38903");
       _policy.Origins.Add("http://local.fundingmiracles.com");
       _policy.Origins.Add("https://local.fundingmiracles.com");
 

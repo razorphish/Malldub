@@ -1,4 +1,3 @@
-///#source 1 1 /app/security/routing-config.js
 (function (exports) {
 
   var config = {
@@ -101,7 +100,6 @@
   }
 
 })(typeof exports === 'undefined' ? this['routingConfig'] = {} : exports);
-///#source 1 1 /app/app.js
 'use strict';
 var fundoloApp = angular.module('fundoloApp', [
     'ngResource', 'ui.router', 'ngRoute', 'ngCookies', 'ui.validate', 'ngSanitize',
@@ -341,36 +339,36 @@ var fundoloApp = angular.module('fundoloApp', [
       }
     ]
   );
-///#source 1 1 /app/constants/mdConfig.js
 
-fundoloApp.constant("appUrl", {
-    fundPrint: 'http://local.maras.co',
-    shorty: 'local.fundingmiracles.com',
-    base: 'http://local.fundingmiracles.com',
-    api: 'http://api.local.fundingmiracles.com',
+fundoloApp.constant("appUrl", {  
+    fundPrint: 'https://print.fundingmiracles.com',
+    shorty: 'www.fundingmiracles.com', 
+    base: 'https://www.fundingmiracles.com',
+    api: 'https://api.fundingmiracles.com',
     facebook: {
-      signInUrl: 'http://api.local.fundingmiracles.com/facebookauth.aspx?u='
+      signInUrl: 'https://api.fundingmiracles.com/facebookauth.aspx?u=' 
     },
-    defaultFundImage: '2154630987.png'
+    defaultFundImage: '9406317528.png'
   })
-  .constant("twitterConfiguration", {
-    signInUrl: 'http://api.local.fundingmiracles.com/twitterauth.aspx?f=',
-    tweetUrl: 'https://twitter.com/intent/tweet',
-    countUrl: "http://cdn.api.twitter.com/1/urls/count.json"
-  })
-  .constant("wePayConst", {
-    webUrl: 'https://stage.wepay.com',
-    authUrl: 'https://stage.wepay.com/v2/oauth2/authorize',
-    tokenUrl: 'https://stage.wepayapi.com/v2/oauth2/token',
-    client_id: '181045', //staging,
-    redirect_uri: 'http://local.fundingmiracles.com/wepay/authenticate',
-    scope: 'manage_accounts,collect_payments,view_balance,view_user,send_money,refund_payments,preapprove_payments,manage_subscriptions',
-    callback_uri: 'http://local.fundingmiracles.com/wepay/ipn',
-    credit_card_number: '4003830171874018',
-    endpoint: 'stage'
-  }); 
+.constant("twitterConfiguration", {
+  signInUrl: 'https://api.fundingmiracles.com/twitterauth.aspx?f=',
+  tweetUrl: 'https://twitter.com/intent/tweet',
+  countUrl: "http://cdn.api.twitter.com/1/urls/count.json"
+})
+.constant("wePayConst", {
+  webUrl: 'https://www.wepay.com',
+  authUrl: 'https://www.wepay.com/v2/oauth2/authorize',
+  tokenUrl: 'https://wwww.wepayapi.com/v2/oauth2/token',
+  client_id: '135196', //production,
+  //authUrl: 'https://stage.wepay.com/v2/oauth2/authorize',
+  //tokenUrl: 'https://stage.wepayapi.com/v2/oauth2/token',
+  //client_id: '181045', //staging,
+  redirect_uri: 'https://www.fundingmiracles.com/wepay/authenticate',
+  scope: 'manage_accounts,collect_payments,view_balance,view_user,send_money,refund_payments,preapprove_payments,manage_subscriptions',
+  callback_uri: 'https://www.fundingmiracles.com/wepay/ipn',
+  endpoint: 'production'
+});
 
-///#source 1 1 /app/modules/mdCssInjector.js
 /*
 * angular-css-injector v1.0.4
 * Written by Gabriel Delépine
@@ -461,7 +459,6 @@ angular.module('angular.css.injector', [])
     return this;
   }
 });
-///#source 1 1 /app/modules/mdMalldubTwitter.js
 /*
  * 
  * 
@@ -683,7 +680,6 @@ angular.module('angular.css.injector', [])
       }
     ]);
 })(window, angular);
-///#source 1 1 /app/services/mdGoogleSvc.js
 fundoloApp.factory('mdGoogleSvc', ['$resource', '$q', '$filter', '$compile', 'seAuthSvc', 'appUrl',
   function ($resource, $q, $filter, $compile, seAuthSvc, appUrl) {
     'use strict';
@@ -737,7 +733,6 @@ fundoloApp.factory('mdGoogleSvc', ['$resource', '$q', '$filter', '$compile', 'se
 
     return p;
   }]);
-///#source 1 1 /app/pages/pgCtrl.js
 'use strict';
 
 fundoloApp.controller('pgAboutUsCtrl',['$scope', '$timeout',
@@ -831,7 +826,6 @@ fundoloApp.controller('pgAboutUsCtrl',['$scope', '$timeout',
   }
 ]);
 //#endregion /Cancer Pages
-///#source 1 1 /app/home/hmHomeContainer.js
 fundoloApp.controller('hmHomeContainer', ['$scope', '$log',
 function hmHomeContainer($scope, $log) {
   'use strict';
@@ -839,7 +833,6 @@ function hmHomeContainer($scope, $log) {
     return moment().format('YYYY');
   }
 }]);;
-///#source 1 1 /app/home/hmHomeCtrl.js
 fundoloApp.controller('hmHomeCtrl',['$scope', '$log', 'fdSvc',
   function hmHomeCtrl($scope, $log, fdSvc) {
     'use strict';
@@ -849,7 +842,6 @@ fundoloApp.controller('hmHomeCtrl',['$scope', '$log', 'fdSvc',
     //#endregion
 
   }])
-///#source 1 1 /app/home/hm-header-drctv.js
 fundoloApp.directive('hmHeaderDrctv', [
   '$window', 'seAuthSvc', 'pgWePaySvc',
   function ($window, seAuthSvc, pgWePaySvc) {
@@ -896,7 +888,6 @@ fundoloApp.directive('hmHeaderDrctv', [
 
     return p;
   }])
-///#source 1 1 /app/home/hm-header5-drctv.js
 fundoloApp.directive('hmHeader5Drctv', [
   function () {
     'use strict';
@@ -935,7 +926,6 @@ fundoloApp.directive('hmHeader5Drctv', [
 
     return p;
   }])
-///#source 1 1 /app/home/hm-slider-layer-drctv.js
 fundoloApp.directive('hmSliderLayerDrctv', [function () {
   'use strict';
   var p = {};
@@ -951,7 +941,6 @@ fundoloApp.directive('hmSliderLayerDrctv', [function () {
 
   return p;
 }]);
-///#source 1 1 /app/home/hm-slider-v2-drctv.js
 fundoloApp.directive('hmSliderV2Drctv', [
   function() {
     'use strict';
@@ -1010,7 +999,6 @@ fundoloApp.directive('hmSliderV2Drctv', [
 
   }
 ]);
-///#source 1 1 /app/security/seLoginCtrl.js
 fundoloApp.controller('seLoginCtrl',
 ['$scope', '$location', '$log', 'seAuthSvc',
   function seLoginCtrl($scope, $location, $log, seAuthSvc) {
@@ -1040,7 +1028,6 @@ fundoloApp.controller('seLoginCtrl',
 
   }
 ]);
-///#source 1 1 /app/security/seNavigationCtrl.js
 fundoloApp.controller('seNavigationCtrl',
 ['$scope', '$location', 'seAuthSvc',
   function ($scope, $location, seAuthSvc) {
@@ -1062,7 +1049,6 @@ fundoloApp.controller('seNavigationCtrl',
     };
   }
 ]);
-///#source 1 1 /app/security/seRegisterCtrl.js
 fundoloApp.controller('seRegisterCtrl',
 ['$scope', '$location', '$log', 'seAuthSvc', 'mdCoreDataSvc',
   function seRegisterCtrl($scope, $location, $log, seAuthSvc, mdCoreDataSvc) {
@@ -1130,7 +1116,6 @@ fundoloApp.controller('seRegisterCtrl',
 
   }
 ]);
-///#source 1 1 /app/security/seConnectExternalCtrl.js
 fundoloApp.controller('seConnectExternalCtrl', [
   '$scope', '$location', '$stateParams', '$log', 'seAuthSvc',
   function ($scope, $location, $stateParams, $log, seAuthSvc) {
@@ -1172,7 +1157,6 @@ fundoloApp.controller('seConnectExternalCtrl', [
     }
   }
 ]);
-///#source 1 1 /app/security/seResetPasswordCtrl.js
 fundoloApp.controller('seResetPasswordCtrl',
   ['$scope', '$location', '$log', 'seAuthSvc',
   function ($scope, $location, $log, seAuthSvc) {
@@ -1204,7 +1188,6 @@ fundoloApp.controller('seResetPasswordCtrl',
     };
 
   }]);
-///#source 1 1 /app/security/seRegisterExternalCtrl.js
 fundoloApp.controller('seRegisterExternalCtrl',
 ['$scope', '$location', '$stateParams', '$log', 'seAuthSvc', 'mdCoreDataSvc',
   function ($scope, $location, $stateParams, $log, seAuthSvc, mdCoreDataSvc) {
@@ -1277,7 +1260,6 @@ fundoloApp.controller('seRegisterExternalCtrl',
 
   }
 ]);
-///#source 1 1 /app/security/seAuthenticateCtrl.js
 fundoloApp.controller('seAuthenticateCtrl',
 ['$scope', '$location', '$stateParams', '$window', 'seAuthSvc',
   function ($scope, $location, $stateParams, $window, seAuthSvc) {
@@ -1365,7 +1347,6 @@ fundoloApp.controller('seAuthenticateCtrl',
     };
   }
 ]);
-///#source 1 1 /app/security/se-external-logins-drctv.js
 fundoloApp.directive('seExternalLoginsDrctv', ['$stateParams', 'appUrl', 'seAuthSvc',
   function ($stateParams, appUrl, seAuthSvc) {
     'use strict';
@@ -1429,7 +1410,6 @@ fundoloApp.directive('seExternalLoginsDrctv', ['$stateParams', 'appUrl', 'seAuth
     return p;
 
   }]);
-///#source 1 1 /app/security/se-login-popup-drctv.js
 fundoloApp.directive('seLoginPopupDrctv', [
   'seAuthSvc', function (seAuthSvc) {
     'use strict';
@@ -1692,7 +1672,6 @@ var loginModal = ['$scope', '$uibModalInstance', '$location', '$window', '$inter
 
 //#endregion
   }];
-///#source 1 1 /app/security/se-login-popup-facebook-drctv.js
 fundoloApp.directive('seLoginPopupFacebookDrctv', [function () {
 
   'use strict';
@@ -1773,7 +1752,6 @@ fundoloApp.directive('seLoginPopupFacebookDrctv', [function () {
 
 
 
-///#source 1 1 /app/fund/fdsvc.js
 fundoloApp.factory('fdSvc', ['$resource', '$q', '$filter', '$compile', 'appUrl', 
   function ($resource, $q, $filter, $compile, appUrl) {
     'use strict';
@@ -2449,7 +2427,6 @@ fundoloApp.factory('fdSvc', ['$resource', '$q', '$filter', '$compile', 'appUrl',
   
   return p;
 }]);
-///#source 1 1 /app/paymentgateway/wepay/pgWePaySvc.js
 'use strict';
 
 fundoloApp.factory('pgWePaySvc', [
@@ -2663,7 +2640,6 @@ fundoloApp.factory('pgWePaySvc', [
     return p;
   }
 ]);
-///#source 1 1 /app/paymentgateway/wepay/pgWePayAuthenticateCtrl.js
 'use strict';
 
 fundoloApp.controller('pgWePayAuthenticateCtrl', ['$scope', '$stateParams', '$log', '$location', 'pgWePaySvc',
@@ -2704,7 +2680,6 @@ fundoloApp.controller('pgWePayAuthenticateCtrl', ['$scope', '$stateParams', '$lo
     $scope.authorize();
   }
 ]);
-///#source 1 1 /app/account/widgets/ac-dashboard-widgets-header-drctv.js
 fundoloApp.directive('acDashboardWidgetsHeaderDrctv', function () {
   'use strict';
   var p = {};
@@ -2736,7 +2711,6 @@ fundoloApp.directive('acDashboardWidgetsHeaderDrctv', function () {
   
   return p;
 });
-///#source 1 1 /app/account/widgets/ac-dashboard-widgets-manage-drctv.js
 fundoloApp.directive('acDashboardWidgetsManageDrctv', [function() {
   'use strict';
   var p = {};
@@ -2752,7 +2726,6 @@ fundoloApp.directive('acDashboardWidgetsManageDrctv', [function() {
 
   return p;
 }]);
-///#source 1 1 /app/account/foAccountCtrl.js
 fundoloApp.controller('foAccountCtrl', [
   '$scope', '$stateParams', '$location', '$filter', '$log', 'cssInjector',
   function($scope, $stateParams, $location, $filter, $log, cssInjector) {
@@ -2778,7 +2751,6 @@ fundoloApp.controller('foAccountCtrl', [
     //#endregion
   }
 ]);
-///#source 1 1 /app/account/foAccountOverviewCtrl.js
 fundoloApp.controller('foAccountOverviewCtrl', [
   '$scope', '$log', 'userSvc', 'pgWePaySvc', 'seAuthSvc',
   function ($scope, $log, userSvc, pgWePaySvc, seAuthSvc) {
@@ -2887,7 +2859,6 @@ fundoloApp.controller('foAccountOverviewCtrl', [
     };
   }
 ]);
-///#source 1 1 /app/account/foAccountProfileCtrl.js
 fundoloApp.controller('foAccountProfileCtrl',
   ['$scope', '$log', 'mdCoreDataSvc', 'userSvc',
   function ($scope, $log, mdCoreDataSvc, userSvc) {
@@ -2974,7 +2945,6 @@ fundoloApp.controller('foAccountProfileCtrl',
     //#endregion
 
   }]);
-///#source 1 1 /app/account/foAccountWithdrawCtrl.js
 fundoloApp.controller('foAccountWithdrawCtrl', [
   '$scope', '$log', '$window', '$location', 'pgWePaySvc',
   function ($scope, $log, $window, $location, pgWePaySvc) {
@@ -3071,7 +3041,6 @@ fundoloApp.controller('foAccountWithdrawCtrl', [
 
   }
 ]);
-///#source 1 1 /app/account/foAccountPasswordCtrl.js
 fundoloApp.controller('foAccountPasswordCtrl',
   ['$scope', '$log', 'seAuthSvc', 'userSvc',
   function ($scope, $log, seAuthSvc, userSvc) {
@@ -3158,7 +3127,6 @@ fundoloApp.controller('foAccountPasswordCtrl',
     //#endregion
   }
 ]);
-///#source 1 1 /app/account/foAccountDonationsCtrl.js
 fundoloApp.controller('foAccountDonationsCtrl', ['$scope', '$log', 'userSvc', 'fdSvc',
   function ($scope, $log, userSvc, fdSvc) {
 
@@ -3190,7 +3158,6 @@ fundoloApp.controller('foAccountDonationsCtrl', ['$scope', '$log', 'userSvc', 'f
     //#endregion 
   }
 ]);
-///#source 1 1 /app/account/foAccountNotificationsCtrl.js
 fundoloApp.controller('foAccountNotificationsCtrl', [
   '$scope',
   function ($scope) {
@@ -3203,7 +3170,6 @@ fundoloApp.controller('foAccountNotificationsCtrl', [
     //endregion
   }
 ]);
-///#source 1 1 /app/account/foAccountStatusCtrl.js
 fundoloApp.controller('foAccountStatusCtrl', ['$scope', '$location', 'seAuthSvc', 'pgWePaySvc',
   function ($scope, $location, $seAuthSvc, pgWePaySvc) {
 
@@ -3265,7 +3231,6 @@ fundoloApp.controller('foAccountStatusCtrl', ['$scope', '$location', 'seAuthSvc'
     //#endregion
   }
 ]);
-///#source 1 1 /app/fund/dashboard/fdDashboardSvc.js
 'use strict';
 
 fundoloApp.factory('fdDashboardSvc', ['$resource', '$q', '$filter', '$compile', 'seAuthSvc', 'appUrl',
@@ -4368,7 +4333,6 @@ fundoloApp.factory('fdDashboardSvc', ['$resource', '$q', '$filter', '$compile', 
 
     return p;
   }]);
-///#source 1 1 /app/fund/controlpanel/fdControlPanelCtrl.js
 fundoloApp.controller('fdControlPanelCtrl', [
   '$scope', '$stateParams', '$location', '$filter', '$log', '$window', 'appUrl', 'fdSvc','fdDashboardSvc','pgWePaySvc', 'cssInjector',
   function ($scope, $stateParams, $location, $filter, $log, $window, appUrl, fdSvc, fdDashboardSvc, pgWePaySvc, cssInjector) {
@@ -4568,7 +4532,6 @@ fundoloApp.controller('fdControlPanelCtrl', [
     //#endregion
   }
 ]);
-///#source 1 1 /app/fund/controlpanel/fdControlPanelOverviewCtrl.js
 
 fundoloApp.controller('fdControlPanelOverviewCtrl', [
   '$scope', '$stateParams', '$location', '$filter', '$log', 'appUrl', 'fdSvc', 'fdDashboardSvc', 'pgWePaySvc',
@@ -4592,7 +4555,6 @@ fundoloApp.controller('fdControlPanelOverviewCtrl', [
     //#endregion
   }
 ]);
-///#source 1 1 /app/fund/controlpanel/fdControlPanelProfileCtrl.js
 fundoloApp.controller('fdControlPanelProfileCtrl', [
   '$scope',
   function($scope) {
@@ -4614,7 +4576,6 @@ fundoloApp.controller('fdControlPanelProfileCtrl', [
     //#endregion
   }
 ]);
-///#source 1 1 /app/fund/controlpanel/fdControlPanelSupportersCtrl.js
 fundoloApp.controller('fdControlPanelSupportersCtrl', [
   '$scope', '$stateParams', 'fdDashboardSvc',
   function fdControlPanelSupportersCtrl($scope, $stateParams, fdDashboardSvc) {
@@ -4694,7 +4655,6 @@ fundoloApp.controller('fdControlPanelSupportersCtrl', [
     //#endregion
   }
 ]);
-///#source 1 1 /app/fund/controlpanel/fdControlPanelTeamsCtrl.js
 fundoloApp.controller('fdControlPanelTeamsCtrl', [
   '$scope',
   function ($scope) {
@@ -4714,7 +4674,6 @@ fundoloApp.controller('fdControlPanelTeamsCtrl', [
     //#endregion
   }
 ]);
-///#source 1 1 /app/fund/controlpanel/fdControlPanelCommentsCtrl.js
 fundoloApp.controller('fdControlPanelCommentsCtrl', [
   '$scope', '$stateParams', 'fdSvc',
   function fdControlPanelCommentsCtrl($scope, $stateParams, fdSvc) {
@@ -4768,7 +4727,6 @@ fundoloApp.controller('fdControlPanelCommentsCtrl', [
     //#endregion
   }
 ]);
-///#source 1 1 /app/fund/controlpanel/fdControlPanelHistoryCtrl.js
 fundoloApp.controller('fdControlPanelHistoryCtrl', [
   '$scope', '$stateParams','cssInjector', 'fdDashboardSvc', 'mdScrollScrollSvc',
   function ($scope, $stateParams, cssInjector, fdDashboardSvc, mdScrollScrollSvc) {
@@ -4849,7 +4807,6 @@ fundoloApp.controller('fdControlPanelHistoryCtrl', [
     //#endregion
   }
 ]);
-///#source 1 1 /app/fund/controlpanel/fdControlPanelSettingsCtrl.js
 fundoloApp.controller('fdControlPanelSettingsCtrl', [
   '$scope',
   function ($scope) {
@@ -4863,7 +4820,6 @@ fundoloApp.controller('fdControlPanelSettingsCtrl', [
 
   }
 ]);
-///#source 1 1 /app/fund/controlpanel/fdControlPanelToolsCtrl.js
 fundoloApp.controller('fdControlPanelToolsCtrl', [
   '$scope','$stateParams', 'fdDashboardSvc',
 function fdControlPanelToolsCtrl($scope, $stateParams, fdDashboardSvc) {
@@ -4894,7 +4850,6 @@ function fdControlPanelToolsCtrl($scope, $stateParams, fdDashboardSvc) {
   //#endregion
 }
 ]);
-///#source 1 1 /app/fund/controlpanel/fdControlPanelListCtrl.js
 
 fundoloApp.controller('fdControlPanelListCtrl', ['$scope', '$state', 'fdSvc', 'fdDashboardSvc', 'pgWePaySvc', 'mdCoreDataSvc',
   function ($scope, $state, fdSvc, fdDashboardSvc, pgWePaySvc, mdCoreDataSvc) {
@@ -5111,7 +5066,6 @@ fundoloApp.controller('fdControlPanelListCtrl', ['$scope', '$state', 'fdSvc', 'f
 
     //#endregion
   }]);
-///#source 1 1 /app/fund/controlpanel/fdControlPanelTeamsMdl.js
 var fdControlPanelTeamsMdl = ['$scope', '$uibModalInstance', '$filter', 'fdDashboardSvc', 'fundId', 'team',
   function ($scope, $uibModalInstance, $filter, fdDashboardSvc, fundId, team) {
 
@@ -5158,7 +5112,6 @@ var fdControlPanelTeamsMdl = ['$scope', '$uibModalInstance', '$filter', 'fdDashb
       $uibModalInstance.dismiss(cancelType);
     };
   }];
-///#source 1 1 /app/fund/controlpanel/fdControlPanelDonationsCtrl.js
 fundoloApp.controller('fdControlPanelDonationsCtrl', [
   '$scope',
   function ($scope) {
@@ -5181,7 +5134,6 @@ fundoloApp.controller('fdControlPanelDonationsCtrl', [
     //#endregion
   }
 ]);
-///#source 1 1 /app/fund/controlpanel/fdControlPanelNotificationsCtrl.js
 fundoloApp.controller('fdControlPanelNotificationsCtrl', [
   '$scope', 
   function ($scope) {
@@ -5204,7 +5156,6 @@ fundoloApp.controller('fdControlPanelNotificationsCtrl', [
     //#endregion
   }
 ]);
-///#source 1 1 /app/fund/controlpanel/fdControlPanelTeamMemberCtrl.js
 fundoloApp.controller('fdControlPanelTeamMemberCtrl', [
   '$scope',
   function ($scope) {
@@ -5224,7 +5175,6 @@ fundoloApp.controller('fdControlPanelTeamMemberCtrl', [
     //#endregion
   }
 ]);
-///#source 1 1 /app/fund/controlpanel/fdControlPanelEditCtrl.js
 fundoloApp.controller('fdControlPanelEditCtrl', [
     '$scope', function($scope) {
         //#region === Initialize ===
@@ -5236,7 +5186,6 @@ fundoloApp.controller('fdControlPanelEditCtrl', [
         //#endregion
     }
 ]);
-///#source 1 1 /app/fund/controlpanel/widgets/fd-controlpanel-widgets-notifications-drctv.js
 fundoloApp.directive('fdControlpanelWidgetsNotificationsDrctv', [
   '$timeout', '$filter', 'fdDashboardSvc',
   function ($timeout, $filter, fdDashboardSvc) {
@@ -5289,7 +5238,6 @@ fundoloApp.directive('fdControlpanelWidgetsNotificationsDrctv', [
     return p;
   }
 ]);
-///#source 1 1 /app/fund/controlpanel/widgets/fd-controlpanel-widgets-activity-drctv.js
 fundoloApp.directive('fdControlpanelWidgetsActivityDrctv', [
   '$timeout', '$state', 'fdDashboardSvc',
   function ($timeout, $state, fdDashboardSvc) {
@@ -5366,7 +5314,6 @@ fundoloApp.directive('fdControlpanelWidgetsActivityDrctv', [
     return p;
   }
 ]);
-///#source 1 1 /app/fund/controlpanel/widgets/fd-controlpanel-widgets-donations-drctv.js
 fundoloApp.directive('fdControlpanelWidgetsDonationsDrctv', [
   '$timeout', '$uibModal', '$state',
   function ($timeout, $uibModal, $state) {
@@ -5510,7 +5457,6 @@ var donationThankYouMdlCtrl = [
       $uibModalInstance.dismiss('cancel');
     };
   }];
-///#source 1 1 /app/fund/controlpanel/widgets/fd-controlpanel-widgets-updates-drctv.js
 fundoloApp.directive('fdControlpanelWidgetsUpdatesDrctv', [
   '$timeout', 'fdDashboardSvc', '$uibModal',
   function ($timeout, fdDashboardSvc, $uibModal) {
@@ -5646,7 +5592,6 @@ fundoloApp.directive('fdControlpanelWidgetsUpdatesDrctv', [
     return p;
   }
 ]);
-///#source 1 1 /app/fund/controlpanel/widgets/fd-controlpanel-widgets-updates-drctv-mdl.js
 var fdControlPanelWidgetsUpdatesMdl = [
   '$scope', '$uibModalInstance', '$timeout', '$window', 'fdDashboardSvc', 'seAuthSvc', 'Facebook', 'twitterConfiguration', 'fundId',
   function ($scope, $uibModalInstance, $timeout, $window, fdDashboardSvc, seAuthSvc, Facebook, twitterConfiguration, fundId) {
@@ -5875,7 +5820,6 @@ var fdControlPanelWidgetsUpdatesMdl = [
       $uibModalInstance.dismiss('cancel');
     };
   }]
-///#source 1 1 /app/fund/controlpanel/widgets/fd-controlpanel-widgets-supporters-drctv.js
 fundoloApp.directive('fdControlpanelWidgetsSupportersDrctv', [
   '$timeout', '$state',
   function ($timeout, $state) {
@@ -5923,7 +5867,6 @@ fundoloApp.directive('fdControlpanelWidgetsSupportersDrctv', [
 
     return p;
   }])
-///#source 1 1 /app/fund/controlpanel/widgets/fd-controlpanel-widgets-teams-drctv.js
 fundoloApp.directive('fdControlpanelWidgetsTeamsDrctv', [
   '$location', '$timeout', '$uibModal', '$state', 'fdSvc',
   function($location, $timeout, $uibModal, $state, fdSvc) {
@@ -6024,7 +5967,6 @@ fundoloApp.directive('fdControlpanelWidgetsTeamsDrctv', [
     return p;
   }
 ])
-///#source 1 1 /app/fund/controlpanel/widgets/fd-controlpanel-widgets-teams-lg-drctv.js
 fundoloApp.directive('fdControlpanelWidgetsTeamsLgDrctv', [
   '$timeout', '$location', '$uibModal', '$filter', 'fdSvc',
   function ($timeout, $location, $uibModal, $filter, fdSvc) {
@@ -6245,7 +6187,6 @@ fundoloApp.directive('fdControlpanelWidgetsTeamsLgDrctv', [
     return p;
   }
 ]);
-///#source 1 1 /app/fund/controlpanel/widgets/fd-controlpanel-widgets-squad-drctv.js
 fundoloApp.directive('fdControlpanelWidgetsSquadDrctv', [
   function () {
     'use strict';
@@ -6323,7 +6264,6 @@ fundoloApp.directive('fdControlpanelWidgetsSquadDrctv', [
     }
     return p;
   }])
-///#source 1 1 /app/fund/controlpanel/widgets/fd-controlpanel-widgets-comments-drctv.js
 fundoloApp.directive('fdControlpanelWidgetsCommentsDrctv', [
   '$timeout', '$state', 'fdSvc',
   function ($timeout, $state, fdSvc) {
@@ -6380,7 +6320,6 @@ fundoloApp.directive('fdControlpanelWidgetsCommentsDrctv', [
 
     return p;
   }])
-///#source 1 1 /app/fund/controlpanel/widgets/fd-controlpanel-widgets-badge-drctv.js
 fundoloApp.directive('fdControlpanelWidgetsBadgeDrctv', [
   function () {
     'use strict';
@@ -6453,7 +6392,6 @@ fundoloApp.directive('fdControlpanelWidgetsBadgeDrctv', [
     return p;
   }
 ]);
-///#source 1 1 /app/fund/controlpanel/widgets/fd-controlpanel-widgets-badgev2-drctv.js
 fundoloApp.directive('fdControlpanelWidgetsBadgev2Drctv', [
   function () {
     'use strict';
@@ -6543,7 +6481,6 @@ fundoloApp.directive('fdControlpanelWidgetsBadgev2Drctv', [
     return p;
   }
 ]);
-///#source 1 1 /app/fund/controlpanel/widgets/fd-controlpanel-widgets-embed-drctv.js
 fundoloApp.directive('fdControlpanelWidgetsEmbedDrctv', [
   function () {
     'use strict';
@@ -6588,7 +6525,6 @@ fundoloApp.directive('fdControlpanelWidgetsEmbedDrctv', [
     }
     return p;
   }])
-///#source 1 1 /app/fund/controlpanel/widgets/fd-controlpanel-widgets-print-drctv.js
 fundoloApp.directive('fdControlpanelWidgetsPrintDrctv', [
   function () {
     'use strict';
@@ -6652,7 +6588,6 @@ fundoloApp.directive('fdControlpanelWidgetsPrintDrctv', [
     }
     return p;
   }])
-///#source 1 1 /app/fund/controlpanel/widgets/fd-controlpanel-widgets-share-drctv.js
 fundoloApp.directive('fdControlpanelWidgetsShareDrctv', [
   function () {
     'use strict';
@@ -6726,7 +6661,6 @@ fundoloApp.directive('fdControlpanelWidgetsShareDrctv', [
     }
     return p;
   }])
-///#source 1 1 /app/fund/controlpanel/widgets/fd-controlpanel-widgets-profile-drctv.js
 fundoloApp.directive('fdControlpanelWidgetsProfileDrctv', ['appUrl', 'fdSvc',
   function (appUrl, fdSvc) {
     'use strict';
@@ -6751,7 +6685,6 @@ fundoloApp.directive('fdControlpanelWidgetsProfileDrctv', ['appUrl', 'fdSvc',
     }
     return p;
   }])
-///#source 1 1 /app/fund/controlpanel/widgets/fd-controlpanel-widgets-analytics-drctv.js
 fundoloApp.directive('fdControlpanelWidgetsAnalyticsDrctv', [
   '$timeout', '$state', 'mdGoogleSvc',
   function ($timeout, $state, mdGoogleSvc) {
@@ -6847,7 +6780,6 @@ fundoloApp.directive('fdControlpanelWidgetsAnalyticsDrctv', [
     return p;
   }
 ]);
-///#source 1 1 /app/fund/controlpanel/widgets/fd-controlpanel-widgets-settings-drctv.js
 fundoloApp.directive('fdControlpanelWidgetsSettingsDrctv', ['$timeout', 'fdDashboardSvc',
   function ($timeout, fdDashboardSvc) {
 
@@ -7053,7 +6985,6 @@ fundoloApp.directive('fdControlpanelWidgetsSettingsDrctv', ['$timeout', 'fdDashb
     return p;
   }
 ]);
-///#source 1 1 /app/fund/controlpanel/widgets/fd-controlpanel-widgets-donations-lg-drctv.js
 fundoloApp.directive('fdControlpanelWidgetsDonationsLgDrctv', [
   '$timeout', '$uibModal', '$filter', 'mdScrollScrollSvc', 'fdDashboardSvc',
 function ($timeout, $uibModal, $filter, mdScrollScrollSvc, fdDashboardSvc) {
@@ -7269,7 +7200,6 @@ function ($timeout, $uibModal, $filter, mdScrollScrollSvc, fdDashboardSvc) {
     return p;
   }
 ]);
-///#source 1 1 /app/fund/controlpanel/widgets/fd-controlpanel-widgets-notifications-lg-drctv.js
 fundoloApp.directive('fdControlpanelWidgetsNotificationsLgDrctv', [
   '$timeout', '$uibModal', '$filter', 'mdScrollScrollSvc', 'fdDashboardSvc',
 function ($timeout, $uibModal, $filter, mdScrollScrollSvc, fdDashboardSvc) {
@@ -7420,7 +7350,6 @@ function ($timeout, $uibModal, $filter, mdScrollScrollSvc, fdDashboardSvc) {
   return p;
 }
 ]);
-///#source 1 1 /app/fund/controlpanel/widgets/fd-controlpanel-widgets-notifications-mdl.js
 var fdControlpanelWidgetsNotificationsMdl = ['$scope', '$uibModalInstance', '$uibModal', 'fdDashboardSvc', 'appUrl', 'rowItem',
   function ($scope, $uibModalInstance, $uibModal, fdDashboardSvc, appUrl, rowItem) {
 
@@ -7477,7 +7406,6 @@ var fdControlpanelWidgetsNotificationsMdl = ['$scope', '$uibModalInstance', '$ui
 
     };
   }];
-///#source 1 1 /app/fund/controlpanel/widgets/fd-controlpanel-widgets-edit-drctv.js
 fundoloApp.directive('fdControlpanelWidgetsEditDrctv', [
     '$timeout', '$window', '$filter', 'Upload', 'fdDashboardSvc', 'seAuthSvc', 'mdCoreDataSvc', 'appUrl',
 function($timeout, $window, $filter, Upload, fdDashboardSvc, seAuthSvc, mdCoreDataSvc, appUrl) {
@@ -8004,7 +7932,6 @@ function($timeout, $window, $filter, Upload, fdDashboardSvc, seAuthSvc, mdCoreDa
         return p;
     }
 ]);
-///#source 1 1 /app/fund/widgets/fd-widgets-featured-slider-drctv.js
 fundoloApp.directive('fdWidgetsFeaturedSliderDrctv', ['$log', '$filter', '$timeout', 'fdSvc',
     function ($log, $filter, $timeout, fdSvc) {
       var p = {};
@@ -8051,7 +7978,6 @@ fundoloApp.directive('fdWidgetsFeaturedSliderDrctv', ['$log', '$filter', '$timeo
 
       return p;
     }])
-///#source 1 1 /app/fund/widgets/fd-widgets-contact-drctv.js
 fundoloApp.directive('fdWidgetsContactDrctv', [
   function () {
     'use strict';
@@ -8141,7 +8067,6 @@ var contactFundModal = ['$scope', '$uibModalInstance', 'fdSvc', 'fund',
       $uibModalInstance.close(reason);
     };
   }];
-///#source 1 1 /app/fund/widgets/fd-widgets-support-drctv.js
 'use strict';
 
 fundoloApp.directive('fdWidgetsSupportDrctv', [
@@ -8432,7 +8357,6 @@ var supportFundModal = [
     };
   }
 ];
-///#source 1 1 /app/fund/widgets/fd-widgets-permalink-drctv.js
 'use strict';
 
 fundoloApp.directive('fdWidgetsPermalinkDrctv', ['$timeout', 'permalinkData', function($timeout, permalinkData) {
@@ -8513,7 +8437,6 @@ fundoloApp.directive('fdWidgetsPermalinkDrctv', ['$timeout', 'permalinkData', fu
   };
   return p;
 }]);
-///#source 1 1 /app/fund/widgets/fd-widgets-teams-drctv.js
 'use strict';
 
 fundoloApp.directive('fdWidgetsTeamsDrctv', [
@@ -8697,7 +8620,6 @@ var joinTeamModal = [
 
   }
 ];
-///#source 1 1 /app/fund/widgets/fd-widgets-featured-drctv.js
 fundoloApp.directive('fdWidgetsFeaturedDrctv', ['$log', '$filter', 'fdSvc',
   function ($log, $filter, fdSvc) {
     'use strict';
@@ -8749,7 +8671,6 @@ fundoloApp.directive('fdWidgetsFeaturedDrctv', ['$log', '$filter', 'fdSvc',
 
     return p;
   }])
-///#source 1 1 /app/fund/widgets/fd-widgets-sliderv2-drctv.js
 fundoloApp.directive('fdWidgetsSliderv2Drctv', [
   '$log', '$filter', 'fdSvc',
   function($log, $filter, fdSvc) {
@@ -8855,7 +8776,6 @@ fundoloApp.directive('fdWidgetsSliderv2Drctv', [
     return p;
   }
 ]);
-///#source 1 1 /app/fund/widgets/fd-widgets-tweets-drctv.js
 fundoloApp.directive('fdWidgetsTweetsDrctv', [
   function() {
     "use strict";
@@ -8942,7 +8862,6 @@ fundoloApp.directive('fdWidgetsTweetsDrctv', [
     return p;
   }
 ]);
-///#source 1 1 /app/fund/widgets/fd-widgets-provider-drctv.js
 fundoloApp.directive('fdWidgetsProviderDrctv', [
   function () {
     "use strict";
@@ -8964,7 +8883,6 @@ fundoloApp.directive('fdWidgetsProviderDrctv', [
     return p;
   }
 ]);
-///#source 1 1 /app/fund/widgets/fd-widgets-fund-drctv.js
 fundoloApp.directive('fdWidgetsFundDrctv', ['seAuthSvc', 'fdSvc', 'appUrl', '$state',
   function (seAuthSvc, fdSvc, appUrl, $state) {
     var p = {};
@@ -9055,7 +8973,6 @@ fundoloApp.directive('fdWidgetsFundDrctv', ['seAuthSvc', 'fdSvc', 'appUrl', '$st
     return p;
   }
 ]);
-///#source 1 1 /app/fund/widgets/fd-widgets-fund-xs-drctv.js
 fundoloApp.directive('fdWidgetsFundXsDrctv', ['seAuthSvc', 'fdSvc', 'appUrl', '$state',
   function (seAuthSvc, fdSvc, appUrl, $state) {
     var p = {};
@@ -9142,7 +9059,6 @@ fundoloApp.directive('fdWidgetsFundXsDrctv', ['seAuthSvc', 'fdSvc', 'appUrl', '$
     return p;
   }
 ]);
-///#source 1 1 /app/fund/widgets/fd-widgets-fundv2-drctv.js
 fundoloApp.directive('fdWidgetsFundv2Drctv', ['$state', 'fdSvc', 'appUrl',
   function ($state, fdSvc, appUrl) {
     var p = {};
@@ -9223,7 +9139,6 @@ fundoloApp.directive('fdWidgetsFundv2Drctv', ['$state', 'fdSvc', 'appUrl',
     return p;
   }
 ]);
-///#source 1 1 /app/fund/widgets/fd-widgets-social-drctv.js
 fundoloApp.directive('fdWidgetsSocialDrctv', [function () {
 
   'use strict';
@@ -9387,7 +9302,6 @@ fundoloApp.directive('fdWidgetsSocialDrctv', [function () {
   return p;
 }]);
 
-///#source 1 1 /app/fund/widgets/fd-widgets-sliderv3-drctv.js
 fundoloApp.directive('fdWidgetsSliderv3Drctv', [
   '$window', '$timeout',
   function ($window, $timeout) {
@@ -9524,7 +9438,6 @@ fundoloApp.directive('fdWidgetsSliderv3Drctv', [
     return p;
   }
 ]);
-///#source 1 1 /app/fund/widgets/fd-widgets-donate-drctv.js
 fundoloApp.directive('fdWidgetsDonateDrctv', [
   function() {
     var p = {};
@@ -9630,7 +9543,6 @@ fundoloApp.directive('fdWidgetsDonateDrctv', [
     return p;
   }
 ]);
-///#source 1 1 /app/fund/widgets/fd-widgets-updates-drctv.js
 fundoloApp.directive('fdWidgetsUpdatesDrctv', [function () {
 
   'use strict';
@@ -9681,7 +9593,6 @@ fundoloApp.directive('fdWidgetsUpdatesDrctv', [function () {
   return p;
 }]);
 
-///#source 1 1 /app/fund/widgets/fd-widgets-comments-drctv.js
 fundoloApp.directive('fdWidgetsCommentsDrctv', [
   'seAuthSvc','cssInjector', 'fdSvc', 'mdCoreDataSvc',
   function (seAuthSvc, cssInjector, fdSvc, mdCoreDataSvc) {
@@ -9867,7 +9778,6 @@ fundoloApp.directive('fdWidgetsCommentsDrctv', [
   return p;
 }]);
 
-///#source 1 1 /app/fund/widgets/fd-widgets-fundraisers-drctv.js
 fundoloApp.directive('fdWidgetsFundraisersDrctv', [
   '$uibModal','fdDashboardSvc',
   function ($uibModal, fdDashboardSvc) {
@@ -9969,7 +9879,6 @@ fundoloApp.directive('fdWidgetsFundraisersDrctv', [
     return p;
   }]);
 
-///#source 1 1 /app/fund/widgets/fdWidgetsSocialPostMdl.js
 var fdWidgetsSocialPostMdl = ['$scope', '$uibModalInstance', '$uibModal', 'fdSvc', 'appUrl', 'user', 'fund',
   function ($scope, $uibModalInstance, $uibModal, fdSvc, appUrl, user, fund) {
 
@@ -10057,14 +9966,12 @@ var fdWidgetsSocialPostMdl = ['$scope', '$uibModalInstance', '$uibModal', 'fdSvc
       $uibModalInstance.dismiss(reason);
     };
   }];
-///#source 1 1 /app/fund/widgets/fdWidgetsSocialMailPreviewMdl.js
 var fdWidgetsSocialMailPreviewMdl = ['$scope', '$uibModalInstance', function ($scope, $uibModalInstance) {
 
   $scope.close = function (reason) {
     $uibModalInstance.close(reason);
   };
 }];
-///#source 1 1 /app/fund/widgets/fdWidgetsSocialPrintMdl.js
 var fdWidgetsSocialPrintMdl = ['$scope', '$uibModalInstance', '$compile', 'appUrl', 'mdCoreDataSvc', 'fund',
   function ($scope, $uibModalInstance, $compile, appUrl, mdCoreDataSvc, fund) {
     //#region === Initialization ===
@@ -10097,7 +10004,6 @@ var fdWidgetsSocialPrintMdl = ['$scope', '$uibModalInstance', '$compile', 'appUr
       $uibModalInstance.close(reason);
     };
   }];
-///#source 1 1 /app/fund/widgets/fdWidgetsSocialEmbedMdl.js
 var fdWidgetsSocialEmbedMdl = ['$scope', '$uibModalInstance', 'appUrl', 'fund',
   function ($scope, $uibModalInstance, appUrl, fund) {
     'use strict';
@@ -10114,7 +10020,6 @@ var fdWidgetsSocialEmbedMdl = ['$scope', '$uibModalInstance', 'appUrl', 'fund',
       $uibModalInstance.close(reason);
     };
   }];
-///#source 1 1 /app/fund/widgets/fdWidgetsDonateMdl.js
 var fdWidgetsDonateMdl = [
   '$scope', '$uibModalInstance', '$uibModal', '$filter', 'appUrl', 'mdCoreDataSvc', 'userSvc', 'seAuthSvc', 'orDataSvc', 'wePayConst', 'fund', 'donationAmount',
   function ($scope, $uibModalInstance, $uibModal, $filter, appUrl, mdCoreDataSvc, userSvc, seAuthSvc, orDataSvc, wePayConst, fund, myDonationAmount) {
@@ -10507,7 +10412,6 @@ var fdWidgetsDonateMdl = [
     }
     //#endregion
   }];
-///#source 1 1 /app/fund/widgets/fdWidgetsDonateThankYouMdl.js
 var fdWidgetsDonateThankYouMdl = [
   '$scope', '$uibModalInstance', '$filter', 'appUrl','fdSvc', 'fund', 'order',
   function ($scope, $uibModalInstance, $filter, appUrl, fdSvc, fund, order) {
@@ -10579,7 +10483,6 @@ var fdWidgetsDonateThankYouMdl = [
     }
     //#endregion
   }];
-///#source 1 1 /app/fund/widgets/fd-widgets-donations-drctv.js
 fundoloApp.directive('fdWidgetsDonationsDrctv', [function () {
 
   'use strict';
@@ -10702,7 +10605,6 @@ fundoloApp.directive('fdWidgetsDonationsDrctv', [function () {
   return p;
 }]);
 
-///#source 1 1 /app/fund/widgets/fd-widgets-supporters-drctv.js
 fundoloApp.directive('fdWidgetsSupportersDrctv', [
   'cssInjector', 'fdDashboardSvc',
   function (cssInjector, fdDashboardSvc) {
@@ -10823,7 +10725,6 @@ fundoloApp.directive('fdWidgetsSupportersDrctv', [
   return p;
 }]);
 
-///#source 1 1 /app/fund/donate/fdDonateThankYouCtrl.js
 'use strict';
 
 fundoloApp.controller('fdDonateThankYouCtrl', [
@@ -10849,7 +10750,6 @@ fundoloApp.controller('fdDonateThankYouCtrl', [
 
   //#endregion 
 }]);
-///#source 1 1 /app/fund/donate/fdDonateCtrl.js
 fundoloApp.controller('fdDonateCtrl', ['$scope', '$location', '$stateParams', '$uibModal', '$log', '$filter', 'seAuthSvc', 'fdSvc', 'userSvc', 'orDataSvc', 'mdCoreDataSvc', 'wePayConst',
   function fdDonateCtrl($scope, $location, $stateParams, $uibModal, $log, $filter, seAuthSvc, fdSvc, userSvc, orDataSvc, mdCoreDataSvc, wePayConst) {
     'use strict';
@@ -11310,7 +11210,6 @@ var donationBreakdownModal = ['$scope', '$uibModalInstance', 'donation', 'totalA
     $uibModalInstance.dismiss('cancel');
   };
 }];
-///#source 1 1 /app/fund/fdCtrl.js
 fundoloApp.controller('fdCtrl', ['$uibModal', '$scope', '$log', '$stateParams', '$state', '$filter', '$window', 'fdSvc',
   'seAuthSvc', 'appUrl', 'cssInjector', 'Facebook', 'fdDashboardSvc', 'mdCoreDataSvc', '$analytics',
   function fdFundCtrl($uibModal, $scope, $log, $stateParams, $state, $filter, $window, fdSvc,
@@ -12017,7 +11916,6 @@ fundoloApp.controller('fdCtrl', ['$uibModal', '$scope', '$log', '$stateParams', 
     //#endregion
 
   }]);
-///#source 1 1 /app/fund/fdCtrlEditTitleMdl.js
 var fdCtrlEditTitleMdl = [
   '$scope', '$uibModalInstance', '$filter', 'appUrl', 'fdDashboardSvc', 'seAuthSvc', 'fund',
   function ($scope, $uibModalInstance, $filter, appUrl, fdDashboardSvc, seAuthSvc, fund) {
@@ -12075,7 +11973,6 @@ var fdCtrlEditTitleMdl = [
 
     //#endregion
   }];
-///#source 1 1 /app/fund/fdCtrlEditGoalMdl.js
 var fdCtrlEditGoalMdl = [
   '$scope', '$uibModalInstance', '$filter', 'appUrl', 'fdDashboardSvc', 'seAuthSvc', 'fund',
   function ($scope, $uibModalInstance, $filter, appUrl, fdDashboardSvc, seAuthSvc, fund) {
@@ -12133,7 +12030,6 @@ var fdCtrlEditGoalMdl = [
 
     //#endregion
   }];
-///#source 1 1 /app/fund/fdCtrlEditPermalinkMdl.js
 var fdCtrlEditPermalinkMdl = [
   '$scope', '$uibModalInstance', '$filter', 'appUrl', 'fdDashboardSvc', 'seAuthSvc', 'fund',
   function ($scope, $uibModalInstance, $filter, appUrl, fdDashboardSvc, seAuthSvc, fund) {
@@ -12191,7 +12087,6 @@ var fdCtrlEditPermalinkMdl = [
     //#endregion
 
   }];
-///#source 1 1 /app/fund/fdCtrlEditDescriptionMdl.js
 var fdCtrlEditDescriptionMdl = [
   '$scope', '$uibModalInstance', '$filter', '$timeout', '$window', 'appUrl', 'fdDashboardSvc', 'seAuthSvc', 'fund',
   function ($scope, $uibModalInstance, $filter, $timeout, $window, appUrl, fdDashboardSvc, seAuthSvc, fund) {
@@ -12258,7 +12153,6 @@ var fdCtrlEditDescriptionMdl = [
 
     //#endregion
   }];
-///#source 1 1 /app/fund/fdCtrlEditShortSummaryMdl.js
 var fdCtrlEditShortSummaryMdl = [
   '$scope', '$uibModalInstance', '$filter', 'appUrl', 'fdDashboardSvc', 'seAuthSvc', 'fund',
   function ($scope, $uibModalInstance, $filter, appUrl, fdDashboardSvc, seAuthSvc, fund) {
@@ -12320,7 +12214,6 @@ var fdCtrlEditShortSummaryMdl = [
 
     //#endregion
   }];
-///#source 1 1 /app/fund/fdCtrlEditCategoryMdl.js
 var fdCtrlEditCategoryMdl = [
   '$scope', '$uibModalInstance', '$filter', 'appUrl', 'fdDashboardSvc', 'seAuthSvc', 'mdCoreDataSvc', 'fund',
   function ($scope, $uibModalInstance, $filter, appUrl, fdDashboardSvc, seAuthSvc, mdCoreDataSvc, fund) {
@@ -12414,7 +12307,6 @@ var fdCtrlEditCategoryMdl = [
 
     //#endregion
   }];
-///#source 1 1 /app/fund/fdCtrlEditUploadMdl.js
 var fdCtrlEditUploadMdl = [
   '$scope', '$uibModalInstance', '$filter', 'Upload', '$timeout', 'appUrl', 'fdDashboardSvc', 'seAuthSvc', 'fund',
   function ($scope, $uibModalInstance, $filter, Upload, $timeout, appUrl, fdDashboardSvc, seAuthSvc, fund) {
@@ -12777,7 +12669,6 @@ var fdCtrlEditUploadMdl = [
     //#endregion
 
   }];
-///#source 1 1 /app/fund/fdCtrlEditDateMdl.js
 var fdCtrlEditDateMdl = [
   '$scope', '$uibModalInstance', '$filter', '$timeout', 'appUrl', 'fdDashboardSvc', 'seAuthSvc', 'fund',
   function ($scope, $uibModalInstance, $filter, $timeout, appUrl, fdDashboardSvc, seAuthSvc, fund) {
@@ -12870,7 +12761,6 @@ var fdCtrlEditDateMdl = [
 
     //#endregion
   }];
-///#source 1 1 /app/fund/fdCtrlEditSettingsMdl.js
 var fdCtrlEditSettingsMdl = [
   '$scope', '$uibModalInstance', 'fund', 'activeTab',
   function ($scope, $uibModalInstance, fund, activeTab) {
@@ -12892,7 +12782,6 @@ var fdCtrlEditSettingsMdl = [
     //#endregion
 
   }];
-///#source 1 1 /app/fund/search/fdSearchCtrl.js
 fundoloApp.controller('fdSearchCtrl', ['$scope', '$location', '$log', '$stateParams', '$state', '$filter', 'fdSvc', 'mdCoreDataSvc', 'mdScrollScrollSvc',
   function ($scope, $location, $log, $stateParams, $state, $filter, fdSvc, mdCoreDataSvc, mdScrollScrollSvc) {
 
@@ -13109,7 +12998,6 @@ fundoloApp.controller('fdSearchCtrl', ['$scope', '$location', '$log', '$statePar
   }
 });
 
-///#source 1 1 /app/fund/widgets/fdWidgetsPermalinkSvc.js
 'use strict';
 
 fundoloApp.factory('permalinkData', ['$resource', '$q', 'appUrl',
@@ -13140,7 +13028,6 @@ fundoloApp.factory('permalinkData', ['$resource', '$q', 'appUrl',
 
   return p;
 }]);
-///#source 1 1 /app/security/seAuthSvc.js
 fundoloApp.factory('seAuthSvc', ['$http', '$cookieStore', '$resource', '$q', '$log', '$interval', '$window', 'appUrl',
   function ($http, $cookieStore, $resource, $q, $log, $interval, $window, appUrl) {
   
@@ -13840,7 +13727,6 @@ fundoloApp.factory('Users', ['$http', function ($http) {
   };
 }]);
 
-///#source 1 1 /app/security/security.js
 fundoloApp.directive('accessLevel', ['seAuthSvc', function (seAuthSvc) {
   'use strict';
   var p = {};
@@ -13897,7 +13783,6 @@ fundoloApp.directive('accessLevel', ['seAuthSvc', function (seAuthSvc) {
 
   return p;
 }]);
-///#source 1 1 /app/user/userSvc.js
 'use strict';
 
 fundoloApp.factory('userSvc', ['$resource', '$q', 'appUrl', 'seAuthSvc',
@@ -14108,7 +13993,6 @@ fundoloApp.factory('userSvc', ['$resource', '$q', 'appUrl', 'seAuthSvc',
   
   return p;
 }]);
-///#source 1 1 /app/shopping/orDataSvc.js
 fundoloApp.factory('orDataSvc',
 [
   '$resource', '$q', 'appUrl',
@@ -14179,7 +14063,6 @@ fundoloApp.factory('orDataSvc',
     return p;
   }
 ]);
-///#source 1 1 /app/widgets/wiFeatureSummarySvc.js
 fundoloApp.factory('wiFeatureSummarySvc', function() {
   'use strict';
   var p = {};
@@ -14202,7 +14085,6 @@ fundoloApp.factory('wiFeatureSummarySvc', function() {
 
   return p;
 });
-///#source 1 1 /app/widgets/wi-feature-summary-drctv.js
 fundoloApp.directive('wiFeatureSummaryDrctv', [
   'wiFeatureSummarySvc',
   function(wiFeatureSummarySvc) {
@@ -14224,7 +14106,6 @@ fundoloApp.directive('wiFeatureSummaryDrctv', [
     return p;
   }
 ]);
-///#source 1 1 /app/embed/emFundWidgetCtrl.js
 fundoloApp.controller('emFundWidgetCtrl', [
   '$scope', '$stateParams', '$log', '$location', 'fdSvc', 'appUrl', '$window',
   function($scope, $stateParams, $log, $location, fdSvc, appUrl, $window) {
@@ -14294,7 +14175,6 @@ fundoloApp.controller('emFundWidgetCtrl', [
     //#endregion
   }
 ]);
-///#source 1 1 /app/embed/emFundCardCtrl.js
 fundoloApp.controller('emFundCardCtrl', [
   '$scope', '$stateParams', '$log', '$filter', '$window', 'fdSvc', 'appUrl',
   function($scope, $stateParams, $log, $filter, $window, fdSvc, appUrl) {
@@ -14366,7 +14246,6 @@ fundoloApp.controller('emFundCardCtrl', [
 
   }
 ]);
-///#source 1 1 /app/embed/emFundButtonCtrl.js
 fundoloApp.controller('emFundButtonCtrl', [
   '$scope', '$stateParams', '$window', 'fdSvc', 'appUrl',
   function ($scope, $stateParams, $window, fdSvc, appUrl) {
@@ -14398,7 +14277,6 @@ fundoloApp.controller('emFundButtonCtrl', [
     //#endregion
   }
 ]);
-///#source 1 1 /app/common/md-alert-drctv.js
 'use strict';
 
 fundoloApp.directive('mdAlertDrctv', [function () {
@@ -14423,7 +14301,6 @@ fundoloApp.directive('mdAlertDrctv', [function () {
 
   return p;
 }]);
-///#source 1 1 /app/common/dtPickerCtrl.js
 'use strict';
 
 fundoloApp.controller('dtPickerCtrl',['$scope', '$timeout',
@@ -14465,7 +14342,6 @@ fundoloApp.controller('dtPickerCtrl',['$scope', '$timeout',
             'starting-day': 1
         };
 }]);
-///#source 1 1 /app/common/mdCommonDrctv.js
 'use strict';
 
 fundoloApp.directive('selectOnClick', [
@@ -14541,7 +14417,6 @@ fundoloApp.directive('selectOnClick', [
     }
   ]);
 
-///#source 1 1 /app/common/validation/va-password-check-drctv.js
 'use strict';
 
 fundoloApp.directive('vaPasswordCheckDrctv', [function () {
@@ -14558,7 +14433,6 @@ fundoloApp.directive('vaPasswordCheckDrctv', [function () {
 	    }
 	  }
 	}]);
-///#source 1 1 /app/common/mdCoreDataSvc.js
 'use strict';
 
 fundoloApp.factory('mdCoreDataSvc', ['$resource', '$q', '$window', 'seAuthSvc', 'appUrl',
@@ -15045,7 +14919,6 @@ fundoloApp.factory('mdCoreDataSvc', ['$resource', '$q', '$window', 'seAuthSvc', 
 
   return p;
 }])
-///#source 1 1 /app/common/md-press-thumbnail-drctv.js
 'use strict';
 
 fundoloApp.directive('mdPressThumbnailDrctv', ['mdPressDataSvc', function (mdPressDataSvc) {
@@ -15081,7 +14954,6 @@ fundoloApp.directive('mdPressThumbnailDrctv', ['mdPressDataSvc', function (mdPre
     
     return p;
 }]);
-///#source 1 1 /app/common/md-carousel-drctv.js
 'use strict';
 
 fundoloApp.directive('mdCarousel', [function() {
@@ -15142,7 +15014,6 @@ fundoloApp.directive('mdCarousel', [function() {
 }]);
 
 
-///#source 1 1 /app/common/validation/va-whole-number-drctv.js
 'use strict';
 
 fundoloApp.directive('vaWholeNumberDrctv', [function() {
@@ -15158,7 +15029,6 @@ fundoloApp.directive('vaWholeNumberDrctv', [function() {
 
     return p;
 }]);
-///#source 1 1 /app/common/md-social-message-drctv.js
 'use strict';
 
 fundoloApp.directive('mdSocialMessageDrctv', [
@@ -15193,7 +15063,6 @@ fundoloApp.directive('mdSocialMessageDrctv', [
     return p;
   }
 ]);
-///#source 1 1 /app/common/bt-swatch-drctv.js
 'use strict';
 
 fundoloApp.directive('btSwatchDrctv', [function () {
@@ -15235,7 +15104,6 @@ fundoloApp.directive('btSwatchDrctv', [function () {
 
   return p;
 }]);
-///#source 1 1 /app/common/at-plugin.js
 'use strict';
 
 /**
@@ -15286,7 +15154,6 @@ fundoloApp.directive('atPlugin', [function () {
 
   return p;
 }]);
-///#source 1 1 /app/common/md-spinner-bar-drctv.js
 'use strict';
 
 fundoloApp.directive('mdSpinnerBarDrctv', [function() {
@@ -15318,7 +15185,6 @@ fundoloApp.directive('mdSpinnerBarDrctv', [function() {
 
   return p;
 }]);
-///#source 1 1 /app/common/mdPressDataSvc.js
 'use strict';
 
 fundoloApp.factory('mdPressDataSvc', [function () {
@@ -15397,7 +15263,6 @@ fundoloApp.factory('mdPressDataSvc', [function () {
 
     return p;
 }]);
-///#source 1 1 /app/common/mdFilters.js
 'use strict';
 
 fundoloApp.filter('doubleDigit', function() {
@@ -15487,7 +15352,6 @@ function utcToLocalTimeUnFormatted(utcMoment) {
   var localDate = moment(utcDate);
   return localDate;
 }
-///#source 1 1 /app/common/md-avatar-drctv.js
 fundoloApp.directive('mdAvatarDrctv', ['$window',
   function ($window) {
     'use strict';
@@ -15541,7 +15405,6 @@ fundoloApp.directive('mdAvatarDrctv', ['$window',
     return p;
   }
 ]);
-///#source 1 1 /app/common/mdSmoothScrollSvc.js
 fundoloApp.service('mdScrollScrollSvc', function () {
 
   this.scrollTo = function (elementId, speed) {

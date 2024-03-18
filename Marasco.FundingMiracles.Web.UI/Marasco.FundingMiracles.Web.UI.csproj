@@ -28,6 +28,8 @@
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <TypeScriptToolsVersion>1.0</TypeScriptToolsVersion>
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -347,9 +349,7 @@
     <Content Include="app\facebook\channel.min.html">
       <DependentUpon>channel.html</DependentUpon>
     </Content>
-    <Content Include="app\Fundolo.js">
-      <DependentUpon>Fundolo.js.bundle</DependentUpon>
-    </Content>
+    <Content Include="app\Fundolo.js" />
     <Content Include="app\Fundolo.min.js">
       <DependentUpon>Fundolo.js</DependentUpon>
     </Content>
@@ -5758,6 +5758,10 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="app\Fundolo.min.js.map">
+      <DependentUpon>Fundolo.min.js</DependentUpon>
+    </Content>
+    <None Include="bundleconfig.json" />
     <None Include="index2.html" />
     <Content Include="robots.txt" />
     <Content Include="Scripts\angular-cookies.js" />
@@ -6889,12 +6893,6 @@
     </Content>
     <Content Include="app\user\userSvc.min.js.map">
       <DependentUpon>userSvc.min.js</DependentUpon>
-    </Content>
-    <Content Include="app\Fundolo.js.bundle">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="app\Fundolo.min.js.map">
-      <DependentUpon>Fundolo.min.js</DependentUpon>
     </Content>
     <Content Include="app\fund\dashboard\widgets\fd-dashboard-widgets-features-drctv.min.js.map">
       <DependentUpon>fd-dashboard-widgets-features-drctv.min.js</DependentUpon>
