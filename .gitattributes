@@ -16,7 +16,10 @@
 # Set Default git languages
 ###############################################################################
 * linguist-vendored
-*.cs .js linguist-vendored=false
+*.cs linguist-detectable=true
+*.js linguist-detectable=false
+*.html linguist-detectable=false
+*.css linguist-detectable=false
 
 ###############################################################################
 # Set the merge driver for project and solution files
