@@ -6,7 +6,7 @@
 ###############################################################################
 # Set Default git languages
 ###############################################################################
-*.css linguist-detectable=true
+*.css linguist-detectable=false
 *.cs linguist-detectable=true
 *.js linguist-detectable=false
 *.html linguist-detectable=false  
