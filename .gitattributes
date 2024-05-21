@@ -16,8 +16,6 @@
 # Set Default git languages
 ###############################################################################
 * linguist-vendored
-*.cs linguist-detectable=true
-*.js linguist-detectable=true
 *.html linguist-detectable=false
 *.css linguist-detectable=false
 
